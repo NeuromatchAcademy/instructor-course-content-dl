@@ -14,20 +14,24 @@ jobs:
   build-and-deploy-book:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
           ref: ${{ github.head_ref }}
+
       - name: Get commit message
         run: |
           readonly local msg=$(git log -1 --pretty=format:"%s")
           echo "COMMIT_MESSAGE=$msg" >> $GITHUB_ENV
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
+
       - name: Install CI tools
         run: |
           BRANCH=`python -c 'import os, re; m = re.search(r"nmaci:([\w-]+)", os.environ["COMMIT_MESSAGE"]); print("main" if m is None else m.group(1))'`
@@ -38,10 +42,21 @@ jobs:
           mv nmaci-$BRANCH/scripts/ ci/
           rm -r nmaci-$BRANCH
           echo ci/ >> .gitignore
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
+
+      - name: Copy tutorials from course-content-dl repo
+        run: |
+          BRANCH=`python -c 'import os, re; m = re.search(r"course-content-dl:([\w-]+)", os.environ["COMMIT_MESSAGE"]); print("main" if m is None else m.group(1))'`
+          wget https://github.com/NeuromatchAcademy/course-content-dl/archive/refs/heads/$BRANCH.tar.gz
+          tar -xzf $BRANCH.tar.gz
+          mv course-content-dl-$BRANCH/tutorials/ tutorials/
+          rm -r course-content-dl-$BRANCH
+          rm -r $BRANCH.tar.gz
+
       - name: Build the book
         run: |
           python ci/generate_book_precourse.py
