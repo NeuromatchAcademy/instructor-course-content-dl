@@ -62,7 +62,7 @@ jobs:
 
       - name: Build the book
         run: |
-          arg = instructor
+          arg = "instructor"
           python ci/generate_book_dl.py $arg
           ln -s ../tutorials book/tutorials
           ln -s ../projects book/projects
