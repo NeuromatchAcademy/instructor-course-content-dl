@@ -37,16 +37,12 @@ jobs:
           BRANCH=`python -c 'import os, re; m = re.search(r"nmaci:([\w-]+)", os.environ["COMMIT_MESSAGE"]); print("main" if m is None else m.group(1))'`
           wget https://github.com/NeuromatchAcademy/nmaci/archive/refs/heads/$BRANCH.tar.gz
           tar -xzf $BRANCH.tar.gz
+          rm -rf $BRANCH.tar.gz
           sudo apt-get install -y xvfb ffmpeg
           pip install -r nmaci-$BRANCH/requirements.txt
           mv nmaci-$BRANCH/scripts/ ci/
           rm -r nmaci-$BRANCH
           echo ci/ >> .gitignore
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install jupyter-book==0.10.2 ghp-import
 
       - name: Copy tutorials from course-content-dl repo
         run: |
@@ -54,12 +50,18 @@ jobs:
           wget https://github.com/NeuromatchAcademy/course-content-dl/archive/refs/heads/$BRANCH.tar.gz
           tar -xzf $BRANCH.tar.gz
           mv course-content-dl-$BRANCH/tutorials/ tutorials/
+          mv course-content-dl-$BRANCH/requirements.txt .
           rm -r course-content-dl-$BRANCH
           rm -r $BRANCH.tar.gz
 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install jupyter-book==0.10.2 ghp-import
+
       - name: Build the book
         run: |
-          python ci/generate_book_precourse.py
+          python ci/generate_book_dl.py instructor
           ln -s ../tutorials book/tutorials
           jupyter-book build book
           python ci/parse_html_for_errors.py
