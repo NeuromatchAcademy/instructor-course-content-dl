@@ -50,6 +50,7 @@ jobs:
           wget https://github.com/NeuromatchAcademy/course-content-dl/archive/refs/heads/$BRANCH.tar.gz
           tar -xzf $BRANCH.tar.gz
           mv course-content-dl-$BRANCH/tutorials/ tutorials/
+          mv course-content-dl-$BRANCH/projects/ projects/
           mv course-content-dl-$BRANCH/requirements.txt .
           rm -r course-content-dl-$BRANCH
           rm -r $BRANCH.tar.gz
@@ -63,6 +64,7 @@ jobs:
         run: |
           python ci/generate_book_dl.py instructor
           ln -s ../tutorials book/tutorials
+          ln -s ../projects book/projects
           jupyter-book build book
           python ci/parse_html_for_errors.py
 
