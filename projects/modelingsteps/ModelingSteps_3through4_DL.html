@@ -1,0 +1,1645 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modeling Steps 3 - 4 &#8212; Neuromatch Academy: Deep Learning (instructor&#39;s version)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Modeling Steps 5 - 6" href="ModelingSteps_5through6_DL.html" />
+    <link rel="prev" title="Modeling Steps 1 - 2" href="ModelingSteps_1through2_DL.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/nma-dl-logo-square-4xp.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../tutorials/intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/Schedule/schedule_intro.html">
+   Schedule
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/Schedule/daily_schedules.html">
+     General schedule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/Schedule/shared_calendars.html">
+     Shared calendars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/Schedule/timezone_widget.html">
+     Timezone widget
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/TechnicalHelp/tech_intro.html">
+   Technical Help
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorials/TechnicalHelp/Jupyterbook.html">
+     Using jupyterbook
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/TechnicalHelp/Tutorial_colab.html">
+       Using Google Colab
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/TechnicalHelp/Tutorial_kaggle.html">
+       Using Kaggle
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/TechnicalHelp/Discord.html">
+     Using Discord
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W1D1_BasicsAndPytorch/chapter_title.html">
+   Basics And Pytorch (W1D1)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D1_BasicsAndPytorch/instructor/W1D1_Tutorial1.html">
+     Tutorial 1: PyTorch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W1D2_LinearDeepLearning/chapter_title.html">
+   Linear Deep Learning (W1D2)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D2_LinearDeepLearning/instructor/W1D2_Tutorial1.html">
+     Tutorial 1: Gradient Descent and AutoGrad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D2_LinearDeepLearning/instructor/W1D2_Tutorial2.html">
+     Tutorial 2: Learning Hyperparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D2_LinearDeepLearning/instructor/W1D2_Tutorial3.html">
+     Tutorial 3: Deep linear neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W1D3_MultiLayerPerceptrons/chapter_title.html">
+   Multi Layer Perceptrons (W1D3)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial1.html">
+     Tutorial 1: Biological vs. Artificial Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial2.html">
+     Tutorial 2: Deep MLPs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W1D4_Optimization/chapter_title.html">
+   Optimization (W1D4)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D4_Optimization/instructor/W1D4_Tutorial1.html">
+     Tutorial 1: Optimization techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W1D5_Regularization/chapter_title.html">
+   Regularization (W1D5)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D5_Regularization/instructor/W1D5_Tutorial1.html">
+     Tutorial 1: Regularization techniques part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D5_Regularization/instructor/W1D5_Tutorial2.html">
+     Tutorial 2: Regularization techniques part 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/Module_WrapUps/TheBasics.html">
+   Deep Learning: The Basics Wrap-up
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Doing More With Fewer Parameters
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W2D1_ConvnetsAndRecurrentNeuralNetworks/chapter_title.html">
+   Convnets And Recurrent Neural Networks (W2D1)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D1_ConvnetsAndRecurrentNeuralNetworks/instructor/W2D1_Tutorial1.html">
+     Tutorial 1: Introduction to CNNs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D1_ConvnetsAndRecurrentNeuralNetworks/instructor/W2D1_Tutorial2.html">
+     Tutorial 2: Introduction to RNNs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W2D2_ModernConvnets/chapter_title.html">
+   Modern Convnets (W2D2)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D2_ModernConvnets/instructor/W2D2_Tutorial1.html">
+     Tutorial 1: Learn how to use modern convnets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D2_ModernConvnets/instructor/W2D2_Tutorial2.html">
+     (Bonus) Tutorial 2: Facial recognition using modern convnets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W2D3_ModernRecurrentNeuralNetworks/chapter_title.html">
+   Modern Recurrent Neural Networks (W2D3)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D3_ModernRecurrentNeuralNetworks/instructor/W2D3_Tutorial1.html">
+     Tutorial 1: Modeling sequencies and encoding text
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W2D4_AttentionAndTransformers/chapter_title.html">
+   Attention And Transformers (W2D4)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D4_AttentionAndTransformers/instructor/W2D4_Tutorial1.html">
+     Tutorial 1: Learn how to work with Transformers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W2D5_GenerativeModels/chapter_title.html">
+   Generative Models (W2D5)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial1.html">
+     Tutorial 1: Variational Autoencoders (VAEs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial2.html">
+     Tutorial 2: Introduction to GANs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial3.html">
+     Tutorial 3: Conditional GANs and Implications of GAN Technology
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial4.html">
+     (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/Module_WrapUps/DoingMoreWithFewerParameters.html">
+   Deep Learning: Doing more with fewer parameters Wrap-up
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W3D1_UnsupervisedAndSelfSupervisedLearning/chapter_title.html">
+   Unsupervised And Self Supervised Learning (W3D1)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D1_UnsupervisedAndSelfSupervisedLearning/instructor/W3D1_Tutorial1.html">
+     Tutorial 1: Un/Self-supervised learning methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W3D2_BasicReinforcementLearning/chapter_title.html">
+   Basic Reinforcement Learning (W3D2)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D2_BasicReinforcementLearning/instructor/W3D2_Tutorial1.html">
+     Tutorial 1: Learning to Predict
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W3D3_ReinforcementLearningForGames/chapter_title.html">
+   Reinforcement Learning For Games (W3D3)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D3_ReinforcementLearningForGames/instructor/W3D3_Tutorial1.html">
+     Tutorial 1: Learn to play games with RL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/W3D4_ContinualLearning/chapter_title.html">
+   Continual Learning (W3D4)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D4_ContinualLearning/instructor/W3D4_Tutorial1.html">
+     Tutorial 1: Introduction to Continual Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D4_ContinualLearning/instructor/W3D4_Tutorial2.html">
+     Tutorial 2: Out-of-distribution (OOD) Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/Module_WrapUps/AdvancedTopics.html">
+   Deep Learning: Advanced Topics Wrap-up
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Booklet
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Introduction to projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/project_guidance.html">
+   Daily guide for projects
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Modeling Step-by-Step Guide
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ModelingSteps_1through2_DL.html">
+     Modeling Steps 1 - 2
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modeling Steps 3 - 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ModelingSteps_5through6_DL.html">
+     Modeling Steps 5 - 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ModelingSteps_7through9_DL.html">
+     Modeling Steps 7 - 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ModelingSteps_10_DL.html">
+     Modeling Steps 10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="TrainIllusionDataProjectDL.html">
+     Example Data Project: the Train Illusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="TrainIllusionModelingProjectDL.html">
+     Example Model Project: the Train Illusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Example_Deep_Learning_Project.html">
+     Example Deep Learning Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../docs/projects_overview.html">
+   Project Templates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../ComputerVision/README.html">
+     Computer Vision
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/slides.html">
+       Slides
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/ideas_and_datasets.html">
+       Ideas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/em_synapses.html">
+       Knowledge Extraction from a Convolutional Neural Network
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/spectrogram_analysis.html">
+       Music classification and generation with spectrograms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/screws.html">
+       Something Screwy - image recognition, detection, and classification of screws
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/image_alignment.html">
+       Image Alignment
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/data_augmentation.html">
+       Data Augmentation in image classification models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ComputerVision/transfer_learning.html">
+       Transfer Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../ReinforcementLearning/README.html">
+     Reinforcement Learning
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ReinforcementLearning/slides.html">
+       Slides
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ReinforcementLearning/ideas_and_datasets.html">
+       Ideas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ReinforcementLearning/robolympics.html">
+       NMA Robolympics: Controlling robots using reinforcement learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ReinforcementLearning/lunar_lander.html">
+       Performance Analysis of DQN Algorithm on the Lunar Lander task
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ReinforcementLearning/human_rl.html">
+       Using RL to Model Cognitive Tasks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../NaturalLanguageProcessing/README.html">
+     Natural Language Processing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../NaturalLanguageProcessing/slides.html">
+       Slides
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../NaturalLanguageProcessing/ideas_and_datasets.html">
+       Ideas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../NaturalLanguageProcessing/sentiment_analysis.html">
+       Twitter Sentiment Analysis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../NaturalLanguageProcessing/machine_translation.html">
+       Machine Translation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Neuroscience/README.html">
+     Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/slides.html">
+       Slides
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/ideas_and_datasets.html">
+       Ideas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/pose_estimation.html">
+       Animal Pose Estimation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/cellular_segmentation.html">
+       Segmentation and Denoising
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/algonauts_videos.html">
+       Load algonauts videos
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/blurry_vision.html">
+       Vision with Lost Glasses: Modelling how the brain deals with noisy input
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/finetuning_fmri.html">
+       Moving beyond Labels: Finetuning CNNs on BOLD response
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Neuroscience/neuro_seq_to_seq.html">
+       Focus on what matters: inferring low-dimensional dynamics from neural recordings
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/datasets_and_models.html">
+   Models and Data sets
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/NeuromatchAcademy/instructor-course-content-dl"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/NeuromatchAcademy/instructor-course-content-dl/issues/new?title=Issue%20on%20page%20%2Fprojects/modelingsteps/ModelingSteps_3through4_DL.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/projects/modelingsteps/ModelingSteps_3through4_DL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modeling Steps 3 - 4
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-determining-the-basic-ingredients">
+   Step 3: Determining the basic ingredients
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-4-determining-basic-ingredients">
+     Video 4: Determining basic ingredients
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-projects-step-3">
+     Example projects step 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-your-basic-ingredients">
+     Determine your basic ingredients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-formulating-specific-mathematically-defined-hypotheses">
+   Step 4: Formulating specific, mathematically defined hypotheses
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-5-formulating-a-hypothesis">
+     Video 5: Formulating a hypothesis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-projects-step-4">
+     Example projects step 4
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulating-your-hypothesis">
+     Formulating your hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modeling Steps 3 - 4</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modeling Steps 3 - 4
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-determining-the-basic-ingredients">
+   Step 3: Determining the basic ingredients
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-4-determining-basic-ingredients">
+     Video 4: Determining basic ingredients
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-projects-step-3">
+     Example projects step 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-your-basic-ingredients">
+     Determine your basic ingredients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-formulating-specific-mathematically-defined-hypotheses">
+   Step 4: Formulating specific, mathematically defined hypotheses
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-5-formulating-a-hypothesis">
+     Video 5: Formulating a hypothesis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-projects-step-4">
+     Example projects step 4
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulating-your-hypothesis">
+     Formulating your hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/projects/modelingsteps/ModelingSteps_3through4_DL.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/projects/modelingsteps/ModelingSteps_3through4_DL.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a></p>
+<div class="section" id="modeling-steps-3-4">
+<h1>Modeling Steps 3 - 4<a class="headerlink" href="#modeling-steps-3-4" title="Permalink to this headline">¶</a></h1>
+<p><strong>By Neuromatch Academy</strong></p>
+<p><strong>Content creators:</strong> Marius ‘t Hart, Megan Peters, Paul Schrater, Gunnar Blohm</p>
+<p><strong>Content reviewers:</strong> Eric DeWitt, Tara van Viegen, Marius Pachitariu</p>
+<p><strong>Production editors:</strong> Ella Batty, Spiros Chavlis</p>
+<p><strong>Our 2021 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
+<p align='center'><img src='https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True'/></p></div>
+<hr class="docutils" />
+<div class="section" id="step-3-determining-the-basic-ingredients">
+<h1>Step 3: Determining the basic ingredients<a class="headerlink" href="#step-3-determining-the-basic-ingredients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-4-determining-basic-ingredients">
+<h2>Video 4: Determining basic ingredients<a class="headerlink" href="#video-4-determining-basic-ingredients" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "3f447ca123ab44cab63c868b8843a667", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="example-projects-step-3">
+<h2>Example projects step 3<a class="headerlink" href="#example-projects-step-3" title="Permalink to this headline">¶</a></h2>
+<p>Run this cell to download the data for this example project.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Example projects step 3</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Math</span>
+
+<span class="c1"># @title Data retrieval</span>
+<span class="c1"># @markdown Run this cell to download the data for this example project.</span>
+<span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://osf.io/mnqb7/download&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to download data&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">train_moves</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;train_moves&#39;</span><span class="p">]</span>
+  <span class="n">train_labels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;train_labels&#39;</span><span class="p">]</span>
+  <span class="n">test_moves</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;test_moves&#39;</span><span class="p">]</span>
+  <span class="n">test_labels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;test_labels&#39;</span><span class="p">]</span>
+  <span class="n">label_names</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;label_names&#39;</span><span class="p">]</span>
+  <span class="n">joint_names</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;joint_names&#39;</span><span class="p">]</span>
+
+
+
+<span class="n">markdown1</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">## Step 3</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">We determined that we probably needed the following ingredients for our model:</span>
+
+<span class="s1">* Vestibular input: *v(t)*</span>
+
+<span class="s1">* Binary decision output: *d* - time dependent?</span>
+
+<span class="s1">* Decision threshold: θ</span>
+
+<span class="s1">* A filter (maybe running average?): *f*</span>
+
+<span class="s1">* An integration mechanism to get from vestibular acceleration to sensed velocity: ∫</span>
+
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">## Step 3</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">In order to address our question we need to design an appropriate computational data analysis pipeline. We did some brainstorming and think that we need to somehow extract the self-motion judgements from the spike counts of our neurons. Based on that, our algorithm needs to make a decision: was there self motion or not? This is a classical 2-choice classification problem. We will have to transform the raw spike data into the right input for the algorithm (spike pre-processing).</span>
+
+<span class="s1">So we determined that we probably needed the following ingredients:</span>
+
+<span class="s1">* spike trains *S* of 3-second trials (10ms spike bins)</span>
+<span class="s1">* ground truth movement *m&lt;sub&gt;r&lt;/sub&gt;* (real) and perceived movement *m&lt;sub&gt;p&lt;/sub&gt;*</span>
+<span class="s1">* some form of classifier *C* giving us a classification *c*</span>
+<span class="s1">* spike pre-processing</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown31</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">## Step 3</span>
+
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">After downloading the data, we should have 6 numpy arrays:</span>
+
+<span class="s1">`train_moves`: the training set of 1032 movements</span>
+
+<span class="s1">`train_labels`: the class labels for each of the 1032 training movements</span>
+
+<span class="s1">`test_moves`: the test set of 172 movements</span>
+
+<span class="s1">`test_labels`: the class labels for each of the 172 test movements</span>
+
+<span class="s1">`label_names`: text labels for the values in the two arrays of class labels</span>
+
+<span class="s1">`joint_names`: the names of the 24 joints used in each movement</span>
+
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">We&#39;ll take a closer look at the data below. Note: data is split into training and test sets. If you don&#39;t know what that means, NMA-DL will teach you!</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown32</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+
+<span class="s1">**Inputs:**</span>
+<span class="s1">For simplicity, we take the first 24 joints of the whole MoVi dataset including all major limbs. The data was in an exponential map format, which has 3 rotations/angles for each joint (pitch, yaw, roll). The advantage of this type of data is that it is (mostly) agnostic about body size or shape. And since we care about movements only, we choose this representation of the data (there are other representations in the full data set).</span>
+
+<span class="s1">Since the joints are simply points, the 3rd angle (i.e. roll) contained no information, and that is already dropped from the data that we pre-formatted for this demo project. That is, the movements of each joint are described by 2 angles, that change over time. Furthermore, we normalized all the angles/rotations to fall between 0 and 1 so they are good input for PyTorch.</span>
+
+<span class="s1">Finally, the movements originally took various amounts of time, but we need the same input for each movement, so we sub-sampled and (linearly) interpolated the data to have 75 timepoints.</span>
+
+<span class="s1">Our training data is supposed to have 1032 movements, 2 x 24 joints = 48 channels and 75 timepoints. Let&#39;s check and make sure:</span>
+
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown33</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+
+<span class="s1">**Joints:**</span>
+<span class="s1">For each movement we have 2 angles from 24 joints. Which joints are these?</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown34</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+
+<span class="s1">**Labels:**</span>
+
+<span class="s1">Let&#39;s have a look at the `train_labels` array too:</span>
+
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="n">markdown35</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">The labels are numbers, and there are 1032 of them, so that matches the number of movements in the data set.</span>
+<span class="s1">There are text versions too in the array called `label_names`. Let&#39;s have a look. There are supposed to be 14 movement classes.</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown36</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">The test data set has similar data, but fewer movements. That&#39;s ok.</span>
+<span class="s1">What&#39;s important is that both the training and test datasets have an even spread of movement types,</span>
+<span class="s1">i.e., we want them to be balanced. Let&#39;s see how balanced the data is:</span>
+
+<span class="s1">Train data:</span>
+
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown37</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">Test data:</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown38</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">So that looks more or less OK. Movements 2, 3, 4 and 5 occur once more in the</span>
+<span class="s1">training data than the other movements, and one time fewer in the test data.</span>
+<span class="s1">Not perfect, but probably doesn&#39;t matter that much.</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown39</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+
+<span class="s1">**Model ingredients**</span>
+
+<span class="s1">&quot;Mechanisms&quot;:</span>
+<span class="s1">&lt;br&gt;</span>
+
+<span class="s1">Feature engineering? --&gt; Do we need anything else aside from angular time courses? For now we choose to only use the angular time courses (exponential maps), as our ultimate goal is to see how many joints we need for accurate movement classification so that we can decrease the number of measurements or devices for later work.</span>
+
+<span class="s1">Feature selection? --&gt; Which joint movements are most informative? These are related to our research questions and hypotheses, so this project will explicitly investigate which joints are most informative.</span>
+
+<span class="s1">Feature grouping? --&gt; Instead of trying all possible combinations of joints (very many) we could focus on limbs, by grouping joints. We could also try the model on individual joints.</span>
+
+<span class="s1">Classifier? --&gt; For our classifier we would like to keep it as simple as possible, but we will decide later.</span>
+
+<span class="s1">Input? --&gt; The training data (movements and labels) will be used to train the classifier.</span>
+
+<span class="s1">Output? --&gt; The test data will be used as input for the trained model and we will see if the predicted labels are the same as the actual labels.</span>
+
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="c1"># No idea why this is necessary but math doesn&#39;t render properly without it</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+
+
+<span class="n">out2</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out2</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown2</span><span class="p">))</span>
+
+
+<span class="n">out1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out1</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown1</span><span class="p">))</span>
+
+<span class="n">out3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out3</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown31</span><span class="p">))</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown32</span><span class="p">))</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">train_moves</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown33</span><span class="p">))</span>
+
+  <span class="k">for</span> <span class="n">joint_no</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">joint_no</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">joint_names</span><span class="p">[</span><span class="n">joint_no</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown34</span><span class="p">))</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">train_labels</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown35</span><span class="p">))</span>
+  <span class="c1"># let&#39;s check the values of the train_labels array:</span>
+  <span class="n">label_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">label_numbers</span><span class="p">)</span>
+
+  <span class="c1"># and use them as indices into the label_names array:</span>
+  <span class="k">for</span> <span class="n">label_no</span> <span class="ow">in</span> <span class="n">label_numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label_no</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">label_names</span><span class="p">[</span><span class="n">label_no</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown36</span><span class="p">))</span>
+
+  <span class="n">Counter</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown37</span><span class="p">))</span>
+
+  <span class="n">Counter</span><span class="p">(</span><span class="n">test_labels</span><span class="p">)</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown38</span><span class="p">))</span>
+
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown39</span><span class="p">))</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Tab</span><span class="p">([</span><span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">,</span> <span class="n">out3</span><span class="p">])</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Computational Model&#39;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Data Analysis&#39;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Deep Learning&#39;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8dd83e5d7bcd4750a03067bf1cad7929", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="determine-your-basic-ingredients">
+<h2>Determine your basic ingredients<a class="headerlink" href="#determine-your-basic-ingredients" title="Permalink to this headline">¶</a></h2>
+<p>This will allow you to think deeper about what your modeling project will need. It’s a crucial step before you can formulate hypotheses because you first need to understand what your modeling approach will need. There are 2 aspects you want to think about:</p>
+<br>
+<ol class="simple">
+<li><p>What parameters / hyperparameters / variables are needed?</p>
+<ul class="simple">
+<li><p>Constants?</p></li>
+<li><p>Do they change over space, time, conditions…?</p></li>
+<li><p>What details can be omitted?</p></li>
+<li><p>Constraints, initial conditions?</p></li>
+<li><p>Model inputs / outputs?</p></li>
+</ul>
+</li>
+<li><p>Variables needed to describe the process to be modelled?</p>
+<ul class="simple">
+<li><p>Brainstorming!</p></li>
+<li><p>What can be observed / measured?  latent variables?</p></li>
+<li><p>Where do these variables come from?</p></li>
+<li><p>Do any abstract concepts need to be instantiated as variables?</p>
+<ul>
+<li><p>E.g., value, utility, uncertainty, cost, salience, goals, strategy, plant, dynamics</p></li>
+<li><p>Instantiate them so that they relate to potential measurements!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>This is a step where your prior knowledge and intuition is tested. You want to end up with an inventory of <em>specific</em> concepts and/or interactions that need to be instantiated.</p>
+<p><strong>Make sure to avoid the pitfalls!</strong></p>
+<details>
+<summary>Click here for a recap on pitfalls</summary>
+<p>I’m experienced, I don’t need to think about ingredients anymore</p>
+  <ul>
+  <li>Or so you think …</li>
+  </ul>
+<p>I can’t think of any ingredients</p>
+  <ul>
+  <li>Think about the potential experiment. What are your stimuli? What parameters? What would you control? What do you measure?</li>
+  </ul>
+<p>I have all inputs and outputs</p>
+  <ul>
+  <li>Good! But what will link them? Thinking about that will start shaping your model and hypotheses</li>
+  </ul>
+<p>I can’t think of any links (= mechanisms)</p>
+  <ul>
+  <li>You will acquire a library of potential mechanisms as you keep modeling and learning</li>
+  <li>But the literature will often give you hints through hypotheses</li>
+  <li>If you still can't think of links, then maybe you're missing ingredients?</li>
+  </ul>
+</details></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-4-formulating-specific-mathematically-defined-hypotheses">
+<h1>Step 4: Formulating specific, mathematically defined hypotheses<a class="headerlink" href="#step-4-formulating-specific-mathematically-defined-hypotheses" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-5-formulating-a-hypothesis">
+<h2>Video 5: Formulating a hypothesis<a class="headerlink" href="#video-5-formulating-a-hypothesis" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "344fb52211bd4dc597a66e849e5c4329", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="example-projects-step-4">
+<h2>Example projects step 4<a class="headerlink" href="#example-projects-step-4" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Example projects step 4</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Math</span>
+
+<span class="c1"># Not writing in latex because that didn&#39;t render in jupyterbook</span>
+
+<span class="n">markdown1</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">## Step 4</span>
+<span class="s1">&lt;br&gt;</span>
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">Our main hypothesis is that the strength of the illusion has a linear relationship to the amplitude of vestibular noise.</span>
+
+<span class="s1">Mathematically, this would write as</span>
+
+<span class="s1">&lt;div align=&quot;center&quot;&gt;</span>
+<span class="s1">&lt;em&gt;S&lt;/em&gt; = &lt;em&gt;k&lt;/em&gt; ⋅ &lt;em&gt;N&lt;/em&gt;</span>
+<span class="s1">&lt;/div&gt;</span>
+
+<span class="s1">where *S* is the illusion strength and *N* is the noise level, and *k* is a free parameter.</span>
+<span class="s1">&gt;we could simply use the frequency of occurance across repetitions as the &quot;strength of the illusion&quot;</span>
+
+<span class="s1">We would get the noise as the standard deviation of *v(t)*, i.e.</span>
+
+<span class="s1">&lt;div align=&quot;center&quot;&gt;</span>
+<span class="s1">&lt;em&gt;N&lt;/em&gt; = &lt;b&gt;E&lt;/b&gt;[&lt;em&gt;v(t)&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt;],</span>
+<span class="s1">&lt;/div&gt;</span>
+
+<span class="s1"> where **E** stands for the expected value.</span>
+
+<span class="s1">Do we need to take the average across time points?</span>
+<span class="s1">&gt; doesn&#39;t really matter because we have the generative process, so we can just use the σ that we define</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">## Step 4</span>
+<span class="s1">&lt;br&gt;</span>
+
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">We think that noise in the signal drives whether or not people perceive self motion. Maybe the brain uses the strongest signal at peak acceleration to decide on self motion, but we actually think it is better to accumulate evidence over some period of time. We want to test this. The noise idea also means that when the signal-to-noise ratio is higher, the brain does better, and this would be in the faster acceleration condition. We want to test this too.</span>
+
+<span class="s1">We came up with the following hypotheses focussing on specific details of our overall research question:</span>
+
+<span class="s1">* Hyp 1: Accumulated vestibular spike rates explain self-motion judgements better than average spike rates around peak acceleration.</span>
+<span class="s1">* Hyp 2: Classification performance should be better for faster vs slower self-motion.</span>
+
+<span class="s1">&gt; There are many other hypotheses you could come up with, but for simplicity, let&#39;s go with those.</span>
+
+<span class="s1">Mathematically, we can write our hypotheses as follows (using our above ingredients):</span>
+<span class="s1">* Hyp 1: **E**(c&lt;sub&gt;accum&lt;/sub&gt;) &gt; **E**(c&lt;sub&gt;win&lt;/sub&gt;)</span>
+<span class="s1">* Hyp 2: **E**(c&lt;sub&gt;fast&lt;/sub&gt;) &gt; **E**(c&lt;sub&gt;slow&lt;/sub&gt;)</span>
+
+<span class="s1">Where **E** denotes taking the expected value (in this case the mean) of its argument: classification outcome in a given trial type.</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">markdown3</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">## Step 4</span>
+<span class="s1">&lt;br&gt;</span>
+
+<span class="s1">&lt;font size=&#39;3pt&#39;&gt;</span>
+<span class="s1">Since humans can easily distinguish different movement types from video data and also more abstract &quot;stick figures&quot;, a DL model should also be able to do so. Therefore, our hypotheses are more detailed with respect to parameters influencing model performance (and not just whether it will work or not).</span>
+
+<span class="s1">Remember, we&#39;re interested in seeing how many joints are needed for classification. So we could hypothezise (Hypothesis 1) that arm and leg motions are sufficient for classification (meaning: head and torso data is not needed).</span>
+
+<span class="s1">* Hypothesis 1: The performance of a model with four limbs plus torso and head is not higher than the performance of a model with only limbs.</span>
+
+<span class="s1">We could also hypothesize that data from only one side of the body is sufficient (Hypothesis 2), e.g. the right side, since our participants are right handed.</span>
+
+<span class="s1">* Hypothesis 2: A model using only joints in the right arm will outperform a model using only the joints in the left arm.</span>
+
+<span class="s1">Writing those in mathematical terms:</span>
+<span class="s1">* Hyp 1: **E**(perf &lt;sub&gt;limbs&lt;/sub&gt;) &gt; **E**(perf &lt;sub&gt;torso&lt;/sub&gt;)</span>
+<span class="s1">* Hyp 2: **E**(perf &lt;sub&gt;right arm&lt;/sub&gt;) &gt; **E**(perf &lt;sub&gt;left arm&lt;/sub&gt;)</span>
+<span class="s1">&lt;/font&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># No idea why this is necessary but math doesn&#39;t render properly without it</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+
+<span class="n">out2</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out2</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown2</span><span class="p">))</span>
+
+<span class="n">out1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out1</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown1</span><span class="p">))</span>
+
+<span class="n">out3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">out3</span><span class="p">:</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">markdown3</span><span class="p">))</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Tab</span><span class="p">([</span><span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">,</span> <span class="n">out3</span><span class="p">])</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Computational Model&#39;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Data Analysis&#39;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Deep Learning&#39;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "65f7fae3aaf4436a992cad429991d0ac", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="formulating-your-hypothesis">
+<h2>Formulating your hypothesis<a class="headerlink" href="#formulating-your-hypothesis" title="Permalink to this headline">¶</a></h2>
+<p>Once you have your question and goal lines up, you have done a literature review and you have thought about ingredients needed for your model, you’re now ready to start thinking about <em>specific</em> hypotheses.</p>
+<p>Formulating hypotheses really consists of two consecutive steps:</p>
+<ol class="simple">
+<li><p>You think about the hypotheses in words by relating ingredients identified in Step 3</p>
+<ul class="simple">
+<li><p>What is the model mechanism expected to do?</p></li>
+<li><p>How are different parameters expected to influence model results?</p></li>
+</ul>
+</li>
+<li><p>You then express these hypotheses in mathematical language by giving the ingredients identified in Step 3 specific variable names.</p>
+<ul class="simple">
+<li><p>Be explicit, e.g., <span class="math notranslate nohighlight">\(y(t)=f(x(t), k)\)</span> but <span class="math notranslate nohighlight">\(z(t)\)</span> doesn’t influence <span class="math notranslate nohighlight">\(y\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p>There are also “structural hypotheses” that make assumptions on what model components you hypothesize will be crucial to capture the phenomenon at hand.</p>
+<p><strong>Important:</strong> Formulating the hypotheses is the last step before starting to model. This step determines the model approach and ingredients. It provides a more detailed description of the question / goal from Step 1. The more precise the hypotheses, the easier the model will be to justify.</p>
+<p><strong>Make sure to avoid the pitfalls!</strong></p>
+<details>
+<summary>Click here for a recap on pitfalls</summary>
+<p>I don’t need hypotheses, I will just play around with the model</p>
+  <ul>
+  <li>Hypotheses help determine and specify goals. You can (and should) still play…</li>
+  </ul>
+<p>My hypotheses don’t match my question (or vice versa)</p>
+  <ul>
+  <li>This is a normal part of the process!</li>
+  <li>You need to loop back to Step 1 and revisit your question / phenomenon / goals</li>
+  </ul>
+<p>I can’t write down a math hypothesis</p>
+  <ul>
+  <li>Often that means you lack ingredients and/or clarity on the hypothesis</li>
+  <li>OR: you have a “structural” hypothesis, i.e. you expect a certain model component to be crucial in explaining the phenomenon / answering the question</li>
+  </ul>
+</details></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./projects/modelingsteps"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ModelingSteps_1through2_DL.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Modeling Steps 1 - 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ModelingSteps_5through6_DL.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeling Steps 5 - 6</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Neuromatch<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

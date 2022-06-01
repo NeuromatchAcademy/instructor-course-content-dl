@@ -1,0 +1,2292 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>(Bonus) Tutorial 4: Deploying Neural Networks on the Web — Neuromatch Academy: Deep Learning (instructor's version)</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/styles/sphinx-book-theme.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
+<link href="../../../genindex.html" rel="index" title="Index"/>
+<link href="../../../search.html" rel="search" title="Search"/>
+<link href="../../Module_WrapUps/DoingMoreWithFewerParameters.html" rel="next" title="Deep Learning: Doing more with fewer parameters Wrap-up"/>
+<link href="W2D5_Tutorial3.html" rel="prev" title="Tutorial 3: Conditional GANs and Implications of GAN Technology"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="60" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+<!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.jpeg"/>
+<h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
+</a>
+</div><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search this book..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." type="search"/>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../Schedule/schedule_intro.html">
+   Schedule
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../Schedule/daily_schedules.html">
+     General schedule
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../Schedule/shared_calendars.html">
+     Shared calendars
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../Schedule/timezone_widget.html">
+     Timezone widget
+    </a>
+</li>
+</ul>
+</input></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../TechnicalHelp/tech_intro.html">
+   Technical Help
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox">
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../TechnicalHelp/Jupyterbook.html">
+     Using jupyterbook
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox">
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../TechnicalHelp/Tutorial_colab.html">
+       Using Google Colab
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../TechnicalHelp/Tutorial_kaggle.html">
+       Using Kaggle
+      </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../TechnicalHelp/Discord.html">
+     Using Discord
+    </a>
+</li>
+</ul>
+</input></li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  The Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W1D1_BasicsAndPytorch/chapter_title.html">
+   Basics And Pytorch (W1D1)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D1_BasicsAndPytorch/instructor/W1D1_Tutorial1.html">
+     Tutorial 1: PyTorch
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W1D2_LinearDeepLearning/chapter_title.html">
+   Linear Deep Learning (W1D2)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D2_LinearDeepLearning/instructor/W1D2_Tutorial1.html">
+     Tutorial 1: Gradient Descent and AutoGrad
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D2_LinearDeepLearning/instructor/W1D2_Tutorial2.html">
+     Tutorial 2: Learning Hyperparameters
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D2_LinearDeepLearning/instructor/W1D2_Tutorial3.html">
+     Tutorial 3: Deep linear neural networks
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W1D3_MultiLayerPerceptrons/chapter_title.html">
+   Multi Layer Perceptrons (W1D3)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial1.html">
+     Tutorial 1: Biological vs. Artificial Neural Networks
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial2.html">
+     Tutorial 2: Deep MLPs
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W1D4_Optimization/chapter_title.html">
+   Optimization (W1D4)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D4_Optimization/instructor/W1D4_Tutorial1.html">
+     Tutorial 1: Optimization techniques
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W1D5_Regularization/chapter_title.html">
+   Regularization (W1D5)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D5_Regularization/instructor/W1D5_Tutorial1.html">
+     Tutorial 1: Regularization techniques part 1
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W1D5_Regularization/instructor/W1D5_Tutorial2.html">
+     Tutorial 2: Regularization techniques part 2
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/TheBasics.html">
+   Deep Learning: The Basics Wrap-up
+  </a>
+</li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  Doing More With Fewer Parameters
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W2D1_ConvnetsAndRecurrentNeuralNetworks/chapter_title.html">
+   Convnets And Recurrent Neural Networks (W2D1)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D1_ConvnetsAndRecurrentNeuralNetworks/instructor/W2D1_Tutorial1.html">
+     Tutorial 1: Introduction to CNNs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D1_ConvnetsAndRecurrentNeuralNetworks/instructor/W2D1_Tutorial2.html">
+     Tutorial 2: Introduction to RNNs
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W2D2_ModernConvnets/chapter_title.html">
+   Modern Convnets (W2D2)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D2_ModernConvnets/instructor/W2D2_Tutorial1.html">
+     Tutorial 1: Learn how to use modern convnets
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D2_ModernConvnets/instructor/W2D2_Tutorial2.html">
+     (Bonus) Tutorial 2: Facial recognition using modern convnets
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W2D3_ModernRecurrentNeuralNetworks/chapter_title.html">
+   Modern Recurrent Neural Networks (W2D3)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D3_ModernRecurrentNeuralNetworks/instructor/W2D3_Tutorial1.html">
+     Tutorial 1: Modeling sequencies and encoding text
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W2D4_AttentionAndTransformers/chapter_title.html">
+   Attention And Transformers (W2D4)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D4_AttentionAndTransformers/instructor/W2D4_Tutorial1.html">
+     Tutorial 1: Learn how to work with Transformers
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../chapter_title.html">
+   Generative Models (W2D5)
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="W2D5_Tutorial1.html">
+     Tutorial 1: Variational Autoencoders (VAEs)
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="W2D5_Tutorial2.html">
+     Tutorial 2: Introduction to GANs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="W2D5_Tutorial3.html">
+     Tutorial 3: Conditional GANs and Implications of GAN Technology
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/DoingMoreWithFewerParameters.html">
+   Deep Learning: Doing more with fewer parameters Wrap-up
+  </a>
+</li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W3D1_UnsupervisedAndSelfSupervisedLearning/chapter_title.html">
+   Unsupervised And Self Supervised Learning (W3D1)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D1_UnsupervisedAndSelfSupervisedLearning/instructor/W3D1_Tutorial1.html">
+     Tutorial 1: Un/Self-supervised learning methods
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W3D2_BasicReinforcementLearning/chapter_title.html">
+   Basic Reinforcement Learning (W3D2)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D2_BasicReinforcementLearning/instructor/W3D2_Tutorial1.html">
+     Tutorial 1: Learning to Predict
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W3D3_ReinforcementLearningForGames/chapter_title.html">
+   Reinforcement Learning For Games (W3D3)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D3_ReinforcementLearningForGames/instructor/W3D3_Tutorial1.html">
+     Tutorial 1: Learn to play games with RL
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../W3D4_ContinualLearning/chapter_title.html">
+   Continual Learning (W3D4)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D4_ContinualLearning/instructor/W3D4_Tutorial1.html">
+     Tutorial 1: Introduction to Continual Learning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D4_ContinualLearning/instructor/W3D4_Tutorial2.html">
+     Tutorial 2: Out-of-distribution (OOD) Learning
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/AdvancedTopics.html">
+   Deep Learning: Advanced Topics Wrap-up
+  </a>
+</li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  Project Booklet
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../projects/README.html">
+   Introduction to projects
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../../projects/docs/project_guidance.html">
+   Daily guide for projects
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../../projects/modelingsteps/intro.html">
+   Modeling Step-by-Step Guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/ModelingSteps_1through2_DL.html">
+     Modeling Steps 1 - 2
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/ModelingSteps_3through4_DL.html">
+     Modeling Steps 3 - 4
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/ModelingSteps_5through6_DL.html">
+     Modeling Steps 5 - 6
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/ModelingSteps_7through9_DL.html">
+     Modeling Steps 7 - 9
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/ModelingSteps_10_DL.html">
+     Modeling Steps 10
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/TrainIllusionDataProjectDL.html">
+     Example Data Project: the Train Illusion
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/TrainIllusionModelingProjectDL.html">
+     Example Model Project: the Train Illusion
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../../projects/modelingsteps/Example_Deep_Learning_Project.html">
+     Example Deep Learning Project
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../../projects/docs/projects_overview.html">
+   Project Templates
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../../projects/ComputerVision/README.html">
+     Computer Vision
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/slides.html">
+       Slides
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/ideas_and_datasets.html">
+       Ideas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/em_synapses.html">
+       Knowledge Extraction from a Convolutional Neural Network
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/spectrogram_analysis.html">
+       Music classification and generation with spectrograms
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/screws.html">
+       Something Screwy - image recognition, detection, and classification of screws
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/image_alignment.html">
+       Image Alignment
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/data_augmentation.html">
+       Data Augmentation in image classification models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ComputerVision/transfer_learning.html">
+       Transfer Learning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/README.html">
+     Reinforcement Learning
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/slides.html">
+       Slides
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/ideas_and_datasets.html">
+       Ideas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/robolympics.html">
+       NMA Robolympics: Controlling robots using reinforcement learning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/lunar_lander.html">
+       Performance Analysis of DQN Algorithm on the Lunar Lander task
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/ReinforcementLearning/human_rl.html">
+       Using RL to Model Cognitive Tasks
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../../projects/NaturalLanguageProcessing/README.html">
+     Natural Language Processing
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/NaturalLanguageProcessing/slides.html">
+       Slides
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/NaturalLanguageProcessing/ideas_and_datasets.html">
+       Ideas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/NaturalLanguageProcessing/sentiment_analysis.html">
+       Twitter Sentiment Analysis
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/NaturalLanguageProcessing/machine_translation.html">
+       Machine Translation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../../projects/Neuroscience/README.html">
+     Neuroscience
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/slides.html">
+       Slides
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/ideas_and_datasets.html">
+       Ideas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/pose_estimation.html">
+       Animal Pose Estimation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/cellular_segmentation.html">
+       Segmentation and Denoising
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/algonauts_videos.html">
+       Load algonauts videos
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/blurry_vision.html">
+       Vision with Lost Glasses: Modelling how the brain deals with noisy input
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/finetuning_fmri.html">
+       Moving beyond Labels: Finetuning CNNs on BOLD response
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../../projects/Neuroscience/neuro_seq_to_seq.html">
+       Focus on what matters: inferring low-dimensional dynamics from neural recordings
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../../projects/docs/datasets_and_models.html">
+   Models and Data sets
+  </a>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+<button aria-label="Launch interactive content" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-rocket"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+</ul>
+</div>
+</div>
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/NeuromatchAcademy/instructor-course-content-dl" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/NeuromatchAcademy/instructor-course-content-dl/issues/new?title=Issue%20on%20page%20%2Ftutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial4.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../../_sources/tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial4.ipynb" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tutorial-objectives">
+   Tutorial Objectives
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tutorial-slides">
+     Tutorial slides
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#install-dependencies">
+     Install dependencies
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-1-introduction">
+   Section 1: Introduction
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-1-deploying-neural-networks-on-the-web">
+     Video 1: Deploying Neural Networks on the Web
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-flask">
+   Section 2: Flask
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-1-your-first-flask-app">
+     Section 2.1: Your First Flask App
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-2-flask">
+       Video 2: Flask
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-2-using-jinja2-templates">
+     Section 2.2: Using Jinja2 Templates
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-3-jinja-templates">
+       Video 3: Jinja Templates
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-3-apply-the-mvvm-design-pattern">
+     Section 2.3: Apply the MVVM Design Pattern
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-4-using-the-mvvm-design-pattern">
+       Video 4: Using the MVVM Design Pattern
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-4-creating-a-rest-api">
+     Section 2.4: Creating a REST API
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-5-rest-api">
+       Video 5: REST API
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-vue-js">
+   Section 3: Vue.js
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-6-vue-js">
+     Video 6: Vue.js
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-1-defining-the-vue-template">
+     Section 3.1: Defining the Vue Template
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-2-serving-the-vue-js-app">
+     Section 3.2: Serving the Vue.js App
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-model-presentation">
+   Section 4: Model Presentation
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-7-deploying-a-pytorch-model">
+     Video 7: Deploying a PyTorch model
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-1-image-classification-api">
+     Section 4.1: Image Classification API
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-8-classification-with-a-pre-trained-model">
+       Video 8: Classification with a Pre-trained Model
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-2-create-a-dynamic-application">
+     Section 4.2: Create a Dynamic Application
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-9-create-a-dynamic-application">
+       Video 9: Create a Dynamic Application
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-deploy-a-flask-app-on-heroku">
+   Section 5: Deploy a Flask app on Heroku
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-10-deploy-on-heroku">
+     Video 10: Deploy on Heroku
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-1-preparing-your-environment">
+     Section 5.1: Preparing Your Environment
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-11-prepare-python-environment">
+       Video 11: Prepare Python Environment
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-2-create-your-application">
+     Section 5.2: Create Your Application
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-12-creating-a-local-application">
+       Video 12: Creating a Local Application
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-3-testing-your-application-locally">
+     Section 5.3: Testing Your Application Locally
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-4-preparing-for-deployment-on-heroku">
+     Section 5.4: Preparing for Deployment on Heroku
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-13-preparing-for-heroku">
+       Video 13: Preparing for Heroku
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-5-deploying-on-heroku">
+     Section 5.5: Deploying on Heroku
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-14-deploying-on-heroku">
+       Video 14: Deploying on Heroku
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-15-summary">
+     Video 15: Summary
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>(Bonus) Tutorial 4: Deploying Neural Networks on the Web</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tutorial-objectives">
+   Tutorial Objectives
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tutorial-slides">
+     Tutorial slides
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#install-dependencies">
+     Install dependencies
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-1-introduction">
+   Section 1: Introduction
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-1-deploying-neural-networks-on-the-web">
+     Video 1: Deploying Neural Networks on the Web
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-flask">
+   Section 2: Flask
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-1-your-first-flask-app">
+     Section 2.1: Your First Flask App
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-2-flask">
+       Video 2: Flask
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-2-using-jinja2-templates">
+     Section 2.2: Using Jinja2 Templates
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-3-jinja-templates">
+       Video 3: Jinja Templates
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-3-apply-the-mvvm-design-pattern">
+     Section 2.3: Apply the MVVM Design Pattern
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-4-using-the-mvvm-design-pattern">
+       Video 4: Using the MVVM Design Pattern
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-2-4-creating-a-rest-api">
+     Section 2.4: Creating a REST API
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-5-rest-api">
+       Video 5: REST API
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-vue-js">
+   Section 3: Vue.js
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-6-vue-js">
+     Video 6: Vue.js
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-1-defining-the-vue-template">
+     Section 3.1: Defining the Vue Template
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-3-2-serving-the-vue-js-app">
+     Section 3.2: Serving the Vue.js App
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-model-presentation">
+   Section 4: Model Presentation
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-7-deploying-a-pytorch-model">
+     Video 7: Deploying a PyTorch model
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-1-image-classification-api">
+     Section 4.1: Image Classification API
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-8-classification-with-a-pre-trained-model">
+       Video 8: Classification with a Pre-trained Model
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-4-2-create-a-dynamic-application">
+     Section 4.2: Create a Dynamic Application
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-9-create-a-dynamic-application">
+       Video 9: Create a Dynamic Application
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-deploy-a-flask-app-on-heroku">
+   Section 5: Deploy a Flask app on Heroku
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-10-deploy-on-heroku">
+     Video 10: Deploy on Heroku
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-1-preparing-your-environment">
+     Section 5.1: Preparing Your Environment
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-11-prepare-python-environment">
+       Video 11: Prepare Python Environment
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-2-create-your-application">
+     Section 5.2: Create Your Application
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-12-creating-a-local-application">
+       Video 12: Creating a Local Application
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-3-testing-your-application-locally">
+     Section 5.3: Testing Your Application Locally
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-4-preparing-for-deployment-on-heroku">
+     Section 5.4: Preparing for Deployment on Heroku
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-13-preparing-for-heroku">
+       Video 13: Preparing for Heroku
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#section-5-5-deploying-on-heroku">
+     Section 5.5: Deploying on Heroku
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-14-deploying-on-heroku">
+       Video 14: Deploying on Heroku
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#video-15-summary">
+     Video 15: Summary
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial4.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D5_GenerativeModels/instructor/W2D5_Tutorial4.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg"/></a></p>
+<div class="section" id="bonus-tutorial-4-deploying-neural-networks-on-the-web">
+<h1>(Bonus) Tutorial 4: Deploying Neural Networks on the Web<a class="headerlink" href="#bonus-tutorial-4-deploying-neural-networks-on-the-web" title="Permalink to this headline">¶</a></h1>
+<p><strong>Week 2, Day 5: Generative models</strong></p>
+<p><strong>By Neuromatch Academy</strong></p>
+<p><strong>Content creators:</strong> Sam Ray, Vladimir Haltakov, Konrad Kording</p>
+<p><strong>Production editors:</strong> Spiros Chavlis</p>
+</div>
+<hr class="docutils"/>
+<div class="section" id="tutorial-objectives">
+<h1>Tutorial Objectives<a class="headerlink" href="#tutorial-objectives" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, you will learn the basics of how to deploy your deep learning models as web applications using some modern frameworks and libraries. In this tutorial, you will learn to:</p>
+<ul class="simple">
+<li><p>Serve web pages with Flask</p></li>
+<li><p>Apply the MVVM design pattern to write maintainable code</p></li>
+<li><p>Create an interactive UI for your service</p></li>
+<li><p>Deploy your deep learning models as a REST API</p></li>
+<li><p>Deploying your application on Heroku</p></li>
+</ul>
+<div class="section" id="tutorial-slides">
+<h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>These are the slides for the videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/p6wty/download">here</a>.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p>Run the following cells to install and include important dependencies.</p>
+<div class="section" id="install-dependencies">
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
+!pip install --upgrade jupyter-client --quiet
+!pip install flask-ngrok Flask-RESTful flasgger  --quiet
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="kn">import</span> <span class="nn">flasgger</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span>
+<span class="kn">from</span> <span class="nn">flask_ngrok</span> <span class="kn">import</span> <span class="n">run_with_ngrok</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">marshal</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template_string</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="section-1-introduction">
+<h1>Section 1: Introduction<a class="headerlink" href="#section-1-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-1-deploying-neural-networks-on-the-web">
+<h2>Video 1: Deploying Neural Networks on the Web<a class="headerlink" href="#video-1-deploying-neural-networks-on-the-web" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>We will start by building a simple web application in Flask, which we’ll keep extending throughout the tutorial. In the end, you will have a web app where you can upload an image and have it classified automatically by a neural network model.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="section-2-flask">
+<h1>Section 2: Flask<a class="headerlink" href="#section-2-flask" title="Permalink to this headline">¶</a></h1>
+<p>Flask is a web application micro-framework built with Python. Flask is popular because it’s lightweight, easy to use, scalable, and has tons of great extensions. Nowadays, Flask is used for many different applications like web applications, REST APIs, socket-based services, and by companies like LinkedIn or Pinterest.</p>
+<p>In this section, you will learn to create simple Flask websites.</p>
+<div class="section" id="section-2-1-your-first-flask-app">
+<h2>Section 2.1: Your First Flask App<a class="headerlink" href="#section-2-1-your-first-flask-app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-2-flask">
+<h3>Video 2: Flask<a class="headerlink" href="#video-2-flask" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Creating a minimal Flask app is very simple. You need to create a <code class="docutils literal notranslate"><span class="pre">Flask</span></code> object and define the handler for the root URL returning the HTML response. You need to provide the applications module or package, but we can use <code class="docutils literal notranslate"><span class="pre">__name__</span></code> as a convenient shortcut.</p>
+<p>We need one small trick because the app will be running in a notebook. If you just run the app, it will be accessible at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code>. The problem is that this is a local address to the server where the notebook is running, so you can’t access it. This is where <code class="docutils literal notranslate"><span class="pre">ngrok</span></code> helps - it creates a tunnel from the notebook server to the outside world. Make sure you use the ngrok URL when testing your app.</p>
+<blockquote>
+<div><p>Note: the call to <code class="docutils literal notranslate"><span class="pre">app.run()</span></code> will not return on its own. Make sure to stop the running cell when you want to move to the next one.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Flask app object</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Define a function to be called when the user accesses the root URL (/)</span>
+<span class="c1"># Handler</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="c1"># Return a very simple HTML response</span>
+  <span class="k">return</span> <span class="s2">"&lt;h1&gt;Welcome to Neuromatch&lt;/h1&gt;"</span>
+
+
+<span class="c1"># You need ngrok to expose the Flask app outside of the notebook</span>
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-2-2-using-jinja2-templates">
+<h2>Section 2.2: Using Jinja2 Templates<a class="headerlink" href="#section-2-2-using-jinja2-templates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-3-jinja-templates">
+<h3>Video 3: Jinja Templates<a class="headerlink" href="#video-3-jinja-templates" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>The default template engine used by Flask is Jinja2. Jinja2 offers features that help you write clean and reusable templates such as inheritance, humanizing, and formatting data (there’s an extension for this), dividing components into sub-modules, etc.</p>
+<p>In this section, we are going to add Jinja2 templates to the app. WIth Jinja2 you can use variables and control flow commands, like ifs and loops in your HTML code. Then you can pass data from your Python code to the template when it is rendered.</p>
+<p>Let’s first define the template of a simple web page showing some platform properties. We are going to loop over the <code class="docutils literal notranslate"><span class="pre">platform</span></code> dictionary containing property keys and their corresponding values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>One row of the HTML table is created for every element of the dictionary. You can display the content of the variables like that: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">value</span> <span class="pre">}}</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jinja2 HTML template</span>
+<span class="n">template_str</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">&lt;html lang="en"&gt;</span>
+<span class="s1">    &lt;body&gt;</span>
+<span class="s1">        &lt;div style="width: 50%; margin: 100px auto"&gt;</span>
+<span class="s1">            &lt;h1&gt;Platform Info&lt;/h1&gt;</span>
+<span class="s1">            &lt;table&gt;</span>
+<span class="s1">                &lt;tr style="width:"&gt;</span>
+<span class="s1">                    &lt;th style="width: 200px"&gt;Property&lt;/th&gt;</span>
+<span class="s1">                    &lt;th&gt;Value&lt;/th&gt;</span>
+<span class="s1">                &lt;/tr&gt;</span>
+
+<span class="s1">                {</span><span class="si">% f</span><span class="s1">or key, value in platform.items() %}</span>
+<span class="s1">                &lt;tr&gt;</span>
+<span class="s1">                    &lt;td style="width: 200px"&gt;{{ key }}&lt;/td&gt;</span>
+<span class="s1">                    &lt;td&gt;{{ value }}&lt;/td&gt;</span>
+<span class="s1">                &lt;/tr&gt;</span>
+<span class="s1">                {</span><span class="si">% e</span><span class="s1">ndfor %}</span>
+
+<span class="s1">            &lt;/table&gt;</span>
+<span class="s1">        &lt;/div&gt;</span>
+<span class="s1">    &lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+<span class="s1">'''</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can then render the template passing the platform properties that you can retrieve using the <code class="docutils literal notranslate"><span class="pre">platform</span></code> package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="c1"># Get the platform properties as a dict</span>
+  <span class="n">properties</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>
+
+  <span class="c1"># Render the Jinja2 template</span>
+  <span class="k">return</span> <span class="n">render_template_string</span><span class="p">(</span><span class="n">template_str</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="n">properties</span><span class="p">)</span>
+
+
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-2-3-apply-the-mvvm-design-pattern">
+<h2>Section 2.3: Apply the MVVM Design Pattern<a class="headerlink" href="#section-2-3-apply-the-mvvm-design-pattern" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-4-using-the-mvvm-design-pattern">
+<h3>Video 4: Using the MVVM Design Pattern<a class="headerlink" href="#video-4-using-the-mvvm-design-pattern" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Design patterns provide a way of writing reusable, adaptable, and extendable code. Design patterns are not libraries, but rather a set of best practices to follow when designing your software.</p>
+<p>Model View View-Model (MVVM) is a powerful design pattern commonly used in web applications (and other GUI applications).</p>
+<ul class="simple">
+<li><p><strong>View</strong> - this is that part of your code the user interacts with (the web page)</p></li>
+<li><p><strong>Model</strong> - this is the representation of the data that you want to interact with.</p></li>
+<li><p><strong>View-Model</strong> - this is the part that handles the application state and that transforms the data from the Model to a representation suitable for display and back.</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D5_GenerativeModels/static/deploy.png" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D5_GenerativeModels/static/deploy.png"/>
+<p>Let’s implement the MVVM pattern in Flask. You will first create classes for each of the 3 parts of the MVVM pattern used to display information about 2D points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PointModel</span><span class="p">:</span>
+  <span class="sd">"""</span>
+<span class="sd">  Simple point Model storing a 2D point</span>
+<span class="sd">  """</span>
+
+  <span class="c1"># Initialize a 2D point</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+
+<span class="k">class</span> <span class="nc">PointView</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+  <span class="sd">"""</span>
+<span class="sd">  Simple View displaying the information about a 2D point</span>
+<span class="sd">  """</span>
+
+  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">PointViewModel</span><span class="o">.</span><span class="n">get_sample_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"Point: (x=</span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span>
+
+
+<span class="k">class</span> <span class="nc">PointViewModel</span><span class="p">:</span>
+  <span class="sd">"""</span>
+<span class="sd">  ViewModel - Simple ViewModel retrieving the data and passing it to the view</span>
+<span class="sd">  """</span>
+
+  <span class="c1"># Create some sample data</span>
+  <span class="nd">@classmethod</span>
+  <span class="k">def</span> <span class="nf">get_sample_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">PointModel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+  <span class="c1"># Register a handler for "/" in the API calling the PointView</span>
+  <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api</span><span class="p">):</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">PointView</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now create your Flask app and use the <code class="docutils literal notranslate"><span class="pre">Api</span></code> object where you can register your ViewModel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Flask app</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Create an Api object where different ViewModels can be registered</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Create a PointViewModel and register it to the API</span>
+<span class="n">pvm</span> <span class="o">=</span> <span class="n">PointViewModel</span><span class="p">()</span>
+<span class="n">pvm</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+
+<span class="c1"># Run with ngrok</span>
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-2-4-creating-a-rest-api">
+<h2>Section 2.4: Creating a REST API<a class="headerlink" href="#section-2-4-creating-a-rest-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-5-rest-api">
+<h3>Video 5: REST API<a class="headerlink" href="#video-5-rest-api" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>REST (Representational State Transfer) is a set of rules according to which APIs are designed to enable your service to interact with other services. If HTML pages are interfaces designed for humans, you can think about REST APIs as interfaces made for computers.</p>
+<p>A common way to implement a REST API is for your application to respond to certain requests by returning a JSON string containing the required data.</p>
+<p>Let’s now create a new View and ViewModel that will provide the platform properties in JSON format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PlatformView</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+  <span class="sd">"""</span>
+<span class="sd">  New view displaying some Platform Properties</span>
+<span class="sd">  """</span>
+
+  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">      This examples uses PlatformView Resource</span>
+<span class="sd">      It works also with swag_from, schemas and spec_dict</span>
+<span class="sd">      ---</span>
+<span class="sd">      responses:</span>
+<span class="sd">        200:</span>
+<span class="sd">          description: A single Machine item</span>
+<span class="sd">          schema:</span>
+<span class="sd">            id: Machine</span>
+<span class="sd">            properties:</span>
+<span class="sd">              machine:</span>
+<span class="sd">                type: string</span>
+<span class="sd">                description: The type of the processor</span>
+<span class="sd">                default: None</span>
+<span class="sd">              node:</span>
+<span class="sd">                type: string</span>
+<span class="sd">                description: The name of the current virtual machine</span>
+<span class="sd">                default: None</span>
+<span class="sd">              processor:</span>
+<span class="sd">                type: string</span>
+<span class="sd">                description: The type of the processor arch</span>
+<span class="sd">                default: None</span>
+<span class="sd">              system:</span>
+<span class="sd">                type: string</span>
+<span class="sd">                description: The name of the user</span>
+<span class="sd">                default: None</span>
+<span class="sd">      """</span>
+
+    <span class="c1"># Specification of the returned data</span>
+    <span class="n">resource_fields</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'system'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+        <span class="s1">'machine'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+        <span class="s1">'processor'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+        <span class="s1">'node'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Serialize the data according to the specification</span>
+    <span class="k">return</span> <span class="n">marshal</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span><span class="o">.</span><span class="n">_asdict</span><span class="p">(),</span> <span class="n">resource_fields</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PlatformViewModel</span><span class="p">:</span>
+  <span class="sd">"""</span>
+<span class="sd">  A simple ViewModel that displays the PlatformView at /platform</span>
+<span class="sd">  """</span>
+
+  <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api</span><span class="p">):</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">PlatformView</span><span class="p">,</span> <span class="s1">'/platform'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the documentation in the <code class="docutils literal notranslate"><span class="pre">get</span></code> method. We can use the <code class="docutils literal notranslate"><span class="pre">flasgger</span></code> package to automatically create documentation of your REST API. You can access it at <code class="docutils literal notranslate"><span class="pre">/apidocs</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the Flask app and register the ViewModel</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">pvm</span> <span class="o">=</span> <span class="n">PlatformViewModel</span><span class="p">()</span>
+<span class="n">pvm</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+
+<span class="c1"># Redirect / to /platform for convenience</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">redirect_platform</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">"/platform"</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="mi">302</span><span class="p">)</span>
+
+
+<span class="c1"># Register Swagger to create API documentation at /apidocs</span>
+<span class="n">swg</span> <span class="o">=</span> <span class="n">flasgger</span><span class="o">.</span><span class="n">Swagger</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Run the app</span>
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="section-3-vue-js">
+<h1>Section 3: Vue.js<a class="headerlink" href="#section-3-vue-js" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-6-vue-js">
+<h2>Video 6: Vue.js<a class="headerlink" href="#video-6-vue-js" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>We already talked about the MVVM pattern and implemented it using a back end framework - Flask. Applying the same pattern on the front end can also be beneficial when creating dynamic applications.</p>
+<p>Vue.js is a great front end library that implements the MVVM design pattern. It is widely used for creating user interfaces and single-page applications.</p>
+<p>In this section, you will learn how to implement a simple Vue.js front end that fetches data from the platform REST API we created in the previous section.</p>
+</div>
+<div class="section" id="section-3-1-defining-the-vue-template">
+<h2>Section 3.1: Defining the Vue Template<a class="headerlink" href="#section-3-1-defining-the-vue-template" title="Permalink to this headline">¶</a></h2>
+<p>We define our HTML template similarly to Jinja. The big difference is that the Vue template is rendered dynamically after the page is loaded, while the Jinja templates are rendered in the backend before the page is served.</p>
+<p>Using variables is very similar to Jinja, but now you also have some JavaScript code handling the state of the application and the binding to the data. You can use the <code class="docutils literal notranslate"><span class="pre">axois</span></code> package to fetch data from our platform REST API, when Vue is initialized (mounted).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vue_template</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">&lt;html&gt;</span>
+<span class="s2">    &lt;head&gt;</span>
+<span class="s2">        &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;</span>
+<span class="s2">        &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"&gt;&lt;/script&gt;</span>
+<span class="s2">    &lt;/head&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+
+<span class="s2">        &lt;div id="app"&gt;</span>
+<span class="s2">            &lt;ul&gt;</span>
+<span class="s2">                &lt;li&gt;&lt;strong&gt;System:    &lt;/strong&gt;{{ platform.system }}&lt;/li&gt;</span>
+<span class="s2">                &lt;li&gt;&lt;strong&gt;Machine:   &lt;/strong&gt;{{ platform.machine }}&lt;/li&gt;</span>
+<span class="s2">                &lt;li&gt;&lt;strong&gt;Processor: &lt;/strong&gt;{{ platform.processor }}&lt;/li&gt;</span>
+<span class="s2">                &lt;li&gt;&lt;strong&gt;Node:      &lt;/strong&gt;{{ platform.node }}&lt;/li&gt;</span>
+<span class="s2">            &lt;/ul&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+
+<span class="s2">        &lt;script &gt;</span>
+<span class="s2">            var app = new Vue({</span>
+<span class="s2">                el: '#app',</span>
+<span class="s2">                data() {</span>
+<span class="s2">                    return {</span>
+<span class="s2">                        platform: null</span>
+<span class="s2">                    }</span>
+<span class="s2">                },</span>
+<span class="s2">                mounted () {</span>
+<span class="s2">                    axios.get('/platform')</span>
+<span class="s2">                      .then(response =&gt; (this.platform = response.data))</span>
+<span class="s2">                }</span>
+<span class="s2">            });</span>
+<span class="s2">        &lt;/script&gt;</span>
+
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+<span class="s2">"""</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-3-2-serving-the-vue-js-app">
+<h2>Section 3.2: Serving the Vue.js App<a class="headerlink" href="#section-3-2-serving-the-vue-js-app" title="Permalink to this headline">¶</a></h2>
+<p>You can now again run your Flask app and serve the Vue template from the root URL. We are still using Flask to implement our logic on the backend and provide the platform REST API.</p>
+<p>This way of doing things may seem more complicated, but it has the advantage that it is dynamic. In the next section, we will add some dynamic functionality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the Flask app with the previously defined platform API</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="c1"># Serve the Platform REST API</span>
+<span class="n">pvm</span> <span class="o">=</span> <span class="n">PlatformViewModel</span><span class="p">()</span>
+<span class="n">pvm</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+<span class="n">swg</span> <span class="o">=</span> <span class="n">flasgger</span><span class="o">.</span><span class="n">Swagger</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Serve the Vue template page at /</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">vue_template</span>
+
+
+<span class="c1"># Run the app</span>
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="section-4-model-presentation">
+<h1>Section 4: Model Presentation<a class="headerlink" href="#section-4-model-presentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-7-deploying-a-pytorch-model">
+<h2>Video 7: Deploying a PyTorch model<a class="headerlink" href="#video-7-deploying-a-pytorch-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Now (finally) we have all the tools we need to deploy our neural network! We are going to use a pre-trained DenseNet mode. In the first step, we are going to create an API entry point that accepts an image as input and classifies it. After that, we will create a dynamic UI for easier interaction.</p>
+</div>
+<div class="section" id="section-4-1-image-classification-api">
+<h2>Section 4.1: Image Classification API<a class="headerlink" href="#section-4-1-image-classification-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-8-classification-with-a-pre-trained-model">
+<h3>Video 8: Classification with a Pre-trained Model<a class="headerlink" href="#video-8-classification-with-a-pre-trained-model" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>First, we need to load a pre-trained DenseNet trained on ImageNet. You can use <code class="docutils literal notranslate"><span class="pre">torchvision.models</span></code> to quickly get a pre-trained model for many popular neural network architectures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a pre-trainied DenseNet model from torchvision.models</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">densenet121</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Switch the model to evaluation mode</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># Load the class labels from a file</span>
+<span class="n">class_labels_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt"</span>
+<span class="n">class_labels</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">class_labels_url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Define the transformation of the input image</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Define a function to predict the most likely class using the model. Note that we need to pass a batch of images to the model. Since we have only 1, we can just use <code class="docutils literal notranslate"><span class="pre">unsqueeze(0)</span></code> to add an additional dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">class_labels</span><span class="p">):</span>
+  <span class="c1"># Transform the image and convert it to a tensor</span>
+  <span class="n">image_tensor</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1"># Pass the image through the model</span>
+  <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">)</span>
+
+  <span class="c1"># Select the class with the higherst probability and look up the name</span>
+  <span class="n">class_id</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+  <span class="n">class_name</span> <span class="o">=</span> <span class="n">class_labels</span><span class="p">[</span><span class="n">class_id</span><span class="p">]</span>
+
+  <span class="c1"># Return the class name</span>
+  <span class="k">return</span> <span class="n">class_name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s test the <code class="docutils literal notranslate"><span class="pre">predict</span></code> function using an image of a <a class="reference external" href="https://unsplash.com/photos/2l0CWTpcChI/download?force=true&amp;w=640">dog</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and display the image</span>
+<span class="n">dog_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">"https://unsplash.com/photos/2l0CWTpcChI/download?force=true&amp;w=480"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">dog_image</span><span class="p">)</span>
+
+<span class="c1"># Classify the image</span>
+<span class="n">display</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">dog_image</span><span class="p">,</span> <span class="n">class_labels</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-4-2-create-a-dynamic-application">
+<h2>Section 4.2: Create a Dynamic Application<a class="headerlink" href="#section-4-2-create-a-dynamic-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-9-create-a-dynamic-application">
+<h3>Video 9: Create a Dynamic Application<a class="headerlink" href="#video-9-create-a-dynamic-application" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>We will now create a Flask app that receives an image at <code class="docutils literal notranslate"><span class="pre">/predict</span></code> and passes it through the model. We will also implement an interactive UI to upload the image and call the API.</p>
+<p>The UI consists of a file upload field, a classify button, and an image displaying the uploaded file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">index_template</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">&lt;html&gt;</span>
+<span class="s2">    &lt;head&gt;</span>
+<span class="s2">        &lt;!-- Load vue.js and axois.js --&gt;</span>
+<span class="s2">        &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;</span>
+<span class="s2">        &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"&gt;&lt;/script&gt;</span>
+<span class="s2">    &lt;/head&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;!-- The APP UI --&gt;</span>
+<span class="s2">        &lt;div id="app" style="width: 50%; margin: 200px auto"&gt;</span>
+<span class="s2">            &lt;form id="imageForm" enctype="multipart/form-data" method="POST" style="text-align: center; display: block"&gt;</span>
+<span class="s2">                &lt;label for="imageFile"&gt;Select image to classify:&lt;/label</span>
+<span class="s2">                &gt;&lt;input id="imageFile" name="file" type="file" style="margin-left: 10px" /&gt;</span>
+
+<span class="s2">                &lt;img v-if="image" :src="image" style="width: 250px; display: block; margin: 50px auto 10px" /&gt;</span>
+<span class="s2">                &lt;div v-if="prediction" style="font-size: 32px; font-weight: bold; text-align: center"&gt;</span>
+<span class="s2">                    {{ prediction }}</span>
+<span class="s2">                &lt;/div&gt;</span>
+<span class="s2">                &lt;input v-if="image" type="submit" value="Classify Image" style="margin: 20px 20px" /&gt;</span>
+<span class="s2">            &lt;/form&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">            &lt;!-- The Vue application --&gt;</span>
+<span class="s2">            var app = new Vue({</span>
+<span class="s2">                el: "#app",</span>
+<span class="s2">                data() {</span>
+<span class="s2">                    return {</span>
+<span class="s2">                        image: null,</span>
+<span class="s2">                        prediction: null,</span>
+<span class="s2">                    };</span>
+<span class="s2">                },</span>
+<span class="s2">            });</span>
+
+<span class="s2">            &lt;!-- Calling the predict API when the form is submitted --&gt;</span>
+<span class="s2">            document.getElementById("imageForm").addEventListener("submit", (e) =&gt; {</span>
+<span class="s2">                axios</span>
+<span class="s2">                    .post("/predict", new FormData(document.getElementById("imageForm")), {</span>
+<span class="s2">                        headers: {</span>
+<span class="s2">                            "Content-Type": "multipart/form-data",</span>
+<span class="s2">                        },</span>
+<span class="s2">                    })</span>
+<span class="s2">                    .then((response) =&gt; (app.prediction = response.data));</span>
+
+<span class="s2">                e.preventDefault();</span>
+<span class="s2">            });</span>
+
+<span class="s2">            &lt;!-- Display the selected image --&gt;</span>
+<span class="s2">            document.getElementById("imageFile").addEventListener("change", (e) =&gt; {</span>
+<span class="s2">                const [file] = document.getElementById("imageFile").files;</span>
+<span class="s2">                if (file) {</span>
+<span class="s2">                    app.image = URL.createObjectURL(file);</span>
+<span class="s2">                }</span>
+<span class="s2">            });</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+<span class="s2">"""</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The application has two entry points:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> - serve the Vue template with the interactive UI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/predict</span></code> - a REST API classifying the image received as input</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Serve the Vue template with the interactive UI</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">index_template</span>
+
+
+<span class="c1"># Classification API</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/predict"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict_api</span><span class="p">():</span>
+  <span class="c1"># Fetch the image from the request and convert it to a Pillow image</span>
+  <span class="n">image_file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">'file'</span><span class="p">]</span>
+  <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">))</span>
+
+  <span class="c1"># Predict the class from the image</span>
+  <span class="n">class_name</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">class_labels</span><span class="p">)</span>
+
+  <span class="c1"># Return the result</span>
+  <span class="k">return</span> <span class="n">class_name</span>
+
+
+<span class="c1"># Run the app</span>
+<span class="n">run_with_ngrok</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">## Uncomment below to run the app</span>
+<span class="c1"># app.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="section-5-deploy-a-flask-app-on-heroku">
+<h1>Section 5: Deploy a Flask app on Heroku<a class="headerlink" href="#section-5-deploy-a-flask-app-on-heroku" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-10-deploy-on-heroku">
+<h2>Video 10: Deploy on Heroku<a class="headerlink" href="#video-10-deploy-on-heroku" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Now you are going to deploy your application as a real web server outside of the notebook. We are going to use Heroku for this. Heroku is a PaaS (Platform-as-a-Service) that offers pre-configured environments so you can deploy an application easily and quickly. They also offer a free tier which is enough for deploying simple apps.</p>
+<p>But first, you need to test your application locally.</p>
+</div>
+<div class="section" id="section-5-1-preparing-your-environment">
+<h2>Section 5.1: Preparing Your Environment<a class="headerlink" href="#section-5-1-preparing-your-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-11-prepare-python-environment">
+<h3>Video 11: Prepare Python Environment<a class="headerlink" href="#video-11-prepare-python-environment" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>You need to do all the steps from here on on your own machine and not in the notebook. You need to make sure that you have Python 3 installed and some code editor (for example VS Code). You will also be using the terminal a lot in this section.</p>
+<p>First, you need to prepare your Python environment and install all required dependencies. You should first create an empty folder where you will store your application and do the following steps.</p>
+<p><strong>1. Create a new virtual environment</strong></p>
+<p>Run the following code in the terminal to create a new Python virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+</pre></div>
+</div>
+<p><strong>2. Activate the virtual environment</strong></p>
+<p>Now, you need to activate the environment, which is a bit different on Linux/macOS and Windows.</p>
+<p>For Linux and macOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>For Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span><span class="o">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+<p><strong>3. Install dependencies</strong></p>
+<p>You need to install some packages that you will need using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">flask</span> <span class="n">Pillow</span> <span class="n">gunicorn</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: the package <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> is a web server that is needed later when your code runs on Heroku.</p>
+</div></blockquote>
+<p><strong>4. Install PyTorch</strong></p>
+<p>Depending on your system, there are different ways to install <code class="docutils literal notranslate"><span class="pre">torch</span></code> and <code class="docutils literal notranslate"><span class="pre">torchvision</span></code>. Refer to the <a class="reference external" href="https://pytorch.org/get-started/locally/">Installation page</a> for the exact command. We recommend using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>On macOS and Windows for example this is straightforward:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: avoid installing <code class="docutils literal notranslate"><span class="pre">torchaudio</span></code> since it is not needed, but may cause problems with the package size when deploying on Heroku later.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="section-5-2-create-your-application">
+<h2>Section 5.2: Create Your Application<a class="headerlink" href="#section-5-2-create-your-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-12-creating-a-local-application">
+<h3>Video 12: Creating a Local Application<a class="headerlink" href="#video-12-creating-a-local-application" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>You are now ready to create the files needed for your application. For now, you need just 2 files.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">app.py</span></code></strong></p>
+<p>This is the main file of your application. Inside, you will put the code for running your PyTorch model as well as the code of your Flask application.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">send_from_directory</span>
+
+<span class="c1"># Load a pre-trainied DenseNet model from torchvision.models</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">densenet121</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># Load the class labels from a file</span>
+<span class="n">class_labels_url</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt"</span>
+<span class="p">)</span>
+<span class="n">class_labels</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">class_labels_url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Define the transofrmation of the input image</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]),</span>
+<span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">class_labels</span><span class="p">):</span>
+  <span class="c1"># Transform the image and convert it to a tensor</span>
+  <span class="n">image_tensor</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="c1"># Pass the image through the model</span>
+  <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+      <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">)</span>
+
+  <span class="c1"># Select the class with the higherst probability</span>
+  <span class="n">class_id</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+  <span class="n">class_name</span> <span class="o">=</span> <span class="n">class_labels</span><span class="p">[</span><span class="n">class_id</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">class_name</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="s2">"static"</span><span class="p">,</span> <span class="s2">"index.html"</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/predict"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict_api</span><span class="p">():</span>
+  <span class="c1"># Fetch the image from the request and convert it</span>
+  <span class="n">image_file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s2">"file"</span><span class="p">]</span>
+  <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">))</span>
+
+  <span class="c1"># Predict the class from the image</span>
+  <span class="n">class_name</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">class_labels</span><span class="p">)</span>
+
+  <span class="c1"># Write result as JSON</span>
+  <span class="k">return</span> <span class="n">class_name</span>
+
+
+<span class="c1"># Run the app</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">threaded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"PORT"</span><span class="p">,</span> <span class="mi">5000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>static/index.html</strong></p>
+<p>This file should contain the HTML code of your Vue template - exactly as it is.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Load vue.js and axois.js --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- The APP UI --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span> <span class="na">style</span><span class="o">=</span><span class="s">"width: 50%; margin: 200px auto"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">"imageForm"</span> <span class="na">enctype</span><span class="o">=</span><span class="s">"multipart/form-data"</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span> <span class="na">style</span><span class="o">=</span><span class="s">"text-align: center; display: block"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"imageFile"</span><span class="p">&gt;</span>Select image to classify:<span class="p">&lt;/</span><span class="nt">label</span>
+                <span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"imageFile"</span> <span class="na">name</span><span class="o">=</span><span class="s">"file"</span> <span class="na">type</span><span class="o">=</span><span class="s">"file"</span> <span class="na">style</span><span class="o">=</span><span class="s">"margin-left: 10px"</span> <span class="p">/&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"image"</span> <span class="na">:src</span><span class="o">=</span><span class="s">"image"</span> <span class="na">style</span><span class="o">=</span><span class="s">"width: 250px; display: block; margin: 50px auto 10px"</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"prediction"</span> <span class="na">style</span><span class="o">=</span><span class="s">"font-size: 32px; font-weight: bold; text-align: center"</span><span class="p">&gt;</span>
+                    {{ prediction }}
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"image"</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Classify Image"</span> <span class="na">style</span><span class="o">=</span><span class="s">"margin: 20px 20px"</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">Vue</span><span class="w"> </span><span class="nx">application</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vue</span><span class="p">({</span><span class="w"></span>
+<span class="w">                </span><span class="nx">el</span><span class="o">:</span><span class="w"> </span><span class="s2">"#app"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">prediction</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="p">};</span><span class="w"></span>
+<span class="w">                </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">Calling</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">predict</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">when</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">submitted</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"imageForm"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"submit"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nx">axios</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"/predict"</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"imageForm"</span><span class="p">)),</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                            </span><span class="s2">"Content-Type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"multipart/form-data"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="p">},</span><span class="w"></span>
+<span class="w">                    </span><span class="p">})</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">prediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">                </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">Display</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">selected</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"imageFile"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"change"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">file</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"imageFile"</span><span class="p">).</span><span class="nx">files</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="nx">app</span><span class="p">.</span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="section-5-3-testing-your-application-locally">
+<h2>Section 5.3: Testing Your Application Locally<a class="headerlink" href="#section-5-3-testing-your-application-locally" title="Permalink to this headline">¶</a></h2>
+<p>You are now ready to test your application. Once you have your environment set up correctly and your application files created you can just start it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">app</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>You can now access your application at http://127.0.0.1:5000. No <code class="docutils literal notranslate"><span class="pre">ngrok</span></code> needed anymore!</p>
+</div>
+<div class="section" id="section-5-4-preparing-for-deployment-on-heroku">
+<h2>Section 5.4: Preparing for Deployment on Heroku<a class="headerlink" href="#section-5-4-preparing-for-deployment-on-heroku" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-13-preparing-for-heroku">
+<h3>Video 13: Preparing for Heroku<a class="headerlink" href="#video-13-preparing-for-heroku" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Before we can deploy on Heroku there are a couple of things we need to prepare.</p>
+<p><strong>Create <code class="docutils literal notranslate"><span class="pre">Procfile</span></code></strong></p>
+<p>Every application running on Heroku needs a <code class="docutils literal notranslate"><span class="pre">Procfile</span></code> where you need to specify how the app should be run. In our case, it is quite easy, because we can use <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> as a web server. Create a file named <code class="docutils literal notranslate"><span class="pre">Procfile</span></code> in the root folder of your application and put the following code inside:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">web</span><span class="p">:</span> <span class="n">gunicorn</span> <span class="n">app</span><span class="p">:</span><span class="n">app</span>
+</pre></div>
+</div>
+<p><strong>Create <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></strong></p>
+<p>We also need to tell Heroku which Python packages need to be installed. Heroku uses the standard way of defining Python dependencies - a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. You can create it with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><strong>Fix the <code class="docutils literal notranslate"><span class="pre">torch</span></code> version</strong></p>
+<p>Now, this should be enough in theory, but we need one small change. The problem is that by default <code class="docutils literal notranslate"><span class="pre">torch</span></code> comes with both the CPU and GPU code, which creates a package that exceeds the maximum size limit on the Heroku free tier. Therefore we need to make sure that we only specify the CPU version of <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p>
+<p>You need to open the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file and modify it as follows:</p>
+<ol class="simple">
+<li><p>Add the following line in the beginning, telling Heroku where to look for the packages <code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">https://download.pytorch.org/whl/torch_stable.html</span> </code></p></li>
+<li><p>Find the line defining the torch dependency and change it to <code class="docutils literal notranslate"><span class="pre">torch==1.9.0+cpu</span></code></p></li>
+<li><p>Do the same with <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> by changing it to <code class="docutils literal notranslate"><span class="pre">torchvision==0.10.0+cpu</span> </code></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="section-5-5-deploying-on-heroku">
+<h2>Section 5.5: Deploying on Heroku<a class="headerlink" href="#section-5-5-deploying-on-heroku" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-14-deploying-on-heroku">
+<h3>Video 14: Deploying on Heroku<a class="headerlink" href="#video-14-deploying-on-heroku" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>You are now finally ready to deploy to Heroku! There are just a couple of steps needed.</p>
+<p><strong>1. Create a Heroku account</strong></p>
+<p>Create a free account on Heroku at https://www.heroku.com/</p>
+<p><strong>2. Install the Heroku CLI</strong></p>
+<p>Use <a class="reference external" href="https://devcenter.heroku.com/articles/heroku-cli">this guide</a> to install the Heroku CLI for your system. After installation, you should be able to run the <code class="docutils literal notranslate"><span class="pre">heroku</span></code> command in your terminal.</p>
+<p><strong>3. Login to Heroku</strong></p>
+<p>Run the following command in the terminal and log in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">heroku</span> <span class="n">login</span>
+</pre></div>
+</div>
+<p><strong>4. Create a new Heroku App</strong></p>
+<p>Run the following command to create a new application. When choosing the application name, you need to make sure that it doesn’t exist yet. It may be a good idea to add your name to it (I chose <code class="docutils literal notranslate"><span class="pre">vladimir-classifier-app</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">heroku</span> <span class="n">create</span> <span class="o">&lt;</span><span class="n">application</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>5. Initialize a Git repository</strong></p>
+<p>The deployment on Heroku is done using <code class="docutils literal notranslate"><span class="pre">git</span></code>. If you don’t have it installed already, check <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">this guide</a>. You need to initialize a new repository, commit your files and push it to Heroku:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">app</span><span class="o">.</span><span class="n">py</span> <span class="n">Procfile</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> <span class="n">static</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"Initial commit"</span>
+<span class="n">heroku</span> <span class="n">git</span><span class="p">:</span><span class="n">remote</span> <span class="o">-</span><span class="n">a</span> <span class="o">&lt;</span><span class="n">application</span> <span class="n">name</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">heroku</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>Your application will now be packaged and uploaded to Heroku. This may take a couple of minutes, but when done you will be able to access your application at https://&lt;application name&gt;.herokuapp.com.</p>
+<p>You can also go to your dashboard and see your application there: https://dashboard.heroku.com/apps.</p>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="video-15-summary">
+<h2>Video 15: Summary<a class="headerlink" href="#video-15-summary" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>In this tutorial you learned the basics of some modern tools for creating dynamic web applications and REST APIs. You also learned how you can deploy your neural network model as a web app.</p>
+<p>You can now build on top of that and create more sophisticated and awesome applications and make them available to millions of people!</p>
+</div>
+</div>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/W2D5_GenerativeModels/instructor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="W2D5_Tutorial3.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Tutorial 3: Conditional GANs and Implications of GAN Technology</p>
+</div>
+</a>
+<a class="right-next" href="../../Module_WrapUps/DoingMoreWithFewerParameters.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Deep Learning: Doing more with fewer parameters Wrap-up</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By Neuromatch<br/>
+  
+      © Copyright 2021.<br/>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+</body>
+</html>
