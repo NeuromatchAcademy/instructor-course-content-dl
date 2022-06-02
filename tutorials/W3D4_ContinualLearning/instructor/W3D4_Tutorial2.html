@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1693,6 +1695,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/dqnm6/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for all videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/dqnm6/download">here</a>.</p>
 </div>
@@ -2580,6 +2586,12 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2591,6 +2603,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="video-1-the-future-of-learning">
 <h2>Video 1: The Future of Learning<a class="headerlink" href="#video-1-the-future-of-learning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "f243f90c3c664e799c8af32282388e93"}
+</script></div>
 </div>
 </div>
 <div class="section" id="think-1-1-what-are-the-problems-that-you-want-to-solve">
@@ -2623,6 +2639,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="video-2-transfer-and-multi-tasking-learning">
 <h2>Video 2: Transfer and Multi-Tasking Learning<a class="headerlink" href="#video-2-transfer-and-multi-tasking-learning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "3e400fe55f284003b54ed96c9ae8bdbb"}
+</script></div>
 </div>
 </div>
 <div class="section" id="section-2-1-getting-the-data">
@@ -2635,6 +2655,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Get the current working directory in `CWD` variable.</span>
 <span class="n">CWD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Current dir: </span><span class="si">{</span><span class="n">CWD</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current dir: /home/runner/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D4_ContinualLearning/instructor
 </pre></div>
 </div>
 </div>
@@ -2667,6 +2692,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Change working direcrtory!'</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Current dir: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start downloading and unzipping `MTFL` dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed.
+Change working direcrtory!
+Current dir: /home/runner/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D4_ContinualLearning/instructor/MTFL
 </pre></div>
 </div>
 </div>
@@ -2719,6 +2754,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">visualize_mtfl_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Labels: [0, 0, 0, 2]
+</pre></div>
+</div>
+<img alt="../../../_images/W3D4_Tutorial2_47_1.png" src="../../../_images/W3D4_Tutorial2_47_1.png"/>
 </div>
 </div>
 <p>Can you interpret the above image and the labels corresponding to the image? Let’s have a look at some more instances from the dataset.</p>
@@ -2965,6 +3006,61 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======== Epoch 1 / 5 ========
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training =&gt; Avg. Task Accuracy: 0.6893750000000001
+Validation =&gt; Avg. Task Accuracy: 0.702
+
+======== Epoch 2 / 5 ========
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training =&gt; Avg. Task Accuracy: 0.7108125000000001
+Validation =&gt; Avg. Task Accuracy: 0.7108749999999999
+
+======== Epoch 3 / 5 ========
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training =&gt; Avg. Task Accuracy: 0.71815625
+Validation =&gt; Avg. Task Accuracy: 0.717
+
+======== Epoch 4 / 5 ========
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_62758</span><span class="o">/</span><span class="mf">2165614975.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">criterion</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">optimizer_without_pre_trained_backbone</span><span class="p">,</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_62758/2013835684.py</span> in <span class="ni">train_multi_task</span><span class="nt">(model, trainloader, valloader, criterion, optimizer, epochs, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> 
+<span class="g g-Whitespace">     </span><span class="mi">53</span>       <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">54</span>       <span class="n">overall_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>       <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>                 <span class="n">create_graph</span><span class="o">=</span><span class="n">create_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">255</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span> 
+<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>         <span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors_</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">149</span>         <span class="n">allow_unreachable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accumulate_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># allow_unreachable flag</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> 
+<span class="g g-Whitespace">    </span><span class="mi">151</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="section-2-4-training-model-with-pretrained-backbone">
@@ -2988,8 +3084,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Transfer learning helps in initializing the model better and thus makes learning of the model faster. It also gives better performance compared to the same model that was trained from scratch. Below is a table which contains validation accuracies after 5 epochs. Note that your accuracies can be slightly different when you run the training loops. It will also depend on the number of epochs and the model you have implemented.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b5cdd142-8338-48ba-bb3a-5b53616889c4">
-<span class="eqno">(95)<a class="headerlink" href="#equation-b5cdd142-8338-48ba-bb3a-5b53616889c4" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1f03578f-ce7b-42be-99c2-4b22f2af8932">
+<span class="eqno">(95)<a class="headerlink" href="#equation-1f03578f-ce7b-42be-99c2-4b22f2af8932" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 \text{Method} &amp; \text{Validation Accuracy} \\
 \hline
 \text{With Transfer Learning} &amp; \mathbf{0.779} \\
@@ -3016,8 +3112,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The algorithm does not favour either of the outcomes, so <span class="math notranslate nohighlight">\(P(cancer) = P(no\_cancer) = .5\)</span></p>
 <p>You wish to find the most important feature according to the model and you have the following list of conditional probabilities.</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-65e1d2a9-79be-4df9-ab51-2ca56b943145">
-<span class="eqno">(96)<a class="headerlink" href="#equation-65e1d2a9-79be-4df9-ab51-2ca56b943145" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d907f213-5bce-4e22-bb83-ba46e70c49d2">
+<span class="eqno">(96)<a class="headerlink" href="#equation-d907f213-5bce-4e22-bb83-ba46e70c49d2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(family\_history = 1  | no\_cancer) = .1 &amp;, P(family\_history = 1 | cancer) = .9 \\
 P(smoker = 1 | no\_cancer) = .05 &amp;, P(smoker = 1| cancer) = .8 \\
 P(young = 1 | cancer) = .01 &amp;, P(young = 1 | no\_cancer) = .71
@@ -3130,8 +3226,8 @@ P(young = 1 | cancer) = .01 &amp;, P(young = 1 | no\_cancer) = .71
 <p>Let’s assume that we wish to find the K best features. We know that a set of K features would be most important if they can predict the outcome with high confidence and better than any other set of the same size! We could hence try to predict the outcome using only the given set of features and record the accuracy. If this accuracy is higher than that using any other set of the same size, then we can say that the given set has the most important K features!</p>
 <p>In essence, we would want to find the accuracies considering all feature sets of size K and then pick the one with the highest accuracy.</p>
 <p>If we wish to define a loss instead (the lower the better), we could simply extend the above notion as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c980908-3705-46de-8f9e-453facb3ce31">
-<span class="eqno">(97)<a class="headerlink" href="#equation-4c980908-3705-46de-8f9e-453facb3ce31" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-526c3fb5-ac11-452a-bd1c-900d2abf5ba6">
+<span class="eqno">(97)<a class="headerlink" href="#equation-526c3fb5-ac11-452a-bd1c-900d2abf5ba6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Loss = 1 - Accuracy
 \end{equation}\]</div>
 </div>
@@ -3182,8 +3278,8 @@ Loss = 1 - Accuracy
 <p>The accuracy can be calculated using the probabilities specified above. Here are the accuracies for different feature sets!</p>
 <p>Note that we have not detailed the calculation of these accuracies. If you are curious, refer to the bonus section!</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-49ade6e5-e9af-4a74-8859-c8b0e56e5a77">
-<span class="eqno">(98)<a class="headerlink" href="#equation-49ade6e5-e9af-4a74-8859-c8b0e56e5a77" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1109ab40-b92f-4527-949a-085ea497ba84">
+<span class="eqno">(98)<a class="headerlink" href="#equation-1109ab40-b92f-4527-949a-085ea497ba84" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 \text{Feature(s)} &amp; \text{Accuracy}\\
 \hline
 \text{Family History} &amp; 0.900 \\
@@ -3785,8 +3881,8 @@ Loss = 1 - Accuracy
 <p>Recall the problem setup:</p>
 <p>There exist binary-valued random variables <span class="math notranslate nohighlight">\(X^{(1)}, X^{(2)}, X^{(3)}, Y \in {0,1}\)</span> such that <span class="math notranslate nohighlight">\(X^{(1)}, X^{(2)}\)</span>, and <span class="math notranslate nohighlight">\(X^{(3)}\)</span> are conditionally independent (given <span class="math notranslate nohighlight">\(Y\)</span>).</p>
 <p>Let <span class="math notranslate nohighlight">\(P(Y=1) = 1/2\)</span>. Then the joint distribution of <span class="math notranslate nohighlight">\(X^{(1)}, X^{(2)}, X^{(3)}, Y\)</span> is specified by the conditional probabilities <span class="math notranslate nohighlight">\(P(X_i=1 | Y=0)\)</span> and <span class="math notranslate nohighlight">\(P(X_i=1 | Y=1)\)</span>, for <span class="math notranslate nohighlight">\(i=1,2,3\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97be1e9f-3e3f-4481-bcbd-7cc333dc451c">
-<span class="eqno">(99)<a class="headerlink" href="#equation-97be1e9f-3e3f-4481-bcbd-7cc333dc451c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c30c75db-93b8-4fdc-9536-f9230f56f051">
+<span class="eqno">(99)<a class="headerlink" href="#equation-c30c75db-93b8-4fdc-9536-f9230f56f051" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(X^{(1)}=1|Y=0)=0.10 &amp;, P(X^{(1)}=1|Y=1)=0.90 \\
 P(X^{(2)}=1|Y=0)=0.05 &amp;, P(X^{(2)}=1|Y=1)=0.80 \\
 P(X^{(3)}=1|Y=0)=0.01 &amp;, P(X^{(1)}=1|Y=1)=0.71
@@ -3802,8 +3898,8 @@ P(X^{(3)}=1|Y=0)=0.01 &amp;, P(X^{(1)}=1|Y=1)=0.71
 <p>There’s a symmetry we can take advantage of here: we know that 90% of the time <span class="math notranslate nohighlight">\(Y=1\)</span> we have <span class="math notranslate nohighlight">\(X=1\)</span>, which implies that 90% of the time <span class="math notranslate nohighlight">\(X=1\)</span> we have <span class="math notranslate nohighlight">\(Y=1\)</span>, which is a more natural way of thinking about prediction.</p>
 <p>This means we predict correctly 90% of the time when <span class="math notranslate nohighlight">\(Y=0\)</span>, and we predict correctly 90% of the time when <span class="math notranslate nohighlight">\(Y=1\)</span>. Since <span class="math notranslate nohighlight">\(P(Y)=1/2\)</span>, we have 0-1 loss <span class="math notranslate nohighlight">\(L = 1-(0.5 \times 0.9 + 0.5 \times 0.9)=0.1\)</span>.</p>
 <p>In total, we have:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-adc180bf-8cef-4cf3-bbbd-14a4e0a946c3">
-<span class="eqno">(100)<a class="headerlink" href="#equation-adc180bf-8cef-4cf3-bbbd-14a4e0a946c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-30b2a4f9-8789-49c8-8b16-5cb9863cd502">
+<span class="eqno">(100)<a class="headerlink" href="#equation-30b2a4f9-8789-49c8-8b16-5cb9863cd502" title="Permalink to this equation">¶</a></span>\[\begin{align}
 L_1 =&amp; 1 - (0.5 \times 0.9 + 0.5 \times 0.9) = 0.1 \\
 L_2 =&amp; 1 - (0.5 \times 0.95 + 0.5 \times 0.8) = 0.125 \\
 L_3 =&amp; 1 - (0.5 \times 0.99 + 0.5 \times 0.71) = 0.15.
@@ -3817,16 +3913,16 @@ L_3 =&amp; 1 - (0.5 \times 0.99 + 0.5 \times 0.71) = 0.15.
 <p>Working out these calculations is a bit tedious, so we’ll provide various tables and descriptions of their origins.</p>
 <p>First, we compute conditional PMFs <span class="math notranslate nohighlight">\(P\left( X^{(1)}, X^{(2)}∣Y \right)\)</span> by multiplying the provided conditionally independent probabilities together.</p>
 <p><strong>Conditional PMFs:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e989a283-f202-4caa-a24a-864b32407800">
-<span class="eqno">(101)<a class="headerlink" href="#equation-e989a283-f202-4caa-a24a-864b32407800" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-931c2b62-019d-46dc-97f4-5859050bd3f1">
+<span class="eqno">(101)<a class="headerlink" href="#equation-931c2b62-019d-46dc-97f4-5859050bd3f1" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_1,X_2|Y=0) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.855 &amp;&amp; 0.045 \\
 X_1=1 &amp;&amp; 0.095 &amp;&amp; 0.005
 \end{matrix}\]</div>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-cbe82a42-6874-48a9-8e4b-fb172b72ff2e">
-<span class="eqno">(102)<a class="headerlink" href="#equation-cbe82a42-6874-48a9-8e4b-fb172b72ff2e" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-b1aec6a5-1ac9-4997-ab4a-87a7cf98c12c">
+<span class="eqno">(102)<a class="headerlink" href="#equation-b1aec6a5-1ac9-4997-ab4a-87a7cf98c12c" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_1,X_2|Y=1) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.02 &amp;&amp; 0.08 \\
@@ -3835,8 +3931,8 @@ X_1=1 &amp;&amp; 0.18 &amp;&amp; 0.72
 <br/>
 <p>We can then obtain a marginal PMF for <span class="math notranslate nohighlight">\(\{X^{(1)}, X^{(2)}\}\)</span> by element-wise averaging these two 2x2 tables because <span class="math notranslate nohighlight">\(P(Y)=1/2\)</span>.</p>
 <p><strong>Marginal PMF:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e8d41ec-d9d5-4863-8f32-062bf2a1619f">
-<span class="eqno">(103)<a class="headerlink" href="#equation-6e8d41ec-d9d5-4863-8f32-062bf2a1619f" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-bc31019a-f501-428d-b649-95eed3a5aafd">
+<span class="eqno">(103)<a class="headerlink" href="#equation-bc31019a-f501-428d-b649-95eed3a5aafd" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_1,X_2) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.4375 &amp;&amp; 0.0625 \\
@@ -3847,8 +3943,8 @@ X_1=1 &amp;&amp; 0.1375 &amp;&amp; 0.3625
 <p><strong>Conditional Probabilities: <span class="math notranslate nohighlight">\(P \left( Y=\{0, 1\}|X_1,X_2 \right)\)</span></strong></p>
 <p>Using the <span class="math notranslate nohighlight">\(\frac{P(X_1,X_2 | Y=0)}{P(X_1,X_2|Y=0) + P(X_1,X_2|Y=1)}\)</span>, we obtain the following matrix:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-130b42b2-ca58-4413-9e24-2faff283264b">
-<span class="eqno">(104)<a class="headerlink" href="#equation-130b42b2-ca58-4413-9e24-2faff283264b" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-378224e4-6693-4040-9a1d-ddbe76138417">
+<span class="eqno">(104)<a class="headerlink" href="#equation-378224e4-6693-4040-9a1d-ddbe76138417" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(Y=0|X_1,X_2) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.977143 &amp;&amp; 0.36 \\
@@ -3857,8 +3953,8 @@ X_1=1 &amp;&amp; 0.345455 &amp;&amp; 0.006897
 <br/>
 <p>Using the <span class="math notranslate nohighlight">\(\frac{P(X_1, X_2 | Y=1)}{P(X_1,X_2|Y=0) + P(X_1,X_2|Y=1)}\)</span>, we obtain the following matrix:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-e70808be-a4b7-4de0-ac5c-7d1103051574">
-<span class="eqno">(105)<a class="headerlink" href="#equation-e70808be-a4b7-4de0-ac5c-7d1103051574" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-41bd9cfb-2733-417c-b8f2-f4f1aad3e0cb">
+<span class="eqno">(105)<a class="headerlink" href="#equation-41bd9cfb-2733-417c-b8f2-f4f1aad3e0cb" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(Y=1|X_1,X_2) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.022857 &amp;&amp; 0.640000 \\
@@ -3869,8 +3965,8 @@ X_1=1 &amp;&amp; 0.654545 &amp;&amp; 0.993103
 <p>We now know the expected probability of success for our classifier for each <span class="math notranslate nohighlight">\(\{X^{(1)}, X^{(2)}\}\)</span> combination.</p>
 <br/>
 <p><strong>Maximum Conditional Probability:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc6b369d-11a0-4816-bd80-497ae4ac914c">
-<span class="eqno">(106)<a class="headerlink" href="#equation-fc6b369d-11a0-4816-bd80-497ae4ac914c" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-0db50e71-9277-4486-908b-ea7f13382015">
+<span class="eqno">(106)<a class="headerlink" href="#equation-0db50e71-9277-4486-908b-ea7f13382015" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(\text{Correct}|X_1,X_2) &amp;&amp; X_2=0 &amp;&amp; X_2=1 \\
 \hline
 X_1=0 &amp;&amp; 0.977143 &amp;&amp; 0.640000 \\
@@ -3910,16 +4006,16 @@ X_1=1 &amp;&amp; 0.654545 &amp;&amp; 0.993103
 <p>Our claim was that the most important single feature, already found to be <span class="math notranslate nohighlight">\(\{X^{(1)}\)</span>}, is not in the most important pair of features, so we just need to show that the 0-1 loss for <span class="math notranslate nohighlight">\(\{X^{(2)}, X^{(3)}\}\)</span> is less than 0.0826.</p>
 <p>First, we compute conditional PMFs <span class="math notranslate nohighlight">\(P \left( X^{(2)}, X^{(3)}∣Y \right)\)</span> by multiplying conditionally independent probabilities together.</p>
 <p><strong>Conditional PMFs:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5f5e60d-c81f-4505-93cb-bbd1faec6315">
-<span class="eqno">(107)<a class="headerlink" href="#equation-c5f5e60d-c81f-4505-93cb-bbd1faec6315" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-668131f3-a827-447c-98a1-fa9bbc0e7213">
+<span class="eqno">(107)<a class="headerlink" href="#equation-668131f3-a827-447c-98a1-fa9bbc0e7213" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_2,X_3|Y=0) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.9405 &amp;&amp; 0.0095 \\
 X_2=1 &amp;&amp; 0.0495 &amp;&amp; 0.0005
 \end{matrix}\]</div>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-f8340818-df46-4383-a9ea-8815ab5f8ef0">
-<span class="eqno">(108)<a class="headerlink" href="#equation-f8340818-df46-4383-a9ea-8815ab5f8ef0" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-3c1b5007-3966-4795-bddc-c994c305e095">
+<span class="eqno">(108)<a class="headerlink" href="#equation-3c1b5007-3966-4795-bddc-c994c305e095" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_2,X_3|Y=1) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.058 &amp;&amp; 0.142 \\
@@ -3929,8 +4025,8 @@ X_2=1 &amp;&amp; 0.232 &amp;&amp; 0.568
 <p>We can then obtain a marginal PMF for <span class="math notranslate nohighlight">\(\{X^{(2)}, X^{(3)}\}\)</span> by element-wise averaging these two 2x2 tables because <span class="math notranslate nohighlight">\(P(Y)=1/2\)</span>.</p>
 <br/>
 <p><strong>Marginal PMF:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-d6fdb144-22cc-4dae-b434-4bb1b2ba2d44">
-<span class="eqno">(109)<a class="headerlink" href="#equation-d6fdb144-22cc-4dae-b434-4bb1b2ba2d44" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-9f6fa169-8ea5-44f6-8e7e-09c95aa9213e">
+<span class="eqno">(109)<a class="headerlink" href="#equation-9f6fa169-8ea5-44f6-8e7e-09c95aa9213e" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(X_2,X_3) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.49925 &amp;&amp; 0.07575 \\
@@ -3942,8 +4038,8 @@ X_2=1 &amp;&amp; 0.14075 &amp;&amp; 0.28425
 <p><strong>Conditional Probabilities: <span class="math notranslate nohighlight">\(P \left( Y=\{0, 1\}|X_2, X_3 \right)\)</span></strong></p>
 <p>Using the <span class="math notranslate nohighlight">\(\frac{P(X_2,X_3 | Y=0)}{P(X_2, X_3|Y=0) + P(X_2, X_3|Y=1)}\)</span>, we obtain the following matrix:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-a85091ad-0b1a-4278-ae56-ee575f0e9966">
-<span class="eqno">(110)<a class="headerlink" href="#equation-a85091ad-0b1a-4278-ae56-ee575f0e9966" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-b1105bc6-c0f0-4e51-8781-73dd912a83ae">
+<span class="eqno">(110)<a class="headerlink" href="#equation-b1105bc6-c0f0-4e51-8781-73dd912a83ae" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(Y=0|X_2,X_3) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.941912869 &amp;&amp; 0.062706271 \\
@@ -3952,8 +4048,8 @@ X_2=1 &amp;&amp; 0.175843694 &amp;&amp; 0.000879507
 <br/>
 <p>Using the <span class="math notranslate nohighlight">\(\frac{P(X_2,X_3 | Y=1)}{P(X_2, X_3|Y=0) + P(X_2, X_3|Y=1)}\)</span>, we obtain the following matrix:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-43b4b6ad-f2d0-4940-bc42-a3ded845f669">
-<span class="eqno">(111)<a class="headerlink" href="#equation-43b4b6ad-f2d0-4940-bc42-a3ded845f669" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-93851188-7e16-4728-ac63-aec7885507a4">
+<span class="eqno">(111)<a class="headerlink" href="#equation-93851188-7e16-4728-ac63-aec7885507a4" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(Y=0|X_2,X_3) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.058087131 &amp;&amp; 0.937293729 \\
@@ -3964,8 +4060,8 @@ X_2=1 &amp;&amp; 0.824156306 &amp;&amp; 0.999120493
 <p>We now know the expected probability of success for our classifier for each <span class="math notranslate nohighlight">\(\{X^{(2)}, X^{(3)}\}\)</span> combination.</p>
 <br/>
 <p><strong>Maximum Conditional Probability:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-5139100d-d515-4731-b27d-eecf9fb8756f">
-<span class="eqno">(112)<a class="headerlink" href="#equation-5139100d-d515-4731-b27d-eecf9fb8756f" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-68bc1b69-ea6e-4bf2-8eb0-658cdb76994e">
+<span class="eqno">(112)<a class="headerlink" href="#equation-68bc1b69-ea6e-4bf2-8eb0-658cdb76994e" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 P(\text{Correct}|X_2,X_3) &amp;&amp; X_3=0 &amp;&amp; X_3=1 \\
 \hline
 X_2=0 &amp;&amp; 0.941912869 &amp;&amp; 0.937293729 \\

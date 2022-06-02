@@ -46,6 +46,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
@@ -1232,8 +1234,8 @@ title="Print to PDF"
 <p><em>Part of step 5</em></p>
 <p>We chose to use a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/">Drift-Diffusion Model (DDM)</a> because it is a well-established framework that allows us to model decision making in the case of 2 alternative choices (here: self-motion vs. other train motion).</p>
 <p>For our purposes simplest equation looks something like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f771fc0b-e7d7-4e05-906f-208f3c9f7510">
-<span class="eqno">(114)<a class="headerlink" href="#equation-f771fc0b-e7d7-4e05-906f-208f3c9f7510" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d81a737f-1657-4a2f-9a34-b18082986056">
+<span class="eqno">(114)<a class="headerlink" href="#equation-d81a737f-1657-4a2f-9a34-b18082986056" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dot e = \frac{de}{dt}= -c \cdot e + v \, ,
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e\)</span> is the accumulated evidence and <span class="math notranslate nohighlight">\(v\)</span> is our vestibular input already containing the noise (so we don’t need to add more noise?). <span class="math notranslate nohighlight">\(c\)</span> is the leakage constant, i.e., <span class="math notranslate nohighlight">\(c=0\)</span> means perfect integration; <span class="math notranslate nohighlight">\(c=1\)</span> means no integration (perfect leakage).</p>
@@ -1259,11 +1261,11 @@ title="Print to PDF"
 <p>So let’s go step by step… first we need to get set up…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-!pip install pandas --quiet
-plt.style.use(&#39;dark_background&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="o">!</span>pip install pandas --quiet
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;dark_background&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1274,7 @@ plt.style.use(&#39;dark_background&#39;)
 <h2>1. Vestibular signal generator<a class="headerlink" href="#vestibular-signal-generator" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vestibular_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">mov</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vestibular_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">mov</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  Computes a vestibular signal that corresponds to the acceleration of the</span>
 <span class="sd">  train with different amplitudes of noise</span>
@@ -1295,7 +1297,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Let’s see if that works… (<em>unit test</em>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">vestibular_signal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">vestibular_signal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># plot signal</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1317,7 +1319,7 @@ plt.style.use(&#39;dark_background&#39;)
 <h2>2. Integrator (DDM mechanism)<a class="headerlink" href="#integrator-ddm-mechanism" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ddm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ddm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  Leaky integration of vestibular signal</span>
 <span class="sd">  Args:</span>
@@ -1339,7 +1341,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Let’s test the DDM function… (<em>unit test</em>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">ddm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">ddm</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
 
 <span class="c1"># plot result</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
@@ -1358,7 +1360,7 @@ plt.style.use(&#39;dark_background&#39;)
 <h2>3. Thresholding (decision mechanism)<a class="headerlink" href="#thresholding-decision-mechanism" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">threshold</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">thr</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">threshold</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">thr</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  Thresholding of motion evidence</span>
 <span class="sd">  Args:</span>
@@ -1375,7 +1377,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Now let’s test this function… (<em>unit test</em>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mf">.6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mf">.6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1391,7 +1393,7 @@ plt.style.use(&#39;dark_background&#39;)
 <h2>Assembling the model<a class="headerlink" href="#assembling-the-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_model</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">thr</span><span class="p">,</span> <span class="n">mov</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_model</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">thr</span><span class="p">,</span> <span class="n">mov</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">  runs the full model to simulate self-motion decision, e.g., for train illusion</span>
 <span class="sd">  Args:</span>
@@ -1412,7 +1414,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Let’s run the model and see if it works…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">run_model</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">run_model</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1444,7 +1446,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>So let’s run out model in different parameter regimes and analyze the result to get some insight into the model performance</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>  <span class="c1"># to automatically generate possible combinations of parameters</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>  <span class="c1"># to automatically generate possible combinations of parameters</span>
 
 <span class="c1"># define parameter list</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
@@ -1470,7 +1472,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Now let’s explicitly test our hypothsis for different parameter combinations…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># want data frames:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># want data frames:</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sig&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;Thr&#39;</span><span class="p">,</span> <span class="s1">&#39;Mov&#39;</span><span class="p">,</span> <span class="s1">&#39;Decisions&#39;</span><span class="p">])</span>
 <span class="c1"># multi panel layout:</span>
@@ -1507,7 +1509,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>But it looks like <span class="math notranslate nohighlight">\(c=0.0004\)</span> works well for <span class="math notranslate nohighlight">\(\theta = 1.5\)</span> and <span class="math notranslate nohighlight">\(\sigma=50\)</span> (highlighted plot). Lets run a few trials on that to analyze those results more specifically…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># run &quot;best&quot; parameter combination</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run &quot;best&quot; parameter combination</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mf">0.0004</span>
 <span class="n">thr</span> <span class="o">=</span> <span class="mf">1.5</span>
@@ -1521,7 +1523,7 @@ plt.style.use(&#39;dark_background&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 27.4% and motion: 59.2%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 31.6% and motion: 59.8%
 </pre></div>
 </div>
 </div>
@@ -1530,7 +1532,7 @@ plt.style.use(&#39;dark_background&#39;)
 <p>Finally, let’s explicitly evaluate our hypothesis…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mf">0.0004</span>
 <span class="n">thr</span> <span class="o">=</span> <span class="mf">1.5</span>
 <span class="n">D0</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1549,7 +1551,7 @@ plt.style.use(&#39;dark_background&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">D0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;no motion&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">D0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;no motion&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">D1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;motion&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Noise level&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;% motion decisions&quot;</span><span class="p">)</span>
