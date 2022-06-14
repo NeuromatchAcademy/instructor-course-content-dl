@@ -38,6 +38,8 @@ jobs:
           wget https://github.com/NeuromatchAcademy/nmaci/archive/refs/heads/$BRANCH.tar.gz
           tar -xzf $BRANCH.tar.gz
           rm -rf $BRANCH.tar.gz
+          sudo apt-get update
+          sudo apt-get install -y --fix-missing
           sudo apt-get install -y xvfb ffmpeg
           pip install -r nmaci-$BRANCH/requirements.txt
           mv nmaci-$BRANCH/scripts/ ci/
