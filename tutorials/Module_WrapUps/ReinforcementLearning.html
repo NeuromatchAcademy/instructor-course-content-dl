@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optimization &#8212; Neuromatch Academy: Deep Learning (instructor&#39;s version)</title>
+    <title>Deep Learning: Reinforcement Learning Wrap-up &#8212; Neuromatch Academy: Deep Learning (instructor&#39;s version)</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -49,8 +49,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tutorial 1: Optimization techniques" href="instructor/W1D5_Tutorial1.html" />
-    <link rel="prev" title="Tutorial 2: Deep MLPs" href="../W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial2.html" />
+    <link rel="next" title="Introduction to projects" href="../../projects/README.html" />
+    <link rel="prev" title="Tutorial 1: Learn to play games with RL" href="../W3D5_ReinforcementLearningForGames/instructor/W3D5_Tutorial1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -258,19 +258,19 @@ const thebe_selector_output = ".output, .cell_output"
   Fine Tuning
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../W1D5_Optimization/chapter_title.html">
    Optimization (W1D5)
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="instructor/W1D5_Tutorial1.html">
+    <a class="reference internal" href="../W1D5_Optimization/instructor/W1D5_Tutorial1.html">
      Tutorial 1: Optimization techniques
     </a>
    </li>
@@ -299,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Module_WrapUps/FineTuning.html">
+  <a class="reference internal" href="FineTuning.html">
    Deep Learning: The Basics and Fine Tuning Wrap-up
   </a>
  </li>
@@ -450,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Module_WrapUps/NaturalLanguageProcessing.html">
+  <a class="reference internal" href="NaturalLanguageProcessing.html">
    Deep Learning: Doing more with fewer parameters Wrap-up
   </a>
  </li>
@@ -460,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
   Reinforcement Learning
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../W3D3_UnsupervisedAndSelfSupervisedLearning/chapter_title.html">
    Unsupervised And Self Supervised Learning (W3D3)
@@ -532,8 +532,8 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Module_WrapUps/ReinforcementLearning.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Deep Learning: Reinforcement Learning Wrap-up
   </a>
  </li>
@@ -847,6 +847,17 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -886,7 +897,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NeuromatchAcademy/instructor-course-content-dl/issues/new?title=Issue%20on%20page%20%2Ftutorials/W1D5_Optimization/chapter_title.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NeuromatchAcademy/instructor-course-content-dl/issues/new?title=Issue%20on%20page%20%2Ftutorials/Module_WrapUps/ReinforcementLearning.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -914,7 +925,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/tutorials/W1D5_Optimization/chapter_title.md"
+        <a href="../../_sources/tutorials/Module_WrapUps/ReinforcementLearning.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -925,7 +936,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -951,23 +962,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#podcast-panel-discussion">
+   Podcast Panel Discussion
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Optimization</h1>
+                <h1>Deep Learning: Reinforcement Learning Wrap-up</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#podcast-panel-discussion">
+   Podcast Panel Discussion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -975,9 +1023,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="optimization">
-<h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/tutorials/Module_WrapUps/ReinforcementLearning.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/Module_WrapUps/ReinforcementLearning.ipynb" target="_parent"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a></p>
+<div class="section" id="deep-learning-reinforcement-learning-wrap-up">
+<h1>Deep Learning: Reinforcement Learning Wrap-up<a class="headerlink" href="#deep-learning-reinforcement-learning-wrap-up" title="Permalink to this headline">¶</a></h1>
+<p><strong>Our 2021 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
+<p align='center'><img src='https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True'/></p><div class="section" id="podcast-panel-discussion">
+<h2>Podcast Panel Discussion<a class="headerlink" href="#podcast-panel-discussion" title="Permalink to this headline">¶</a></h2>
+<p>Neuromatch Academy has collaborated with Paul Middlebrooks of the podcast Brain Inspired to host a series of panel discussions on the content modules.</p>
+<p>The sixth session covers the Deep Learning <em>Reinforcement Learning</em> module, featuring panelists <a class="reference external" href="http://webdocs.cs.ualberta.ca/~alona/">Alona Fyshe</a>, <a class="reference external" href="http://www.janexwang.com/">Jane Wang</a>, and <a class="reference external" href="https://www.momen-nejad.org/">Ida Momennejad</a>.</p>
+<p>Listen <a class="reference external" href="https://braininspired.co/podcast/nma-6/">here</a> or in the embedded audio below!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;https://braininspired.castos.com/player/625374&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;150&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -994,7 +1057,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./tutorials/W1D5_Optimization"
+            path: "./tutorials/Module_WrapUps"
         },
         predefinedOutput: true
     }
@@ -1008,17 +1071,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../W1D3_MultiLayerPerceptrons/instructor/W1D3_Tutorial2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../W3D5_ReinforcementLearningForGames/instructor/W3D5_Tutorial1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutorial 2: Deep MLPs</p>
+            <p class="prev-next-title">Tutorial 1: Learn to play games with RL</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="instructor/W1D5_Tutorial1.html" title="next page">
+    <a class='right-next' id="next-link" href="../../projects/README.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 1: Optimization techniques</p>
+        <p class="prev-next-title">Introduction to projects</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

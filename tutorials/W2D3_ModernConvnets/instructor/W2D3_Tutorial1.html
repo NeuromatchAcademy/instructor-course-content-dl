@@ -37,8 +37,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -276,6 +274,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/FineTuning.html">
+   Deep Learning: The Basics and Fine Tuning Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -422,6 +425,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
+   Deep Learning: Doing more with fewer parameters Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -499,6 +507,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </li>
 </ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/ReinforcementLearning.html">
+   Deep Learning: Reinforcement Learning Wrap-up
+  </a>
 </li>
 </ul>
 <p class="caption">
@@ -1888,10 +1901,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/tzfsn/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
-</div></div>
 </div>
 <p>These are the slides for all videos in this tutorial. If you want to download locally the slides, click <a class="reference external" href="https://osf.io/tzfsn/download">here</a>.</p>
 </div>
@@ -2064,12 +2073,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2080,22 +2083,18 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="section" id="video-1-modern-cnns-and-transfer-learning">
 <h2>Video 1: Modern CNNs and Transfer Learning<a class="headerlink" href="#video-1-modern-cnns-and-transfer-learning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "717f75b84f8c4924865183e2565ad25a"}
-</script></div>
 </div>
 <p>Images are high dimensional. That is to say that <code class="docutils literal notranslate"><span class="pre">image_length</span></code> * <code class="docutils literal notranslate"><span class="pre">image_width</span></code> * <code class="docutils literal notranslate"><span class="pre">image_channels</span></code> is a big number, and multiplying that big number by a normal sized fully-connected layer leads to a ton of parameters to learn. Yesterday, we learned about convolutional neural networks, one way of working around high dimensionality in images and other domains.</p>
 <p>The widget below (i.e., <em>Interactive Demo 1</em>) calculates the parameters required for a single convolutional or fully connected layer that operates on an image of a certain height and width.</p>
 <p>Recall that, the number of parameters of a convolutional layer <span class="math notranslate nohighlight">\(l\)</span> are calculated as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a05c7dcd-fd66-4c66-8348-0e58328755e2">
-<span class="eqno">(83)<a class="headerlink" href="#equation-a05c7dcd-fd66-4c66-8348-0e58328755e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-35b534eb-cd9c-45c9-a6fd-9bbfad5c4921">
+<span class="eqno">(83)<a class="headerlink" href="#equation-35b534eb-cd9c-45c9-a6fd-9bbfad5c4921" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( H \times W \times K_{l-1} \right) + 1 \right] \times K_l
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(H\)</span> denotes the shape of the height of the filter, <span class="math notranslate nohighlight">\(W\)</span> the shape of the width of the filter, and <span class="math notranslate nohighlight">\(K_l\)</span> denotes the number of the filters in the <span class="math notranslate nohighlight">\(l\)</span>-th layer. The added <span class="math notranslate nohighlight">\(1\)</span> is because of the bias term for each filter.</p>
 <p>While a fully connected layer contains:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-398b2bd0-0b2d-4b90-a49c-5bc24b981772">
-<span class="eqno">(84)<a class="headerlink" href="#equation-398b2bd0-0b2d-4b90-a49c-5bc24b981772" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-80b5b9ec-2aa4-45c8-a49d-365b97e0537c">
+<span class="eqno">(84)<a class="headerlink" href="#equation-80b5b9ec-2aa4-45c8-a49d-365b97e0537c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( N_{l-1} \times N_l \right) + 1 \times N_l \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N_l\)</span> denotes the number of nodes in the <span class="math notranslate nohighlight">\(l\)</span>-th layer.</p>
@@ -2275,12 +2274,6 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FCCN parameter count: 12583168
-ConvNet parameter count: 7168
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FCCN</span> <span class="n">parameter</span> <span class="n">count</span><span class="p">:</span> <span class="mi">12583168</span>
 <span class="n">ConvNet</span> <span class="n">parameter</span> <span class="n">count</span><span class="p">:</span> <span class="mi">7168</span>
@@ -2348,10 +2341,6 @@ ConvNet parameter count: 7168
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5bab6f56924045898adfac7e10f83cef"}
-</script></div>
 </div>
 </div>
 </div>
@@ -2365,10 +2354,6 @@ ConvNet parameter count: 7168
 <div class="section" id="video-2-history-of-convnets">
 <h2>Video 2: History of convnets<a class="headerlink" href="#video-2-history-of-convnets" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6cc34c4c532a4b0f8091b88f12f30972"}
-</script></div>
 </div>
 </div>
 <div class="section" id="think-2-challenges-of-improving-cnns">
@@ -2405,12 +2390,6 @@ ConvNet parameter count: 7168
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "601a6805c8b1478793956012bf480b98"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "eea1536774b148d6acea895b85933b7a"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2446,10 +2425,6 @@ ConvNet parameter count: 7168
 <div class="section" id="video-3-alexnet-vgg">
 <h2>Video 3: AlexNet &amp; VGG<a class="headerlink" href="#video-3-alexnet-vgg" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "85c4c2f63fa844f599b73160b3f7ea18"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-3-1-introduction-to-alexnet">
@@ -2494,10 +2469,6 @@ In this section you’ll have the opportunity to play with AlexNet and see the w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4a9f708229984b3c85c810c8c6959e1a"}
-</script></div>
 </div>
 </div>
 </div>
@@ -2525,9 +2496,6 @@ What do these filters remind you of?</p>
   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_50_0.png" src="../../../_images/W2D3_Tutorial1_50_0.png"/>
 </div>
 </div>
 <div class="section" id="think-3-2-1-filter-similarity">
@@ -2561,12 +2529,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "26f2b1a66af143bbb6aacb05c61f4349"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "3357bf62c11d454dbf0161928d21ef4a"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2654,10 +2616,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f8d3de719947446097e7f7fbf89b6011"}
-</script></div>
 </div>
 </div>
 </div>
@@ -2692,12 +2650,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2b348ef996044ce5a589c2785d343842"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4089c604251647049e308c56d538cd43"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2726,10 +2678,6 @@ What do these filters remind you of?</p>
 <div class="section" id="video-4-residual-networks-resnets">
 <h2>Video 4: Residual Networks (ResNets)<a class="headerlink" href="#video-4-residual-networks-resnets" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "31842c71385d4970a21f60b465290b98"}
-</script></div>
 </div>
 <p>In this section we’ll be working with a state of the art CNN model called <a class="reference external" href="https://arxiv.org/abs/1512.03385">ResNet</a>. ResNet has two particularly interesting features. First, it uses skip connections to avoid the vanishing gradient problem. Second, each block (collection of layers) in a ResNet can be treated as learning a residual function.</p>
 <p>Mathematically, a neural network can be thought of as a series of operations that maps an input (like an image of a dog) to an output (like the label “dog”). In math-speak a mapping from an input to an output is called a function. Neural networks are a flexible way of expressing that function.</p>
@@ -2759,14 +2707,6 @@ What do these filters remind you of?</p>
   <span class="nb">print</span><span class="p">(</span><span class="s2">"The download has been completed."</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">"Data has already been downloaded."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data is being downloaded...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The download has been completed.
 </pre></div>
 </div>
 </div>
@@ -3872,9 +3812,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_76_0.png" src="../../../_images/W2D3_Tutorial1_76_0.png"/>
-</div>
 </div>
 </div>
 <div class="section" id="eval-imagenette-function">
@@ -4003,17 +3940,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "c2a21225c687422f8c929334fb2b736a"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "0ee9e3d6360d41c18d20fc3211598fbb"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "c78cb606d8d341ff819c399259fb1575"}
-</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-4-1-use-the-resnet-model">
@@ -4139,14 +4065,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['gas pump', 'chain saw', 'jinrikisha', 'rifle', 'forklift']
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Random</span> <span class="n">seed</span> <span class="mi">2021</span> <span class="n">has</span> <span class="n">been</span> <span class="nb">set</span><span class="o">.</span>
 <span class="p">[</span><span class="s1">'gas pump'</span><span class="p">,</span> <span class="s1">'chain saw'</span><span class="p">,</span> <span class="s1">'jinrikisha'</span><span class="p">,</span> <span class="s1">'French horn'</span><span class="p">,</span> <span class="s1">'laptop'</span><span class="p">]</span>
@@ -4169,9 +4087,6 @@ What do these filters remind you of?</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_87_0.png" src="../../../_images/W2D3_Tutorial1_87_0.png"/>
 </div>
 </div>
 </div>
@@ -4204,11 +4119,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4228,9 +4138,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_92_0.png" src="../../../_images/W2D3_Tutorial1_92_0.png"/>
-</div>
 </div>
 </div>
 </div>
@@ -4241,10 +4148,6 @@ What do these filters remind you of?</p>
 <div class="section" id="video-5-improving-efficiency-inceptrion-and-resnext">
 <h2>Video 5: Improving efficiency: Inceptrion and ResNeXt<a class="headerlink" href="#video-5-improving-efficiency-inceptrion-and-resnext" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "fd982792f6c84f2f8c5ec755ab93d956"}
-</script></div>
 </div>
 </div>
 <div class="section" id="resnet-vs-resnext">
@@ -4371,14 +4274,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8be89f50fddb42738bb9e1b3c47ea5d5"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f14a076c9dda4c588aae92f96c221c7c"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "610db8df88d94b218a8b12bcdab52121"}
-</script></div>
 </div>
 </div>
 </div>
@@ -4418,12 +4313,6 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4a28162445b14e09ae4d077962f4de11"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "42a744b4bc754a2f828e311231cae4f1"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4472,10 +4361,6 @@ What do these filters remind you of?</p>
 <div class="section" id="video-6-improving-efficiency-mobilenet">
 <h2>Video 6: Improving efficiency: MobileNet<a class="headerlink" href="#video-6-improving-efficiency-mobilenet" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "560238f369bb42bbb27e1039a15cbd7d"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-6-1-depthwise-separable-convolutions">
@@ -4564,12 +4449,6 @@ Above you can see the example given in the video for you to check if your calcul
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Depthwise separable: 44 parameters
-Regular convolution: 72 parameters
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Depthwise</span> <span class="n">separable</span><span class="p">:</span> <span class="mi">44</span> <span class="n">parameters</span>
 <span class="n">Regular</span> <span class="n">convolution</span><span class="p">:</span> <span class="mi">72</span> <span class="n">parameters</span>
@@ -4606,12 +4485,6 @@ Regular convolution: 72 parameters
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e6b49e00ac414d559eccde4ea90e5c9c"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "684103d601644d598717f17815ed1295"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4637,10 +4510,6 @@ Regular convolution: 72 parameters
 <div class="section" id="video-7-transfer-learning">
 <h2>Video 7: Transfer Learning<a class="headerlink" href="#video-7-transfer-learning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b8a4d17b8b284c408f1f48ca66f807af"}
-</script></div>
 </div>
 <p>The most common way large image models are trained in practice is via transfer learning. One first pretrains a network on a large classification dataset like ImageNet, then uses the weights of this network as initialization for training (“fine-tuning”) that network on your task of choice.</p>
 <p>While training a network twice sounds like a strange thing to do, the model ends up training faster on the target dataset and often outperforms training “from scratch”. There are also other benefits such as <a class="reference external" href="https://arxiv.org/pdf/1901.09960.pdf">robustness to noise</a> that are the subject of <a class="reference external" href="https://arxiv.org/abs/2008.11687">active research</a>.</p>
@@ -4671,32 +4540,11 @@ Regular convolution: 72 parameters
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data is being downloaded...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The download has been completed.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the different Pokemon</span>
 <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">"small_pokemon_dataset/"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Wartortle',
- 'Blastoise',
- 'Ivysaur',
- 'Bulbasaur',
- 'Charmander',
- 'Squirtle',
- 'Charizard',
- 'Charmeleon',
- 'Venusaur']
 </pre></div>
 </div>
 </div>
@@ -4711,11 +4559,6 @@ Regular convolution: 72 parameters
 <span class="k">for</span> <span class="n">folders</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'small_pokemon_dataset/'</span><span class="p">):</span>
   <span class="n">num_classes</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">num_classes</span><span class="si">}</span><span class="s2"> types of Pokemon"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 types of Pokemon
 </pre></div>
 </div>
 </div>
@@ -4760,9 +4603,6 @@ Regular convolution: 72 parameters
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_130_0.png" src="../../../_images/W2D3_Tutorial1_130_0.png"/>
 </div>
 </div>
 </div>
@@ -4831,35 +4671,6 @@ Regular convolution: 72 parameters
     <span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W2D3_Tutorial1_134_0.png" src="../../../_images/W2D3_Tutorial1_134_0.png"/>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_59864</span><span class="o">/</span><span class="mf">3760956877.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">output</span> <span class="o">=</span> <span class="n">resnet</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>                 <span class="n">create_graph</span><span class="o">=</span><span class="n">create_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">363</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> 
-<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors_</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>         <span class="n">allow_unreachable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accumulate_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> 
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

@@ -37,8 +37,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -276,6 +274,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/FineTuning.html">
+   Deep Learning: The Basics and Fine Tuning Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -422,6 +425,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
+   Deep Learning: Doing more with fewer parameters Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -499,6 +507,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </li>
 </ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/ReinforcementLearning.html">
+   Deep Learning: Reinforcement Learning Wrap-up
+  </a>
 </li>
 </ul>
 <p class="caption">
@@ -1461,10 +1474,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/n263c/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
-</div></div>
 </div>
 <p>These are the slides for the videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/n263c/download">here</a>.</p>
 </div>
@@ -1476,27 +1485,27 @@ const thebe_selector_output = ".output, .cell_output"
 <p>There may be <em>errors</em> and/or <em>warnings</em> reported during the installation. However, they are to be ignored.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
 
-<span class="c1"># @markdown There may be *errors* and/or *warnings* reported during the installation. However, they are to be ignored.</span>
-<span class="o">!</span>pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.8.0+cu111 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.9.0+cu111 <span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.8.0 <span class="nv">torchtext</span><span class="o">==</span><span class="m">0</span>.9.0 -f https://download.pytorch.org/whl/torch_stable.html --quiet
-<span class="o">!</span>pip install unidecode --quiet
-<span class="o">!</span>pip install nltk --quiet
-<span class="o">!</span>pip install <span class="nv">d2l</span><span class="o">==</span><span class="m">0</span>.16.5 --quiet
-<span class="o">!</span>pip install python-Levenshtein --quiet
+# @markdown There may be *errors* and/or *warnings* reported during the installation. However, they are to be ignored.
+!pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 torchtext==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html --quiet
+!pip install unidecode --quiet
+!pip install nltk --quiet
+!pip install d2l==0.16.5 --quiet
+!pip install python-Levenshtein --quiet
 
-<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
+!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+from evaltools.airtable import AirtableForm
 
-<span class="c1"># Generate airtable form</span>
-<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W2D5_T2'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/9c55f6cb-cdf9-4429-ac1c-ec44fe64c303'</span><span class="p">)</span>
+# Generate airtable form
+atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T2','https://portal.neuromatchacademy.org/api/redirect/to/9c55f6cb-cdf9-4429-ac1c-ec44fe64c303')
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">math</span>
@@ -1526,10 +1535,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Figure Settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1540,17 +1549,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Load Dataset from <code class="docutils literal notranslate"><span class="pre">nltk</span></code><a class="headerlink" href="#load-dataset-from-nltk" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title  Load Dataset from `nltk`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title  Load Dataset from `nltk`</span>
 <span class="c1"># No critical warnings, so we suppress it</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
 
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'punkt'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1561,7 +1565,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -1628,7 +1632,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
 
@@ -1657,15 +1661,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
-Random seed 2021 has been set.
 </pre></div>
 </div>
 </div>
@@ -1681,10 +1679,6 @@ Random seed 2021 has been set.
 <div class="section" id="video-1-rnns">
 <h3>Video 1: RNNs<a class="headerlink" href="#video-1-rnns" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2bd69bb1135f4e96ba273a00e8604c8b"}
-</script></div>
 </div>
 <p>Recurrent neural networks, or RNNs , are a family of neural networks for processing sequential data. Just as a convolutional network is specialized for processing a grid of values X such as an image, a recurrent neural network is specialized for processing a sequence of values. RNNs prove useful in many scenarios where other deep learning models are not effective.</p>
 <ul class="simple">
@@ -1696,16 +1690,12 @@ Random seed 2021 has been set.
 <div class="section" id="video-2-rnn-basic-architectures">
 <h3>Video 2: RNN: Basic Architectures<a class="headerlink" href="#video-2-rnn-basic-architectures" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a143c8713af14816aa9338e2a890c3fe"}
-</script></div>
 </div>
 <p>The following provides more data than the video (but can be skipped for now). For more detail, see the sources, the <a class="reference external" href="https://www.deeplearningbook.org/contents/rnn.html">deep learning book</a>, and <a class="reference external" href="https://d2l.ai/chapter_recurrent-neural-networks/rnn.html">d2l.ai</a></p>
 <p>When the recurrent network is trained to perform a task that requires predicting the future from the past, the network typically learns to use a hidden state at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(H_t\)</span> as a kind of lossy summary of the task-relevant aspects of the past sequence of inputs up to <span class="math notranslate nohighlight">\(t\)</span>. This summary is in general necessarily lossy, since it maps an arbitrary length sequence <span class="math notranslate nohighlight">\((X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})\)</span> to a ﬁxed length vector <span class="math notranslate nohighlight">\(H_t\)</span>.</p>
 <p>We can represent the unfolded recurrence after <span class="math notranslate nohighlight">\(t\)</span> steps with a function <span class="math notranslate nohighlight">\(G_t\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f32039a3-d701-4273-a685-0f3806fb4f2e">
-<span class="eqno">(97)<a class="headerlink" href="#equation-f32039a3-d701-4273-a685-0f3806fb4f2e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9404de9-b457-4477-9392-e6fa9e26037d">
+<span class="eqno">(97)<a class="headerlink" href="#equation-f9404de9-b457-4477-9392-e6fa9e26037d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})=f(H_{t−1}, X_{t}; \theta)
 \end{equation}\]</div>
 <br/>
@@ -1718,13 +1708,13 @@ H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})=f(H_{t−1}, X_{t}; \theta)
 </ul>
 <p>We will now formally write down the equations of a recurrent unit-</p>
 <p>Assume that we have a minibatch of inputs <span class="math notranslate nohighlight">\(X_t \in R^{nxd}\)</span> at time step <span class="math notranslate nohighlight">\(t\)</span> . In other words, for a minibatch of <span class="math notranslate nohighlight">\(n\)</span> sequence examples, each row of <span class="math notranslate nohighlight">\(X_t\)</span>  corresponds to one example at time step <span class="math notranslate nohighlight">\(t\)</span> from the sequence. Next, we denote by <span class="math notranslate nohighlight">\(H_t \in R^{nxh}\)</span> the hidden variable of time step <span class="math notranslate nohighlight">\(t\)</span>. Unlike the MLP, here we save the hidden variable <span class="math notranslate nohighlight">\(H_{t-1}\)</span> from the previous time step and introduce a new weight parameter <span class="math notranslate nohighlight">\(W_{hh} \in R^{hxh}\)</span> to describe how to use the hidden variable of the previous time step in the current time step. Specifically, the calculation of the hidden variable of the current time step is determined by the input of the current time step together with the hidden variable of the previous time step:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b4e69e1-7dee-4095-8b9a-bf3ef38d458d">
-<span class="eqno">(98)<a class="headerlink" href="#equation-2b4e69e1-7dee-4095-8b9a-bf3ef38d458d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9ab3f14f-a63d-43c0-a8d5-797a8e26372c">
+<span class="eqno">(98)<a class="headerlink" href="#equation-9ab3f14f-a63d-43c0-a8d5-797a8e26372c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t = \phi(X_t W_{xh} + H_{t-1}W_{hh} + b_h)
 \end{equation}\]</div>
 <p>For time step <span class="math notranslate nohighlight">\(t\)</span>, the output of the output layer is similar to the computation in the MLP:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0dac9a68-0992-4d28-a9bc-809218f39a2c">
-<span class="eqno">(99)<a class="headerlink" href="#equation-0dac9a68-0992-4d28-a9bc-809218f39a2c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-55a1331f-f64a-447e-9747-effc6e30c757">
+<span class="eqno">(99)<a class="headerlink" href="#equation-55a1331f-f64a-447e-9747-effc6e30c757" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 O_t = H_t W_{hq} + b_q
 \end{equation}\]</div>
 <p>Parameters of the RNN include the weights <span class="math notranslate nohighlight">\(W_{xh} \in R^{dxh}, W_{hh} \in R^{h \times h}\)</span> , and the bias <span class="math notranslate nohighlight">\(b_h \in R^{1 \times h}\)</span> of the hidden layer, together with the weights <span class="math notranslate nohighlight">\(W_{hq} \in R^{h \times q}\)</span> and the bias <span class="math notranslate nohighlight">\(b_q \in R^{1 \times q}\)</span> of the output layer. It is worth mentioning that even at different time steps, RNNs always use these model parameters. Therefore, the parameterization cost of an RNN does not grow as the number of time steps increases.</p>
@@ -1739,7 +1729,7 @@ O_t = H_t W_{hq} + b_q
 <h4>Load dataset function<a class="headerlink" href="#load-dataset-function" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Load dataset function</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Load dataset function</span>
 
 <span class="k">def</span> <span class="nf">download_osf</span><span class="p">():</span>
   <span class="c1"># Download IMDB dataset from OSF</span>
@@ -1823,22 +1813,7 @@ O_t = H_t W_{hq} + b_q
 <p>The cell below can take 15-30 secs to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TEXT</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading Started...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading Completed.
-Extracting all the files now...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done!
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data loading is completed. Sentence length: 50, Batch size: 32, and seed: 2021
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TEXT</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1849,7 +1824,7 @@ Extracting all the files now...
 <h4>Explore Dataset<a class="headerlink" href="#explore-dataset" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Explore Dataset</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Explore Dataset</span>
 
 <span class="k">def</span> <span class="nf">text_from_dict</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">):</span>
   <span class="n">text</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1872,33 +1847,13 @@ Extracting all the files now...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Review:  ok , so the fx are not high budget . but this story is based on actual events . not something thrown together to make a couple of rich actors , even richer ! ! as most movies that are based on books , there are somethings that just do
-Label:  1 
-
-Review:  the running man is one of those films that if overwatched , would become boring and depressing even. &lt; br / &gt; &lt; br / &gt; my advice is to watch it maybe once or twice a year with a couple of mates and a few drinks. &lt; br /
-Label:  1 
-
-Review:  the energetic young producer of theatrical prologues ( those staged performances , usually musical , that often proceeded the movie in the larger cinemas in bygone days ) must deal with crooked competition , fraudulent partners , unfaithful lovers &amp; amateur talent to realize his dream of making his mark
-Label:  1 
-
-Review:  i chose to see this movie because it got a good score here on imdb . but a lot of people either have really poor taste or someone 's been fixing the score. &lt; br / &gt; &lt; br / &gt; either way it was a real disappointment . the
-Label:  0 
-
-Review:  the dvd was a joke , the audio for the first few minutes was terrible with sound out of sync and segals voice not even his ! ! ! ! pathetic ! when the audio sync was better in about 5 minutes the poor plot , lines and actors should
-Label:  0 
-
-[0: Negative Review, 1: Positive Review]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="helper-functions">
 <h4>Helper Functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper Functions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper Functions</span>
 <span class="c1"># @markdown * `train(model, device, train_iter, valid_iter, epochs, learning_rate)`</span>
 
 <span class="c1"># @markdown * `test(model, device, test_iter)`</span>
@@ -2030,10 +1985,6 @@ Label:  0
 <div class="section" id="video-3-time-series">
 <h3>Video 3: Time Series<a class="headerlink" href="#video-3-time-series" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5ed0c13527444247ab475929f03f487e"}
-</script></div>
 </div>
 <p>Over the last tutorials, you were introduced to CNNs and used them to work on a range of interesting deep learning applications in vision. You also discussed where else these networks might be useful. Can we apply CNNs to language?</p>
 <p>Before we jump into RNNs we will create a CNN model for the text classification task. Let us understand how a one-dimensional convolutional layer works.</p>
@@ -2111,7 +2062,7 @@ Label:  0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">TextCNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_size</span><span class="p">,</span> <span class="n">kernel_sizes</span><span class="p">,</span> <span class="n">num_channels</span><span class="p">,</span>
                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -2147,25 +2098,10 @@ Label:  0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TextCNN(
-  (embedding): Embedding(1000, 300)
-  (fc): Linear(in_features=60, out_features=2, bias=True)
-  (pool): AdaptiveMaxPool1d(output_size=1)
-  (relu): ReLU()
-  (convs): ModuleList(
-    (0): Conv1d(300, 10, kernel_size=(1,), stride=(1,))
-    (1): Conv1d(300, 20, kernel_size=(2,), stride=(1,))
-    (2): Conv1d(300, 30, kernel_size=(3,), stride=(1,))
-  )
-)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparameters</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparameters</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.00001</span>
 <span class="n">embedding_length</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">kernel_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -2193,90 +2129,6 @@ Label:  0
 <span class="c1"># Number of parameters in model</span>
 <span class="n">paramters</span> <span class="o">=</span> <span class="n">count_parameters</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">Number of parameters = </span><span class="si">{</span><span class="n">paramters</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 1,  Training Loss: 0.7850, Training Accuracy:  50.29%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7753, Validation Accuracy:  50.05% 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 2,  Training Loss: 0.7512, Training Accuracy:  52.67%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7604, Validation Accuracy:  51.41% 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 3,  Training Loss: 0.7286, Training Accuracy:  54.64%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7493, Validation Accuracy:  52.59% 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 4,  Training Loss: 0.7091, Training Accuracy:  56.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7399, Validation Accuracy:  53.76% 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 5,  Training Loss: 0.6921, Training Accuracy:  58.18%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7320, Validation Accuracy:  54.53% 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 6,  Training Loss: 0.6764, Training Accuracy:  59.82%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Loss: 0.7251, Validation Accuracy:  55.57% 
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_61543</span><span class="o">/</span><span class="mf">3775148202.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">cnn_model</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">init_weights</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">cnn_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">cnn_train_loss</span><span class="p">,</span> <span class="n">cnn_train_acc</span><span class="p">,</span> <span class="n">cnn_validation_loss</span><span class="p">,</span> <span class="n">cnn_validation_acc</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">DEVICE</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"--- Time taken to train = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">cnn_start_time</span><span class="si">}</span><span class="s2"> seconds ---"</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">DEVICE</span><span class="p">,</span> <span class="n">test_iter</span><span class="p">)</span>
-
-<span class="nn">/tmp/ipykernel_61543/3753837047.py</span> in <span class="ni">train</span><span class="nt">(model, device, train_iter, valid_iter, epochs, learning_rate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>       <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>       <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">36</span>       <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>       <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>       <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/optim/optimizer.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>                 <span class="n">profile_name</span> <span class="o">=</span> <span class="s2">"Optimizer.step#</span><span class="si">{}</span><span class="s2">.step"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span>                 <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">profiler</span><span class="o">.</span><span class="n">record_function</span><span class="p">(</span><span class="n">profile_name</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">89</span>                     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="k">return</span> <span class="n">wrapper</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/grad_mode.py</span> in <span class="ni">decorate_context</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="k">def</span> <span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">27</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>         <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">decorate_context</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/optim/adam.py</span> in <span class="ni">step</span><span class="nt">(self, closure)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>                    <span class="n">group</span><span class="p">[</span><span class="s1">'lr'</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>                    <span class="n">group</span><span class="p">[</span><span class="s1">'weight_decay'</span><span class="p">],</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>                    <span class="n">group</span><span class="p">[</span><span class="s1">'eps'</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="k">return</span> <span class="n">loss</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/optim/_functional.py</span> in <span class="ni">adam</span><span class="nt">(params, grads, exp_avgs, exp_avg_sqs, max_exp_avg_sqs, state_steps, amsgrad, beta1, beta2, lr, weight_decay, eps)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="n">denom</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_exp_avg_sqs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bias_correction2</span><span class="p">))</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">92</span>             <span class="n">denom</span> <span class="o">=</span> <span class="p">(</span><span class="n">exp_avg_sq</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bias_correction2</span><span class="p">))</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span> 
-<span class="g g-Whitespace">     </span><span class="mi">94</span>         <span class="n">step_size</span> <span class="o">=</span> <span class="n">lr</span> <span class="o">/</span> <span class="n">bias_correction1</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -2337,7 +2189,7 @@ Label:  0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">VanillaRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_size</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">VanillaRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -2370,7 +2222,7 @@ Label:  0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparamters</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparamters</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.0002</span>
 <span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">100</span>
@@ -2429,7 +2281,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p>Preparing the input (run me)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Preparing the input (run me)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Preparing the input (run me)</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
 
@@ -2487,7 +2339,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p><strong>Network</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GenerationRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GenerationRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">GenerationRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">input_size</span> <span class="o">=</span> <span class="n">input_size</span>
@@ -2568,7 +2420,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">all_characters</span><span class="p">,</span> <span class="n">prime_str</span><span class="p">,</span> <span class="n">predict_len</span><span class="p">):</span>
   <span class="n">hidden</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">init_hidden</span><span class="p">()</span>
   <span class="n">predicted</span> <span class="o">=</span> <span class="n">prime_str</span>
@@ -2614,7 +2466,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p>Run this cell to train the model</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to train the model</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to train the model</span>
 
 <span class="k">def</span> <span class="nf">grad_clipping</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
   <span class="sd">"""Clip the gradient."""</span>
@@ -2700,7 +2552,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p>Build the dataloader (run me!)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Build the dataloader (run me!)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Build the dataloader (run me!)</span>
 <span class="k">class</span> <span class="nc">TaggingDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
   <span class="s1">'Characterizes a dataset for PyTorch'</span>
 
@@ -2789,7 +2641,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">TaggingRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">TaggingRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -2831,7 +2683,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p>Evaluation function</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Evaluation function</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Evaluation function</span>
 
 <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">prime_str</span><span class="p">,</span> <span class="n">predict_len</span><span class="p">):</span>
   <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Vowel'</span><span class="p">,</span> <span class="s1">'Space'</span><span class="p">,</span> <span class="s1">'Other'</span><span class="p">]</span>
@@ -2876,7 +2728,7 @@ https://d2l.ai/chapter_recurrent-neural-networks/rnn.html#rnn-based-character-le
 <p>Run this cell to train the model!</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to train the model!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to train the model!</span>
 
 <span class="c1"># Single training step</span>
 <span class="k">def</span> <span class="nf">train_simple</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">chunk_len</span><span class="p">):</span>
@@ -2961,7 +2813,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <h3>Data download and Preprocessing<a class="headerlink" href="#data-download-and-preprocessing" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Data download and Preprocessing</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Data download and Preprocessing</span>
 
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">io</span>
 
@@ -3049,7 +2901,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>The following cell retrieves about 29,000 random English words and their Pig Latin translations. We then tokenize each word and its translation; in this case, our tokens are characters. We also create vocabularies for the source and target languages; and a two-way mapping for each (index to token and token to index). Finally, we pick the value for <code class="docutils literal notranslate"><span class="pre">NUM_STEPS</span></code> as the size of the largest sequence in either language. This value would mark the maximum size of the sequence accepted by our models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean_data</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">()</span>
 
 <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">source_vocab</span><span class="p">,</span> <span class="n">target_vocab</span> <span class="o">=</span> <span class="n">tokenize_nmt</span><span class="p">(</span><span class="n">clean_data</span><span class="p">)</span>
 
@@ -3070,7 +2922,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Padding function</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Padding function</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Padding function</span>
 <span class="k">def</span> <span class="nf">truncate_pad</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">,</span> <span class="n">padding_token</span><span class="p">):</span>
   <span class="sd">"""Truncate or pad sequences."""</span>
   <span class="c1"># Truncate</span>
@@ -3104,7 +2956,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Build the dataloaders</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Build the dataloaders</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Build the dataloaders</span>
 
 <span class="k">def</span> <span class="nf">build_array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vocab</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">):</span>
   <span class="sd">"""Transform text sequences of machine translation into minibatches."""</span>
@@ -3255,7 +3107,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">Encoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""The RNN encoder for sequence to sequence learning."""</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_size</span><span class="p">,</span> <span class="n">num_hiddens</span><span class="p">,</span> <span class="n">num_layers</span><span class="p">,</span>
@@ -3327,7 +3179,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EncoderDecoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EncoderDecoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""The base class for the encoder-decoder architecture."""</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">EncoderDecoder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -3345,7 +3197,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Masked Loss Function</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Masked Loss Function</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Masked Loss Function</span>
 <span class="k">def</span> <span class="nf">sequence_mask</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
   <span class="sd">"""Mask irrelevant entries in sequences."""</span>
   <span class="n">maxlen</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -3376,7 +3228,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p><code class="docutils literal notranslate"><span class="pre">train_seq2seq(model,</span> <span class="pre">data_loader,</span> <span class="pre">lr,</span> <span class="pre">num_epochs,</span> <span class="pre">tgt_vocab,</span> <span class="pre">device)</span></code></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown `train_seq2seq(model, data_loader, lr, num_epochs, tgt_vocab, device)`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown `train_seq2seq(model, data_loader, lr, num_epochs, tgt_vocab, device)`</span>
 
 <span class="k">def</span> <span class="nf">train_seq2seq</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">tgt_vocab</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
   <span class="sd">"""Train a model for sequence to sequence."""</span>
@@ -3430,7 +3282,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>This cell below, takes about 10 minutes to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embed_size</span><span class="p">,</span> <span class="n">num_hiddens</span><span class="p">,</span> <span class="n">num_layers</span><span class="p">,</span> <span class="n">dropout</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">embed_size</span><span class="p">,</span> <span class="n">num_hiddens</span><span class="p">,</span> <span class="n">num_layers</span><span class="p">,</span> <span class="n">dropout</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.1</span>
 
 <span class="n">lr</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">device</span> <span class="o">=</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">DEVICE</span>
 
@@ -3453,7 +3305,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Compute BLEU</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Compute BLEU</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Compute BLEU</span>
 <span class="k">def</span> <span class="nf">bleu</span><span class="p">(</span><span class="n">pred_seq</span><span class="p">,</span> <span class="n">label_seq</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
   <span class="sd">"""Compute the BLEU."""</span>
   <span class="n">pred_tokens</span><span class="p">,</span> <span class="n">label_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">pred_seq</span><span class="p">],</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">label_seq</span><span class="p">]</span>
@@ -3476,7 +3328,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Implementing a function to make a translation of a given word.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_seq2seq</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">src_sentence</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_seq2seq</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">src_sentence</span><span class="p">):</span>
   <span class="sd">"""Predict for sequence to sequence."""</span>
   <span class="c1"># Set `net` to eval mode for inference</span>
   <span class="n">net</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
@@ -3508,7 +3360,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">engs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'middle'</span><span class="p">,</span> <span class="s1">'funny'</span><span class="p">,</span> <span class="s1">'hour'</span><span class="p">,</span> <span class="s1">'igloo'</span><span class="p">,</span> <span class="s1">'vendor'</span><span class="p">,</span> <span class="s1">'moody'</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">engs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'middle'</span><span class="p">,</span> <span class="s1">'funny'</span><span class="p">,</span> <span class="s1">'hour'</span><span class="p">,</span> <span class="s1">'igloo'</span><span class="p">,</span> <span class="s1">'vendor'</span><span class="p">,</span> <span class="s1">'moody'</span><span class="p">]</span>
 <span class="n">pig_latin</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'iddlemay'</span><span class="p">,</span> <span class="s1">'unnyfay'</span><span class="p">,</span> <span class="s1">'ourhay'</span><span class="p">,</span> <span class="s1">'iglooway'</span><span class="p">,</span> <span class="s1">'endorvay'</span><span class="p">,</span> <span class="s1">'oodymay'</span><span class="p">]</span>
 
 <span class="n">column_width</span> <span class="o">=</span> <span class="mi">18</span>
@@ -3546,7 +3398,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>
@@ -3568,7 +3420,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p>Let’s increase the <code class="docutils literal notranslate"><span class="pre">sentence_length</span></code> to see how RNN performs when long reviews are allowed. We have set the length to 200 words, feel free to experiment with the length!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TEXT</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TEXT</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">TEXT_long</span><span class="p">,</span> <span class="n">vocab_size_long</span><span class="p">,</span> <span class="n">train_iter_long</span><span class="p">,</span> <span class="n">valid_iter_long</span><span class="p">,</span> <span class="n">test_iter_long</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3576,7 +3428,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparamters</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model hyperparamters</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.0002</span>
 <span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">100</span>
@@ -3615,7 +3467,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare accuracies of model trained on different sentence lengths</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare accuracies of model trained on different sentence lengths</span>
 
 <span class="n">x_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ticks</span><span class="p">,</span> <span class="n">vanilla_train_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'train accuracy,len=50'</span><span class="p">)</span>
@@ -3641,7 +3493,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p><strong>Network</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GenerationRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GenerationRNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">GenerationRNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">input_size</span> <span class="o">=</span> <span class="n">input_size</span>
@@ -3713,7 +3565,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">evaluateMultinomial</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">prime_str</span><span class="p">,</span> <span class="n">predict_len</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
   <span class="n">hidden</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">init_hidden</span><span class="p">()</span>
   <span class="n">predicted</span> <span class="o">=</span> <span class="n">prime_str</span>
@@ -3758,7 +3610,7 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <h3>Execute cell to train the model<a class="headerlink" href="#execute-cell-to-train-the-model" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Execute cell to train the model</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Execute cell to train the model</span>
 
 <span class="k">def</span> <span class="nf">grad_clipping</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
   <span class="sd">"""Clip the gradient."""</span>

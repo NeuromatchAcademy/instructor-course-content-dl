@@ -37,8 +37,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -276,6 +274,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/FineTuning.html">
+   Deep Learning: The Basics and Fine Tuning Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -422,6 +425,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
+   Deep Learning: Doing more with fewer parameters Wrap-up
+  </a>
+</li>
 </ul>
 <p class="caption">
 <span class="caption-text">
@@ -499,6 +507,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </li>
 </ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../Module_WrapUps/ReinforcementLearning.html">
+   Deep Learning: Reinforcement Learning Wrap-up
+  </a>
 </li>
 </ul>
 <p class="caption">
@@ -1353,6 +1366,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#bonus-4-keynote">
+   Bonus 4: Keynote
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-ethics-emily-denton">
+     Data Ethics, Emily Denton
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#abstractions-and-analogy-in-ai-melanie-mitchell">
+     Abstractions and Analogy in AI, Melanie Mitchell
+    </a>
+</li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -1860,6 +1890,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#bonus-4-keynote">
+   Bonus 4: Keynote
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-ethics-emily-denton">
+     Data Ethics, Emily Denton
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#abstractions-and-analogy-in-ai-melanie-mitchell">
+     Abstractions and Analogy in AI, Melanie Mitchell
+    </a>
+</li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -1892,10 +1939,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/wvt34/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
-</div></div>
 </div>
 <p>These are the slides for the videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/wvt34/download">here</a>.</p>
 </div>
@@ -1907,64 +1950,56 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
 
-<span class="c1"># @markdown Download dataset, modules, and files needed for the tutorial from GitHub.</span>
+# @markdown Download dataset, modules, and files needed for the tutorial from GitHub.
 
-<span class="c1"># @markdown Download from OSF. Original repo: https://github.com/colleenjg/neuromatch_ssl_tutorial.git</span>
+# @markdown Download from OSF. Original repo: https://github.com/colleenjg/neuromatch_ssl_tutorial.git
 
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">shutil</span><span class="o">,</span> <span class="nn">importlib</span>
+import os, sys, shutil, importlib
 
-<span class="n">REPO_PATH</span> <span class="o">=</span> <span class="s2">"neuromatch_ssl_tutorial"</span>
-<span class="n">download_str</span> <span class="o">=</span> <span class="s2">"Downloading"</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">):</span>
-  <span class="n">download_str</span> <span class="o">=</span> <span class="s2">"Redownloading"</span>
-  <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">)</span>
+REPO_PATH = "neuromatch_ssl_tutorial"
+download_str = "Downloading"
+if os.path.exists(REPO_PATH):
+  download_str = "Redownloading"
+  shutil.rmtree(REPO_PATH)
 
-<span class="c1"># Download from github repo directly</span>
-<span class="c1"># !git clone git://github.com/colleenjg/neuromatch_ssl_tutorial.git --quiet</span>
+# Download from github repo directly
+# !git clone git://github.com/colleenjg/neuromatch_ssl_tutorial.git --quiet
 
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+from io import BytesIO
+from urllib.request import urlopen
+from zipfile import ZipFile
 
-<span class="n">zipurl</span> <span class="o">=</span> <span class="s1">'https://osf.io/smqvg/download'</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">download_str</span><span class="si">}</span><span class="s2"> and unzipping the file... Please wait."</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">zipurl</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipresp</span><span class="p">:</span>
-  <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">zipresp</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span> <span class="k">as</span> <span class="n">zfile</span><span class="p">:</span>
-    <span class="n">zfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Download completed!"</span><span class="p">)</span>
-
-
-<span class="c1"># @markdown Import modules designed for use in this tutorials</span>
-<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
-<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">load</span><span class="p">);</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">plot_util</span><span class="p">);</span>
+zipurl = 'https://osf.io/smqvg/download'
+print(f"{download_str} and unzipping the file... Please wait.")
+with urlopen(zipurl) as zipresp:
+  with ZipFile(BytesIO(zipresp.read())) as zfile:
+    zfile.extractall()
+print("Download completed!")
 
 
-<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
+# @markdown Import modules designed for use in this tutorials
+from neuromatch_ssl_tutorial.modules import data, load, models, plot_util
+from neuromatch_ssl_tutorial.modules import data, load, models, plot_util
+importlib.reload(data);
+importlib.reload(load);
+importlib.reload(models)
+importlib.reload(plot_util);
 
-<span class="c1"># Generate airtable form</span>
-<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D1_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/47de6f8f-1265-4a74-88c4-7dfa6e64b35a'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and unzipping the file... Please wait.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed!
+
+!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+from evaltools.airtable import AirtableForm
+
+# Generate airtable form
+atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchacademy.org/api/redirect/to/47de6f8f-1265-4a74-88c4-7dfa6e64b35a')
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1978,10 +2013,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Figure settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>       <span class="c1"># Interactive display</span>
 <span class="c1"># %matplotlib inline</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">'axes'</span><span class="p">,</span> <span class="n">unicode_minus</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># To ensure negatives render correctly with xkcd style</span>
@@ -1997,7 +2032,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Function to plot a histogram of RSM values: <code class="docutils literal notranslate"><span class="pre">plot_rsm_histogram(rsms,</span> <span class="pre">colors)</span></code></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
 
 <span class="c1"># @markdown Function to plot a histogram of RSM values: `plot_rsm_histogram(rsms, colors)`</span>
 <span class="k">def</span> <span class="nf">plot_rsm_histogram</span><span class="p">(</span><span class="n">rsms</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
@@ -2052,7 +2087,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
 
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span> <span class="c1"># to visualize images</span>
 
@@ -2109,7 +2144,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -2178,7 +2213,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 <span class="c1"># especially if torch modules used.</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
@@ -2208,16 +2243,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set global variables</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set global variables</span>
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
 </pre></div>
 </div>
 </div>
@@ -2226,7 +2255,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <h3>Pre-load variables (allows each section to be run independently)<a class="headerlink" href="#pre-load-variables-allows-each-section-to-be-run-independently" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Pre-load variables (allows each section to be run independently)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Pre-load variables (allows each section to be run independently)</span>
 
 <span class="c1"># Section 1</span>
 <span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
@@ -2291,10 +2320,6 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="section" id="video-0-introduction">
 <h2>Video 0: Introduction<a class="headerlink" href="#video-0-introduction" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "14f9efa69d3d4c649ab63b02225f8a57"}
-</script></div>
 </div>
 </div>
 </div>
@@ -2305,10 +2330,6 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="section" id="video-1-why-do-representations-matter">
 <h2>Video 1: Why do representations matter?<a class="headerlink" href="#video-1-why-do-representations-matter" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9c66355c71cf472ca732883ce6962e82"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-1-1-introducing-the-dsprites-dataset">
@@ -2330,7 +2351,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <p>We will first load the dataset into the <code class="docutils literal notranslate"><span class="pre">dSprites</span></code> object, which is an instance of the <code class="docutils literal notranslate"><span class="pre">data.dSpritesDataset</span></code> class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"dsprites"</span><span class="p">,</span> <span class="s2">"dsprites_subset.npz"</span><span class="p">)</span>
     <span class="p">)</span>
 </pre></div>
@@ -2341,13 +2362,10 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <p><strong>Interactive Demo:</strong> View a different set of randomly sampled images by passing the random state argument <code class="docutils literal notranslate"><span class="pre">randst</span></code> any integer or the value <code class="docutils literal notranslate"><span class="pre">None</span></code>. (The original setting is <code class="docutils literal notranslate"><span class="pre">randst=SEED</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">num_images</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_37_0.png" src="../../../_images/W3D3_Tutorial1_37_0.png"/>
 </div>
 </div>
 <p>To better understand the <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> latent dimensions (which will be most relevant in <strong>Bonus 2</strong>), we plot the images with some annotations. The annotations (in red) do not modify the actual images; they are added <strong>purely for visualization purposes</strong>, and show:</p>
@@ -2358,13 +2376,10 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <p><em><strong>Note on shape positions:</strong> Notice that all shape centers are positioned <strong>within the area marked by the red square</strong>. <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> actually describe the relative position of the center of a shape within this area: <code class="docutils literal notranslate"><span class="pre">posX=0</span></code> (left) to <code class="docutils literal notranslate"><span class="pre">posX=1</span></code> (right), and <code class="docutils literal notranslate"><span class="pre">posY=0</span></code> (top) to <code class="docutils literal notranslate"><span class="pre">posY=1</span></code> (bottom). No shape center appears outside, in the buffer area. This choice in the dSprites dataset design ensures that shapes of different scales and rotations <strong>all appear fully</strong>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">num_images</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">,</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"pos"</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_39_0.png" src="../../../_images/W3D3_Tutorial1_39_0.png"/>
 </div>
 </div>
 </div>
@@ -2380,13 +2395,10 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <h3>Encoder network schematic<a class="headerlink" href="#encoder-network-schematic" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Encoder network schematic</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Encoder network schematic</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"feat_encoder_schematic.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_43_0.png" src="../../../_images/W3D3_Tutorial1_43_0.png"/>
 </div>
 </div>
 <p>The following code:</p>
@@ -2397,7 +2409,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the seed before building any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the seed before building any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -2421,12 +2433,6 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Dataset size: 16000 training, 4000 test images
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="interactive-demo-1-2-1-training-a-logistic-regression-classifier-directly-on-images">
@@ -2438,7 +2444,7 @@ Dataset size: 16000 training, 4000 test images
 <p><em><strong>Interactive Demo:</strong> Try a few different <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code> settings to see whether performance improves with more training, e.g., between 1 and 50 epochs. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=25</span></code>).</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -2455,19 +2461,6 @@ Dataset size: 16000 training, 4000 test images
   <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
   <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Print results</span>
   <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Training a classifier directly on the images...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e2ac1c6972de475ca97fd6561f5af633"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
-    Training accuracy: 51.81%
-    Testing accuracy: 39.55%
 </pre></div>
 </div>
 </div>
@@ -2565,7 +2558,7 @@ Training a classifier directly on the images...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">train_supervised_encoder</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to train the encoder in a supervised way</span>
@@ -2610,19 +2603,6 @@ Training a classifier directly on the images...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Training a supervised encoder and classifier...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7bf01781e7754dc4817610787133e628"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 10 encoder and classifier training epochs (chance: 33.33%):
-    Training accuracy: 100.00%
-    Testing accuracy: 98.88%
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">10</span> <span class="n">encoder</span> <span class="ow">and</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
     <span class="n">Training</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">100.00</span><span class="o">%</span>
@@ -2657,10 +2637,6 @@ Training a supervised encoder and classifier...
 <div class="section" id="video-2-supervised-learning-and-invariance">
 <h2>Video 2: Supervised Learning and Invariance<a class="headerlink" href="#video-2-supervised-learning-and-invariance" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b3b3673cc77e4e92b179cdaf5ed98c72"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-2-1-examining-representational-similarity-matrices-rsms">
@@ -2760,7 +2736,7 @@ Training a supervised encoder and classifier...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">custom_torch_RSM_fct</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Custom function to calculate representational similarity matrix (RSM) of a feature</span>
@@ -2800,11 +2776,6 @@ Training a supervised encoder and classifier...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>custom_torch_RSM_fct() is correctly implemented.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">custom_torch_RSM_fct</span><span class="p">()</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">implemented</span><span class="o">.</span>
 </pre></div>
@@ -2820,7 +2791,7 @@ Training a supervised encoder and classifier...
 <p><strong>Interactive Demo:</strong> In the current example, the rows and columns of the RSM are organized along the <code class="docutils literal notranslate"><span class="pre">shape</span></code> latent dimension. Try organizing them along one of the other latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>) to see whether different patterns emerge. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">],</span> <span class="c1"># We pass the trained supervised_encoder</span>
@@ -2832,12 +2803,6 @@ Training a supervised encoder and classifier...
     <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting RSMs...
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_66_1.png" src="../../../_images/W3D3_Tutorial1_66_1.png"/>
 </div>
 </div>
 </div>
@@ -2851,7 +2816,7 @@ Training a supervised encoder and classifier...
 <h4>Student Response<a class="headerlink" href="#student-response" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -2875,16 +2840,10 @@ Training a supervised encoder and classifier...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8fe232613c744e18b3863433a85a73fc"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "c0427bff16ad41309f405e2d3f72ad31"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The yellow diagonal corresponds to the similarity between each encoded image and itself.</span>
@@ -2925,14 +2884,11 @@ Training a supervised encoder and classifier...
 <h3>Supporting images for Discussion response examples for 2.1.1<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-2-1-1" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 2.1.1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 2.1.1</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_supervised_encoder_10ep_bs1000_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_72_0.png" src="../../../_images/W3D3_Tutorial1_72_0.png"/>
 </div>
 </div>
 </div>
@@ -2945,10 +2901,6 @@ Training a supervised encoder and classifier...
 <div class="section" id="video-3-random-representations">
 <h2>Video 3: Random Representations<a class="headerlink" href="#video-3-random-representations" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "416e6da79b974da49a5a9862c8e62e84"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-3-1-examining-rsms-of-a-random-encoder">
@@ -3019,7 +2971,7 @@ Training a supervised encoder and classifier...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">plot_rsms</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot Representational Similarity Matrices (RSMs)</span>
@@ -3065,13 +3017,6 @@ Training a supervised encoder and classifier...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Plotting RSMs...
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_80_5.png" src="../../../_images/W3D3_Tutorial1_80_5.png"/>
-</div>
 </div>
 </div>
 <div class="section" id="discussion-3-1-1-what-does-comparing-these-rsms-reveal-about-the-potential-value-of-trained-versus-random-encoder-representations">
@@ -3082,7 +3027,7 @@ Plotting RSMs...
 <h4>Student Response<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3106,16 +3051,10 @@ Plotting RSMs...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "fea352bb9a9545b68a1161135954bd61"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "defe6728f2a143b3b4e3ed4229aac861"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. Only the yellow diagnonal identity line is visible. No other patterns emerge,</span>
@@ -3138,14 +3077,11 @@ Plotting RSMs...
 <h3>Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-3-1-1-all-random-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_random_encoder_0ep_bs0_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_86_0.png" src="../../../_images/W3D3_Tutorial1_86_0.png"/>
 </div>
 </div>
 </div>
@@ -3227,7 +3163,7 @@ Plotting RSMs...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot the loss function of the random-encoder</span>
@@ -3278,20 +3214,6 @@ Plotting RSMs...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Training a classifier on the random encoder representations...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6aac5af5681e4874a1448a9552791686"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
-    Training accuracy: 46.02%
-    Testing accuracy: 44.67%
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_89_3.png" src="../../../_images/W3D3_Tutorial1_89_3.png"/>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">25</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
     <span class="n">Training</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">46.02</span><span class="o">%</span>
@@ -3328,7 +3250,7 @@ Training a classifier on the random encoder representations...
 <h4>Student Response<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3352,16 +3274,10 @@ Training a classifier on the random encoder representations...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f88f878017e444b191bf5cc1d12f6b6e"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "998c5fe36de541bfaabbe53d32d30b74"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifier trained with the random encoder appears to perform a bit</span>
@@ -3394,10 +3310,6 @@ Training a classifier on the random encoder representations...
 <div class="section" id="video-4-generative-models">
 <h2>Video 4: Generative models<a class="headerlink" href="#video-4-generative-models" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a1416f9a88c44818b1c2371a9002f074"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-4-1-examining-the-rsms-of-a-variational-autoencoder">
@@ -3410,22 +3322,13 @@ Training a classifier on the random encoder representations...
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
 <span class="c1"># Load VAE encoder and decoder pre-trained on the reconstruction and KLD tasks</span>
 <span class="n">vae_encoder</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s2">"vae"</span><span class="p">)</span>
 <span class="n">vae_decoder</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">load_vae_decoder</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Loading VAE encoder from 'neuromatch_ssl_tutorial/checkpoints/vae_encoder_300ep_bs500_seed2021.pth'.
-    =&gt; trained for 300 epochs (batch_size of 500) on the full dSprites subset dataset.
-Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_bs500_seed2021.pth'.
-   =&gt; trained for 300 epochs (batch_size of 500) on the full dSprites subset dataset.
 </pre></div>
 </div>
 </div>
@@ -3436,7 +3339,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <p><strong>Interactive Demo:</strong> Try plotting different images from the test dataset by selecting different <code class="docutils literal notranslate"><span class="pre">test_sampler.indices</span></code> values. (Original setting is <code class="docutils literal notranslate"><span class="pre">indices=test_sampler.indices[:10]</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">plot_vae_reconstructions</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">plot_vae_reconstructions</span><span class="p">(</span>
     <span class="n">vae_encoder</span><span class="p">,</span>  <span class="c1"># Pre-trained encoder</span>
     <span class="n">vae_decoder</span><span class="p">,</span>  <span class="c1"># Pre-trained decoder</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
@@ -3445,9 +3348,6 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
     <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_104_0.png" src="../../../_images/W3D3_Tutorial1_104_0.png"/>
 </div>
 </div>
 </div>
@@ -3458,7 +3358,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <p><strong>Note on reconstruction quality:</strong> This VAE network uses a basic VAE loss with a convolutional encoder (our core encoder network), and a deconvolutional decoder. This can lead to some blurriness in the reconstructed shapes which a more sophisticated VAE could overcome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The reconstructions preserve most of the latent features well:</span>
@@ -3486,7 +3386,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">random_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">],</span> <span class="c1"># Pass all three encoders</span>
@@ -3498,12 +3398,6 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
     <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting RSMs...
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_108_1.png" src="../../../_images/W3D3_Tutorial1_108_1.png"/>
 </div>
 </div>
 </div>
@@ -3518,7 +3412,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <h4>Student Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3542,16 +3436,10 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "159fba88e63a459f9befaa5c2e227b59"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "dafe31d1ef444f44a7cbafaa8bfa0b7f"}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The VAE RSMs show very little structure along the diagonal when sorted by `shape` or `orientation`,</span>
@@ -3591,14 +3479,11 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <h3>Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-4-1-2-all-vae-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_vae_encoder_300ep_bs500_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_114_0.png" src="../../../_images/W3D3_Tutorial1_114_0.png"/>
 </div>
 </div>
 </div>
@@ -3681,7 +3566,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">vae_train_loss</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot the train loss of the variational autoencoder (VAE)</span>
@@ -3731,20 +3616,6 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Training a classifier on the pre-trained VAE encoder representations...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6264fd1a43e2440d82cc049b5446af4a"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
-    Training accuracy: 46.48%
-    Testing accuracy: 45.75%
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_117_3.png" src="../../../_images/W3D3_Tutorial1_117_3.png"/>
-</div>
 </div>
 <p>The network loss training is fairly stable by 25 epochs, at which point the classifier performs at 45.75% accuracy on the test dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">25</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
@@ -3783,10 +3654,6 @@ Training a classifier on the pre-trained VAE encoder representations...
 <div class="section" id="video-5-modern-approach-in-self-supervised-learning">
 <h2>Video 5: Modern Approach in Self-supervised Learning<a class="headerlink" href="#video-5-modern-approach-in-self-supervised-learning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "05bb4016764d4c56a14a6986de8ef77d"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-5-1-examining-different-options-for-learning-invariant-representations">
@@ -3809,7 +3676,7 @@ Training a classifier on the pre-trained VAE encoder representations...
 <p><strong>Interactive Demo:</strong> Try out a few combinations of the transformation parameters, and visualize the pairs of transformations of the same image. (The original settings are <code class="docutils literal notranslate"><span class="pre">degrees=90</span></code>, <code class="docutils literal notranslate"><span class="pre">translate=(0.2,</span> <span class="pre">0.2)</span></code>, <code class="docutils literal notranslate"><span class="pre">scale=(0.8,</span> <span class="pre">1.2)</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -3833,12 +3700,6 @@ Training a classifier on the pre-trained VAE encoder representations...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-</pre></div>
-</div>
-<img alt="../../../_images/W3D3_Tutorial1_127_1.png" src="../../../_images/W3D3_Tutorial1_127_1.png"/>
-</div>
 </div>
 </div>
 </div>
@@ -3850,10 +3711,6 @@ Training a classifier on the pre-trained VAE encoder representations...
 <div class="section" id="video-6-data-transformations">
 <h2>Video 6: Data Transformations<a class="headerlink" href="#video-6-data-transformations" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d6ead8baf1254bfc8267091dfaca107a"}
-</script></div>
 </div>
 </div>
 <div class="section" id="section-6-1-using-image-transformations-to-learn-feature-invariant-representations-in-a-self-supervised-learning-ssl-network">
@@ -3973,7 +3830,7 @@ Training a classifier on the pre-trained VAE encoder representations...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">custom_simclr_contrastive_loss</span><span class="p">(</span><span class="n">proj_feat1</span><span class="p">,</span> <span class="n">proj_feat2</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Returns contrastive loss, given sets of projected features, with positive</span>
@@ -4045,11 +3902,6 @@ Training a classifier on the pre-trained VAE encoder representations...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>custom_simclr_contrastive_loss() is correctly implemented.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">custom_simclr_contrastive_loss</span><span class="p">()</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">implemented</span><span class="o">.</span>
 </pre></div>
@@ -4057,7 +3909,7 @@ Training a classifier on the pre-trained VAE encoder representations...
 <p>We can now train the SimCLR encoder with the custom contrastive loss for a few epochs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4081,14 +3933,6 @@ Training a classifier on the pre-trained VAE encoder representations...
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-Training a SimCLR encoder with the custom contrastive loss...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "33e047d3a6524a958d71b33dbee8698b"}
-</script></div>
 </div>
 <p>Given that self-supervised models typically require more training than supervised models, instead of fully pre-training a network here, we will load one that was <strong>pre-trained for 60 epochs</strong>. Again, the <strong>encoder shares the same architecture</strong> as the one used for the supervised, random and VAE examples above.</p>
 <p>The following code:</p>
@@ -4097,7 +3941,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load SimCLR encoder pre-trained on the contrastive loss</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load SimCLR encoder pre-trained on the contrastive loss</span>
 <span class="n">simclr_encoder</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s2">"simclr"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4111,7 +3955,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <p><strong>Interactive Demo:</strong> Try different numbers of epochs for which to train the classifier. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=10</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4189,7 +4033,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <p><em><strong>Note on dataset size:</strong> This biased sampling also significantly reduces the size of the training dataset available (approximately 6x). Thus, it would not be fair to compare our results here to those obtained previously in the tutorial, when we were using the full dataset. For this reason, <strong>as a control, we will also separately train the models with <code class="docutils literal notranslate"><span class="pre">train_sampler_bias_ctrl</span></code></strong>, a training dataset sampler that does not share the same sampling bias as <code class="docutils literal notranslate"><span class="pre">train_sampler_biased</span></code>, but can only sample as many samples as <code class="docutils literal notranslate"><span class="pre">train_sampler_biased</span></code> can.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4228,7 +4072,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting first 20 images from the biased training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting first 20 images from the biased training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="n">train_sampler_biased</span><span class="o">.</span><span class="n">indices</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"posX_quadrants"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4238,7 +4082,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <p>Again, the annotations are added, <strong>purely for visualization purposes</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting sample images from the bias control training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting sample images from the bias control training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="n">train_sampler_bias_ctrl</span><span class="o">.</span><span class="n">indices</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"posX_quadrants"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4246,7 +4090,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Function to run full training procedure</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Function to run full training procedure</span>
 <span class="c1"># @markdown (from initializing and pretraining encoders to training classifiers):</span>
 
 <span class="c1"># @markdown `full_training_procedure(train_sampler, test_sampler)`</span>
@@ -4317,7 +4161,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <p>Let us start with our <strong>unbiased control sampler</strong>, to get a sense of the classification performance levels we should expect with a dataset this size.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4335,7 +4179,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <p>Using the same parameters, we now repeat the analysis with the <strong>biased</strong> training data sampler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4359,7 +4203,7 @@ Training a SimCLR encoder with the custom contrastive loss...
 <strong>D.</strong> What are some methods we can employ to help mitigate the negative effects of biases in our training sets on our ability to learn good data representations with our models?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifier trained with the supervised encoder is most affected by the</span>
@@ -4434,7 +4278,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>D.</strong> What type of SSL task could be implemented for <strong>sequential or time series</strong> data. For example, you might wish to predict from electrical brain recordings what stage of sleep a person is in. How might you use the knowledge that sleep stages change slowly in time to construct a useful SSL task?</br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A.  A few examples of principles we can draw on to successfully apply</span>
@@ -4501,7 +4345,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>
@@ -4535,7 +4379,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">,</span> <span class="n">simclr_encoder</span><span class="p">],</span>
@@ -4559,7 +4403,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>E.</strong>  How might one modify the SimCLR encoder pre-training, for example, if the downstream task were to predict <code class="docutils literal notranslate"><span class="pre">orientation</span></code> instead of <code class="docutils literal notranslate"><span class="pre">shape</span></code>?</br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The RSMs for the pre-trained SimCLR encoder show that it</span>
@@ -4630,7 +4474,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-1-1-1-all-simclr-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_simclr_encoder_60ep_bs1000_deg90_trans0-2_scale0-8to1-2_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -4659,7 +4503,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4726,7 +4570,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">rsms_and_histogram_plot</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Function to plot Representational Similarity Matrices (RSMs) and Histograms</span>
@@ -4772,7 +4616,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>C.</strong>  What, intuitively, is the role of negative pairs in shaping the feature space that a contrastive model learns, and how does this role relate to the role of positive pairs?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. As seen in the much yellower RSMs of the SimCLR encoder trained with only</span>
@@ -4820,7 +4664,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-2-1-1-all-simclr-encoder-2-neg-pairs-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_simclr_encoder_2neg_60ep_bs1000_deg90_trans0-2_scale0-8to1-2_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -4834,7 +4678,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><em><strong>Interactive Demo:</strong> Try different numbers of epochs for which to train the classifier. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=25</span></code>.)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Training a classifier on the representations learned by the SimCLR "</span>
@@ -4917,7 +4761,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><em><strong>Interactive Demo:</strong> Set <code class="docutils literal notranslate"><span class="pre">labelled_fractions</span></code> argument to a list of fractions (4 to 6 values between 0.01 and 1.0) with which to train classifiers for each encoder.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4947,7 +4791,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>B.</strong> What might explain why different models are affected differently?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifiers trained on top of the random and pre-trained VAE encoders</span>
@@ -4988,13 +4832,26 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-3-1-1-classifier-performances-for-various-fractions-of-labelled-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"labelled_fractions.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-4-keynote">
+<h1>Bonus 4: Keynote<a class="headerlink" href="#bonus-4-keynote" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-ethics-emily-denton">
+<h2>Data Ethics, Emily Denton<a class="headerlink" href="#data-ethics-emily-denton" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+</div>
+<div class="section" id="abstractions-and-analogy-in-ai-melanie-mitchell">
+<h2>Abstractions and Analogy in AI, Melanie Mitchell<a class="headerlink" href="#abstractions-and-analogy-in-ai-melanie-mitchell" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove-input docutils container">
 </div>
 </div>
 </div>
