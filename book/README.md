@@ -9,7 +9,7 @@ The Github workflow is defined in `.github/workflows/publish-book.yaml`.
 
 In order to build the book locally, you will need to do the following:
 
-1. Clone instructor-course-content-dl, course-content-dl, and nmaci repos
+1. Clone instructor-course-content-dl repo
 
 `git clone https://github.com/NeuromatchAcademy/instructor-course-content-dl.git`
 
