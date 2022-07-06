@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1843,6 +1845,10 @@ By the end of the tutorial, you should be able to:</p>
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/m3kqy/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for all videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/m3kqy/download">here</a>.</p>
 </div>
@@ -1856,41 +1862,46 @@ By the end of the tutorial, you should be able to:</p>
 <h2>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># @title Install requirements
-from IPython.display import clear_output
-# @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install requirements</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="c1"># @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.</span>
 
-# @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.
-!pip install --upgrade pip --quiet
-!pip install imageio --quiet
-!pip install imageio-ffmpeg --quiet
-!pip install gym --quiet
-!pip install enum34 --quiet
-!pip install dm-env --quiet
-!pip install pandas --quiet
-!pip install grpcio==1.34.0 --quiet
-!pip install tensorflow --quiet
-!pip install typing --quiet
-!pip install einops --quiet
-!pip install dm-acme --quiet
-!pip install dm-acme[reverb] --quiet
-!pip install dm-acme[jax,tensorflow] --quiet
-!pip install dm-acme[envs] --quiet
-!pip install dm-env --quiet
+<span class="c1"># @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.</span>
+<span class="o">!</span>pip install --upgrade pip --quiet
+<span class="o">!</span>pip install imageio --quiet
+<span class="o">!</span>pip install imageio-ffmpeg --quiet
+<span class="o">!</span>pip install gym --quiet
+<span class="o">!</span>pip install enum34 --quiet
+<span class="o">!</span>pip install dm-env --quiet
+<span class="o">!</span>pip install pandas --quiet
+<span class="o">!</span>pip install <span class="nv">grpcio</span><span class="o">==</span><span class="m">1</span>.34.0 --quiet
+<span class="o">!</span>pip install tensorflow --quiet
+<span class="o">!</span>pip install typing --quiet
+<span class="o">!</span>pip install einops --quiet
+<span class="o">!</span>pip install dm-acme --quiet
+<span class="o">!</span>pip install dm-acme<span class="o">[</span>reverb<span class="o">]</span> --quiet
+<span class="o">!</span>pip install dm-acme<span class="o">[</span>jax,tensorflow<span class="o">]</span> --quiet
+<span class="o">!</span>pip install dm-acme<span class="o">[</span>envs<span class="o">]</span> --quiet
+<span class="o">!</span>pip install dm-env --quiet
 
-!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-from evaltools.airtable import AirtableForm
+<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
 
-# Generate airtable form
-atform = AirtableForm('appn7VdPRseSoMXEG','W3D2_T1','https://portal.neuromatchacademy.org/api/redirect/to/3e77471d-4de0-4e43-a026-9cfb603b5197')
-clear_output()
+<span class="c1"># Generate airtable form</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D2_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/3e77471d-4de0-4e43-a026-9cfb603b5197'</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
 <span class="kn">import</span> <span class="nn">gym</span>
 <span class="kn">import</span> <span class="nn">enum</span>
 <span class="kn">import</span> <span class="nn">copy</span>
@@ -1933,10 +1944,10 @@ clear_output()
 <h2>Figure settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>  <span class="c1"># Interactive display</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle"</span><span class="p">)</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Blues'</span><span class="p">)</span>
 </pre></div>
@@ -1949,7 +1960,7 @@ clear_output()
 <p>Implement helpers for value visualisation</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper Functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper Functions</span>
 <span class="c1"># @markdown Implement helpers for value visualisation</span>
 
 <span class="n">map_from_action_to_subplot</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="n">a</span><span class="p">]</span>
@@ -2041,7 +2052,7 @@ clear_output()
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -2108,7 +2119,7 @@ clear_output()
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 <span class="c1"># especially if torch modules used.</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
@@ -2138,7 +2149,7 @@ clear_output()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
 </pre></div>
@@ -2160,7 +2171,7 @@ clear_output()
 <h4><em>Double-click</em> to inspect the contents of this cell.<a class="headerlink" href="#double-click-to-inspect-the-contents-of-this-cell" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Implement GridWorld</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Implement GridWorld</span>
 
 <span class="c1"># @markdown ##### *Double-click* to inspect the contents of this cell.</span>
 
@@ -2665,7 +2676,7 @@ clear_output()
 <h3>Visualise GridWorlds<a class="headerlink" href="#visualise-gridworlds" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise GridWorlds</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise GridWorlds</span>
 
 <span class="c1"># Instantiate two tabular environments, a simple task, and one that involves</span>
 <span class="c1"># the avoidance of an obstacle.</span>
@@ -2694,7 +2705,7 @@ clear_output()
 <h4><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">setup_environment</span></code> is implemented in the same cell as GridWorld.<a class="headerlink" href="#note-setup-environment-is-implemented-in-the-same-cell-as-gridworld" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Look at `environment_spec`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Look at `environment_spec`</span>
 
 <span class="c1"># @markdown ##### **Note:** `setup_environment` is implemented in the same cell as GridWorld.</span>
 <span class="n">environment</span><span class="p">,</span> <span class="n">environment_spec</span> <span class="o">=</span> <span class="n">setup_environment</span><span class="p">(</span><span class="n">simple_grid</span><span class="p">)</span>
@@ -2710,7 +2721,7 @@ clear_output()
 <p>We first set the environment to its initial state by calling the <code class="docutils literal notranslate"><span class="pre">reset()</span></code> method which returns the first observation and resets the agent to the starting location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 <span class="n">environment</span><span class="o">.</span><span class="n">plot_state</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2726,7 +2737,7 @@ clear_output()
 <h3>Pick an action and see the state changing<a class="headerlink" href="#pick-an-action-and-see-the-state-changing" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Pick an action and see the state changing</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Pick an action and see the state changing</span>
 <span class="n">action</span> <span class="o">=</span> <span class="s2">"down"</span> <span class="c1">#@param ["up", "right", "down", "left"] {type:"string"}</span>
 
 <span class="n">action_int</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'up'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -2745,7 +2756,7 @@ clear_output()
 <h3>Run loop<a class="headerlink" href="#run-loop" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Run loop</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Run loop</span>
 
 <span class="c1"># @markdown ##### This function runs an agent in the environment for a number of episodes, allowing it to learn.</span>
 
@@ -2857,7 +2868,7 @@ clear_output()
 <h3>Implement the evaluation loop<a class="headerlink" href="#implement-the-evaluation-loop" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Implement the evaluation loop</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Implement the evaluation loop</span>
 
 <span class="c1"># @markdown ##### This function runs the agent in the environment for a number of episodes, without allowing it to learn, in order to evaluate it.</span>
 
@@ -2958,7 +2969,7 @@ clear_output()
 <p>In the next cell we will show how to implement a simple replay buffer. This can be as simple as a python list containing transition data. In more complicated scenarios we might want to have a more performance-tuned variant, we might have to be more concerned about how large replay is and what to do when its full, and we might want to sample from replay in different ways. But a simple python list can go a surprisingly long way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple replay buffer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple replay buffer</span>
 
 <span class="c1"># Create a convenient container for the SARSA tuples required by deep RL agents.</span>
 <span class="n">Transitions</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span>
@@ -3015,8 +3026,8 @@ In other words, the value <span class="math notranslate nohighlight">\(\color{gr
 <p>When introducing function approximations, and neural networks in particular, we need to have a loss to optimize. But looking back at the tabular setting above, you can see that we already have some notion of error: the <strong>TD error</strong>.</p>
 <p>By training our neural network to output values such that the <em>TD error is minimized</em>, we will also satisfy the Bellman Optimality Equation, which is a good sufficient condition to enforce, to obtain an optimal policy.
 Thanks to automatic differentiation, we can just write the TD error as a loss, e.g., with an <span class="math notranslate nohighlight">\(\ell^2\)</span> loss, but others would work too:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cefc78ef-59b2-42b9-bf0e-3155f0d55c20">
-<span class="eqno">(119)<a class="headerlink" href="#equation-cefc78ef-59b2-42b9-bf0e-3155f0d55c20" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-30347158-ab9a-49ed-86d1-9075e1f660f6">
+<span class="eqno">(119)<a class="headerlink" href="#equation-30347158-ab9a-49ed-86d1-9075e1f660f6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L(\color{green}w) = \mathbb{E}\left[ \left( \color{green}{r} + \gamma \max_\color{blue}{a'} \color{green}{Q_w}(\color{red}{s'}, \color{blue}{a'}) âˆ’ \color{green}{Q_w}(\color{red}{s}, \color{blue}{a})  \right)^2\right].
 \end{equation}\]</div>
 <p>Then we can compute the gradient with respect to the parameters of the neural network and improve our Q-value approximation incrementally.</p>
@@ -3196,7 +3207,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="c1"># Create a convenient container for the SARS tuples required by NFQ.</span>
 <span class="n">Transitions</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span>
     <span class="s1">'Transitions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'action'</span><span class="p">,</span> <span class="s1">'reward'</span><span class="p">,</span> <span class="s1">'discount'</span><span class="p">,</span> <span class="s1">'next_state'</span><span class="p">])</span>
@@ -3362,7 +3373,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h4>Training the NFQ Agent<a class="headerlink" href="#training-the-nfq-agent" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Training the NFQ Agent</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Training the NFQ Agent</span>
 <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># @param {type:"number"}</span>
 
 <span class="n">max_episode_length</span> <span class="o">=</span> <span class="mi">200</span>
@@ -3407,7 +3418,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h5>Temporarily change epsilon to be more greedy; remember to change it back.<a class="headerlink" href="#temporarily-change-epsilon-to-be-more-greedy-remember-to-change-it-back" title="Permalink to this headline">¶</a></h5>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Evaluating the agent (set $\epsilon=0$)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Evaluating the agent (set $\epsilon=0$)</span>
 <span class="c1"># @markdown ##### Temporarily change epsilon to be more greedy; remember to change it back.</span>
 
 <span class="n">agent</span><span class="o">.</span><span class="n">_epsilon</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -3432,7 +3443,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h5>Evaluate the policy for every state, similar to tabular agents above.<a class="headerlink" href="#evaluate-the-policy-for-every-state-similar-to-tabular-agents-above" title="Permalink to this headline">¶</a></h5>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise the learned $Q$ values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise the learned $Q$ values</span>
 
 <span class="c1"># @markdown ##### Evaluate the policy for every state, similar to tabular agents above.</span>
 
@@ -3464,7 +3475,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h5>Notice that the agent’s behavior policy has a lot more randomness, due to the high <span class="math notranslate nohighlight">\(\epsilon\)</span>. However, the greedy policy that’s learned is optimal.<a class="headerlink" href="#notice-that-the-agent-s-behavior-policy-has-a-lot-more-randomness-due-to-the-high-epsilon-however-the-greedy-policy-that-s-learned-is-optimal" title="Permalink to this headline">¶</a></h5>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Compare the greedy policy with the agent's policy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Compare the greedy policy with the agent's policy</span>
 
 <span class="c1"># @markdown ##### Notice that the agent's behavior policy has a lot more randomness, due to the high $\epsilon$. However, the greedy policy that's learned is optimal.</span>
 
@@ -3678,7 +3689,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">DQN</span><span class="p">(</span><span class="n">acme</span><span class="o">.</span><span class="n">Actor</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Implementation of a Deep Q Network Agent</span>
@@ -3856,7 +3867,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h4>Train and evaluate the DQN agent<a class="headerlink" href="#train-and-evaluate-the-dqn-agent" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Train and evaluate the DQN agent</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Train and evaluate the DQN agent</span>
 
 <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.25</span>  <span class="c1"># @param {type: "number"}</span>
 <span class="n">num_episodes</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># @param {type: "integer"}</span>
@@ -3916,7 +3927,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h5>Evaluate the policy for every state, similar to tabular agents above.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise the learned $Q$ values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Visualise the learned $Q$ values</span>
 <span class="c1"># @markdown ##### Evaluate the policy for every state, similar to tabular agents above.</span>
 
 <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">_layout_dims</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -3940,7 +3951,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h4>Compare the greedy policy with the agent’s policy<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Compare the greedy policy with the agent's policy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Compare the greedy policy with the agent's policy</span>
 
 <span class="n">environment</span><span class="o">.</span><span class="n">plot_greedy_policy</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="o">-</span><span class="mf">.08</span><span class="p">,</span> <span class="mf">.95</span><span class="p">,</span> <span class="s2">"Greedy policy using the learnt Q-values"</span><span class="p">)</span>
@@ -3977,7 +3988,7 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <h3>Make a CartPole environment, <code class="docutils literal notranslate"><span class="pre">gym.make('CartPole-v1')</span></code><a class="headerlink" href="#make-a-cartpole-environment-gym-make-cartpole-v1" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Make a CartPole environment, `gym.make('CartPole-v1')`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Make a CartPole environment, `gym.make('CartPole-v1')`</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">'CartPole-v1'</span><span class="p">)</span>
 
 <span class="c1"># Set seeds</span>
@@ -3992,8 +4003,8 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <div class="section" id="section-3-1-policy-gradient">
 <h2>Section 3.1: Policy gradient<a class="headerlink" href="#section-3-1-policy-gradient" title="Permalink to this headline">¶</a></h2>
 <p>Now we will turn to policy gradient methods. Rather than defining the policy in terms of a value function, i.e. <span class="math notranslate nohighlight">\(\color{blue}\pi(\color{red}s) = \arg\max_{\color{blue}a}\color{green}Q(\color{red}s, \color{blue}a)\)</span>, we will directly parameterize the policy and write it as the distribution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e0753d9-75f5-4299-a28a-a6ef2334ba00">
-<span class="eqno">(120)<a class="headerlink" href="#equation-7e0753d9-75f5-4299-a28a-a6ef2334ba00" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d1a40478-739e-4f8f-90a7-6bcd7a700147">
+<span class="eqno">(120)<a class="headerlink" href="#equation-d1a40478-739e-4f8f-90a7-6bcd7a700147" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{blue}a_t \sim \color{blue}\pi_{\theta}(\color{blue}a_t|\color{red}s_t).
 \end{equation}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\theta\)</span> represent the parameters of the policy. We will update the policy parameters using gradient ascent to <strong>maximize</strong> expected future reward.</p>
@@ -4003,8 +4014,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <strong>basic idea</strong> is to use probabilistic action choice. If the reward at the end turns out to be high, we make <strong>all</strong> actions in this sequence <strong>more likely</strong> (otherwise, we do the opposite).</p>
 <p>This strategy could reinforce “bad” actions as well, however they will turn out to be part of trajectories with low reward and will likely not get accentuated.</p>
 <p>From the lectures, we know that we need to compute</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc9a6da7-3054-4a17-898a-b719f17d89ff">
-<span class="eqno">(121)<a class="headerlink" href="#equation-bc9a6da7-3054-4a17-898a-b719f17d89ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3a7ccaac-8639-4666-bf38-40db6f520f22">
+<span class="eqno">(121)<a class="headerlink" href="#equation-3a7ccaac-8639-4666-bf38-40db6f520f22" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4013,8 +4024,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\color{green} G_t\)</span> is the sum over future rewards from time <span class="math notranslate nohighlight">\(t\)</span>, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-185e5788-6c10-4c86-8863-134cfc53c3e8">
-<span class="eqno">(122)<a class="headerlink" href="#equation-185e5788-6c10-4c86-8863-134cfc53c3e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5dc77096-1735-4a18-914a-c5d4e6f93bff">
+<span class="eqno">(122)<a class="headerlink" href="#equation-5dc77096-1735-4a18-914a-c5d4e6f93bff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4029,7 +4040,7 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>Only used in Policy Gradient Method:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set the hyperparameters for Policy Gradient</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set the hyperparameters for Policy Gradient</span>
 
 <span class="n">num_steps</span> <span class="o">=</span> <span class="mi">300</span>
 
@@ -4106,7 +4117,7 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">PolicyGradientNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Defines Policy Gradient Network with the following attributes:</span>
@@ -4161,7 +4172,7 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>Now let’s create an instance of the network we have defined and use Adam as the optimizer using the learning_rate as hyperparameter already defined above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">policy</span> <span class="o">=</span> <span class="n">PolicyGradientNet</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">policy</span> <span class="o">=</span> <span class="n">PolicyGradientNet</span><span class="p">()</span>
 <span class="n">pg_optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4173,7 +4184,7 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <code class="docutils literal notranslate"><span class="pre">select_action()</span></code> function chooses an action based on our policy probability distribution using the PyTorch distributions package.  Our policy returns a probability for each possible action in our action space (move left or move right) as an array of length two such as [0.7, 0.3].  We then choose an action based on these probabilities, record our history, and return our action.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">select_action</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">select_action</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Select an action (0 or 1) by running policy model and choosing based on the probabilities in state;</span>
 
@@ -4208,8 +4219,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <h4>Reward <span class="math notranslate nohighlight">\(G_t\)</span><a class="headerlink" href="#reward-g-t" title="Permalink to this headline">¶</a></h4>
 <p>We update our policy by taking a sample of the action value function <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> by playing through episodes of the game.  <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> is defined as the expected return by taking action <span class="math notranslate nohighlight">\(a\)</span> in state <span class="math notranslate nohighlight">\(s\)</span> following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>We know that for every step the simulation continues we receive a reward of 1.  We can use this to calculate the policy gradient at each time step, where <span class="math notranslate nohighlight">\(r\)</span> is the reward for a particular state-action pair.  Rather than using the instantaneous reward, <span class="math notranslate nohighlight">\(r\)</span>, we instead use a long term reward <span class="math notranslate nohighlight">\( v_{t} \)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is the discounted sum of all future rewards for the length of the episode.   <span class="math notranslate nohighlight">\(v_{t}\)</span> is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bb5b4ba-abda-48ed-ad18-8f38e818fbde">
-<span class="eqno">(123)<a class="headerlink" href="#equation-0bb5b4ba-abda-48ed-ad18-8f38e818fbde" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-879162a3-d425-4c07-a92d-dd6514c21f20">
+<span class="eqno">(123)<a class="headerlink" href="#equation-879162a3-d425-4c07-a92d-dd6514c21f20" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4220,15 +4231,15 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="update-policy-equation">
 <h4>Update Policy: equation<a class="headerlink" href="#update-policy-equation" title="Permalink to this headline">¶</a></h4>
 <p>After each episode we apply Monte-Carlo Policy Gradient to improve our policy according to the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-746cac2a-8bd3-46de-ae48-7d20e0138b95">
-<span class="eqno">(124)<a class="headerlink" href="#equation-746cac2a-8bd3-46de-ae48-7d20e0138b95" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-05229710-7255-42ef-a7aa-c73b941d7baa">
+<span class="eqno">(124)<a class="headerlink" href="#equation-05229710-7255-42ef-a7aa-c73b941d7baa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta\theta_t = \alpha\nabla_\theta \, \log \pi_\theta (s_t,a_t)G_t
 \end{equation}\]</div>
 <p>We will then feed our policy history multiplied by our rewards to our optimizer and update the weights of our neural network using stochastic gradient <strong>ascent</strong>.  This should increase the likelihood of actions that got our agent a larger reward.</p>
 <p>The following function <code class="docutils literal notranslate"><span class="pre">update_policy</span></code> updates the network weights and therefore the policy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_policy</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_policy</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to update network weights and policy</span>
 
@@ -4281,7 +4292,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <p>This is our main policy training loop. For each step in a training episode, we choose an action, take a step through the environment, and record the resulting new state and reward. We call <code class="docutils literal notranslate"><span class="pre">update_policy()</span></code> at the end of each episode to feed the episode history to our neural network and improve our policy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">policy_gradient_train</span><span class="p">(</span><span class="n">episodes</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">policy_gradient_train</span><span class="p">(</span><span class="n">episodes</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to train policy gradient network</span>
 
@@ -4329,7 +4340,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h3>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="mi">500</span>   <span class="c1"># @param {type:"integer"}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="mi">500</span>   <span class="c1"># @param {type:"integer"}</span>
 <span class="n">policy_gradient_train</span><span class="p">(</span><span class="n">episodes</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4342,7 +4353,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h4>Plot the training performance for policy gradient<a class="headerlink" href="#plot-the-training-performance-for-policy-gradient" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plot the training performance for policy gradient</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plot the training performance for policy gradient</span>
 
 <span class="k">def</span> <span class="nf">plot_policy_gradient_training</span><span class="p">():</span>
   <span class="sd">"""</span>
@@ -4397,8 +4408,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="section-3-2-actor-critic">
 <h2>Section 3.2: Actor-critic<a class="headerlink" href="#section-3-2-actor-critic" title="Permalink to this headline">¶</a></h2>
 <p>Recall the policy gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d542dfe-5195-40bd-bf46-44f0502d5428">
-<span class="eqno">(125)<a class="headerlink" href="#equation-0d542dfe-5195-40bd-bf46-44f0502d5428" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-699cff01-c850-4a3a-ab9e-d857f51967e0">
+<span class="eqno">(125)<a class="headerlink" href="#equation-699cff01-c850-4a3a-ab9e-d857f51967e0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4408,8 +4419,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 \end{equation}\]</div>
 <p>The policy parameters are updated using Monte Carlo technique and uses random samples. This introduces high variability in log probabilities and cumulative reward values. This leads to noisy gradients and can cause unstable learning.</p>
 <p>One way to reduce variance and increase stability is subtracting the cumulative reward by a baseline:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1be74935-b41b-4db4-bd2e-70129fe21fef">
-<span class="eqno">(126)<a class="headerlink" href="#equation-1be74935-b41b-4db4-bd2e-70129fe21fef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4d704a01-a875-4902-8118-4ff5a685dfa7">
+<span class="eqno">(126)<a class="headerlink" href="#equation-4d704a01-a875-4902-8118-4ff5a685dfa7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4428,7 +4439,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h3>Set the hyperparameters for Actor Critic<a class="headerlink" href="#set-the-hyperparameters-for-actor-critic" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set the hyperparameters for Actor Critic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set the hyperparameters for Actor Critic</span>
 
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># @param {type:"number"}</span>
 <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.99</span>  <span class="c1"># @param {type:"number"}</span>
@@ -4447,7 +4458,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h3>Actor Critic Network<a class="headerlink" href="#actor-critic-network" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ActorCriticNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ActorCriticNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Build Actor Critic Network</span>
 <span class="sd">  """</span>
@@ -4510,7 +4521,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h3>Training<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">actor_critic_train</span><span class="p">(</span><span class="n">episodes</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">actor_critic_train</span><span class="p">(</span><span class="n">episodes</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to train Actor Critic Network</span>
 
@@ -4593,7 +4604,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h3>Run the model<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="mi">500</span>   <span class="c1"># @param {type:"integer"}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="mi">500</span>   <span class="c1"># @param {type:"integer"}</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
@@ -4615,7 +4626,7 @@ Next we scale our reward vector by substracting the mean from each element and s
 <h4>Plot the training performance for Actor Critic<a class="headerlink" href="#plot-the-training-performance-for-actor-critic" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plot the training performance for Actor Critic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plot the training performance for Actor Critic</span>
 
 
 <span class="k">def</span> <span class="nf">plot_actor_critic_training</span><span class="p">(</span><span class="n">actor_critic</span><span class="p">,</span> <span class="n">episodes</span><span class="p">):</span>
@@ -4699,7 +4710,7 @@ allotted to each, or address them all at once, and allow for a more natural
 conversation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 <span class="sd">"""</span>
 <span class="sd">Encourage students to consider different examples of RL in the real</span>
 <span class="sd">world that have safety issues that don't necessarily come up with supervised</span>
@@ -4733,7 +4744,7 @@ conversation.</p>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>

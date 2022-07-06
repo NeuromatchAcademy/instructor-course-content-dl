@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
@@ -1703,6 +1705,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/3zn9w/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for the videos in the tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/3zn9w/download">here</a>.</p>
 </div>
@@ -1714,21 +1720,21 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
-!pip install coloredlogs --quiet
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
+<span class="o">!</span>pip install coloredlogs --quiet
 
-!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-from evaltools.airtable import AirtableForm
+<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
 
-# generate airtable form
-atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchacademy.org/api/redirect/to/2baacd95-3fb5-4399-bf95-bbe5de255d2b')
+<span class="c1"># generate airtable form</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D3_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/2baacd95-3fb5-4399-bf95-bbe5de255d2b'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -1758,7 +1764,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -1825,7 +1831,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 <span class="c1"># especially if torch modules used.</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
@@ -1855,9 +1861,15 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
 </pre></div>
 </div>
 </div>
@@ -1867,7 +1879,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 <h2>Download the modules<a class="headerlink" href="#download-the-modules" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Download the modules</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Download the modules</span>
 
 <span class="c1"># @markdown Run this cell!</span>
 
@@ -1912,11 +1924,20 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and unzipping the file... Please wait.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed.
+Add the nma_rl_games in the path and import the modules.
+</pre></div>
+</div>
+</div>
 </div>
 <p>The hyperparameters used throughout the notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="n">dotdict</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="n">dotdict</span><span class="p">({</span>
     <span class="s1">'numIters'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>            <span class="c1"># In training, number of iterations = 1000 and num of episodes = 100</span>
     <span class="s1">'numEps'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>              <span class="c1"># Number of complete self-play games to simulate during a new iteration.</span>
     <span class="s1">'tempThreshold'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>      <span class="c1"># To control exploration and exploitation</span>
@@ -1954,6 +1975,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 <div class="section" id="video-0-introduction">
 <h2>Video 0: Introduction<a class="headerlink" href="#video-0-introduction" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "a9a35a9f35d240319c1c01dfc580a738"}
+</script></div>
 </div>
 </div>
 </div>
@@ -1964,6 +1989,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchac
 <div class="section" id="video-1-a-game-loop-for-rl">
 <h2>Video 1: A game loop for RL<a class="headerlink" href="#video-1-a-game-loop-for-rl" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "fc7bcf7526574f2c869616ba39a91d4b"}
+</script></div>
 </div>
 <div class="section" id="introduction-to-othellogame">
 <h3>Introduction to OthelloGame<a class="headerlink" href="#introduction-to-othellogame" title="Permalink to this headline">¶</a></h3>
@@ -1993,7 +2022,7 @@ When both players can not make a valid move the game ends.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OthelloGame</span><span class="p">(</span><span class="n">Game</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OthelloGame</span><span class="p">(</span><span class="n">Game</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Instantiate Othello Game</span>
 <span class="sd">  """</span>
@@ -2076,7 +2105,7 @@ When both players can not make a valid move the game ends.</p>
       <span class="k">return</span> <span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="o">-</span><span class="n">player</span><span class="p">)</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">Board</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
     <span class="n">b</span><span class="o">.</span><span class="n">pieces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
-    <span class="n">move</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">action</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">),</span> <span class="n">action</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">move</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">action</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">),</span> <span class="n">action</span><span class="o">%</span><span class="k">self</span>.n)
     <span class="n">b</span><span class="o">.</span><span class="n">execute_move</span><span class="p">(</span><span class="n">move</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">pieces</span><span class="p">,</span> <span class="o">-</span><span class="n">player</span><span class="p">)</span>
 
@@ -2212,7 +2241,7 @@ When both players can not make a valid move the game ends.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">RandomPlayer</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Simulates Random Player</span>
@@ -2252,7 +2281,7 @@ When both players can not make a valid move the game ends.</p>
 <h2>Section 1.2. Initiate the game board<a class="headerlink" href="#section-1-2-initiate-the-game-board" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the board</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the board</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">getInitBoard</span><span class="p">()</span>
@@ -2260,14 +2289,34 @@ When both players can not make a valid move the game ends.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+   0 1 2 3 4 5 
+-----------------------
+0 |- - - - - - |
+1 |- - - - - - |
+2 |- - X O - - |
+3 |- - O X - - |
+4 |- - - - - - |
+5 |- - - - - - |
+-----------------------
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Observe the game board size</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Observe the game board size</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Board size = </span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">getBoardSize</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="c1"># Observe the action size</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Action size = </span><span class="si">{</span><span class="n">game</span><span class="o">.</span><span class="n">getActionSize</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Board size = (6, 6)
+Action size = 37
 </pre></div>
 </div>
 </div>
@@ -2277,7 +2326,7 @@ When both players can not make a valid move the game ends.</p>
 <h2>Section 1.3. Create two random agents to play against each other<a class="headerlink" href="#section-1-3-create-two-random-agents-to-play-against-each-other" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the random player</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the random player</span>
 <span class="n">player1</span> <span class="o">=</span> <span class="n">RandomPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>  <span class="c1"># Player 1 is a random player</span>
 <span class="n">player2</span> <span class="o">=</span> <span class="n">RandomPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>  <span class="c1"># Player 2 is a random player</span>
 
@@ -2292,6 +2341,14 @@ When both players can not make a valid move the game ends.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11, 9, 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -2301,10 +2358,17 @@ When both players can not make a valid move the game ends.</p>
 <h2>Section 1.4. Compute win rate for the random player (player 1)<a class="headerlink" href="#section-1-4-compute-win-rate-for-the-random-player-player-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of games won by player1 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of games won by player1 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
       <span class="sa">f</span><span class="s2">"Number of games won by player2 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games"</span><span class="p">)</span>
 <span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Win rate for player1 over 20 games: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">win_rate_player1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of games won by player1 = 11, Number of games won by player2 = 9 out of 20 games
+
+Win rate for player1 over 20 games: 55.0%
 </pre></div>
 </div>
 </div>
@@ -2329,13 +2393,17 @@ When both players can not make a valid move the game ends.</p>
 <div class="section" id="video-2-train-a-value-function">
 <h2>Video 2: Train a value function<a class="headerlink" href="#video-2-train-a-value-function" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "06b66bff60d347fc8e5f65798e53aca6"}
+</script></div>
 </div>
 </div>
 <div class="section" id="section-2-1-load-expert-data">
 <h2>Section 2.1. Load expert data<a class="headerlink" href="#section-2-1-load-expert-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loadTrainExamples</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loadTrainExamples</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to load Training examples</span>
 
@@ -2369,8 +2437,16 @@ When both players can not make a valid move the game ends.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/data/"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/data/"</span>
 <span class="n">loaded_games</span> <span class="o">=</span> <span class="n">loadTrainExamples</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'checkpoint_1.pth.tar'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File with train examples found. Loading it...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading done!
 </pre></div>
 </div>
 </div>
@@ -2474,7 +2550,7 @@ When both players can not make a valid move the game ends.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">OthelloNNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Instantiate Othello Neural Net with following configuration</span>
@@ -2737,7 +2813,7 @@ When both players can not make a valid move the game ends.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">ValueNetwork</span><span class="p">(</span><span class="n">NeuralNet</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Initiates the Value Network</span>
@@ -2898,7 +2974,7 @@ When both players can not make a valid move the game ends.</p>
 <p><strong>Important:</strong> Run this cell ONLY if you do not have access to the pretrained models in the <code class="docutils literal notranslate"><span class="pre">rl_for_games</span></code> repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'nma_rl_games/alpha-zero/pretrained_models/models/'</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'nma_rl_games/alpha-zero/pretrained_models/models/'</span><span class="p">):</span>
   <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
   <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
   <span class="n">vnet</span> <span class="o">=</span> <span class="n">ValueNetwork</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
@@ -2924,18 +3000,27 @@ Show that doing so beats the random player</p></li>
 <div class="section" id="video-3-play-games-using-a-value-function">
 <h2>Video 3: Play games using a value function<a class="headerlink" href="#video-3-play-games-using-a-value-function" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "bc3c3f30a33243f68c9e10c465d037ca"}
+</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-3-value-based-player">
 <h2>Coding Exercise 3: Value-based player<a class="headerlink" href="#coding-exercise-3-value-based-player" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'ValueNetwork.pth.tar'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'ValueNetwork.pth.tar'</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/models/"</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">vnet</span> <span class="o">=</span> <span class="n">ValueNetwork</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
 <span class="n">vnet</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">model_save_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
 </pre></div>
 </div>
 </div>
@@ -3024,7 +3109,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">ValueBasedPlayer</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Simulate Value Based Player</span>
@@ -3095,6 +3180,14 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(14, 6, 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -3102,10 +3195,17 @@ Show that doing so beats the random player</p></li>
 <p><strong>Result of pitting a value-based player against a random player</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of games won by player1 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of games won by player1 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
       <span class="sa">f</span><span class="s2">"Number of games won by player2 = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, out of </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games"</span><span class="p">)</span>
 <span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span> <span class="c1"># result[0] is the number of times that player 1 wins</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Win rate for player1 over </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">win_rate_player1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of games won by player1 = 14, Number of games won by player2 = 6, out of 20 games
+
+Win rate for player1 over 20 games: 70.0%
 </pre></div>
 </div>
 </div>
@@ -3129,6 +3229,10 @@ Show that doing so beats the random player</p></li>
 <div class="section" id="video-4-train-a-policy-network">
 <h2>Video 4: Train a policy network<a class="headerlink" href="#video-4-train-a-policy-network" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "ce5f0333dd2f4f5ca4441bcca1167e26"}
+</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-4-implement-policynetwork">
@@ -3303,7 +3407,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">PolicyNetwork</span><span class="p">(</span><span class="n">NeuralNet</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Initialise Policy Network</span>
@@ -3468,7 +3572,7 @@ Show that doing so beats the random player</p></li>
 <p><strong>Important:</strong> Only run this cell if you do not have access to the pretrained models in the <code class="docutils literal notranslate"><span class="pre">rl_for_games</span></code> repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'nma_rl_games/alpha-zero/pretrained_models/models/'</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'nma_rl_games/alpha-zero/pretrained_models/models/'</span><span class="p">):</span>
   <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
   <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
   <span class="n">pnet</span> <span class="o">=</span> <span class="n">PolicyNetwork</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
@@ -3494,18 +3598,27 @@ Show that doing so beats the random player</p></li>
 <div class="section" id="video-5-play-games-using-a-policy-network">
 <h2>Video 5: Play games using a policy network<a class="headerlink" href="#video-5-play-games-using-a-policy-network" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "b41ea96307e34f148a6613669de46406"}
+</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-5-implement-the-policybasedplayer">
 <h2>Coding Exercise 5: Implement the <code class="docutils literal notranslate"><span class="pre">PolicyBasedPlayer</span></code><a class="headerlink" href="#coding-exercise-5-implement-the-policybasedplayer" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'PolicyNetwork.pth.tar'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'PolicyNetwork.pth.tar'</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/models/"</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">pnet</span> <span class="o">=</span> <span class="n">PolicyNetwork</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
 <span class="n">pnet</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">model_save_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
 </pre></div>
 </div>
 </div>
@@ -3598,7 +3711,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">PolicyBasedPlayer</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Simulate Policy Based Player</span>
@@ -3677,15 +3790,30 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16, 4, 0)
+
+Win rate for player1 over 20 games: 80.0%
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'PolicyNetwork.pth.tar'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_save_name</span> <span class="o">=</span> <span class="s1">'PolicyNetwork.pth.tar'</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/models/"</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">pnet</span> <span class="o">=</span> <span class="n">PolicyNetwork</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
 <span class="n">pnet</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">model_save_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
 </pre></div>
 </div>
 </div>
@@ -3698,7 +3826,7 @@ Show that doing so beats the random player</p></li>
 <p>There’s often randomness in the results as we are running the players for a low number of games (only 20 games due compute + time costs). So, when students are running the cells they might not get the expected result. To better measure the strength of players you can run more games!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">num_games</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">player1</span> <span class="o">=</span> <span class="n">PolicyBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">pnet</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>
@@ -3709,11 +3837,24 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(19, 1, 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Win rate for player1 over </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">win_rate_player1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Win rate for player1 over 20 games: 95.0%
 </pre></div>
 </div>
 </div>
@@ -3726,7 +3867,7 @@ Show that doing so beats the random player</p></li>
 <h3>Compare greedy policy based player versus value based player<a class="headerlink" href="#compare-greedy-policy-based-player-versus-value-based-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">num_games</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">player1</span> <span class="o">=</span> <span class="n">PolicyBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">pnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>
@@ -3737,11 +3878,24 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11, 9, 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Win rate for player 1 over </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">win_rate_player1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Win rate for player 1 over 20 games: 55.0%
 </pre></div>
 </div>
 </div>
@@ -3754,7 +3908,7 @@ Show that doing so beats the random player</p></li>
 <h3>Compare greedy policy based player versus sample-based policy player<a class="headerlink" href="#compare-greedy-policy-based-player-versus-sample-based-policy-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">num_games</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">game</span> <span class="o">=</span> <span class="n">OthelloGame</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">player1</span> <span class="o">=</span> <span class="n">PolicyBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">pnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span> <span class="c1"># greedy player</span>
@@ -3765,11 +3919,24 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 10, 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">win_rate_player1</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">num_games</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Win rate for player 1 over </span><span class="si">{</span><span class="n">num_games</span><span class="si">}</span><span class="s2"> games: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">win_rate_player1</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Win rate for player 1 over 20 games: 50.0%
 </pre></div>
 </div>
 </div>
@@ -3793,6 +3960,10 @@ Show that doing so beats the random player</p></li>
 <div class="section" id="video-6-play-using-monte-carlo-rollouts">
 <h2>Video 6: Play using Monte-Carlo rollouts<a class="headerlink" href="#video-6-play-using-monte-carlo-rollouts" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "fb57fd3af4a94d2db4490fe72aebc9c5"}
+</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-6-montecarlo">
@@ -3894,7 +4065,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">MonteCarlo</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Implementation of Monte Carlo Algorithm</span>
@@ -3995,6 +4166,10 @@ Show that doing so beats the random player</p></li>
 <div class="section" id="video-7-play-with-planning">
 <h2>Video 7: Play with planning<a class="headerlink" href="#video-7-play-with-planning" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "a87fb17aad02431abd0f9b59696b93c4"}
+</script></div>
 </div>
 </div>
 <div class="section" id="coding-exercise-7-monte-carlo-simulations">
@@ -4005,7 +4180,7 @@ Show that doing so beats the random player</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load MC model from the repository</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load MC model from the repository</span>
 <span class="n">mc_model_save_name</span> <span class="o">=</span> <span class="s1">'MC.pth.tar'</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/models/"</span>
 </pre></div>
@@ -4165,7 +4340,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">MonteCarloBasedPlayer</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Simulate Player based on Monte Carlo Algorithm</span>
@@ -4305,6 +4480,113 @@ Show that doing so beats the random player</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>******MC player versus random player******
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21174</span><span class="o">/</span><span class="mf">388705676.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="n">n1p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mc1</span><span class="o">.</span><span class="n">getActionProb</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">132</span> <span class="n">MC_result</span> <span class="o">=</span> <span class="n">arena</span><span class="o">.</span><span class="n">playGames</span><span class="p">(</span><span class="n">num_games</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n\n</span><span class="si">{</span><span class="n">MC_result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Number of games won by player1 = </span><span class="si">{</span><span class="n">MC_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
+
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D5_ReinforcementLearningForGames/instructor/nma_rl_games/alpha-zero/Arena.py</span> in <span class="ni">playGames</span><span class="nt">(self, num, verbose)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="n">draws</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">"Arena.playGames (1)"</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">81</span>             <span class="n">gameResult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">playGame</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>             <span class="k">if</span> <span class="n">gameResult</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>                 <span class="n">oneWon</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D5_ReinforcementLearningForGames/instructor/nma_rl_games/alpha-zero/Arena.py</span> in <span class="ni">playGame</span><span class="nt">(self, verbose)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>                 <span class="nb">print</span><span class="p">(</span><span class="s2">"Turn "</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="s2">"Player "</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">curPlayer</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">50</span>             <span class="n">action</span> <span class="o">=</span> <span class="n">players</span><span class="p">[</span><span class="n">curPlayer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">getCanonicalForm</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">curPlayer</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> 
+<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="n">valids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">getValidMoves</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">getCanonicalForm</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">curPlayer</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_21174/388705676.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MC player versus random player******'</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="n">mc1</span> <span class="o">=</span> <span class="n">MonteCarloBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">args1</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">130</span> <span class="n">n1p</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mc1</span><span class="o">.</span><span class="n">getActionProb</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="n">MC_result</span> <span class="o">=</span> <span class="n">arena</span><span class="o">.</span><span class="n">playGames</span><span class="p">(</span><span class="n">num_games</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_21174/388705676.py</span> in <span class="ni">getActionProb</span><span class="nt">(self, canonicalBoard, temp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>       <span class="n">action_probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">getActionSize</span><span class="p">()))</span>
+<span class="ne">--&gt; </span><span class="mi">108</span>       <span class="n">best_action</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">canonicalBoard</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>       <span class="n">action_probs</span><span class="p">[</span><span class="n">best_action</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> 
+
+<span class="nn">/tmp/ipykernel_21174/388705676.py</span> in <span class="ni">play</span><span class="nt">(self, canonicalBoard)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>       <span class="c1"># Do some rollouts</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>       <span class="k">for</span> <span class="n">rollout</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">numMCsims</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">77</span>         <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mc</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">canonicalBoard</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> 
+
+<span class="nn">/tmp/ipykernel_21174/1765758357.py</span> in <span class="ni">simulate</span><span class="nt">(self, canonicalBoard)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="k">break</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> 
+<span class="ne">---&gt; </span><span class="mi">59</span>       <span class="bp">self</span><span class="o">.</span><span class="n">Ps</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nnet</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">canonicalBoard</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>       <span class="n">valids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">getValidMoves</span><span class="p">(</span><span class="n">canonicalBoard</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>       <span class="bp">self</span><span class="o">.</span><span class="n">Ps</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ps</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">*</span> <span class="n">valids</span>  <span class="c1"># Masking invalid moves</span>
+
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D5_ReinforcementLearningForGames/instructor/nma_rl_games/alpha-zero/othello/pytorch/NNet.py</span> in <span class="ni">predict</span><span class="nt">(self, board)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>         <span class="bp">self</span><span class="o">.</span><span class="n">nnet</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>         <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">91</span>             <span class="n">pi</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nnet</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span> 
+<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="c1"># print('PREDICTION TIME TAKEN : {0:03f}'.format(time.time()-start))</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D5_ReinforcementLearningForGames/instructor/nma_rl_games/alpha-zero/othello/pytorch/OthelloNNet.py</span> in <span class="ni">forward</span><span class="nt">(self, s)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>                          <span class="c1"># batch_size x num_channels x board_x x board_y</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>                          <span class="c1"># batch_size x num_channels x board_x x board_y</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>                          <span class="c1"># batch_size x num_channels x (board_x-2) x (board_y-2)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn4</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv4</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>                          <span class="c1"># batch_size x num_channels x (board_x-4) x (board_y-4)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_channels</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">board_x</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">board_y</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/conv.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conv_forward</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> 
+<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">class</span> <span class="nc">Conv3d</span><span class="p">(</span><span class="n">_ConvNd</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/conv.py</span> in <span class="ni">_conv_forward</span><span class="nt">(self, input, weight, bias)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>                             <span class="n">_pair</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span>         <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stride</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">454</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Number</span> <span class="n">of</span> <span class="n">games</span> <span class="n">won</span> <span class="n">by</span> <span class="n">player1</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">number</span> <span class="n">of</span> <span class="n">games</span> <span class="n">won</span> <span class="n">by</span> <span class="n">player2</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">20</span> <span class="n">games</span>
 
@@ -4315,7 +4597,7 @@ Show that doing so beats the random player</p></li>
 <h3>Monte-Carlo player against Value-based player<a class="headerlink" href="#monte-carlo-player-against-value-based-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MC player versus value-based player******'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MC player versus value-based player******'</span><span class="p">)</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">vp</span> <span class="o">=</span> <span class="n">ValueBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">vnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span> <span class="c1"># Value-based player</span>
 <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">vp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>
@@ -4339,7 +4621,7 @@ Show that doing so beats the random player</p></li>
 <h3>Monte-Carlo player against Policy-based player<a class="headerlink" href="#monte-carlo-player-against-policy-based-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MC player versus policy-based player******'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MC player versus policy-based player******'</span><span class="p">)</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">pp</span> <span class="o">=</span> <span class="n">PolicyBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">pnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span> <span class="c1"># Policy player</span>
 <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">pp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>
@@ -4384,7 +4666,7 @@ Show that doing so beats the random player</p></li>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>
@@ -4546,7 +4828,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">MCTS</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  This class handles MCTS (Monte Carlo Tree Search).</span>
@@ -4698,7 +4980,7 @@ Show that doing so beats the random player</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load MCTS model from the repository</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load MCTS model from the repository</span>
 <span class="n">mcts_model_save_name</span> <span class="o">=</span> <span class="s1">'MCTS.pth.tar'</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"nma_rl_games/alpha-zero/pretrained_models/models/"</span>
 </pre></div>
@@ -4823,7 +5105,7 @@ Show that doing so beats the random player</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">MonteCarloTreeSearchBasedPlayer</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Simulate Player based on MCTS</span>
@@ -4937,7 +5219,7 @@ Show that doing so beats the random player</p></li>
 <h3>MCTS player against Value-based player<a class="headerlink" href="#mcts-player-against-value-based-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MCTS player versus value-based player******'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MCTS player versus value-based player******'</span><span class="p">)</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">vp</span> <span class="o">=</span> <span class="n">ValueBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">vnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>  <span class="c1"># Value-based player</span>
 <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">vp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>
@@ -4961,7 +5243,7 @@ Show that doing so beats the random player</p></li>
 <h3>MCTS player against Policy-based player<a class="headerlink" href="#mcts-player-against-policy-based-player" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MCTS player versus policy-based player******'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">******MCTS player versus policy-based player******'</span><span class="p">)</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">pp</span> <span class="o">=</span> <span class="n">PolicyBasedPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">pnet</span><span class="p">)</span><span class="o">.</span><span class="n">play</span>  <span class="c1"># Policy-based player</span>
 <span class="n">arena</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">.</span><span class="n">Arena</span><span class="p">(</span><span class="n">n1p</span><span class="p">,</span> <span class="n">pp</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="n">OthelloGame</span><span class="o">.</span><span class="n">display</span><span class="p">)</span>

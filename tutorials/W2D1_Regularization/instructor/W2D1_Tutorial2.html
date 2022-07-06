@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1443,6 +1445,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/7um6p/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for all videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/7um6p/download">here</a>.</p>
 </div>
@@ -1456,24 +1462,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>WARNING</strong>: There may be <em>errors</em> and/or <em>warnings</em> reported during the installation. However, they should be ignored.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
 
-# @markdown **WARNING**: There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.
+<span class="c1"># @markdown **WARNING**: There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.</span>
 
-!pip install imageio --quiet
-!pip install imageio-ffmpeg --quiet
+<span class="o">!</span>pip install imageio --quiet
+<span class="o">!</span>pip install imageio-ffmpeg --quiet
 
-!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-from evaltools.airtable import AirtableForm
+<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
 
-atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatchacademy.org/api/redirect/to/a76f99c1-9005-4566-8bcd-bed4e53d21f1')
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W1D5_T2'</span><span class="p">,</span> <span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/a76f99c1-9005-4566-8bcd-bed4e53d21f1'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1501,10 +1507,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h2>Figure Settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1515,7 +1521,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h2>Loading Animal Faces Data<a class="headerlink" href="#loading-animal-faces-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Loading Animal Faces Data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Loading Animal Faces Data</span>
 <span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
 
@@ -1538,13 +1544,21 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start downloading and unzipping `AnimalFaces` dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="loading-animal-faces-randomized-data">
 <h2>Loading Animal Faces Randomized data<a class="headerlink" href="#loading-animal-faces-randomized-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Loading Animal Faces Randomized data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Loading Animal Faces Randomized data</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Start downloading and unzipping `Randomized AnimalFaces` dataset..."</span><span class="p">)</span>
 
@@ -1571,13 +1585,21 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start downloading and unzipping `Randomized AnimalFaces` dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="plotting-functions">
 <h2>Plotting functions<a class="headerlink" href="#plotting-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
 
 <span class="k">def</span> <span class="nf">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
   <span class="sd">"""</span>
@@ -1668,7 +1690,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
 
 <span class="k">class</span> <span class="nc">AnimalNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
@@ -2019,7 +2041,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
 <span class="c1"># For DL its critical to set the random seed so that students can have a</span>
@@ -2085,7 +2107,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 <span class="c1"># especially if torch modules used.</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
@@ -2115,9 +2137,15 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
 </pre></div>
 </div>
 </div>
@@ -2127,7 +2155,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h2>Dataloaders for the Dataset<a class="headerlink" href="#dataloaders-for-the-dataset" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Dataloaders for the Dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Dataloaders for the Dataset</span>
 <span class="c1">## Dataloaders for the Dataset</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">classes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'cat'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'wild'</span><span class="p">)</span>
@@ -2223,11 +2251,15 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <div class="section" id="video-1-l1-and-l2-regression">
 <h2>Video 1: L1 and L2 regression<a class="headerlink" href="#video-1-l1-and-l2-regression" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "020c9ea700f846f0b44323f1dbc8c817"}
+</script></div>
 </div>
 <p>Some of you might have already come across L1 and L2 regularization before in other courses. L1 and L2 are the most common types of regularization. These update the general cost function by adding another term known as the regularization term.</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-350a46d0-1aba-4f1a-a291-ae900258e7a1">
-<span class="eqno">(58)<a class="headerlink" href="#equation-350a46d0-1aba-4f1a-a291-ae900258e7a1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ebe06e63-947c-4d98-90e7-d7b6d708f120">
+<span class="eqno">(58)<a class="headerlink" href="#equation-ebe06e63-947c-4d98-90e7-d7b6d708f120" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = Loss(\text{e.g., binary cross entropy}) + \text{Regularization term}
 \end{equation}\]</div>
 <br/>
@@ -2240,7 +2272,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <h3>Dataloaders for Regularization<a class="headerlink" href="#dataloaders-for-regularization" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Dataloaders for Regularization</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Dataloaders for Regularization</span>
 <span class="n">data_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span><span class="o">/</span><span class="s1">'afhq'</span> <span class="c1"># Using pathlib to be compatible with all OS's</span>
 <span class="n">img_dataset</span> <span class="o">=</span> <span class="n">ImageFolder</span><span class="p">(</span><span class="n">data_path</span><span class="o">/</span><span class="s1">'train'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
 
@@ -2268,7 +2300,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <p>Now let’s train a model without regularization and keep it aside as our benchmark for this section.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
     <span class="s1">'lr'</span><span class="p">:</span> <span class="mf">5e-3</span><span class="p">,</span>
@@ -2301,25 +2333,36 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "50e43a78a847430b8e68e568556478f7"}
+</script><img alt="../../../_images/W2D1_Tutorial2_38_2.png" src="../../../_images/W2D1_Tutorial2_38_2.png"/>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum Validation Accuracy reached: 51.0
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="section-1-2-l1-regularization">
 <h2>Section 1.2: L1 Regularization<a class="headerlink" href="#section-1-2-l1-regularization" title="Permalink to this headline">¶</a></h2>
 <p>L1 Regularization (or LASSO<span class="math notranslate nohighlight">\(^{\ddagger}\)</span>) uses a penalty which is the sum of the absolute value of all the weights in the Deep Learning architecture, resulting in the following loss function (<span class="math notranslate nohighlight">\(L\)</span> is the usual Cross-Entropy loss):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-511a51c7-2228-46e7-a624-4d880dc71076">
-<span class="eqno">(59)<a class="headerlink" href="#equation-511a51c7-2228-46e7-a624-4d880dc71076" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c8f00d95-f810-435c-ac57-5629f88608df">
+<span class="eqno">(59)<a class="headerlink" href="#equation-c8f00d95-f810-435c-ac57-5629f88608df" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   L_R = L + \lambda \sum \left| w^{(r)}_{ij} \right|
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r\)</span> denotes the layer, and <span class="math notranslate nohighlight">\(ij\)</span> the specific weight in that layer.</p>
 <p>At a high level, L1 Regularization is similar to L2 Regularization since it leads to smaller weights (you will see the analogy in the next subsection). It results in the following weight update equation when using Stochastic Gradient Descent:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-018479eb-b563-4eb3-bd7d-084a14de0cf1">
-<span class="eqno">(60)<a class="headerlink" href="#equation-018479eb-b563-4eb3-bd7d-084a14de0cf1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f2ef7f1b-fda8-47a1-a555-f8ee8c48279a">
+<span class="eqno">(60)<a class="headerlink" href="#equation-f2ef7f1b-fda8-47a1-a555-f8ee8c48279a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   w^{(r)}_{ij}←w^{(r)}_{ij} − \eta \cdot \lambda \cdot \text{sgn}\left(w^{(r)}_{ij}\right)−\eta \frac{\partial L}{\partial w_{ij}^{(r)}} 
 \end{equation}\]</div>
 <p>where  <span class="math notranslate nohighlight">\(\text{sgn}(\cdot)\)</span> is the sign function, such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-172c0929-088c-4e30-bd06-a07e00b0a135">
-<span class="eqno">(61)<a class="headerlink" href="#equation-172c0929-088c-4e30-bd06-a07e00b0a135" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e4395913-282d-4204-9490-09e260a5d26f">
+<span class="eqno">(61)<a class="headerlink" href="#equation-e4395913-282d-4204-9490-09e260a5d26f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{sgn}(w) = 
 \left\{
   \begin{array}{ll}
@@ -2369,7 +2412,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">l1_reg</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  This function calculates the l1 norm of the all the tensors in the model</span>
@@ -2399,6 +2442,12 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+L1 norm of the model: 48.445133209228516
+</pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Random</span> <span class="n">seed</span> <span class="mi">2021</span> <span class="n">has</span> <span class="n">been</span> <span class="nb">set</span><span class="o">.</span>
 <span class="n">L1</span> <span class="n">norm</span> <span class="n">of</span> <span class="n">the</span> <span class="n">model</span><span class="p">:</span> <span class="mf">48.445133209228516</span>
@@ -2407,7 +2456,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <p>Now, let’s train a classifier that uses L1 regularization. Tune the hyperparameter <code class="docutils literal notranslate"><span class="pre">lambda1</span></code> such that the validation accuracy is higher than that of the unregularized model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args1</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'test_batch_size'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
@@ -2445,6 +2494,17 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "6f520f1a0a4b4760bccc20788b115241"}
+</script><img alt="../../../_images/W2D1_Tutorial2_46_2.png" src="../../../_images/W2D1_Tutorial2_46_2.png"/>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum Validation Accuracy Reached: 52.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>What value of <code class="docutils literal notranslate"><span class="pre">lambda1</span></code> hyperparameter worked for L1 Regularization?</p>
 <p><strong>Note:</strong> that the <span class="math notranslate nohighlight">\(\lambda\)</span> in the equations is the <code class="docutils literal notranslate"><span class="pre">lambda1</span></code> in the code for clarity.</p>
@@ -2453,19 +2513,19 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W1D5_T2', 'https://portal.neuromatcha
 <div class="section" id="section-1-3-l2-ridge-regularization">
 <h2>Section 1.3: L2 / Ridge Regularization<a class="headerlink" href="#section-1-3-l2-ridge-regularization" title="Permalink to this headline">¶</a></h2>
 <p>L2 Regularization (or Ridge), also referred to as “Weight Decay”, is widely used. It works by adding a quadratic penalty term to the Cross-Entropy Loss Function <span class="math notranslate nohighlight">\(L\)</span>, which results in a new Loss Function <span class="math notranslate nohighlight">\(L_R\)</span> given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1462156b-fcfd-4b4b-9b8b-91ee9b8235b9">
-<span class="eqno">(62)<a class="headerlink" href="#equation-1462156b-fcfd-4b4b-9b8b-91ee9b8235b9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-22b197fc-b8d0-4495-81f9-efa90bdc6e10">
+<span class="eqno">(62)<a class="headerlink" href="#equation-22b197fc-b8d0-4495-81f9-efa90bdc6e10" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L_R = L + \lambda \sum \left( w^{(r)}_{ij} \right)^2
 \end{equation}\]</div>
 <p>where, again, <span class="math notranslate nohighlight">\(r\)</span> superscript denotes the layer, and <span class="math notranslate nohighlight">\(ij\)</span> the specific weight in that layer.</p>
 <p>To get further insight into L2 Regularization, we investigate its effect on the Gradient Descent based update equations for the weight and bias parameters. Taking the derivative on both sides of the above equation, we obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69e734f3-928b-4720-b27c-4c74c96bf4c3">
-<span class="eqno">(63)<a class="headerlink" href="#equation-69e734f3-928b-4720-b27c-4c74c96bf4c3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b8410363-cacd-4f41-8e18-638e38527075">
+<span class="eqno">(63)<a class="headerlink" href="#equation-b8410363-cacd-4f41-8e18-638e38527075" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial L_R}{\partial w^{(r)}_{ij}}=\frac{\partial L}{\partial w^{(r)}_{ij}} + 2\lambda w^{(r)}_{ij}
 \end{equation}\]</div>
 <p>Thus the weight update rule becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87694a98-9562-4445-8426-f4a74b142c47">
-<span class="eqno">(64)<a class="headerlink" href="#equation-87694a98-9562-4445-8426-f4a74b142c47" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a3690f07-8c40-46c9-9e06-3055565e2e98">
+<span class="eqno">(64)<a class="headerlink" href="#equation-a3690f07-8c40-46c9-9e06-3055565e2e98" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \eta \lambda w^{(r)}_{ij}=(1−2 \eta \lambda)w^{(r)}_{ij} − \eta \frac{\partial L}{\partial w^{(r)}_{ij}}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the learning rate.</p>
@@ -2508,7 +2568,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">l2_reg</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  This function calculates the l2 norm of the all the tensors in the model</span>
@@ -2538,6 +2598,12 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+L2 norm of the model: 7.328375816345215
+</pre></div>
+</div>
+</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Random</span> <span class="n">seed</span> <span class="mi">2021</span> <span class="n">has</span> <span class="n">been</span> <span class="nb">set</span><span class="o">.</span>
 <span class="n">L2</span> <span class="n">norm</span> <span class="n">of</span> <span class="n">the</span> <span class="n">model</span><span class="p">:</span> <span class="mf">7.328375816345215</span>
@@ -2546,7 +2612,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Now we’ll train a classifier that uses L2 regularization. Tune the hyperparameter <code class="docutils literal notranslate"><span class="pre">lambda2</span></code> such that the validation accuracy is higher than that of the unregularized model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args2</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'test_batch_size'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
@@ -2584,13 +2650,109 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5ec1ad88d6ed40d9aaf07c0cfc84880d"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_9422</span><span class="o">/</span><span class="mf">2385213968.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>                                                                <span class="n">val_loader</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>                                                                <span class="n">img_test_dataset</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>                                                                <span class="n">reg_function2</span><span class="o">=</span><span class="n">l2_reg</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> 
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1">## Train and Test accuracy plot</span>
+
+<span class="nn">/tmp/ipykernel_9422/2686858055.py</span> in <span class="ni">main</span><span class="nt">(args, model, train_loader, val_loader, test_data, reg_function1, reg_function2, criterion)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>                           <span class="n">reg_function2</span><span class="o">=</span><span class="n">reg_function2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="n">train_acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="s1">'Train'</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">256</span>     <span class="n">val_acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="s1">'Val'</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">param_norm</span> <span class="o">=</span> <span class="n">calculate_frobenius_norm</span><span class="p">(</span><span class="n">trained_model</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="n">train_acc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_acc</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_9422/2686858055.py</span> in <span class="ni">test</span><span class="nt">(model, test_loader, loader, criterion, device)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>   <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>   <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">204</span>     <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>       <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>       <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">__next__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>                 <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="ne">--&gt; </span><span class="mi">652</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_next_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1328</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1329</span>             <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shutdown</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="ne">-&gt; </span><span class="mi">1330</span>             <span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1331</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1332</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_get_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1294</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1295</span>             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1296</span>                 <span class="n">success</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1297</span>                 <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1298</span>                     <span class="k">return</span> <span class="n">data</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_try_get_data</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="c1">#   (bool: whether successfully get data, any: data if successful else None)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1134</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span>             <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/queues.py</span> in <span class="ni">get</span><span class="nt">(self, block, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>                 <span class="k">if</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>                     <span class="n">timeout</span> <span class="o">=</span> <span class="n">deadline</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>                     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>                         <span class="k">raise</span> <span class="n">Empty</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>                 <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">():</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_closed</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">257</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> 
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">_poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> 
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="k">def</span> <span class="nf">_poll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">414</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">wait</span><span class="p">([</span><span class="bp">self</span><span class="p">],</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">wait</span><span class="nt">(object_list, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span> 
+<span class="g g-Whitespace">    </span><span class="mi">920</span>             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">921</span>                 <span class="n">ready</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span>                 <span class="k">if</span> <span class="n">ready</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">923</span>                     <span class="k">return</span> <span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">fileobj</span> <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">events</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ready</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/selectors.py</span> in <span class="ni">select</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>         <span class="n">ready</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">415</span>             <span class="n">fd_event_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span>         <span class="k">except</span> <span class="ne">InterruptedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>             <span class="k">return</span> <span class="n">ready</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <p>What value <code class="docutils literal notranslate"><span class="pre">lambda2</span></code> worked for L2 Regularization?</p>
 <p><strong>Note:</strong> that the <span class="math notranslate nohighlight">\(\lambda\)</span> in the equations is the <code class="docutils literal notranslate"><span class="pre">lambda2</span></code> in the code for clarity.</p>
 <p>Now, let’s run a model with both L1 and L2 regularization terms.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Visualize all of them together (Run Me!)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Visualize all of them together (Run Me!)</span>
 
 <span class="c1"># @markdown `lambda1=0.001` and `lambda2=0.001`</span>
 
@@ -2651,7 +2813,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Now, let’s visualize what these different regularizations do to the model’s parameters. We observe the effect by computing the size (technically, the Frobenius norm).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span>  <span class="n">param_norm_unreg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span>  <span class="n">param_norm_unreg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2661,7 +2823,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <h4>Visualize Norm of the Models (Train Me!)<a class="headerlink" href="#visualize-norm-of-the-models-train-me" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Visualize Norm of the Models (Train Me!)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Visualize Norm of the Models (Train Me!)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">param_norm_unreg</span><span class="p">],</span>
          <span class="n">label</span><span class="o">=</span><span class="s1">'Unregularized'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
@@ -2699,7 +2861,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Now let’s revisit the toy dataset we generated above to visualize how the Dropout stabilizes training on a noisy dataset. We will slightly modify the architecture we used above to add dropout layers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NetDropout</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NetDropout</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Network Class - 2D with the following structure:</span>
 <span class="sd">  nn.Linear(1, 300) + leaky_relu(self.dropout1(self.fc1(x))) # First fully connected layer with 0.4 dropout</span>
@@ -2750,7 +2912,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <h3>Run to train the default network<a class="headerlink" href="#run-to-train-the-default-network" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Run to train the default network</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Run to train the default network</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 
 <span class="c1"># Creating train data</span>
@@ -2804,7 +2966,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the network on toy dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the network on toy dataset</span>
 
 <span class="c1"># Initialize the model</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
@@ -2848,7 +3010,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Animation! (Run Me!)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Animation! (Run Me!)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Animation! (Run Me!)</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -2879,7 +3041,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Plot the train and test losses with epoch</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot the train and test losses with epoch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot the train and test losses with epoch</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">test_loss_dp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Test loss dropout'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">)</span>
@@ -2896,7 +3058,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Plot the train and test losses with epoch</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot the train and test losses with epoch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot the train and test losses with epoch</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_loss_dp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Train loss dropout'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">)</span>
@@ -2913,7 +3075,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Plot model weights with epoch</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot model weights with epoch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot model weights with epoch</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model_norm_dp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Dropout'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model_norm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'No dropout'</span><span class="p">)</span>
@@ -2929,7 +3091,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Do you think this (with dropout) performed better than the initial model (without dropout)?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">Yes. Dropout drops a percentage of neurons during training, thus</span>
@@ -2950,7 +3112,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Now, let’s see how dropout fares on the “Animal Faces” dataset. We first modify the existing model to include dropout and then train it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AnimalNetDropout</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AnimalNetDropout</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Network Class - Animal Faces with following structure</span>
 <span class="sd">  nn.Linear(3*32*32, 248) + leaky_relu(self.dropout1(self.fc1(x))) # First fully connected layer with 0.5 dropout</span>
@@ -2999,7 +3161,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'test_batch_size'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
@@ -3051,7 +3213,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>When do you think dropouts can perform bad and do you think their placement within a model matters?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">Dropout is an effective regularization technique but may hurt model performance</span>
@@ -3092,7 +3254,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <h3>Data Loader without Data Augmentation<a class="headerlink" href="#data-loader-without-data-augmentation" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ####  Data Loader without Data Augmentation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ####  Data Loader without Data Augmentation</span>
 
 <span class="c1"># For reproducibility</span>
 <span class="n">g_seed</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">()</span>
@@ -3127,7 +3289,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Define a DataLoader using <code class="docutils literal notranslate"><span class="pre">torchvision.transforms</span></code>, which randomly augments the data for us. For more info, see <a class="reference external" href="https://pytorch.org/vision/stable/transforms.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data Augmentation using transforms</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data Augmentation using transforms</span>
 <span class="n">new_transforms</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
                                      <span class="n">transforms</span><span class="o">.</span><span class="n">RandomHorizontalFlip</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span>
                                      <span class="n">transforms</span><span class="o">.</span><span class="n">RandomVerticalFlip</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span>
@@ -3157,7 +3319,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
     <span class="s1">'lr'</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>
@@ -3209,7 +3371,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot together: without and with augmentation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot together: without and with augmentation</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">param_norm_pure</span><span class="p">],</span>
          <span class="n">c</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Without Augmentation'</span><span class="p">)</span>
@@ -3227,7 +3389,7 @@ w^{(r)}_{ij}←w^{(r)}_{ij}−η\frac{\partial L}{\partial w^{(r)}_{ij}}−2 \et
 <p>Can you think of more ways of augmenting the training data? (Think of other problems beyond object recognition.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">Augmentation is a technique to increase diversity of training data</span>
@@ -3246,7 +3408,7 @@ Each group should have a 10 min discussion.</p>
 <h4>Student Response<a class="headerlink" href="#student-response" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3273,7 +3435,7 @@ Each group should have a 10 min discussion.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">Regularization works by penalizing model complexity. If the initial model is not</span>
@@ -3310,7 +3472,7 @@ Each group should have a 10 min discussion.</p>
 <h3>Generating Data Loaders<a class="headerlink" href="#generating-data-loaders" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Generating Data Loaders</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown #### Generating Data Loaders</span>
 
 <span class="c1"># For reproducibility</span>
 <span class="n">g_seed</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">()</span>
@@ -3350,7 +3512,7 @@ Each group should have a 10 min discussion.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the arguments</span>
 <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'test_batch_size'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
     <span class="s1">'epochs'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
@@ -3385,7 +3547,7 @@ Each group should have a 10 min discussion.</p>
 <p>Plot Train and Validation accuracy (Run me)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot Train and Validation accuracy (Run me)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot Train and Validation accuracy (Run me)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">learning_rates</span><span class="p">):</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">acc_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">'val_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span>
@@ -3406,7 +3568,7 @@ Each group should have a 10 min discussion.</p>
 <p>Plot parametric norms (Run me)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot parametric norms (Run me)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Plot parametric norms (Run me)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">learning_rates</span><span class="p">):</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">acc_dict</span><span class="p">[</span><span class="sa">f</span><span class="s1">'param_norm_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span><span class="p">]],</span>
@@ -3448,7 +3610,7 @@ Each group should have a 10 min discussion.</p>
 <h3>Student Response<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3475,7 +3637,7 @@ Each group should have a 10 min discussion.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">Theoretically yes, we can apply all of the regularization methods on the same network.</span>
@@ -3497,7 +3659,7 @@ Each group should have a 10 min discussion.</p>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>

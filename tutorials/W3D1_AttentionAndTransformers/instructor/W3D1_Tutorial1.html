@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1935,6 +1937,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/sfmpe/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for all videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/sfmpe/download">here</a>.</p>
 </div>
@@ -1962,6 +1968,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1"># generate airtable form</span>
 <span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D1_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/720613bf-c3cd-4fae-9286-b1c3cced6728'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Red">ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
+<span class="-Color -Color-Red">flake8 4.0.1 requires importlib-metadata&lt;4.3; python_version &lt; "3.8", but you have importlib-metadata 4.12.0 which is incompatible.</span>
+
 </pre></div>
 </div>
 </div>
@@ -2043,6 +2056,11 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'averaged_perceptron_tagger'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'brown'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'webtext'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2223,6 +2241,12 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="load-yelp-dataset">
@@ -2315,6 +2339,96 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <span class="c1"># If the above produces an error uncomment below:</span>
 <span class="c1"># DATASET = load_dataset("yelp_review_full", ignore_verifications=True)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">DATASET</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset is being downloading...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download is finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Files have been extracted.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "770428cdaf054208b4980123f2aaa353"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "bbb7498439a74efd830d5a7c75983ce1"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and preparing dataset yelp_review_full/yelp_review_full (download: 187.06 MiB, generated: 496.94 MiB, post-processed: Unknown size, total: 684.00 MiB) to data/yelp_review_full/yelp_review_full/1.0.0/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "3fbeaddfa63d430395769fcb198d2957"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "1e41711fcd3e40cd8303e6414f69db32"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+/tmp/ipykernel_20642/2718299813.py in &lt;module&gt;
+     21 DATASET = datasets.load_dataset("yelp_review_full",
+     22                                 download_mode="reuse_dataset_if_exists",
+---&gt; 23                                 cache_dir='data/')
+     24 
+     25 # If the above produces an error uncomment below:
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/load.py in load_dataset(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, ignore_verifications, keep_in_memory, save_infos, revision, use_auth_token, task, streaming, **config_kwargs)
+   1682         ignore_verifications=ignore_verifications,
+   1683         try_from_hf_gcs=try_from_hf_gcs,
+-&gt; 1684         use_auth_token=use_auth_token,
+   1685     )
+   1686 
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py in download_and_prepare(self, download_config, download_mode, ignore_verifications, try_from_hf_gcs, dl_manager, base_path, use_auth_token, **download_and_prepare_kwargs)
+    703                     if not downloaded_from_gcs:
+    704                         self._download_and_prepare(
+--&gt; 705                             dl_manager=dl_manager, verify_infos=verify_infos, **download_and_prepare_kwargs
+    706                         )
+    707                     # Sync info
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py in _download_and_prepare(self, dl_manager, verify_infos)
+   1219 
+   1220     def _download_and_prepare(self, dl_manager, verify_infos):
+-&gt; 1221         super()._download_and_prepare(dl_manager, verify_infos, check_duplicate_keys=verify_infos)
+   1222 
+   1223     def _get_examples_iterable_for_split(self, split_generator: SplitGenerator) -&gt; ExamplesIterable:
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py in _download_and_prepare(self, dl_manager, verify_infos, **prepare_split_kwargs)
+    791             try:
+    792                 # Prepare split will record examples associated to the split
+--&gt; 793                 self._prepare_split(split_generator, **prepare_split_kwargs)
+    794             except OSError as e:
+    795                 raise OSError(
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py in _prepare_split(self, split_generator, check_duplicate_keys)
+   1210                     desc=f"Generating {split_info.name} split",
+   1211                 ):
+-&gt; 1212                     example = self.info.features.encode_example(record)
+   1213                     writer.write(example, key)
+   1214             finally:
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py in encode_example(self, example)
+   1576             :obj:`dict[str, Any]`
+   1577         """
+-&gt; 1578         example = cast_to_python_objects(example)
+   1579         return encode_nested_example(self, example)
+   1580 
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py in cast_to_python_objects(obj, only_1d_for_numpy, optimize_list_casting)
+    397     """
+    398     return _cast_to_python_objects(
+--&gt; 399         obj, only_1d_for_numpy=only_1d_for_numpy, optimize_list_casting=optimize_list_casting
+    400     )[0]
+    401 
+
+/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py in _cast_to_python_objects(obj, only_1d_for_numpy, optimize_list_casting)
+    304                 for x in obj
+    305             ], True
+--&gt; 306     elif config.TORCH_AVAILABLE and "torch" in sys.modules and isinstance(obj, torch.Tensor):
+    307         if not only_1d_for_numpy or obj.ndim == 1:
+    308             return obj.detach().cpu().numpy(), True
+
+KeyboardInterrupt: 
 </pre></div>
 </div>
 </div>
@@ -3277,8 +3391,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5f6ffb9-8fc9-4c87-8876-9bc7753b61c7">
-<span class="eqno">(100)<a class="headerlink" href="#equation-b5f6ffb9-8fc9-4c87-8876-9bc7753b61c7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04000f49-d45b-4f8c-bce2-41d4b58b57ca">
+<span class="eqno">(100)<a class="headerlink" href="#equation-04000f49-d45b-4f8c-bce2-41d4b58b57ca" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

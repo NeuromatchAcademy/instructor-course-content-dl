@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1122,6 +1124,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <p>These are the slides for all videos in this tutorial.</p>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/2jzdu/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 </div>
 </div>
@@ -1487,6 +1493,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="video-1-model-based-rl">
 <h2>Video 1: Model-based RL<a class="headerlink" href="#video-1-model-based-rl" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "d010fe3e09b0434db8a93ac6714df68f"}
+</script></div>
 </div>
 <p>The algorithms introduced in the previous tutorials are all <em>model-free</em>, as they do not require a model to use or control behavior. In this section, we will study a different class of algorithms called model-based. As we will see next, in contrast to model-free RL, model-based methods use a model to build a policy.</p>
 <p>But what is a model? A model (sometimes called a world model or internal model) is a representation of how the world will respond to the agent’s actions. You can think of it as a representation of how the world <em>works</em>. With such a representation, the agent can simulate new experiences and learn from these simulations. This is advantageous for two reasons. First, acting in the real world can be costly and sometimes even dangerous: remember Cliff World from Tutorial 3? Learning from simulated experience can avoid some of these costs or risks. Second, simulations make fuller use of one’s limited experience. To see why, imagine an agent interacting with the real world. The information acquired with each individual action can only be assimilated at the moment of the interaction. In contrast, the experiences simulated from a model can be simulated multiple times – and whenever desired – allowing for the information to be more fully assimilated.</p>
@@ -1732,6 +1742,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/W3D4_Tutorial4_29_3.png" src="../../../_images/W3D4_Tutorial4_29_3.png"/>
+</div>
 </div>
 <p>Upon completion, we should see that our Dyna-Q agent is able to solve the task quite quickly, achieving a consistent positive reward after only a limited number of episodes (bottom left).</p>
 </div>
@@ -1784,6 +1797,50 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Episodes'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'Steps per episode'</span><span class="p">,</span>
        <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">160</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">planning_steps</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'upper right'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Planning steps"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20996</span><span class="o">/</span><span class="mf">720999810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>   <span class="k">for</span> <span class="n">experiment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_experiments</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">results</span> <span class="o">=</span> <span class="n">learn_environment</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">dyna_q_model_update</span><span class="p">,</span> <span class="n">dyna_q_planning</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">28</span>                                 <span class="n">params</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">,</span> <span class="n">n_episodes</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">steps_per_episode</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">experiment</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> 
+
+<span class="nn">/tmp/ipykernel_20996/1162803831.py</span> in <span class="ni">learn_environment</span><span class="nt">(env, model_updater, planner, params, max_steps, n_episodes, shortcut_episode)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> 
+<span class="g g-Whitespace">     </span><span class="mi">96</span>       <span class="c1"># execute planner</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">value</span> <span class="o">=</span> <span class="n">planner</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> 
+<span class="g g-Whitespace">     </span><span class="mi">99</span>       <span class="k">if</span> <span class="n">next_state</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/tmp/ipykernel_20996/3234831554.py</span> in <span class="ni">dyna_q_planning</span><span class="nt">(model, value, params)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> 
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="c1"># Update the value function using Q-learning</span>
+<span class="ne">---&gt; </span><span class="mi">33</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">q_learning</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> 
+<span class="g g-Whitespace">     </span><span class="mi">35</span>   <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">/tmp/ipykernel_20996/1162803831.py</span> in <span class="ni">q_learning</span><span class="nt">(state, action, reward, next_state, value, params)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>       <span class="n">max_value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>   <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">43</span>       <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">next_state</span><span class="p">)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> 
+<span class="g g-Whitespace">     </span><span class="mi">45</span>   <span class="c1"># reward prediction error</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">amax</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/fromnumeric.py</span> in <span class="ni">amax</span><span class="nt">(a, axis, out, keepdims, initial, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2753</span>     <span class="s2">"""</span>
+<span class="g g-Whitespace">   </span><span class="mi">2754</span><span class="s2">     return _wrapreduction(a, np.maximum, 'max', axis, None, out,</span>
+<span class="ne">-&gt; </span><span class="mi">2755</span><span class="s2">                           keepdims=keepdims, initial=initial, where=where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2756</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2757</span><span class="s2"> </span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

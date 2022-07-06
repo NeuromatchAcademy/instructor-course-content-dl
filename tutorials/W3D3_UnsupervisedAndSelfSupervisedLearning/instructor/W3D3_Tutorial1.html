@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
@@ -1946,6 +1948,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/wvt34/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for the videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/wvt34/download">here</a>.</p>
 </div>
@@ -1957,56 +1963,64 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
 
-# @markdown Download dataset, modules, and files needed for the tutorial from GitHub.
+<span class="c1"># @markdown Download dataset, modules, and files needed for the tutorial from GitHub.</span>
 
-# @markdown Download from OSF. Original repo: https://github.com/colleenjg/neuromatch_ssl_tutorial.git
+<span class="c1"># @markdown Download from OSF. Original repo: https://github.com/colleenjg/neuromatch_ssl_tutorial.git</span>
 
-import os, sys, shutil, importlib
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">shutil</span><span class="o">,</span> <span class="nn">importlib</span>
 
-REPO_PATH = "neuromatch_ssl_tutorial"
-download_str = "Downloading"
-if os.path.exists(REPO_PATH):
-  download_str = "Redownloading"
-  shutil.rmtree(REPO_PATH)
+<span class="n">REPO_PATH</span> <span class="o">=</span> <span class="s2">"neuromatch_ssl_tutorial"</span>
+<span class="n">download_str</span> <span class="o">=</span> <span class="s2">"Downloading"</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">):</span>
+  <span class="n">download_str</span> <span class="o">=</span> <span class="s2">"Redownloading"</span>
+  <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">)</span>
 
-# Download from github repo directly
-# !git clone git://github.com/colleenjg/neuromatch_ssl_tutorial.git --quiet
+<span class="c1"># Download from github repo directly</span>
+<span class="c1"># !git clone git://github.com/colleenjg/neuromatch_ssl_tutorial.git --quiet</span>
 
-from io import BytesIO
-from urllib.request import urlopen
-from zipfile import ZipFile
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
 
-zipurl = 'https://osf.io/smqvg/download'
-print(f"{download_str} and unzipping the file... Please wait.")
-with urlopen(zipurl) as zipresp:
-  with ZipFile(BytesIO(zipresp.read())) as zfile:
-    zfile.extractall()
-print("Download completed!")
-
-
-# @markdown Import modules designed for use in this tutorials
-from neuromatch_ssl_tutorial.modules import data, load, models, plot_util
-from neuromatch_ssl_tutorial.modules import data, load, models, plot_util
-importlib.reload(data);
-importlib.reload(load);
-importlib.reload(models)
-importlib.reload(plot_util);
+<span class="n">zipurl</span> <span class="o">=</span> <span class="s1">'https://osf.io/smqvg/download'</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">download_str</span><span class="si">}</span><span class="s2"> and unzipping the file... Please wait."</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">zipurl</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipresp</span><span class="p">:</span>
+  <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">zipresp</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span> <span class="k">as</span> <span class="n">zfile</span><span class="p">:</span>
+    <span class="n">zfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Download completed!"</span><span class="p">)</span>
 
 
-!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-from evaltools.airtable import AirtableForm
+<span class="c1"># @markdown Import modules designed for use in this tutorials</span>
+<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
+<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">load</span><span class="p">);</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">plot_util</span><span class="p">);</span>
 
-# Generate airtable form
-atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchacademy.org/api/redirect/to/47de6f8f-1265-4a74-88c4-7dfa6e64b35a')
+
+<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
+
+<span class="c1"># Generate airtable form</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D1_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/47de6f8f-1265-4a74-88c4-7dfa6e64b35a'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and unzipping the file... Please wait.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download completed!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -2020,10 +2034,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h2>Figure settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>       <span class="c1"># Interactive display</span>
 <span class="c1"># %matplotlib inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">'axes'</span><span class="p">,</span> <span class="n">unicode_minus</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># To ensure negatives render correctly with xkcd style</span>
@@ -2039,7 +2053,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>Function to plot a histogram of RSM values: <code class="docutils literal notranslate"><span class="pre">plot_rsm_histogram(rsms,</span> <span class="pre">colors)</span></code></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Plotting functions</span>
 
 <span class="c1"># @markdown Function to plot a histogram of RSM values: `plot_rsm_histogram(rsms, colors)`</span>
 <span class="k">def</span> <span class="nf">plot_rsm_histogram</span><span class="p">(</span><span class="n">rsms</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
@@ -2094,7 +2108,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
 
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span> <span class="c1"># to visualize images</span>
 
@@ -2151,7 +2165,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -2220,7 +2234,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 <span class="c1"># especially if torch modules used.</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
@@ -2250,10 +2264,16 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set global variables</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set global variables</span>
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
 </pre></div>
 </div>
 </div>
@@ -2262,7 +2282,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h3>Pre-load variables (allows each section to be run independently)<a class="headerlink" href="#pre-load-variables-allows-each-section-to-be-run-independently" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Pre-load variables (allows each section to be run independently)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Pre-load variables (allows each section to be run independently)</span>
 
 <span class="c1"># Section 1</span>
 <span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
@@ -2327,6 +2347,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <div class="section" id="video-0-introduction">
 <h2>Video 0: Introduction<a class="headerlink" href="#video-0-introduction" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "71fd62919af34e77b3b81ea1c5888e59"}
+</script></div>
 </div>
 </div>
 </div>
@@ -2337,6 +2361,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <div class="section" id="video-1-why-do-representations-matter">
 <h2>Video 1: Why do representations matter?<a class="headerlink" href="#video-1-why-do-representations-matter" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "952c1772ef1544f7968b562e7db1779a"}
+</script></div>
 </div>
 </div>
 <div class="section" id="section-1-1-introducing-the-dsprites-dataset">
@@ -2358,7 +2386,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>We will first load the dataset into the <code class="docutils literal notranslate"><span class="pre">dSprites</span></code> object, which is an instance of the <code class="docutils literal notranslate"><span class="pre">data.dSpritesDataset</span></code> class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dSprites</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dSpritesDataset</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"dsprites"</span><span class="p">,</span> <span class="s2">"dsprites_subset.npz"</span><span class="p">)</span>
     <span class="p">)</span>
 </pre></div>
@@ -2369,10 +2397,13 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> View a different set of randomly sampled images by passing the random state argument <code class="docutils literal notranslate"><span class="pre">randst</span></code> any integer or the value <code class="docutils literal notranslate"><span class="pre">None</span></code>. (The original setting is <code class="docutils literal notranslate"><span class="pre">randst=SEED</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">num_images</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/W3D3_Tutorial1_37_0.png" src="../../../_images/W3D3_Tutorial1_37_0.png"/>
 </div>
 </div>
 <p>To better understand the <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> latent dimensions (which will be most relevant in <strong>Bonus 2</strong>), we plot the images with some annotations. The annotations (in red) do not modify the actual images; they are added <strong>purely for visualization purposes</strong>, and show:</p>
@@ -2383,10 +2414,13 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><em><strong>Note on shape positions:</strong> Notice that all shape centers are positioned <strong>within the area marked by the red square</strong>. <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> actually describe the relative position of the center of a shape within this area: <code class="docutils literal notranslate"><span class="pre">posX=0</span></code> (left) to <code class="docutils literal notranslate"><span class="pre">posX=1</span></code> (right), and <code class="docutils literal notranslate"><span class="pre">posY=0</span></code> (top) to <code class="docutils literal notranslate"><span class="pre">posY=1</span></code> (bottom). No shape center appears outside, in the buffer area. This choice in the dSprites dataset design ensures that shapes of different scales and rotations <strong>all appear fully</strong>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEMO: To view different images, set randst to any integer value.</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">num_images</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">,</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"pos"</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/W3D3_Tutorial1_39_0.png" src="../../../_images/W3D3_Tutorial1_39_0.png"/>
 </div>
 </div>
 </div>
@@ -2402,10 +2436,13 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h3>Encoder network schematic<a class="headerlink" href="#encoder-network-schematic" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Encoder network schematic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Encoder network schematic</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"feat_encoder_schematic.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/W3D3_Tutorial1_43_0.png" src="../../../_images/W3D3_Tutorial1_43_0.png"/>
 </div>
 </div>
 <p>The following code:</p>
@@ -2416,7 +2453,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the seed before building any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the seed before building any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -2440,6 +2477,12 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+Dataset size: 16000 training, 4000 test images
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="interactive-demo-1-2-1-training-a-logistic-regression-classifier-directly-on-images">
@@ -2451,7 +2494,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><em><strong>Interactive Demo:</strong> Try a few different <code class="docutils literal notranslate"><span class="pre">num_epochs</span></code> settings to see whether performance improves with more training, e.g., between 1 and 50 epochs. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=25</span></code>).</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -2468,6 +2511,19 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
   <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
   <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Print results</span>
   <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+Training a classifier directly on the images...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "f6bd611be1714f24b4292a364d1281a6"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
+    Training accuracy: 51.81%
+    Testing accuracy: 39.55%
 </pre></div>
 </div>
 </div>
@@ -2565,7 +2621,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">train_supervised_encoder</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to train the encoder in a supervised way</span>
@@ -2607,6 +2663,52 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Proposed number of training epochs</span>
 <span class="c1">## Uncomment below to test your function</span>
 <span class="n">supervised_encoder</span> <span class="o">=</span> <span class="n">train_supervised_encoder</span><span class="p">(</span><span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+Training a supervised encoder and classifier...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "524254a9e557407993ee9e94239f82d5"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20823</span><span class="o">/</span><span class="mf">626022344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Proposed number of training epochs</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="c1">## Uncomment below to test your function</span>
+<span class="ne">---&gt; </span><span class="mi">42</span> <span class="n">supervised_encoder</span> <span class="o">=</span> <span class="n">train_supervised_encoder</span><span class="p">(</span><span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_20823/626022344.py</span> in <span class="ni">train_supervised_encoder</span><span class="nt">(num_epochs, seed)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>       <span class="n">freeze_features</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>       <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">31</span>       <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># print results</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>       <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> 
+
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/neuromatch_ssl_tutorial/modules/models.py</span> in <span class="ni">train_classifier</span><span class="nt">(encoder, dataset, train_sampler, test_sampler, num_epochs, fraction_of_labels, batch_size, freeze_features, subset_seed, use_cuda, progress_bar, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>             <span class="n">predicted_y_logits</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>             <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">predicted_y_logits</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">298</span>             <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>             <span class="n">classification_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>                 <span class="n">create_graph</span><span class="o">=</span><span class="n">create_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">396</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span> 
+<span class="g g-Whitespace">    </span><span class="mi">398</span>     <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors_</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">175</span>         <span class="n">allow_unreachable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accumulate_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> 
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -2743,7 +2845,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">custom_torch_RSM_fct</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Custom function to calculate representational similarity matrix (RSM) of a feature</span>
@@ -2798,7 +2900,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> In the current example, the rows and columns of the RSM are organized along the <code class="docutils literal notranslate"><span class="pre">shape</span></code> latent dimension. Try organizing them along one of the other latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>) to see whether different patterns emerge. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">],</span> <span class="c1"># We pass the trained supervised_encoder</span>
@@ -2823,7 +2925,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h4>Student Response<a class="headerlink" href="#student-response" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -2850,7 +2952,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The yellow diagonal corresponds to the similarity between each encoded image and itself.</span>
@@ -2891,7 +2993,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h3>Supporting images for Discussion response examples for 2.1.1<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-2-1-1" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 2.1.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 2.1.1</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_supervised_encoder_10ep_bs1000_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">)</span>
 </pre></div>
@@ -2978,7 +3080,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">plot_rsms</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot Representational Similarity Matrices (RSMs)</span>
@@ -3034,7 +3136,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h4>Student Response<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3061,7 +3163,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. Only the yellow diagnonal identity line is visible. No other patterns emerge,</span>
@@ -3084,7 +3186,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h3>Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-3-1-1-all-random-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 3.1.1: All random encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_random_encoder_0ep_bs0_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -3170,7 +3272,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot the loss function of the random-encoder</span>
@@ -3257,7 +3359,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h4>Student Response<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3284,7 +3386,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifier trained with the random encoder appears to perform a bit</span>
@@ -3329,7 +3431,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -3346,7 +3448,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> Try plotting different images from the test dataset by selecting different <code class="docutils literal notranslate"><span class="pre">test_sampler.indices</span></code> values. (Original setting is <code class="docutils literal notranslate"><span class="pre">indices=test_sampler.indices[:10]</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">plot_vae_reconstructions</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span><span class="o">.</span><span class="n">plot_vae_reconstructions</span><span class="p">(</span>
     <span class="n">vae_encoder</span><span class="p">,</span>  <span class="c1"># Pre-trained encoder</span>
     <span class="n">vae_decoder</span><span class="p">,</span>  <span class="c1"># Pre-trained decoder</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
@@ -3365,7 +3467,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Note on reconstruction quality:</strong> This VAE network uses a basic VAE loss with a convolutional encoder (our core encoder network), and a deconvolutional decoder. This can lead to some blurriness in the reconstructed shapes which a more sophisticated VAE could overcome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The reconstructions preserve most of the latent features well:</span>
@@ -3393,7 +3495,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">random_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">],</span> <span class="c1"># Pass all three encoders</span>
@@ -3419,7 +3521,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h4>Student Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -3446,7 +3548,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The VAE RSMs show very little structure along the diagonal when sorted by `shape` or `orientation`,</span>
@@ -3486,7 +3588,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <h3>Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-4-1-2-all-vae-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for 4.1.2: All VAE encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_vae_encoder_300ep_bs500_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -3573,7 +3675,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">vae_train_loss</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Helper function to plot the train loss of the variational autoencoder (VAE)</span>
@@ -3683,7 +3785,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> Try out a few combinations of the transformation parameters, and visualize the pairs of transformations of the same image. (The original settings are <code class="docutils literal notranslate"><span class="pre">degrees=90</span></code>, <code class="docutils literal notranslate"><span class="pre">translate=(0.2,</span> <span class="pre">0.2)</span></code>, <code class="docutils literal notranslate"><span class="pre">scale=(0.8,</span> <span class="pre">1.2)</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -3837,7 +3939,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">custom_simclr_contrastive_loss</span><span class="p">(</span><span class="n">proj_feat1</span><span class="p">,</span> <span class="n">proj_feat2</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
   <span class="sd">"""</span>
 <span class="sd">  Returns contrastive loss, given sets of projected features, with positive</span>
@@ -3916,7 +4018,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>We can now train the SimCLR encoder with the custom contrastive loss for a few epochs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -3948,7 +4050,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load SimCLR encoder pre-trained on the contrastive loss</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load SimCLR encoder pre-trained on the contrastive loss</span>
 <span class="n">simclr_encoder</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s2">"simclr"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3962,7 +4064,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><strong>Interactive Demo:</strong> Try different numbers of epochs for which to train the classifier. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=10</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4040,7 +4142,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p><em><strong>Note on dataset size:</strong> This biased sampling also significantly reduces the size of the training dataset available (approximately 6x). Thus, it would not be fair to compare our results here to those obtained previously in the tutorial, when we were using the full dataset. For this reason, <strong>as a control, we will also separately train the models with <code class="docutils literal notranslate"><span class="pre">train_sampler_bias_ctrl</span></code></strong>, a training dataset sampler that does not share the same sampling bias as <code class="docutils literal notranslate"><span class="pre">train_sampler_biased</span></code>, but can only sample as many samples as <code class="docutils literal notranslate"><span class="pre">train_sampler_biased</span></code> can.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4079,7 +4181,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting first 20 images from the biased training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting first 20 images from the biased training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="n">train_sampler_biased</span><span class="o">.</span><span class="n">indices</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"posX_quadrants"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4089,7 +4191,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>Again, the annotations are added, <strong>purely for visualization purposes</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting sample images from the bias control training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting sample images from the bias control training dataset.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">dSprites</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="n">train_sampler_bias_ctrl</span><span class="o">.</span><span class="n">indices</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span> <span class="n">annotations</span><span class="o">=</span><span class="s2">"posX_quadrants"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4097,7 +4199,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Function to run full training procedure</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Function to run full training procedure</span>
 <span class="c1"># @markdown (from initializing and pretraining encoders to training classifiers):</span>
 
 <span class="c1"># @markdown `full_training_procedure(train_sampler, test_sampler)`</span>
@@ -4168,7 +4270,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>Let us start with our <strong>unbiased control sampler</strong>, to get a sense of the classification performance levels we should expect with a dataset this size.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4186,7 +4288,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <p>Using the same parameters, we now repeat the analysis with the <strong>biased</strong> training data sampler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4210,7 +4312,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W3D1_T1','https://portal.neuromatchac
 <strong>D.</strong> What are some methods we can employ to help mitigate the negative effects of biases in our training sets on our ability to learn good data representations with our models?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifier trained with the supervised encoder is most affected by the</span>
@@ -4285,7 +4387,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>D.</strong> What type of SSL task could be implemented for <strong>sequential or time series</strong> data. For example, you might wish to predict from electrical brain recordings what stage of sleep a person is in. How might you use the knowledge that sleep stages change slowly in time to construct a useful SSL task?</br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A.  A few examples of principles we can draw on to successfully apply</span>
@@ -4352,7 +4454,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>
@@ -4386,7 +4488,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">,</span> <span class="n">simclr_encoder</span><span class="p">],</span>
@@ -4410,7 +4512,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>E.</strong>  How might one modify the SimCLR encoder pre-training, for example, if the downstream task were to predict <code class="docutils literal notranslate"><span class="pre">orientation</span></code> instead of <code class="docutils literal notranslate"><span class="pre">shape</span></code>?</br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The RSMs for the pre-trained SimCLR encoder show that it</span>
@@ -4481,7 +4583,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-1-1-1-all-simclr-encoder-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 1.1.1: All SimCLR encoder RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_simclr_encoder_60ep_bs1000_deg90_trans0-2_scale0-8to1-2_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -4510,7 +4612,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4577,7 +4679,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">def</span> <span class="nf">rsms_and_histogram_plot</span><span class="p">():</span>
   <span class="sd">"""</span>
 <span class="sd">  Function to plot Representational Similarity Matrices (RSMs) and Histograms</span>
@@ -4623,7 +4725,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>C.</strong>  What, intuitively, is the role of negative pairs in shaping the feature space that a contrastive model learns, and how does this role relate to the role of positive pairs?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. As seen in the much yellower RSMs of the SimCLR encoder trained with only</span>
@@ -4671,7 +4773,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-2-1-1-all-simclr-encoder-2-neg-pairs-rsms" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 2.1.1: All SimCLR encoder (2 neg. pairs) RSMs</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"rsms_simclr_encoder_2neg_60ep_bs1000_deg90_trans0-2_scale0-8to1-2_seed2021.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -4685,7 +4787,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><em><strong>Interactive Demo:</strong> Try different numbers of epochs for which to train the classifier. (The original setting is <code class="docutils literal notranslate"><span class="pre">num_epochs=25</span></code>.)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Training a classifier on the representations learned by the SimCLR "</span>
@@ -4768,7 +4870,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><em><strong>Interactive Demo:</strong> Set <code class="docutils literal notranslate"><span class="pre">labelled_fractions</span></code> argument to a list of fractions (4 to 6 values between 0.01 and 1.0) with which to train classifiers for each encoder.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call this before any dataset/network initializing or training,</span>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
@@ -4798,7 +4900,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <strong>B.</strong> What might explain why different models are affected differently?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove explanation</span>
 
 <span class="sd">"""</span>
 <span class="sd">A. The classifiers trained on top of the random and pre-trained VAE encoders</span>
@@ -4839,7 +4941,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <h3>Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data<a class="headerlink" href="#supporting-images-for-discussion-response-examples-for-bonus-3-1-1-classifier-performances-for-various-fractions-of-labelled-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Supporting images for Discussion response examples for Bonus 3.1.1: Classifier performances for various fractions of labelled data</span>
 
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">REPO_PATH</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="s2">"labelled_fractions.png"</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>

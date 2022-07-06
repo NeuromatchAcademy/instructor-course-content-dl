@@ -37,6 +37,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
@@ -1329,6 +1331,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://mfr.ca-1.osf.io/render?url=https://osf.io/n263c/?direct%26mode=render%26action=download%26mode=render" width="854"></iframe>
+</div></div>
 </div>
 <p>These are the slides for the videos in this tutorial. If you want to locally download the slides, click <a class="reference external" href="https://osf.io/n263c/download">here</a>.</p>
 </div>
@@ -1341,27 +1347,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>There may be <em>errors</em> and/or <em>warnings</em> reported during the installation. However, they are to be ignored.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install dependencies</span>
 
-# @markdown There may be *errors* and/or *warnings* reported during the installation. However, they are to be ignored.
-!pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 torchtext==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html --quiet
-!pip install --upgrade gensim --quiet
-!pip install nltk --quiet
-!pip install python-Levenshtein --quiet
-!pip install git+https://github.com/facebookresearch/fastText.git --quiet
+<span class="c1"># @markdown There may be *errors* and/or *warnings* reported during the installation. However, they are to be ignored.</span>
+<span class="o">!</span>pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.8.0+cu111 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.9.0+cu111 <span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.8.0 <span class="nv">torchtext</span><span class="o">==</span><span class="m">0</span>.9.0 -f https://download.pytorch.org/whl/torch_stable.html --quiet
+<span class="o">!</span>pip install --upgrade gensim --quiet
+<span class="o">!</span>pip install nltk --quiet
+<span class="o">!</span>pip install python-Levenshtein --quiet
+<span class="o">!</span>pip install git+https://github.com/facebookresearch/fastText.git --quiet
 
-!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-from evaltools.airtable import AirtableForm
+<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
 
-# Generate airtable form
-atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchacademy.org/api/redirect/to/9c55f6cb-cdf9-4429-ac1c-ec44fe64c303')
+<span class="c1"># Generate airtable form</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W2D5_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/9c55f6cb-cdf9-4429-ac1c-ec44fe64c303'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="kn">import</span> <span class="nn">fasttext</span>
@@ -1387,10 +1400,10 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 <h2>Figure Settings<a class="headerlink" href="#figure-settings" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Figure Settings</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'retina'</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1401,7 +1414,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 <h2>Load Dataset from <code class="docutils literal notranslate"><span class="pre">nltk</span></code><a class="headerlink" href="#load-dataset-from-nltk" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title  Load Dataset from `nltk`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title  Load Dataset from `nltk`</span>
 <span class="c1"># No critical warnings, so we suppress it</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
@@ -1417,7 +1430,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Helper functions</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
 
@@ -1458,7 +1471,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 <p>Executing <code class="docutils literal notranslate"><span class="pre">set_seed(seed=seed)</span></code> you are setting the seed</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set random seed</span>
 
 <span class="c1"># @markdown Executing `set_seed(seed=seed)` you are setting the seed</span>
 
@@ -1525,7 +1538,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 <h2>Set device (GPU or CPU). Execute <code class="docutils literal notranslate"><span class="pre">set_device()</span></code><a class="headerlink" href="#set-device-gpu-or-cpu-execute-set-device" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Set device (GPU or CPU). Execute `set_device()`</span>
 
 <span class="c1"># Inform the user if the notebook uses GPU or CPU.</span>
 
@@ -1554,7 +1567,7 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D5_T1','https://portal.neuromatchac
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 </pre></div>
@@ -1605,7 +1618,7 @@ Word2vec accepts several parameters that affect both training speed and quality.
 <p><code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">Word2Vec(sentences,</span> <span class="pre">workers=4)</span> <span class="pre">#</span> <span class="pre">default</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">worker</span> <span class="pre">=</span> <span class="pre">no</span> <span class="pre">parallelization</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Categories used for the Brown corpus</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Categories used for the Brown corpus</span>
 <span class="n">category</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'editorial'</span><span class="p">,</span> <span class="s1">'fiction'</span><span class="p">,</span> <span class="s1">'government'</span><span class="p">,</span> <span class="s1">'mystery'</span><span class="p">,</span> <span class="s1">'news'</span><span class="p">,</span> <span class="s1">'religion'</span><span class="p">,</span>
             <span class="s1">'reviews'</span><span class="p">,</span> <span class="s1">'romance'</span><span class="p">,</span> <span class="s1">'science_fiction'</span><span class="p">]</span>
 </pre></div>
@@ -1615,7 +1628,7 @@ Word2vec accepts several parameters that affect both training speed and quality.
 <p>Word2Vec model</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Word2Vec model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Word2Vec model</span>
 
 <span class="k">def</span> <span class="nf">create_word2vec_model</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="s1">'news'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">sg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
   <span class="n">sentences</span> <span class="o">=</span> <span class="n">brown</span><span class="o">.</span><span class="n">sents</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="n">category</span><span class="p">)</span>
@@ -1642,7 +1655,7 @@ Word2vec accepts several parameters that affect both training speed and quality.
 <p>The cell will take 30-45 seconds to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a word2vec model based on categories from Brown corpus</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a word2vec model based on categories from Brown corpus</span>
 <span class="n">w2vmodel</span> <span class="o">=</span> <span class="n">create_word2vec_model</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1651,7 +1664,7 @@ Word2vec accepts several parameters that affect both training speed and quality.
 <p>You can get the embedding vector for a word in the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get word list from Brown corpus</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get word list from Brown corpus</span>
 <span class="n">brown_wordlist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">brown</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="n">category</span><span class="p">))</span>
 <span class="c1"># generate a random word</span>
 <span class="n">random_word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">brown_wordlist</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -1671,14 +1684,14 @@ Word2vec accepts several parameters that affect both training speed and quality.
 What should be arrangement of the key clusters with respect to each other?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'voters'</span><span class="p">,</span> <span class="s1">'magic'</span><span class="p">,</span> <span class="s1">'love'</span><span class="p">,</span> <span class="s1">'God'</span><span class="p">,</span> <span class="s1">'evidence'</span><span class="p">,</span> <span class="s1">'administration'</span><span class="p">,</span> <span class="s1">'governments'</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'voters'</span><span class="p">,</span> <span class="s1">'magic'</span><span class="p">,</span> <span class="s1">'love'</span><span class="p">,</span> <span class="s1">'God'</span><span class="p">,</span> <span class="s1">'evidence'</span><span class="p">,</span> <span class="s1">'administration'</span><span class="p">,</span> <span class="s1">'governments'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Cluster embeddings related functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Cluster embeddings related functions</span>
 
 <span class="c1"># @markdown **Note:** We import [sklearn.manifold.TSNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)</span>
 <span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
@@ -1733,7 +1746,7 @@ What should be arrangement of the key clusters with respect to each other?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get closest words to the keys and get clusters of these words</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get closest words to the keys and get clusters of these words</span>
 <span class="n">embeddings_en_2d</span><span class="p">,</span> <span class="n">word_clusters</span> <span class="o">=</span> <span class="n">get_cluster_embeddings</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
 <span class="c1"># tSNE plot of similar words to keys</span>
 <span class="n">tsne_plot_similar_words</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Similar words from Brown Corpus'</span><span class="p">,</span>
@@ -1757,7 +1770,7 @@ What should be arrangement of the key clusters with respect to each other?</p>
 <h4>Student Response<a class="headerlink" href="#student-response" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Student Response</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 
 
@@ -1805,7 +1818,7 @@ What should be arrangement of the key clusters with respect to each other?</p>
 First, find the embedding for the word “King”</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Download FastText English Embeddings of dimension 100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Download FastText English Embeddings of dimension 100</span>
 <span class="c1"># @markdown This will take 1-2 minutes to run</span>
 
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">requests</span>
@@ -1835,7 +1848,7 @@ First, find the embedding for the word “King”</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load 100 dimension FastText Vectors using FastText library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load 100 dimension FastText Vectors using FastText library</span>
 <span class="n">ft_en_vectors</span> <span class="o">=</span> <span class="n">fasttext</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">'cc.en.100.bin'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Length of the embedding is: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ft_en_vectors</span><span class="o">.</span><span class="n">get_word_vector</span><span class="p">(</span><span class="s1">'king'</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Embedding for the word King is:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">ft_en_vectors</span><span class="o">.</span><span class="n">get_word_vector</span><span class="p">(</span><span class="s1">'king'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -1847,7 +1860,7 @@ First, find the embedding for the word “King”</p>
 <p>Now find the 10 most similar words to “king”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ft_en_vectors</span><span class="o">.</span><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="s2">"king"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Most similar by key</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ft_en_vectors</span><span class="o">.</span><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="s2">"king"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Most similar by key</span>
 </pre></div>
 </div>
 </div>
@@ -1858,7 +1871,7 @@ First, find the embedding for the word “King”</p>
 <p>More on similarity between words. Let’s check how similar different pairs of word are.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span> <span class="n">vec_b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span> <span class="n">vec_b</span><span class="p">):</span>
   <span class="sd">"""Compute cosine similarity between vec_a and vec_b"""</span>
   <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span> <span class="n">vec_b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec_a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec_b</span><span class="p">))</span>
 
@@ -1888,7 +1901,7 @@ First, find the embedding for the word “King”</p>
 <p>Check similarity between words</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interactive Demo 2.2.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interactive Demo 2.2.1</span>
 
 <span class="c1"># @markdown Check similarity between words</span>
 
@@ -1908,7 +1921,7 @@ First, find the embedding for the word “King”</p>
 <p>Homonyms are words which have same spelling or pronunciation but different meanings depending on the context. Let’s explore how these words are embedded and their similarity in different contexts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################     Words with multiple meanings     ##########################</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################     Words with multiple meanings     ##########################</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Similarity between the words Cricket and Insect: </span><span class="si">{</span><span class="n">getSimilarity</span><span class="p">(</span><span class="s1">'cricket'</span><span class="p">,</span> <span class="s1">'insect'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Similarity between the words Cricket and Sport: </span><span class="si">{</span><span class="n">getSimilarity</span><span class="p">(</span><span class="s1">'cricket'</span><span class="p">,</span> <span class="s1">'sport'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
@@ -1919,7 +1932,7 @@ First, find the embedding for the word “King”</p>
 <h4>Interactive Demo 2.2.2<a class="headerlink" href="#interactive-demo-2-2-2" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interactive Demo 2.2.2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interactive Demo 2.2.2</span>
 
 <span class="c1"># @markdown Explore homonyms \\</span>
 
@@ -1949,7 +1962,7 @@ Let’s try it:</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use get_analogies() funnction.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use get_analogies() funnction.</span>
 <span class="c1"># The words have to be in the order Positive, negative,  Positve</span>
 
 <span class="c1"># Man : Woman  ::  King : _____</span>
@@ -1974,7 +1987,7 @@ Let’s try it:</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Poverty : Wealth  :: Sickness : _____</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Poverty : Wealth  :: Sickness : _____</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ft_en_vectors</span><span class="o">.</span><span class="n">get_analogies</span><span class="p">(</span><span class="s2">"wealth"</span><span class="p">,</span> <span class="s2">"poverty"</span><span class="p">,</span> <span class="s2">"sickness"</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1"># train : board :: horse : _____</span>
@@ -2074,7 +2087,7 @@ The neural net will have one hidden layer of size 128.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to_remove solution</span>
 <span class="k">class</span> <span class="nc">NeuralNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">""" A vanilla neural network. """</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span>
@@ -2147,7 +2160,7 @@ The neural net will have one hidden layer of size 128.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Helper functions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Helper functions</span>
 
 <span class="c1"># @markdown - `train(model, device, train_iter, valid_iter, epochs, learning_rate)`</span>
 
@@ -2321,7 +2334,7 @@ The neural net will have one hidden layer of size 128.</p>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Download embeddings and load the dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown ### Download embeddings and load the dataset</span>
 
 <span class="c1"># @markdown This will load 300 dim FastText embeddings.</span>
 
@@ -2335,7 +2348,7 @@ The neural net will have one hidden layer of size 128.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.0003</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.0003</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">128</span>
@@ -2359,7 +2372,7 @@ The neural net will have one hidden layer of size 128.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_train_val</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">epochs</span><span class="p">),</span> <span class="n">nn_train_acc</span><span class="p">,</span> <span class="n">nn_validation_acc</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_train_val</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">epochs</span><span class="p">),</span> <span class="n">nn_train_acc</span><span class="p">,</span> <span class="n">nn_validation_acc</span><span class="p">,</span>
                <span class="s1">'training_accuracy'</span><span class="p">,</span> <span class="s1">'validation_accuracy'</span><span class="p">,</span>
                <span class="s1">'Neural Net on IMDB text classification'</span><span class="p">)</span>
 <span class="n">plot_train_val</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">epochs</span><span class="p">),</span> <span class="n">nn_train_loss</span><span class="p">,</span> <span class="n">nn_validation_loss</span><span class="p">,</span>
@@ -2382,7 +2395,7 @@ The neural net will have one hidden layer of size 128.</p>
 <h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
 <span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
    <span class="sa">f</span><span class="s2">"""</span>
