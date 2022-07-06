@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -2652,22 +2652,22 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="coding-exercise-4-implement-momentum">
 <h2>Coding Exercise 4: Implement momentum<a class="headerlink" href="#coding-exercise-4-implement-momentum" title="Permalink to this headline">¶</a></h2>
 <p>In this exercise you will implement the momentum update given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d60c696-826e-4a57-8069-a2a0c2a47458">
-<span class="eqno">(52)<a class="headerlink" href="#equation-9d60c696-826e-4a57-8069-a2a0c2a47458" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ef164cee-7577-4400-9735-cbf161b131e5">
+<span class="eqno">(52)<a class="headerlink" href="#equation-ef164cee-7577-4400-9735-cbf161b131e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w_{t+1} = w_t - \eta \nabla J(w_t) + \beta (w_t - w_{t-1})
 \end{equation}\]</div>
 <p>It is convenient to re-express this update rule in terms of a recursion. For that, we define ‘velocity’ as the quantity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b274cf99-16a6-4f7f-b3e6-75cafdda02d3">
-<span class="eqno">(53)<a class="headerlink" href="#equation-b274cf99-16a6-4f7f-b3e6-75cafdda02d3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-34803481-4cb9-46c5-8301-d115f2f81fbb">
+<span class="eqno">(53)<a class="headerlink" href="#equation-34803481-4cb9-46c5-8301-d115f2f81fbb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 v_{t-1} := w_{t} - w_{t-1}
 \end{equation}\]</div>
 <p>which leads to the two-step update rule:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a926e13e-c8d9-4d33-b00e-29484585a63b">
-<span class="eqno">(54)<a class="headerlink" href="#equation-a926e13e-c8d9-4d33-b00e-29484585a63b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1808c8ca-e4d6-4018-abc2-a50eefee1373">
+<span class="eqno">(54)<a class="headerlink" href="#equation-1808c8ca-e4d6-4018-abc2-a50eefee1373" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 v_t = - \eta \nabla J(w_t) + \beta (\underbrace{w_t - w_{t-1}}_{v_{t-1}})
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a77682ee-ff41-470a-8728-34ddd9c0633b">
-<span class="eqno">(55)<a class="headerlink" href="#equation-a77682ee-ff41-470a-8728-34ddd9c0633b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8a04f8dd-023b-430f-bfe9-711914a40505">
+<span class="eqno">(55)<a class="headerlink" href="#equation-8a04f8dd-023b-430f-bfe9-711914a40505" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w_{t+1} \leftarrow w_t + v_{t}
 \end{equation}\]</div>
 <p>Pay attention to the positive sign of the update in the last equation, given the definition of <span class="math notranslate nohighlight">\(v_t\)</span>, above.</p>
@@ -3384,8 +3384,8 @@ w_{t+1} \leftarrow w_t + v_{t}
 <div class="section" id="coding-exercise-7-implement-rmsprop">
 <h2>Coding Exercise 7: Implement RMSprop<a class="headerlink" href="#coding-exercise-7-implement-rmsprop" title="Permalink to this headline">¶</a></h2>
 <p>In this exercise you will implement the update of the RMSprop optimizer:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-014115db-b304-4b6f-b53f-90b34d9eaee3">
-<span class="eqno">(56)<a class="headerlink" href="#equation-014115db-b304-4b6f-b53f-90b34d9eaee3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-806e81c9-a2c6-434e-83bf-11651bbcf766">
+<span class="eqno">(56)<a class="headerlink" href="#equation-806e81c9-a2c6-434e-83bf-11651bbcf766" title="Permalink to this equation">¶</a></span>\[\begin{align}
 v_{t} &amp;= \alpha v_{t-1} + (1 - \alpha) \nabla J(w_t)^2 \\ \\
 w_{t+1} &amp;= w_t - \eta \frac{\nabla J(w_t)}{\sqrt{v_t + \epsilon}}
 \end{align}\]</div>

@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -1869,8 +1869,8 @@ As a result, even state of the art facial recognition models <a class="reference
 <p>We can try to put this observation in numbers. For this we work with the embeddings.
 We want to calculate the centroid of each group, which is the average of the 49 embeddings of the group. As each embedding vector has a dimension of 512, the centroid will also have this dimension.</p>
 <p>Now we can calculate how far away the observations <span class="math notranslate nohighlight">\(x\)</span> of each group <span class="math notranslate nohighlight">\(S_i\)</span> are from the centroid <span class="math notranslate nohighlight">\(\mu_i\)</span>. This concept is known as Within Sum of Squares (WSS) from cluster analysis.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16a13bd5-dad1-440d-8ba8-2f84ef7a9df8">
-<span class="eqno">(85)<a class="headerlink" href="#equation-16a13bd5-dad1-440d-8ba8-2f84ef7a9df8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-12577c22-974a-4ab4-bef5-8be5ec3103f4">
+<span class="eqno">(85)<a class="headerlink" href="#equation-12577c22-974a-4ab4-bef5-8be5ec3103f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{WSS} = \sum_{x\in S_i} ||x - \mu_i||^2
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(|| \cdot ||\)</span> is the Euclidean norm.</p>

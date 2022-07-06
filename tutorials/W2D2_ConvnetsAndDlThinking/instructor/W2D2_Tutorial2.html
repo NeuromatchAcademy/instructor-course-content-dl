@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -1243,8 +1243,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Upon discussion with Lyle, it emerges that we have data on 12 parameters of motorcycle riding, including acceleration, angle, braking, degrees of leaning. These inputs are fairly smooth over time, the angle of the motorcycle typically does not change much in 100 ms for example.</p>
 <p>We also have recorded data on the timing of spikes of <span class="math notranslate nohighlight">\(N\)</span> neurons in motor cortex. The underlying firing rate is smooth but every millisecond spikes are random and independent. This means we can assume that the number of spikes in a short interval can be modeled using a Poisson distribution with an underlying firing rate for that interval <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <p>For neuron <span class="math notranslate nohighlight">\(i\)</span>, the probability of seeing <span class="math notranslate nohighlight">\(k_{i}\)</span> spikes in some interval given an underlying firing rate <span class="math notranslate nohighlight">\(\lambda_{i}\)</span> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f07c04db-1c71-4256-b6bf-8458cd1a238b">
-<span class="eqno">(68)<a class="headerlink" href="#equation-f07c04db-1c71-4256-b6bf-8458cd1a238b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4ad3a9a1-6515-4d87-a2fb-9ff4cc78be20">
+<span class="eqno">(68)<a class="headerlink" href="#equation-4ad3a9a1-6515-4d87-a2fb-9ff4cc78be20" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathcal{f(k_{i}:λ_{i})} = \mathcal{Pr(X=k_{i})} = \frac {\lambda_{i}^{k_{i}}e^{-\lambda_{i}}}{k_{i}!}
 \end{equation}\]</div>
 <p>So this poisson distribution may be relevant if we want to, in a way, have a good model for the spiking of neurons.</p>
@@ -1270,28 +1270,28 @@ const thebe_selector_output = ".output, .cell_output"
 <summary> <font color="green">Click here for the solution </font></summary>
 <p>First, we will convert our spike timing data to the number of spikes per time bin for time bins of size 50 ms. This gives us <span class="math notranslate nohighlight">\(k_{i,t}\)</span> for every neuron <span class="math notranslate nohighlight">\(i\)</span> and time bin <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>We are assuming a Poisson distribution for our spiking. That means that we get the probability of seeing spike count <span class="math notranslate nohighlight">\(k_{i, t}\)</span>  given underlying firing rate <span class="math notranslate nohighlight">\(\lambda_{i, t}\)</span> using this equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0077d6b8-6db4-48a0-b954-cdc9fe0b1891">
-<span class="eqno">(69)<a class="headerlink" href="#equation-0077d6b8-6db4-48a0-b954-cdc9fe0b1891" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8d85774c-2dbc-4375-8693-38a451284955">
+<span class="eqno">(69)<a class="headerlink" href="#equation-8d85774c-2dbc-4375-8693-38a451284955" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathcal{f(k_{i,t}:\lambda_{i,t})} = \mathcal{Pr}(X=k_{i,t}) = \frac {\lambda_{i,t}^{k_{i,t}}e^{-\lambda_{i,t}}}{k_{i,t}!}
 \end{equation}\]</div>
 <p>That seems a pretty good thing to optimize to make our predictions as good as possible! We want a high probability of seeing the actual spike count we recorded given the neural network prediction of the underlying firing rate.</p>
 <p>We will make this negative later so we have an equation that we want to minimize rather than maximize, so we can use all our normal tricks for minimization (instead of maximization). First though, let’s scale up to include all our neurons and time bins.</p>
 <p>We can treat each time bin as independent because, while the underlying probability of firing changes slowly, every milisecond spiking is random and independent. From probability, we know that we can compute the probability of a set of independent events (all the spike counts) by multiplying the probabilities of each event. So the probability of seeing all of our data given the neural network predictions is all of our probabilities of <span class="math notranslate nohighlight">\(k_{i,t}\)</span> multiplied together:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4a47145-7916-46a6-8208-7aaf3dfe443d">
-<span class="eqno">(70)<a class="headerlink" href="#equation-c4a47145-7916-46a6-8208-7aaf3dfe443d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ae1c237-b864-42f3-b689-1a5527f039eb">
+<span class="eqno">(70)<a class="headerlink" href="#equation-4ae1c237-b864-42f3-b689-1a5527f039eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathcal{Pr}(\text{all_data}) &amp;= \prod_{i=1}^{N}\prod_{t=1}^\top \mathcal{Pr}(X=k_{i,t})\\
 &amp;= \prod_{i=1}^{N}\prod_{t=1}^\top \frac {\lambda_{i,t}^{k_{i,t}}e^{-\lambda_{i,t}}}{k_{i,t}!}
 \end{align}\]</div>
 <p>This is also known as our likelihood!</p>
 <p>We usually use the log likelihood instead of the likelihood when minimizing or maximizing for numerical computation reasons. W We can convert the above equation to log likelihood:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-032317fc-c5f4-4963-87b2-5069eb20d9f4">
-<span class="eqno">(71)<a class="headerlink" href="#equation-032317fc-c5f4-4963-87b2-5069eb20d9f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-49fb9cf3-9e27-4f3f-a129-127407d5d6eb">
+<span class="eqno">(71)<a class="headerlink" href="#equation-49fb9cf3-9e27-4f3f-a129-127407d5d6eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \text{log likelihood} &amp;= \sum_{i=1}^N\sum_{t=1}^\top \text{log}(\mathcal{Pr}(X=k_{i,t}) \\
 &amp;= \sum_{i=1}^N\sum_{t=1}^\top k_{i,t} \text{log}(\lambda_{i,t}) - \lambda_{i,t} - \text{log}(k_{i,t}!)
 \end{align}\]</div>
 <p>And last but not least, we want to make it negative so we can minimize instead of maximize:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e937e01-28ee-45d3-8af6-a847b29d83f8">
-<span class="eqno">(72)<a class="headerlink" href="#equation-3e937e01-28ee-45d3-8af6-a847b29d83f8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b505d09d-6996-4ae2-898b-87b5985c8177">
+<span class="eqno">(72)<a class="headerlink" href="#equation-b505d09d-6996-4ae2-898b-87b5985c8177" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{negative log likelihood} 
 = \sum_{i=1}^N\sum_{t=1}^\top - k_{i,t} \text{log}(\lambda_{i,t}) + \lambda_{i,t} + \text{log}(k_{i,t}!)
 \end{equation}\]</div>
@@ -1326,8 +1326,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Lyle wants to build an artificial neural network that has a measure of its own uncertainty about it’s predictions. He wants the neural network to give a prediction/estimate and an uncertainty, or standard deviation, measurement on it.</p>
 <p>Let’s say Lyle wants to estimate the location of an atom in a chemical molecule based on various inputs. He wants to have the estimate of the location and an estimate of the variance. We don’t train neural networks on one data point at a time though - he wants a cost function that takes in N data points (input and atom location pairings).</p>
 <p>We think we may be able to use a Gaussian distribution to help Lyle here:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d5474c6-957a-46b9-a4cc-dadb0fbb2a13">
-<span class="eqno">(73)<a class="headerlink" href="#equation-0d5474c6-957a-46b9-a4cc-dadb0fbb2a13" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0a3a20d-c4f4-4c22-98ff-c2ecc861e478">
+<span class="eqno">(73)<a class="headerlink" href="#equation-f0a3a20d-c4f4-4c22-98ff-c2ecc861e478" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 g(x) = \frac{1}{\sigma\sqrt{2\pi}} \text{exp} \left( -\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2} \right)
 \end{equation}\]</div>
 </div>
@@ -1350,18 +1350,18 @@ g(x) = \frac{1}{\sigma\sqrt{2\pi}} \text{exp} \left( -\frac{1}{2}\frac{(x-\mu)^2
 <p>For a given set of inputs, we want the neural network to predict the location of the atom and the uncertainty of that estimate. Standard deviation is a great measure of uncertainty so we can predict the mean and standard deviation of the location (instead of just the mean as is more common).</p>
 <p>So how do we a design a cost function that involves the mean and standard deviation?  We can assume a Gaussian distribution over the location. The neural network can predict the mean of that Gaussian (that’s the estimate of the location) and the standard deviation of that Gaussian (that’s the uncertainty measure) for a given set of inputs.</p>
 <p>Now that we’ve got that figured out, we can take a very similar approach to what we did in Section 2 with spiking neurons. For a given data point <span class="math notranslate nohighlight">\(i\)</span>, the neural network predicts the mean (<span class="math notranslate nohighlight">\(\mu_i\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma_i\)</span>) of the location given the inputs. We can then compute the probability of seeing the actual recorded location (<span class="math notranslate nohighlight">\(x_i\)</span>) given these predictions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42737686-31ff-476f-ac74-157f1faf63b1">
-<span class="eqno">(74)<a class="headerlink" href="#equation-42737686-31ff-476f-ac74-157f1faf63b1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8876b992-2330-46b8-91e2-187d86d18cd7">
+<span class="eqno">(74)<a class="headerlink" href="#equation-8876b992-2330-46b8-91e2-187d86d18cd7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 g(x) = \frac{1}{\sigma\sqrt{2\pi}} \text{exp}\left( -\frac{1}{2}\frac{(x_i-\mu_i)^2}{\sigma_i^2} \right)
 \end{equation}\]</div>
 <p>The location of the atom is independent in each data point so we can get the overall likelihood by multiplying the probabilities for the individual data points.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-296f15e7-fafa-4d90-8ccd-06dfa4ea4518">
-<span class="eqno">(75)<a class="headerlink" href="#equation-296f15e7-fafa-4d90-8ccd-06dfa4ea4518" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08e78007-e7bf-4588-8aa3-e812929bca61">
+<span class="eqno">(75)<a class="headerlink" href="#equation-08e78007-e7bf-4588-8aa3-e812929bca61" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{likelihood} = \prod_{i=1}^N\frac{1}{\sigma\sqrt{2\pi}} \text{exp}\left( -\frac{1}{2}\frac{(x_i-\mu_i)^2}{\sigma_i^2} \right)
 \end{equation}\]</div>
 <p>And, as before, we want to take the log of this for numerical reasons and convert to negative log likelihood:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff574a59-ae3c-4653-857b-4f2a6a01a71b">
-<span class="eqno">(76)<a class="headerlink" href="#equation-ff574a59-ae3c-4653-857b-4f2a6a01a71b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-22400d1f-1a5b-42e1-9d46-708556435d0b">
+<span class="eqno">(76)<a class="headerlink" href="#equation-22400d1f-1a5b-42e1-9d46-708556435d0b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{negative log likelihood} = \sum_{i=1}^N \text{log} \left( \frac{1}{\sigma\sqrt{2\pi}} \text{exp}\left( -\frac{1}{2}\frac{(x_i-\mu_i)^2}{\sigma_i^2} \right) \right) 
 \end{equation}\]</div>
 <p>Changing the parameters of the neural network so it predicts <span class="math notranslate nohighlight">\(\mu_i\)</span> and <span class="math notranslate nohighlight">\(\sigma_i\)</span> that minimize this equation will give us (hopefully fairly accurate) predictions of the location and the network uncertainty about the location!</p>
@@ -1396,8 +1396,8 @@ g(x) = \frac{1}{\sigma\sqrt{2\pi}} \text{exp}\left( -\frac{1}{2}\frac{(x_i-\mu_i
 <p>Konrad needs help recognizing faces. He wants to build a network that embeds photos of faces so that photos of the same person are nearby in the embedding space and photos of different people are far in the embedding space. We can’t just use pixel space because the pixels will be very different between a photo of someone straight on vs. from their side!</p>
 <p>We will use a neural network to go from the pixels of each image to an embedding space. Let’s say you have a convolutional neural network with m units in the last layer. If you feed a face photo <span class="math notranslate nohighlight">\(i\)</span> through the CNN, the activities of the units in the last layer form an <span class="math notranslate nohighlight">\(m\)</span> dimensional vector <span class="math notranslate nohighlight">\(\bar{y}_i\)</span> - this is an embedding of that face photo in <span class="math notranslate nohighlight">\(m\)</span> dimensional space.</p>
 <p>We think we might be able to incorporate Euclidean distance to help us here. The Euclidean distance between two vectors is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ff70540-f96c-4168-93fb-e1ec5a9315c9">
-<span class="eqno">(77)<a class="headerlink" href="#equation-5ff70540-f96c-4168-93fb-e1ec5a9315c9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c436812-6344-419a-9f69-ecc8cae3c6f4">
+<span class="eqno">(77)<a class="headerlink" href="#equation-5c436812-6344-419a-9f69-ecc8cae3c6f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 d(\bar{y}_i, \bar{y}_j) = \sqrt{\sum_{c=1}^m(\bar{y}_{i_c} - \bar{y}_{j_c})^2}
 \end{equation}\]</div>
 <br/>
@@ -1420,31 +1420,31 @@ d(\bar{y}_i, \bar{y}_j) = \sqrt{\sum_{c=1}^m(\bar{y}_{i_c} - \bar{y}_{j_c})^2}
 <summary> <font color="green">Click here for the solution </font></summary>
 <p>We want the same faces to have similar embeddings. Let’s say we have one photo of Lyle <span class="math notranslate nohighlight">\(a\)</span> and another photo of Lyle <span class="math notranslate nohighlight">\(p\)</span>. We want the embeddings of those photos to be very similar: we want the Euclidean distance between <span class="math notranslate nohighlight">\(\bar{y}_a\)</span> and <span class="math notranslate nohighlight">\(\bar{y}_p\)</span> (the activitys of the last layer of the CNN when photo <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(p\)</span> are fed through) to be small.</p>
 <p>So one possible cost function is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30c726f3-f66d-4f39-b6da-960b101f08fc">
-<span class="eqno">(78)<a class="headerlink" href="#equation-30c726f3-f66d-4f39-b6da-960b101f08fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62fd18c1-070a-47ac-835b-9022f14e3857">
+<span class="eqno">(78)<a class="headerlink" href="#equation-62fd18c1-070a-47ac-835b-9022f14e3857" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = d(\bar{y}_a, \bar{y}_p)
 \end{equation}\]</div>
 <p>Imagine if we just feed in pairs of the same face and minimize that though. There would be no motivation to ever have different embeddings, we would be only minimizing the distance between embeddings. If the CNN was smart, it would just have the same embedding for every single photo - then the cost function would equal 0!</p>
 <p>This is clearly not what we want. We want to motivate the CNN to have similar embeddings only when the faces are the same. This means we need to also train it to maximize distance when the faces are different.</p>
 <p>We could choose another two photos of different people and maximize that distance but then there’s no relation to the embeddings we’ve already established of the two photos of Lyle.  Instead, we will add one more photo to the mix: a photo of Konrad <span class="math notranslate nohighlight">\(n\)</span>. We want the distance of this photo to be far from our original photos of Lyle <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.  So we want the distance between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(p\)</span> to be small and the distance between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(n\)</span> for example to be large:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3169433-b0f1-442b-9c3e-0551cb112758">
-<span class="eqno">(79)<a class="headerlink" href="#equation-f3169433-b0f1-442b-9c3e-0551cb112758" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ac97ea87-7abb-473d-bf74-2981bd163e84">
+<span class="eqno">(79)<a class="headerlink" href="#equation-ac97ea87-7abb-473d-bf74-2981bd163e84" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = d(\bar{y}_a, \bar{y}_p) - d(\bar{y}_a, \bar{y}_n)
 \end{equation}\]</div>
 <p>We could compare <span class="math notranslate nohighlight">\(n\)</span> to both <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31c73f0f-3c9e-43ce-90de-226103d6f863">
-<span class="eqno">(80)<a class="headerlink" href="#equation-31c73f0f-3c9e-43ce-90de-226103d6f863" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-14d8b17d-d106-4a1c-94c7-c4995d8a7832">
+<span class="eqno">(80)<a class="headerlink" href="#equation-14d8b17d-d106-4a1c-94c7-c4995d8a7832" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = d(\bar{y}_a, \bar{y}_p) - d(\bar{y}_a, \bar{y}_n) - d(\bar{y}_p, \bar{y}_n)
 \end{equation}\]</div>
 <p>But then the cost function is a bit unbalanced, there are two dissimiliarty terms and they might dominate (so achieving the similarity is less important). So let’s go with just including one dissimilarity term.</p>
 <p>This is an established cost function - triplet loss! We chose the subscripts <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> for a reason: we have an anchor image, a positive image (the same person’s face as the anchor) and a negative image (a different person’s face as the anchor). We can then sum over N data points where each data point is a set of three images:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a205cd7b-d446-4d39-938c-692408e02cdc">
-<span class="eqno">(81)<a class="headerlink" href="#equation-a205cd7b-d446-4d39-938c-692408e02cdc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1ec951f2-ebe3-4502-9c9d-b8a50105a428">
+<span class="eqno">(81)<a class="headerlink" href="#equation-1ec951f2-ebe3-4502-9c9d-b8a50105a428" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = \sum_{i=1}^N [d(\bar{y}_{a, i}, \bar{y}_{p, i}) - d(\bar{y}_{a, i}, \bar{y}_{n, i})]
 \end{equation}\]</div>
 <p>There’s one little addition in triplet loss. Instead of just using the above cost function, researchers add a constant <span class="math notranslate nohighlight">\(\alpha\)</span> and then make the cost function 0 if it becomes negative. Why do you think they do this?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-74266122-dc09-452d-a857-88c34a676830">
-<span class="eqno">(82)<a class="headerlink" href="#equation-74266122-dc09-452d-a857-88c34a676830" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c4eca3cc-5309-43b1-8ed3-50d31cb9c377">
+<span class="eqno">(82)<a class="headerlink" href="#equation-c4eca3cc-5309-43b1-8ed3-50d31cb9c377" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{Cost function} = \text{max} \left( \sum_{i=1}^N \left[ d(\bar{y}_{a, i}, \bar{y}_{p, i}) - d(\bar{y}_{a, i}, \bar{y}_{n, i}) + \alpha \right], 0 \right)
 \end{equation}\]</div>
 <div class="section" id="video-10-embedding-faces-wrap-up">

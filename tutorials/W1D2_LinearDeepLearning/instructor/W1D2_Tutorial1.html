@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -1671,39 +1671,39 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="analytical-exercise-1-1-gradient-vector-optional">
 <h3>Analytical Exercise 1.1: Gradient vector (Optional)<a class="headerlink" href="#analytical-exercise-1-1-gradient-vector-optional" title="Permalink to this headline">¶</a></h3>
 <p>Given the following function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5088226-ee87-4267-9202-ccdcbc01826d">
-<span class="eqno">(9)<a class="headerlink" href="#equation-a5088226-ee87-4267-9202-ccdcbc01826d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-48c672c7-a629-4757-8514-aacf7b0cce00">
+<span class="eqno">(9)<a class="headerlink" href="#equation-48c672c7-a629-4757-8514-aacf7b0cce00" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 z = h(x, y) = \sin(x^2 + y^2)
 \end{equation}\]</div>
 <p>find the gradient vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5004e2e-a21e-4be9-b81d-7c0efdd7af75">
-<span class="eqno">(10)<a class="headerlink" href="#equation-a5004e2e-a21e-4be9-b81d-7c0efdd7af75" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-56cc829a-9971-4f20-9873-187ba928e783">
+<span class="eqno">(10)<a class="headerlink" href="#equation-56cc829a-9971-4f20-9873-187ba928e783" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   \begin{bmatrix}
   \dfrac{\partial z}{\partial x} \\ \\ \dfrac{\partial z}{\partial y}
   \end{bmatrix}
 \end{equation}\]</div>
 <p><em>Hint: Use the chain rule!</em></p>
 <p><strong>Chain rule</strong>: For a composite function <span class="math notranslate nohighlight">\(F(x) = g(h(x)) \equiv (g \circ h)(x)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ddf89e8-b8fb-4e03-a43b-66f74de407a0">
-<span class="eqno">(11)<a class="headerlink" href="#equation-5ddf89e8-b8fb-4e03-a43b-66f74de407a0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-122d187d-d4e0-402f-9102-13bc57af096f">
+<span class="eqno">(11)<a class="headerlink" href="#equation-122d187d-d4e0-402f-9102-13bc57af096f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 F'(x) = g'(h(x)) \cdot h'(x)
 \end{equation}\]</div>
 <p>or differently denoted:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67331e79-16db-46a4-9c82-46ea6159c638">
-<span class="eqno">(12)<a class="headerlink" href="#equation-67331e79-16db-46a4-9c82-46ea6159c638" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54d24e5a-4703-4fe5-a315-0f8ba1a23c3b">
+<span class="eqno">(12)<a class="headerlink" href="#equation-54d24e5a-4703-4fe5-a315-0f8ba1a23c3b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dF}{dx} = \frac{dg}{dh} ~ \frac{dh}{dx}
 \end{equation}\]</div>
 <hr class="docutils"/>
 <div class="section" id="solution">
 <h4>Solution:<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
 <p>We can rewrite the function as a composite function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7b7959d-3f0b-4fbe-a4d9-f776a5aba0ed">
-<span class="eqno">(13)<a class="headerlink" href="#equation-d7b7959d-3f0b-4fbe-a4d9-f776a5aba0ed" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af5bfe53-5193-4372-8952-0d4d20ed1148">
+<span class="eqno">(13)<a class="headerlink" href="#equation-af5bfe53-5193-4372-8952-0d4d20ed1148" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 z = f\left( g(x,y) \right), ~~ f(u) = \sin(u), ~~ g(x, y) = x^2 + y^2
 \end{equation}\]</div>
 <p>Using the <a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-096a828d-d27a-49c9-b1fa-d8aeab60baa4">
-<span class="eqno">(14)<a class="headerlink" href="#equation-096a828d-d27a-49c9-b1fa-d8aeab60baa4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-56c022c7-368a-4d13-9ef7-78d4e3f656a0">
+<span class="eqno">(14)<a class="headerlink" href="#equation-56c022c7-368a-4d13-9ef7-78d4e3f656a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dfrac{\partial z}{\partial x} &amp;= \dfrac{\partial f}{\partial g} \dfrac{\partial g}{\partial x} = \cos(g(x,y)) ~ (2x) = \cos(x^2 + y^2) \cdot 2x \\ \\
 \dfrac{\partial z}{\partial y} &amp;= \dfrac{\partial f}{\partial g} \dfrac{\partial g}{\partial y} = \cos(g(x,y)) ~ (2y) = \cos(x^2 + y^2) \cdot 2y
 \end{align}\]</div>
@@ -1823,8 +1823,8 @@ z = f\left( g(x,y) \right), ~~ f(u) = \sin(u), ~~ g(x, y) = x^2 + y^2
 <div class="section" id="section-1-2-gradient-descent-algorithm">
 <h2>Section 1.2: Gradient Descent Algorithm<a class="headerlink" href="#section-1-2-gradient-descent-algorithm" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(f(\mathbf{w}): \mathbb{R}^d \rightarrow \mathbb{R}\)</span> be a differentiable function. Gradient Descent is an iterative algorithm for minimizing the function <span class="math notranslate nohighlight">\(f\)</span>, starting with an initial value for variables <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>, taking steps of size <span class="math notranslate nohighlight">\(\eta\)</span> (learning rate) in the direction of the negative gradient at the current point to update the variables <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-683171a8-c367-4e26-8924-e7d801c4a7f3">
-<span class="eqno">(15)<a class="headerlink" href="#equation-683171a8-c367-4e26-8924-e7d801c4a7f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-88cbc085-aee7-48e4-af11-52904314193d">
+<span class="eqno">(15)<a class="headerlink" href="#equation-88cbc085-aee7-48e4-af11-52904314193d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{w}^{(t+1)} = \mathbf{w}^{(t)} - \eta \nabla f \left( \mathbf{w}^{(t)} \right)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\nabla f (\mathbf{w})= \left( \frac{\partial f(\mathbf{w})}{\partial w_1}, ..., \frac{\partial f(\mathbf{w})}{\partial w_d} \right)\)</span>. Since negative gradients always point locally in the direction of steepest descent, the algorithm makes small steps at each point <strong>towards</strong> the minimum.</p>
@@ -1845,8 +1845,8 @@ z = f\left( g(x,y) \right), ~~ f(u) = \sin(u), ~~ g(x, y) = x^2 + y^2
 <hr class="docutils"/>
 <br/>
 <p>Hence, all we need is to calculate the gradient of the loss function with respect to the learnable parameters (i.e., weights):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-600260ae-76b6-46d9-9836-408170d32c51">
-<span class="eqno">(16)<a class="headerlink" href="#equation-600260ae-76b6-46d9-9836-408170d32c51" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-07a1b4a2-ea99-4dae-bfb6-e6f79ecb193f">
+<span class="eqno">(16)<a class="headerlink" href="#equation-07a1b4a2-ea99-4dae-bfb6-e6f79ecb193f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \dfrac{\partial Loss}{\partial \mathbf{w}} = \left[ \dfrac{\partial Loss}{\partial w_1}, \dfrac{\partial Loss}{\partial w_2} , \dots, \dfrac{\partial Loss}{\partial w_d} \right]^{\top}
 \end{equation}\]</div>
 <div class="section" id="analytical-exercise-1-2-gradients">
@@ -1863,8 +1863,8 @@ z = f\left( g(x,y) \right), ~~ f(u) = \sin(u), ~~ g(x, y) = x^2 + y^2
 </div>
 <p><em>Exercise 1.2</em> is an example of how overwhelming the derivation of gradients can get, as the number of variables and nested functions increases. This function is still extraordinarily simple compared to the loss functions of modern neural networks. So how can we (as well as PyTorch and similar frameworks) approach such beasts?</p>
 <p>Let’s look at the function again:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e79b5b7d-4a3e-48fb-8f59-11884abccba8">
-<span class="eqno">(17)<a class="headerlink" href="#equation-e79b5b7d-4a3e-48fb-8f59-11884abccba8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-28c50e89-065d-4c38-8209-61887f52b633">
+<span class="eqno">(17)<a class="headerlink" href="#equation-28c50e89-065d-4c38-8209-61887f52b633" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x, y, z) = \tanh \left(\ln \left[1 + z \frac{2x}{sin(y)} \right] \right)
 \end{equation}\]</div>
 <p>We can build a so-called computational graph (shown below) to break the original function into smaller and more approachable expressions.</p>
@@ -1873,8 +1873,8 @@ f(x, y, z) = \tanh \left(\ln \left[1 + z \frac{2x}{sin(y)} \right] \right)
 <p>Now, let’s start from <span class="math notranslate nohighlight">\(f\)</span>, and work our way against the arrows while calculating the gradient of each expression as we go. This is called the <strong>backward pass</strong>, from which the <strong>backpropagation of errors</strong> algorithm gets its name.</p>
 <center><img alt="Computation Graph full" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W1D2_LinearDeepLearning/static/comput_graph_full.png" width="1200"/></center>
 <p>By breaking the computation into simple operations on intermediate variables, we can use the chain rule to calculate any gradient:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ef49d75-fdee-4c41-9f7c-d86391777c44">
-<span class="eqno">(18)<a class="headerlink" href="#equation-5ef49d75-fdee-4c41-9f7c-d86391777c44" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-02b3227e-0b32-476d-bcbf-d0a7936e6c43">
+<span class="eqno">(18)<a class="headerlink" href="#equation-02b3227e-0b32-476d-bcbf-d0a7936e6c43" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \dfrac{\partial f}{\partial x} = \dfrac{\partial f}{\partial e}~\dfrac{\partial e}{\partial d}~\dfrac{\partial d}{\partial c}~\dfrac{\partial c}{\partial a}~\dfrac{\partial a}{\partial x} = \left( 1-\tanh^2(e) \right) \cdot \frac{1}{d+1}\cdot z \cdot \frac{1}{b} \cdot 2
 \end{equation}\]</div>
 <p>Conveniently, the values for <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(d\)</span> are available to us from when we did the forward pass through the graph. That is, the partial derivatives have simple expressions in terms of the intermediate variables <span class="math notranslate nohighlight">\(a,b,c,d,e\)</span> that we calculated and stored during the forward pass.</p>
@@ -1885,8 +1885,8 @@ f(x, y, z) = \tanh \left(\ln \left[1 + z \frac{2x}{sin(y)} \right] \right)
 <hr class="docutils"/>
 <div class="section" id="id1">
 <h4>Solution:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-fb939a58-0c5b-43ea-b180-c88c66681d8d">
-<span class="eqno">(19)<a class="headerlink" href="#equation-fb939a58-0c5b-43ea-b180-c88c66681d8d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c7003243-3f5a-4c3e-bf86-e932f1f0e235">
+<span class="eqno">(19)<a class="headerlink" href="#equation-c7003243-3f5a-4c3e-bf86-e932f1f0e235" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \dfrac{\partial f}{\partial y} = \dfrac{\partial f}{\partial e}~\dfrac{\partial e}{\partial d}~\dfrac{\partial d}{\partial c}~\dfrac{\partial c}{\partial b}~\dfrac{\partial b}{\partial y} = \left( 1-\tanh^2(e) \right) \cdot \frac{1}{d+1}\cdot z \cdot \frac{-a}{b^2} \cdot \cos(y)
 \end{equation}\]</div>
 <p>For more: <a class="reference external" href="https://colah.github.io/posts/2015-08-Backprop/">Calculus on Computational Graphs: Backpropagation</a></p>

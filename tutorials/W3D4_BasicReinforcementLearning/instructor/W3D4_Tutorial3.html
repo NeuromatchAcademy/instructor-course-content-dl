@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -1258,14 +1258,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p><em>Estimated timing to here from start of tutorial: 20 min</em></p>
 <p>Now that we have our environment, how can we solve it?</p>
 <p>One of the most famous algorithms for estimating action values (aka Q-values) is the Temporal Differences (TD) <strong>control</strong> algorithm known as <em>Q-learning</em> (Watkins, 1989).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d6c18e4-19c5-43da-8680-9505b2cd867e">
-<span class="eqno">(117)<a class="headerlink" href="#equation-3d6c18e4-19c5-43da-8680-9505b2cd867e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9a827c5e-553b-4296-9e25-28bf2304f44b">
+<span class="eqno">(116)<a class="headerlink" href="#equation-9a827c5e-553b-4296-9e25-28bf2304f44b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \big(r_t + \gamma\max_\limits{a} Q(s_{t+1},a_{t+1}) - Q(s_t,a_t)\big)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(Q(s,a)\)</span> is the value function for action <span class="math notranslate nohighlight">\(a\)</span> at state <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate, <span class="math notranslate nohighlight">\(r\)</span> is the reward, and <span class="math notranslate nohighlight">\(\gamma\)</span> is the temporal discount rate.</p>
 <p>The expression <span class="math notranslate nohighlight">\(r_t + \gamma\max_\limits{a} Q(s_{t+1},a_{t+1})\)</span> is referred to as the TD target while the full expression</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d62e6d2-1189-46b6-bfdb-6435fc41f4c0">
-<span class="eqno">(118)<a class="headerlink" href="#equation-5d62e6d2-1189-46b6-bfdb-6435fc41f4c0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-07e37c83-f04f-4c59-8ad1-a4e6ea0e4e68">
+<span class="eqno">(117)<a class="headerlink" href="#equation-07e37c83-f04f-4c59-8ad1-a4e6ea0e4e68" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 r_t + \gamma\max_\limits{a} Q(s_{t+1},a_{t+1}) - Q(s_t,a_t),
 \end{equation}\]</div>
 <p>i.e., the difference between the TD target and the current Q-value, is referred to as the TD error, or reward prediction error.</p>
@@ -1553,8 +1553,8 @@ r_t + \gamma\max_\limits{a} Q(s_{t+1},a_{t+1}) - Q(s_t,a_t),
 <div class="section" id="bonus-section-1-sarsa">
 <h2>Bonus Section 1: SARSA<a class="headerlink" href="#bonus-section-1-sarsa" title="Permalink to this headline">¶</a></h2>
 <p>An alternative to Q-learning, the SARSA algorithm also estimates action values. However, rather than estimating the optimal (off-policy) values, SARSA estimates the <strong>on-policy</strong> action value, i.e. the cumulative future reward that would be obtained if the agent behaved according to its current beliefs.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-660cf715-4c0b-4ecc-bed8-318956d5e418">
-<span class="eqno">(119)<a class="headerlink" href="#equation-660cf715-4c0b-4ecc-bed8-318956d5e418" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e4537c8c-0abe-41d2-b7e7-fb561a9e72ef">
+<span class="eqno">(118)<a class="headerlink" href="#equation-e4537c8c-0abe-41d2-b7e7-fb561a9e72ef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha \big(r_t + \gamma Q(s_{t+1},a_{t+1}) - Q(s_t,a_t)\big)
 \end{equation}\]</div>
 <p>where, once again, <span class="math notranslate nohighlight">\(Q(s,a)\)</span> is the value function for action <span class="math notranslate nohighlight">\(a\)</span> at state <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate, <span class="math notranslate nohighlight">\(r\)</span> is the reward, and <span class="math notranslate nohighlight">\(\gamma\)</span> is the temporal discount rate.</p>

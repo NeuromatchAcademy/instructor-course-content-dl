@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -1051,12 +1051,12 @@ const thebe_selector_output = ".output, .cell_output"
          Student Response (Placeholder - check question number)
         </a>
 </li>
-</ul>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#check-exercise-2">
+         Check Exercise 2
+        </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#coding-exercise-2-dot-product-attention">
-       Coding Exercise 2: Dot product attention
-      </a>
+</ul>
 </li>
 </ul>
 </li>
@@ -1146,6 +1146,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#video-6-positional-encoding">
      Video 6: Positional Encoding
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#implement-positionalencoding-function">
+     Implement
+     <code class="docutils literal notranslate">
+<span class="pre">
+       PositionalEncoding()
+      </span>
+</code>
+     function
     </a>
 </li>
 </ul>
@@ -1556,12 +1567,12 @@ const thebe_selector_output = ".output, .cell_output"
          Student Response (Placeholder - check question number)
         </a>
 </li>
-</ul>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#check-exercise-2">
+         Check Exercise 2
+        </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#coding-exercise-2-dot-product-attention">
-       Coding Exercise 2: Dot product attention
-      </a>
+</ul>
 </li>
 </ul>
 </li>
@@ -1651,6 +1662,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#video-6-positional-encoding">
      Video 6: Positional Encoding
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#implement-positionalencoding-function">
+     Implement
+     <code class="docutils literal notranslate">
+<span class="pre">
+       PositionalEncoding()
+      </span>
+</code>
+     function
     </a>
 </li>
 </ul>
@@ -1881,11 +1903,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Tutorial 1: Learn how to work with Transformers<a class="headerlink" href="#tutorial-1-learn-how-to-work-with-transformers" title="Permalink to this headline">¶</a></h1>
 <p><strong>Week 3, Day 1: Attention and Transformers</strong></p>
 <p><strong>By Neuromatch Academy</strong></p>
-<p><strong>Content creators:</strong> Bikram Khastgir, Rajaswa Patil, Egor Zverev, He He</p>
+<p><strong>Content creators:</strong> Bikram Khastgir, Rajaswa Patil, Egor Zverev, He He, Kelson Shilling-Scrivo, Alish Dipani</p>
 <p><strong>Content reviewers:</strong> Ezekiel Williams, Melvin Selim Atay, Khalid Almubarak, Lily Cheng, Hadi Vafaei, Kelson Shilling-Scrivo</p>
 <p><strong>Content editors:</strong> Gagana B, Anoop Kulkarni, Spiros Chavlis</p>
 <p><strong>Production editors:</strong> Khalid Almubarak, Gagana B, Spiros Chavlis</p>
-<p><strong>Our 2022 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
 <p align="center"><img src="https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True"/></p></div>
 <hr class="docutils"/>
 <div class="section" id="tutorial-objectives">
@@ -2659,18 +2680,22 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="coding-exercise-2-dot-product-attention">
-<h3>Coding Exercise 2: Dot product attention<a class="headerlink" href="#coding-exercise-2-dot-product-attention" title="Permalink to this headline">¶</a></h3>
-<p>In this exercise, let’s compute the scaled dot product attention using its matrix form.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23fbcc8e-b19e-4c22-a528-87aed712a26b">
-<span class="eqno">(100)<a class="headerlink" href="#equation-23fbcc8e-b19e-4c22-a528-87aed712a26b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>### Coding Exercise 2: Dot product attention
+
+In this exercise, let's compute the scaled dot product attention using its matrix form. 
+
+\begin{equation}
 \mathrm{softmax} \left( \frac{Q K^\text{T}}{\sqrt{d}} \right) V
-\end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Q\)</span> denotes the query or values of the embeddings (in other words the hidden states), <span class="math notranslate nohighlight">\(K\)</span> the key, and <span class="math notranslate nohighlight">\(k\)</span> denotes the dimension of the query key vector.</p>
-<p>The division by square-root of d is to stabilize the gradients.</p>
-<p>Note: the function takes an additional argument <code class="docutils literal notranslate"><span class="pre">h</span></code> (number of heads). You can assume it is 1 for now.</p>
+\end{equation}
+
+where $Q$ denotes the query or values of the embeddings (in other words the hidden states), $K$ the key, and $k$ denotes the dimension of the query key vector.
+
+The division by square-root of d is to stabilize the gradients.
+
+Note: the function takes an additional argument `h` (number of heads). You can assume it is 1 for now.
+
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DotProductAttention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="sd">""" Scaled dot product attention. """</span>
 
@@ -2850,6 +2875,29 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </div>
 </div>
 </div>
+<div class="section" id="check-exercise-2">
+<h4>Check Exercise 2<a class="headerlink" href="#check-exercise-2" title="Permalink to this headline">¶</a></h4>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Check Exercise 2</span>
+
+<span class="n">dot_product_attention</span> <span class="o">=</span> <span class="n">DotProductAttention</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">queries</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([[[[</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">17.</span><span class="p">,</span> <span class="mf">88.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">43.</span><span class="p">,</span> <span class="mf">13.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">69.</span><span class="p">,</span> <span class="mf">48.</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">55.</span><span class="p">]]]])</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([[[[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">99.</span><span class="p">,</span> <span class="mf">65.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">85.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">114.</span><span class="p">,</span> <span class="mf">53.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">25.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]]]])</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([[[[</span><span class="mf">33.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">36.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">37.</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">19.</span><span class="p">,</span> <span class="mf">47.</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">39.</span><span class="p">]]]])</span>
+<span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">queries</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([[[</span><span class="mf">36.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">37.</span><span class="p">],</span> <span class="p">[</span><span class="mf">33.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">36.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">37.</span><span class="p">]]])</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">dot_product_attention</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">answer</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'Correctly implemented!'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'ERROR!'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <hr class="docutils"/>
@@ -2993,6 +3041,8 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </div>
 </div>
 </div>
+<p>In practice PyTorch’s <code class="docutils literal notranslate"><span class="pre">torch.nn.MultiheadAttention()</span></code> function is used.</p>
+<p>Documentation for the function can be found here: https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html</p>
 </div>
 </div>
 </div>
@@ -3140,6 +3190,11 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </div>
 </div>
 </div>
+<p>In practice PyTorch’s <code class="docutils literal notranslate"><span class="pre">torch.nn.Transformer()</span></code> layer is used.</p>
+<p>Documentation for the function can be found here: https://pytorch.org/docs/stable/generated/torch.nn.Transformer.html</p>
+<p>Layer Normalization helps in stabilizing the training of models. More information can be found in this paper: Layer Normalization (https://arxiv.org/abs/1607.06450).</p>
+<p>In practice PyTorch’s <code class="docutils literal notranslate"><span class="pre">torch.nn.LayerNorm()</span></code> function is used.</p>
+<p>Documentation for the function can be found here: https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html</p>
 </div>
 </div>
 </div>
@@ -3215,15 +3270,22 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a2a5a77-1a6b-4eb9-9f7a-fc09c9772327">
-<span class="eqno">(101)<a class="headerlink" href="#equation-8a2a5a77-1a6b-4eb9-9f7a-fc09c9772327" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0a3a0000-4c75-46c0-a1d4-3bc05241a2ed">
+<span class="eqno">(100)<a class="headerlink" href="#equation-0a3a0000-4c75-46c0-a1d4-3bc05241a2ed" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>
 <p>Note that in the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function, the positional embedding (<code class="docutils literal notranslate"><span class="pre">pe</span></code>) is added to the token embeddings (<code class="docutils literal notranslate"><span class="pre">x</span></code>) elementwise.</p>
-<div class="cell docutils container">
+</div>
+<div class="section" id="implement-positionalencoding-function">
+<h2>Implement <code class="docutils literal notranslate"><span class="pre">PositionalEncoding()</span></code> function<a class="headerlink" href="#implement-positionalencoding-function" title="Permalink to this headline">¶</a></h2>
+<p>Bonus: Go through the code to get familiarised with internal working of Positional Encoding</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PositionalEncoding</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Implement `PositionalEncoding()` function</span>
+<span class="c1"># @markdown Bonus: Go through the code to get familiarised with internal working of Positional Encoding</span>
+
+<span class="k">class</span> <span class="nc">PositionalEncoding</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
   <span class="c1"># Source: https://pytorch.org/tutorials/beginner/transformer_tutorial.html</span>
   <span class="sd">""" Block initiating Positional Encodings """</span>
 
@@ -3278,6 +3340,16 @@ PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 </div>
 </div>
 </div>
+<p>More information about positional embeddings can be found from these sources:</p>
+<ul class="simple">
+<li><p>Attention is all you need: https://arxiv.org/abs/1706.03762</p></li>
+<li><p>Convolutional Sequence to Sequence Learning: https://arxiv.org/abs/1705.03122</p></li>
+<li><p>https://jalammar.github.io/illustrated-transformer/</p></li>
+<li><p>http://nlp.seas.harvard.edu/annotated-transformer/#positional-encoding</p></li>
+<li><p>https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html#Positional-encoding</p></li>
+</ul>
+<p>Bonus: Look into the importance of word ordering (last part of the video) by going through the paper.</p>
+<p>Masked Language Modeling and the Distributional Hypothesis: Order Word Matters Pre-training for Little - https://aclanthology.org/2021.emnlp-main.230/</p>
 </div>
 </div>
 <hr class="docutils"/>
@@ -3793,11 +3865,10 @@ conclusion in this situation?</p>
 <p><em>Time estimate: ~?mins</em></p>
 <p>Transformers were originally introduced for language tasks, but since then, transformers have achieved State-of-the-Art performance for many different applications, here we discuss some of them:</p>
 <ul class="simple">
-<li><p>Computer Vision: ViT (https://arxiv.org/abs/2010.11929)</p></li>
+<li><p>Computer Vision: Vision Transformers: ViT (https://arxiv.org/abs/2010.11929)</p></li>
 <li><p>Art &amp; Creativity: OpenAI Dall-E 2 (https://openai.com/dall-e-2/)</p></li>
 <li><p>Vision &amp; Language: DeepMind Flamingo (https://www.deepmind.com/blog/tackling-multiple-tasks-with-a-single-visual-language-model)</p></li>
 <li><p>3D Scene Representations: NeRF (https://www.matthewtancik.com/nerf)</p></li>
-<li><p>Contrastive Learning: SimCLR (https://arxiv.org/pdf/2002.05709.pdf)</p></li>
 <li><p>Speech: FAIR Wav2Vec 2.0 (https://arxiv.org/pdf/2006.11477.pdf)</p></li>
 <li><p>Generalist Agent: DeepMind Gato (https://www.deepmind.com/publications/a-generalist-agent)</p></li>
 </ul>

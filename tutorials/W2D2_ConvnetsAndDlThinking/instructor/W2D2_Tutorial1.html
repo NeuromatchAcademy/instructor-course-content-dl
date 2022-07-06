@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1">
 <a class="reference internal" href="../../Module_WrapUps/NaturalLanguageProcessing.html">
-   Deep Learning: Doing more with fewer parameters Wrap-up
+   Deep Learning: Convnets and NLP
   </a>
 </li>
 </ul>
@@ -2461,8 +2461,8 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D2_T1','https://portal.neuromatchac
 <div class="section" id="coding-exercise-2-1-convolution-of-a-simple-kernel">
 <h2>Coding Exercise 2.1: Convolution of a Simple Kernel<a class="headerlink" href="#coding-exercise-2-1-convolution-of-a-simple-kernel" title="Permalink to this headline">¶</a></h2>
 <p>At its core, convolution is just repeatedly multiplying a matrix, known as a <em>kernel</em> or <em>filter</em>, with some other, larger matrix (in our case the pixels of an image). Consider the below image and kernel:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c433243-3057-4e3c-8e7a-b4a26f516315">
-<span class="eqno">(65)<a class="headerlink" href="#equation-3c433243-3057-4e3c-8e7a-b4a26f516315" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e3eeb3b0-f824-4806-8374-a07f6064b85d">
+<span class="eqno">(65)<a class="headerlink" href="#equation-e3eeb3b0-f824-4806-8374-a07f6064b85d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \textbf{Image} &amp;= 
 \begin{bmatrix}0 &amp; 200 &amp; 200 \\0 &amp; 0 &amp; 200 \\ 0 &amp; 0 &amp; 0  
 \end{bmatrix} \\ \\
@@ -2987,8 +2987,8 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D2_T1','https://portal.neuromatchac
 <div class="section" id="think-2-2-1-edge-detection">
 <h3>Think! 2.2.1: Edge Detection<a class="headerlink" href="#think-2-2-1-edge-detection" title="Permalink to this headline">¶</a></h3>
 <p>One of the simpler tasks performed by a convolutional layer is edge detection; that is, finding a place in the image where there is a large and abrupt change in color. Edge-detecting filters are usually learned by the first layers in a CNN. Observe the following simple kernel and discuss whether this will detect vertical edges (where the trace of the edge is vertical; i.e. there is a boundary between left and right), or whether it will detect horizontal edges (where the trace of the edge is horizontal; i.e., there is a boundary between top and bottom).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c9d1a9be-a440-42ea-9ee8-3e07bd1d6f63">
-<span class="eqno">(66)<a class="headerlink" href="#equation-c9d1a9be-a440-42ea-9ee8-3e07bd1d6f63" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f2b094a3-37a0-4081-9120-e1c1d617b188">
+<span class="eqno">(66)<a class="headerlink" href="#equation-f2b094a3-37a0-4081-9120-e1c1d617b188" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \textbf{Kernel} = 
 \begin{bmatrix} 1 &amp; -1 \\ 1 &amp; -1
 \end{bmatrix} 
@@ -4580,8 +4580,8 @@ atform = AirtableForm('appn7VdPRseSoMXEG','W2D2_T1','https://portal.neuromatchac
 <h2>Bonus 1.1: Understand the Dataset<a class="headerlink" href="#bonus-1-1-understand-the-dataset" title="Permalink to this headline">¶</a></h2>
 <p>The dataset we are going to use for this task is called Fashion-MNIST. It consists of a training set of 60,000 examples and a test set of 10,000 examples. We further divide the test set into a validation set and a test set (8,000 and 2,000, respectively). Each example is a <span class="math notranslate nohighlight">\(28 \times 28\)</span> gray scale image, associated with a label from 10 classes. Following are the labels of the dataset:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-17758ecf-2083-49c1-baea-23f9e15f5a8f">
-<span class="eqno">(67)<a class="headerlink" href="#equation-17758ecf-2083-49c1-baea-23f9e15f5a8f" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-ba1e4a83-7111-4967-a5ce-b73d37401e10">
+<span class="eqno">(67)<a class="headerlink" href="#equation-ba1e4a83-7111-4967-a5ce-b73d37401e10" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 \text{label} &amp;&amp; \text{category} \\
 \hline
 0 &amp;&amp; \text{T-shirt/top} \\
