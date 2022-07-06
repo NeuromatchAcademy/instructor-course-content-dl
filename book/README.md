@@ -38,7 +38,7 @@ In order to build the book locally, you will need to do the following:
 
 **Important:** Do not install jupyter-book 0.11 or later at this point, as there are breaking changes in how it handles the table of contents file we generate.
 
-6. Copy files from course-content-dl-main
+6. Copy files from course-content-dl-main and precourse-main
 
 `mv ../course-content-dl-main/tutorials/ tutorials/`
 
