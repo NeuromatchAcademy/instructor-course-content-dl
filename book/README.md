@@ -22,7 +22,13 @@ In order to build the book locally, you will need to do the following:
 
 `tar -xzf main.tar.gz; rm -rf main.tar.gz`
 
-4. Install dependencies
+4. Download precourse repo (main branch)
+
+`wget https://github.com/NeuromatchAcademy/precourse/archive/refs/heads/main.tar.gz`
+
+`tar -xzf main.tar.gz; rm -rf main.tar.gz`
+
+5. Install dependencies
 
 `cd instructor-course-content-dl`
 
@@ -32,7 +38,7 @@ In order to build the book locally, you will need to do the following:
 
 **Important:** Do not install jupyter-book 0.11 or later at this point, as there are breaking changes in how it handles the table of contents file we generate.
 
-5. Copy files from course-content-dl-main
+6. Copy files from course-content-dl-main
 
 `mv ../course-content-dl-main/tutorials/ tutorials/`
 
@@ -40,15 +46,19 @@ In order to build the book locally, you will need to do the following:
 
 `mv ../course-content-dl-main/requirements.txt .`
 
-`rm -r ../course-content-dl-main`
+`mv ../precourse-main/prereqs .`
 
-6. Create a symlink in the book dir to the tutorials dir. From the repo (i.e., course-content) root directory:
+`rm -r ../course-content-dl-main; rm -r ../precourse-main`
+
+7. Create a symlink in the book dir to the tutorials dir. From the repo (i.e., course-content) root directory:
 
 `ln -s ../tutorials book/tutorials`
 
 `ln -s ../projects book/projects`
 
-7. Prepare repo for book building
+`ln -s ../prereqs book/prereqs`
+
+8. Prepare repo for book building
 
 `python ../nmaci-main/scripts/generate_book_dl.py instructor`
 
@@ -56,7 +66,7 @@ This will use the modified tutorials/materials.yml to create the `_toc.yml` file
 
 **No changes created by this script should be committed to the repo.**
 
-8. Build the book
+9. Build the book
 
 `jupyter-book build book`
 
