@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -1417,14 +1424,14 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Return <span class="math notranslate nohighlight">\(G_{t}\)</span>: future cumulative reward at time <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-b4ce1a0a-f217-45d4-baaf-bf6a7325c586">
-<span class="eqno">(101)<a class="headerlink" href="#equation-b4ce1a0a-f217-45d4-baaf-bf6a7325c586" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5ff20c98-91cd-4c2e-81c5-5e06a08dc9f7">
+<span class="eqno">(101)<a class="headerlink" href="#equation-5ff20c98-91cd-4c2e-81c5-5e06a08dc9f7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 G_{t} = \sum \limits_{k = 0}^{\infty} \gamma^{k} r_{t+k+1}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r_{t}\)</span> is the amount of reward received at time <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(\gamma \in [0, 1]\)</span> is a discount factor that specifies the relevance in the present of future rewards.
 Note that the return <span class="math notranslate nohighlight">\(G_{t}\)</span> can be written in a recursive form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5c46118-c30e-43b7-969b-92b6654682d2">
-<span class="eqno">(102)<a class="headerlink" href="#equation-c5c46118-c30e-43b7-969b-92b6654682d2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b3c67e32-9d21-483b-bbad-2d464c34a987">
+<span class="eqno">(102)<a class="headerlink" href="#equation-b3c67e32-9d21-483b-bbad-2d464c34a987" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 G_{t} = r_{t+1} + \gamma G_{t+1}
 \end{equation}\]</div>
 <ul class="simple">
@@ -1432,16 +1439,16 @@ G_{t} = r_{t+1} + \gamma G_{t+1}
 <li><p>Policy <span class="math notranslate nohighlight">\(\pi\)</span> is a specification of how the agent acts. <span class="math notranslate nohighlight">\(\pi(a|s)\)</span> gives the probability of taking action <span class="math notranslate nohighlight">\(a\)</span> when in state <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
 <li><p>The value function <span class="math notranslate nohighlight">\(V_{\pi}(s_t=s)\)</span> is defined as the expected return starting with state <span class="math notranslate nohighlight">\(s\)</span> and successively following policy <span class="math notranslate nohighlight">\(\pi\)</span>. Roughly speaking, the value function estimates “how good” it is to be in state <span class="math notranslate nohighlight">\(s\)</span> when following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-66e9376a-38fc-4054-a399-edaac247138d">
-<span class="eqno">(103)<a class="headerlink" href="#equation-66e9376a-38fc-4054-a399-edaac247138d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-62b8d9f5-4df0-42dd-aaca-fcbe66b0017d">
+<span class="eqno">(103)<a class="headerlink" href="#equation-62b8d9f5-4df0-42dd-aaca-fcbe66b0017d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V_{\pi}(s_t=s) &amp;= \mathbb{E} [ G_{t}\; | \; s_t=s, a_{t:\infty}\sim\pi] \\
 &amp; = \mathbb{E} [ r_{t+1} + \gamma G_{t+1}\; | \; s_t=s, a_{t:\infty}\sim\pi]
 \end{align}\]</div>
 <ul class="simple">
 <li><p>Combining the above, we have:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ea3dcc7c-c4f8-4fa5-bff6-218a56811c39">
-<span class="eqno">(104)<a class="headerlink" href="#equation-ea3dcc7c-c4f8-4fa5-bff6-218a56811c39" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-64391882-d37a-4099-89dc-563b2eaaa16a">
+<span class="eqno">(104)<a class="headerlink" href="#equation-64391882-d37a-4099-89dc-563b2eaaa16a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V_{\pi}(s_t=s) &amp;= \mathbb{E} [ r_{t+1} + \gamma V_{\pi}(s_{t+1})\; | \; s_t=s, a_{t:\infty}\sim\pi] \\
 &amp;= \sum_a \pi(a|s) \sum_{r, s'}p(s', r)(r + V_{\pi}(s_{t+1}=s'))
 \end{align}\]</div>
@@ -1450,15 +1457,15 @@ V_{\pi}(s_t=s) &amp;= \mathbb{E} [ r_{t+1} + \gamma V_{\pi}(s_{t+1})\; | \; s_t=
 <ul class="simple">
 <li><p>With a <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_property">Markovian assumption</a>, we can use <span class="math notranslate nohighlight">\(V(s_{t+1})\)</span> as a proxy for the true value of the return <span class="math notranslate nohighlight">\(G_{t+1}\)</span>. Thus, we obtain a generalized equation to calculate the TD-error:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0b709c41-d01d-400e-adfb-ee53ca84111d">
-<span class="eqno">(105)<a class="headerlink" href="#equation-0b709c41-d01d-400e-adfb-ee53ca84111d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-79b1ae49-77b0-4318-9281-b34e7d29afed">
+<span class="eqno">(105)<a class="headerlink" href="#equation-79b1ae49-77b0-4318-9281-b34e7d29afed" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \delta_{t} = r_{t+1} + \gamma V(s_{t+1}) - V(s_{t})
 \end{align}\]</div>
 <ul class="simple">
 <li><p>The TD-error measures the discrepancy between the values at time <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span>. Once the TD-error is calculated, we can perform a “value update” to to reduce the value discrepancy:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ab1b9cb5-da7e-4eb8-b622-8e91a1f4e927">
-<span class="eqno">(106)<a class="headerlink" href="#equation-ab1b9cb5-da7e-4eb8-b622-8e91a1f4e927" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68ce145a-e774-48ab-9f79-70d8b4dec289">
+<span class="eqno">(106)<a class="headerlink" href="#equation-68ce145a-e774-48ab-9f79-70d8b4dec289" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V(s_{t}) \leftarrow V(s_{t}) + \alpha \delta_{t}
 \end{align}\]</div>
 <ul class="simple">
@@ -1469,22 +1476,22 @@ V(s_{t}) \leftarrow V(s_{t}) + \alpha \delta_{t}
 <ul class="simple">
 <li><p>Return:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-1f893a0d-ca2b-4c0e-9b52-622c27602580">
-<span class="eqno">(107)<a class="headerlink" href="#equation-1f893a0d-ca2b-4c0e-9b52-622c27602580" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-33d45bba-3c30-4de5-b0e4-9b7b6983171c">
+<span class="eqno">(107)<a class="headerlink" href="#equation-33d45bba-3c30-4de5-b0e4-9b7b6983171c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 G_{t} = \sum \limits_{k = 0}^{\infty} \gamma^{k} r_{t+k+1} = r_{t+1} + \gamma G_{t+1}
 \end{equation}\]</div>
 <ul class="simple">
 <li><p>TD-error:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-73b042fe-1547-4f23-a320-8f1d78766e73">
-<span class="eqno">(108)<a class="headerlink" href="#equation-73b042fe-1547-4f23-a320-8f1d78766e73" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e66728fa-2209-41af-8d8b-7f79792d1fa8">
+<span class="eqno">(108)<a class="headerlink" href="#equation-e66728fa-2209-41af-8d8b-7f79792d1fa8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \delta_{t} = r_{t+1} + \gamma V(s_{t+1}) - V(s_{t})
 \end{equation}\]</div>
 <ul class="simple">
 <li><p>Value updates:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-59c89de2-d566-4e0a-8637-9d6a77277abe">
-<span class="eqno">(109)<a class="headerlink" href="#equation-59c89de2-d566-4e0a-8637-9d6a77277abe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f50df451-7001-4b51-b72d-63450c534528">
+<span class="eqno">(109)<a class="headerlink" href="#equation-f50df451-7001-4b51-b72d-63450c534528" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 V(s_{t}) \leftarrow V(s_{t}) + \alpha \delta_{t}
 \end{equation}\]</div>
 </div>
@@ -1607,8 +1614,8 @@ V(s_{t}) \leftarrow V(s_{t}) + \alpha \delta_{t}
 <h2>Interactive Demo 1.1: US to CS Transfer<a class="headerlink" href="#interactive-demo-1-1-us-to-cs-transfer" title="Permalink to this headline">¶</a></h2>
 <p>During classical conditioning, the subject’s behavioral response (e.g., salivating) transfers from the unconditioned stimulus (US; like the smell of tasty food) to the conditioned stimulus (CS; like Pavlov ringing his bell) that predicts it. Reward prediction errors play an important role in this process by adjusting the value of states according to their expected, discounted return.</p>
 <p>Recall that TD-errors are given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a110b69-78b2-44ec-99bf-9792fd3aacb0">
-<span class="eqno">(110)<a class="headerlink" href="#equation-8a110b69-78b2-44ec-99bf-9792fd3aacb0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dc93418f-80e2-45b5-9808-b149db3dd4b8">
+<span class="eqno">(110)<a class="headerlink" href="#equation-dc93418f-80e2-45b5-9808-b149db3dd4b8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \delta_{t} = r_{t+1} + \gamma V(s_{t+1}) - V(s_{t})
 \end{equation}\]</div>
 <p>The delay period has zero reward, so throughout the learning phase, the TD-errors result from inconsistencies between <span class="math notranslate nohighlight">\(V(s_{t+1})\)</span> and <span class="math notranslate nohighlight">\(V(s_{t})\)</span> (note that the discount factor is set to zero in this example). The TD-errors for a given time point diminish once <span class="math notranslate nohighlight">\(V(s_{t})\)</span> approaches <span class="math notranslate nohighlight">\(V(s_{t+1})\)</span>, but that causes the TD-error for the preceding time point to increase. Thus, throughout learning, the TD-errors will tend to move backwards in time.</p>

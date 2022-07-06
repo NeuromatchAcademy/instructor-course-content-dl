@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -1660,8 +1667,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>These are the points we will use to learn how to approximate the function. We have 10 training data points so we will have 9 ReLUs (we don’t need a ReLU for the last data point as we don’t have anything to the right of it to model).</p>
 <p>We first need to figure out the bias term for each ReLU and compute the activation of each ReLU where:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f3c0dfe-bf3b-446f-9dff-4b80a352e2d2">
-<span class="eqno">(34)<a class="headerlink" href="#equation-7f3c0dfe-bf3b-446f-9dff-4b80a352e2d2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ed0e6cbf-c765-4bfd-9df6-d24ffdf8059c">
+<span class="eqno">(34)<a class="headerlink" href="#equation-ed0e6cbf-c765-4bfd-9df6-d24ffdf8059c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   y(x) = \text{max}(0, x+b)
 \end{equation}\]</div>
 <p>We then need to figure out the correct weights on each ReLU so the linear combination approximates the desired function.</p>
@@ -1838,8 +1845,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Use the same given activation function (i.e., <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.LeakyReLU.html">Leaky ReLU</a>) in all hidden layers</p></li>
 </ul>
 <p><strong>Leaky ReLU</strong> is described by the following mathematical formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-639037bc-28ba-4f46-b28e-d52e4aa02fd6">
-<span class="eqno">(35)<a class="headerlink" href="#equation-639037bc-28ba-4f46-b28e-d52e4aa02fd6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bbf47710-6b70-4162-b896-7f4b1e85ce7a">
+<span class="eqno">(35)<a class="headerlink" href="#equation-bbf47710-6b70-4162-b896-7f4b1e85ce7a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \text{LeakyReLU}(x) &amp;= \text{max}(0,x) + \text{negative_slope} \cdot \text{min}(0, x) \\
 &amp;=
 \left\{
@@ -2024,8 +2031,8 @@ const thebe_selector_output = ".output, .cell_output"
 This criterion expects a batch of predictions <code class="docutils literal notranslate"><span class="pre">x</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">C)</span></code> and class index in the range <span class="math notranslate nohighlight">\([0, C-1]\)</span> as the target (label) for each <code class="docutils literal notranslate"><span class="pre">N</span></code> samples, hence a batch of <code class="docutils literal notranslate"><span class="pre">labels</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">)</span></code>. There are other optional parameters like class weights and class ignores. Feel free to check the PyTorch documentation <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">here</a> for more detail. Additionally, <a class="reference external" href="https://sparrow.dev/cross-entropy-loss-in-pytorch/">here</a> you can learn where is appropriate to use the CrossEntropyLoss.</p></li>
 </ul>
 <p>To get CrossEntropyLoss of a sample <span class="math notranslate nohighlight">\(i\)</span>, we could first calculate <span class="math notranslate nohighlight">\(-\log(\text{softmax(x}))\)</span> and then take the element corresponding to <span class="math notranslate nohighlight">\(\text { labels }_i\)</span> as the loss. However, due to numerical stability, we implement this more stable equivalent form,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2a8c356-74bb-436e-9c4f-be1531c13081">
-<span class="eqno">(36)<a class="headerlink" href="#equation-f2a8c356-74bb-436e-9c4f-be1531c13081" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-df66c95c-d1d6-42d3-8ae4-e159d35e4dbd">
+<span class="eqno">(36)<a class="headerlink" href="#equation-df66c95c-d1d6-42d3-8ae4-e159d35e4dbd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \operatorname{loss}(x_i, \text { labels }_i)=-\log \left(\frac{\exp (x[\text { labels }_i])}{\sum_{j} \exp (x[j])}\right)=-x_i[\text { labels }_i]+\log \left(\sum_{j=1}^C \exp (x_i[j])\right)
 \end{equation}\]</div>
 </div>
@@ -2037,8 +2044,8 @@ This criterion expects a batch of predictions <code class="docutils literal notr
 <li><p>A batch of <code class="docutils literal notranslate"><span class="pre">labels</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">)</span></code> that ranges from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">C-1</span></code></p></li>
 </ul>
 <p>Returns the average loss <span class="math notranslate nohighlight">\(L\)</span> calculated according to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2896f355-f6fe-4ef7-86fa-ee2278f9fc8f">
-<span class="eqno">(37)<a class="headerlink" href="#equation-2896f355-f6fe-4ef7-86fa-ee2278f9fc8f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e958c0ea-9d9d-4ef8-81c7-c13715bb12d6">
+<span class="eqno">(37)<a class="headerlink" href="#equation-e958c0ea-9d9d-4ef8-81c7-c13715bb12d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
 loss(x_i, \text { labels }_i) &amp;= -x_i[\text { labels }_i]+\log \left(\sum_{j=1}^C \exp (x_i[j])\right) \\
 L &amp;= \frac{1}{N} \sum_{i=1}^{N}{loss(x_i, \text { labels }_i)}
 \end{align}\]</div>
@@ -2150,8 +2157,8 @@ L &amp;= \frac{1}{N} \sum_{i=1}^{N}{loss(x_i, \text { labels }_i)}
 <h2>Section 2.2: Spiral Classification Dataset<a class="headerlink" href="#section-2-2-spiral-classification-dataset" title="Permalink to this headline">¶</a></h2>
 <p>Before we could start optimizing these loss functions, we need a dataset!</p>
 <p>Let’s turn this fancy-looking equation into a classification dataset</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6eb89ac8-84c5-4493-8ae8-426a07446fd9">
-<span class="eqno">(38)<a class="headerlink" href="#equation-6eb89ac8-84c5-4493-8ae8-426a07446fd9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9c648454-cd35-400f-b7c1-fd94e99e6e3e">
+<span class="eqno">(38)<a class="headerlink" href="#equation-9c648454-cd35-400f-b7c1-fd94e99e6e3e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \begin{array}{c}
 X_{k}(t)=t\left(\begin{array}{c}
 \sin \left[\frac{2 \pi}{K}\left(2 t+k-1\right)\right]+\mathcal{N}\left(0, \sigma\right) \\
@@ -2714,16 +2721,16 @@ X_{k}(t)=t\left(\begin{array}{c}
 <h2>Leaky Integrate-and-fire (LIF) neuronal model<a class="headerlink" href="#leaky-integrate-and-fire-lif-neuronal-model" title="Permalink to this headline">¶</a></h2>
 <p>The basic idea of LIF neuron was proposed in 1907 by Louis Édouard Lapicque, long before we understood the electrophysiology of a neuron (see a translation of <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/17968583/">Lapicque’s paper</a> ). More details of the model can be found in the book <a class="reference external" href="http://www.gatsby.ucl.ac.uk/~dayan/book/"><strong>Theoretical neuroscience</strong></a> by Peter Dayan and Laurence F. Abbott.</p>
 <p>The model dynamics is defined with the following formula,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff3ea7b7-19c8-4c54-a00f-1e653557aa26">
-<span class="eqno">(39)<a class="headerlink" href="#equation-ff3ea7b7-19c8-4c54-a00f-1e653557aa26" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f27d75d6-7a39-48b6-a611-b857120da5ea">
+<span class="eqno">(39)<a class="headerlink" href="#equation-f27d75d6-7a39-48b6-a611-b857120da5ea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{d V_m}{d t}=\left\{\begin{array}{cc}
 \frac{1}{C_m}\left(-\frac{V_m}{R_m} + I \right) &amp; t&gt;t_{rest} \\
 0 &amp; \text { otherwise }
 \end{array}\right.
 \end{equation}\]</div>
 <p>Note that <span class="math notranslate nohighlight">\(V_{m}\)</span>, <span class="math notranslate nohighlight">\(C_{m}\)</span>, and <span class="math notranslate nohighlight">\(R_{m}\)</span> are the membrane voltage, capacitance, and resitance of the neuron, respectively, so the <span class="math notranslate nohighlight">\(-\frac{V_{m}}{R_{m}}\)</span> denotes the leakage current. When <span class="math notranslate nohighlight">\(I\)</span> is sufficiently strong such that <span class="math notranslate nohighlight">\(V_{m}\)</span> reaches a certain threshold value <span class="math notranslate nohighlight">\(V_{\rm th}\)</span>, it momentarily spikes and then <span class="math notranslate nohighlight">\(V_{m}\)</span> is reset to <span class="math notranslate nohighlight">\(V_{\rm reset}&lt; V_{\rm th}\)</span>, and voltage stays at <span class="math notranslate nohighlight">\(V_{\rm reset}\)</span> for <span class="math notranslate nohighlight">\(\tau_{\rm ref}\)</span> ms, mimicking the refractoriness of the neuron during an action potential (note that <span class="math notranslate nohighlight">\(V_{\rm reset}\)</span> and <span class="math notranslate nohighlight">\(\tau_{\rm ref}\)</span> is assumed to be zero in the lecture):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6788828e-0ca8-496a-8ca1-3ac30814bf78">
-<span class="eqno">(40)<a class="headerlink" href="#equation-6788828e-0ca8-496a-8ca1-3ac30814bf78" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-6067a8de-bf42-40b8-9d07-4ae753ca97e4">
+<span class="eqno">(40)<a class="headerlink" href="#equation-6067a8de-bf42-40b8-9d07-4ae753ca97e4" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 V_{m}(t)=V_{\rm reset} \text{ for } t\in(t_{\text{sp}}, t_{\text{sp}} + \tau_{\text{ref}}]
 \end{eqnarray}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_{\rm sp}\)</span> is the spike time when <span class="math notranslate nohighlight">\(V_{m}(t)\)</span> just exceeded <span class="math notranslate nohighlight">\(V_{\rm th}\)</span>.</p>
@@ -2740,8 +2747,8 @@ V_{m}(t)=V_{\rm reset} \text{ for } t\in(t_{\text{sp}}, t_{\text{sp}} + \tau_{\t
 <h2>Simulating an LIF Neuron<a class="headerlink" href="#simulating-an-lif-neuron" title="Permalink to this headline">¶</a></h2>
 <p>In the cell below is given a function for LIF neuron model with it’s arguments described.</p>
 <p>Note that we will use Euler’s method to make a numerical approximation to a derivative. Hence we will use the following implementation of the model dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-83501889-0682-4941-8856-7028c17b3379">
-<span class="eqno">(41)<a class="headerlink" href="#equation-83501889-0682-4941-8856-7028c17b3379" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96fd543a-ff57-456a-9a31-a4841906b4f1">
+<span class="eqno">(41)<a class="headerlink" href="#equation-96fd543a-ff57-456a-9a31-a4841906b4f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 V_m^{[n]}=\left\{\begin{array}{cc}
 V_m^{[n-1]} + \frac{1}{C_m}\left(-\frac{V_m^{[n-1]}}{R_m}+I \right) \Delta t &amp; t&gt;t_{r e s t} \\
 0 &amp; \text { otherwise }

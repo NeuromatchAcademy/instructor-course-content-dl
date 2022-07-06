@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -2306,8 +2313,8 @@ The common standard arithmetic operators (<span class="math notranslate nohighli
 <div class="section" id="coding-exercise-2-2-simple-tensor-operations">
 <h3>Coding Exercise 2.2 : Simple tensor operations<a class="headerlink" href="#coding-exercise-2-2-simple-tensor-operations" title="Permalink to this headline">¶</a></h3>
 <p>Below are two expressions involving operations on matrices.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-07f45c2c-a11a-43bf-aa25-2727058c67a0">
-<span class="eqno">(1)<a class="headerlink" href="#equation-07f45c2c-a11a-43bf-aa25-2727058c67a0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7230c1ef-c068-40a3-81d4-6dbe708bc7df">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7230c1ef-c068-40a3-81d4-6dbe708bc7df" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \textbf{A} = 
 \begin{bmatrix}2 &amp;4 \\5 &amp; 7 
 \end{bmatrix} 
@@ -2318,8 +2325,8 @@ The common standard arithmetic operators (<span class="math notranslate nohighli
 \end{bmatrix} 
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60ac5b9c-4e92-4c41-ac40-d25f46a8077a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-60ac5b9c-4e92-4c41-ac40-d25f46a8077a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f60244f3-a7e1-4ec5-992a-2347fd4456ca">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f60244f3-a7e1-4ec5-992a-2347fd4456ca" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 b = 
 \begin{bmatrix} 3 \\ 5 \\ 7
 \end{bmatrix} \cdot 
@@ -2661,8 +2668,8 @@ b =
 <p>Using a combination of the methods discussed above, complete the functions below.</p>
 <p><strong>Function A</strong></p>
 <p>This function takes in two 2D tensors <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and returns the column sum of A multiplied by the sum of all the elmements of <span class="math notranslate nohighlight">\(B\)</span>, i.e., a scalar, e.g.,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5764207b-55d2-4b84-b534-fa701c300b67">
-<span class="eqno">(3)<a class="headerlink" href="#equation-5764207b-55d2-4b84-b534-fa701c300b67" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-354776f3-b427-4503-90c6-e212c4e84a3c">
+<span class="eqno">(3)<a class="headerlink" href="#equation-354776f3-b427-4503-90c6-e212c4e84a3c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   \text{If }
   A = \begin{bmatrix}
   1 &amp; 1 \\
@@ -2682,8 +2689,8 @@ b =
 \end{equation}\]</div>
 <p><strong>Function B</strong></p>
 <p>This function takes in a square matrix <span class="math notranslate nohighlight">\(C\)</span> and returns a 2D tensor consisting of a flattened <span class="math notranslate nohighlight">\(C\)</span> with the index of each element appended to this tensor in the row dimension, e.g.,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc58f00e-2cb7-4aa6-a744-a9906502084d">
-<span class="eqno">(4)<a class="headerlink" href="#equation-bc58f00e-2cb7-4aa6-a744-a9906502084d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-334637de-7e21-4c68-83cb-5c71f0327293">
+<span class="eqno">(4)<a class="headerlink" href="#equation-334637de-7e21-4c68-83cb-5c71f0327293" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   \text{If }
   C = \begin{bmatrix}
   2 &amp; 3 \\
@@ -2700,8 +2707,8 @@ b =
 <p><strong>Hint:</strong> Pay close attention to singleton dimensions.</p>
 <p><strong>Function C</strong></p>
 <p>This function takes in two 2D tensors <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(E\)</span>. If the dimensions allow it, this function returns the elementwise sum of <span class="math notranslate nohighlight">\(D\)</span>-shaped <span class="math notranslate nohighlight">\(E\)</span>, and <span class="math notranslate nohighlight">\(D\)</span>; else this function returns a 1D tensor that is the concatenation of the two tensors, e.g.,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7730644e-97aa-46d0-bafc-dac4a6108977">
-<span class="eqno">(5)<a class="headerlink" href="#equation-7730644e-97aa-46d0-bafc-dac4a6108977" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c8598ea2-c56b-476b-b3cc-4b30bbbcd109">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c8598ea2-c56b-476b-b3cc-4b30bbbcd109" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   \text{If }
   D = \begin{bmatrix}
   1 &amp; -1 \\
@@ -2718,8 +2725,8 @@ b =
   \end{bmatrix}
 \end{equation}\]</div>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-bc23fef2-5ada-4c8a-b9fb-68e53f3f1f3e">
-<span class="eqno">(6)<a class="headerlink" href="#equation-bc23fef2-5ada-4c8a-b9fb-68e53f3f1f3e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-33088dd6-92e8-4f3e-9ebb-bd13cdd74037">
+<span class="eqno">(6)<a class="headerlink" href="#equation-33088dd6-92e8-4f3e-9ebb-bd13cdd74037" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   \text{If }
   D = \begin{bmatrix}
   1 &amp; -1 \\
@@ -3922,8 +3929,8 @@ b =
 </div>
 <p>Exclusive OR (XOR) logical operation gives a true (<code class="docutils literal notranslate"><span class="pre">1</span></code>) output when the number of true inputs is odd. That is, a true output result if one, and only one, of the inputs to the gate is true. If both inputs are false (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or both are true or false output results. Mathematically speaking, XOR represents the inequality function, i.e., the output is true if the inputs are not alike; otherwise, the output is false.</p>
 <p>In case of two inputs (<span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>) the following truth table is applied:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0454d963-1b29-40a0-9cbf-ebd3ebbec277">
-<span class="eqno">(7)<a class="headerlink" href="#equation-0454d963-1b29-40a0-9cbf-ebd3ebbec277" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-fdcb3acc-81fa-46a5-89dc-247e7f63c3bd">
+<span class="eqno">(7)<a class="headerlink" href="#equation-fdcb3acc-81fa-46a5-89dc-247e7f63c3bd" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
   X &amp; Y &amp; \text{XOR}\\
   \hline
   0 &amp; 0 &amp; 0\\
@@ -3943,8 +3950,8 @@ b =
 </ul>
 <p>For the second part, you should set the weights by clicking on the connections and either type the value or use the up and down keys to change it by one increment. You could also do the same for the biases by clicking on the tiny square to each neuron’s bottom left.
 Even though there are infinitely many solutions, a neat solution when <span class="math notranslate nohighlight">\(f(x)\)</span> is ReLU is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-780042ea-dca1-4380-b335-0d5ee0b82429">
-<span class="eqno">(8)<a class="headerlink" href="#equation-780042ea-dca1-4380-b335-0d5ee0b82429" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3058925e-db83-42fd-918c-d6158394c13d">
+<span class="eqno">(8)<a class="headerlink" href="#equation-3058925e-db83-42fd-918c-d6158394c13d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   y = f(x_1)+f(x_2)-f(x_1+x_2)
 \end{equation}\]</div>
 <p>Try to set the weights and biases to implement this function after you played enough :)</p>

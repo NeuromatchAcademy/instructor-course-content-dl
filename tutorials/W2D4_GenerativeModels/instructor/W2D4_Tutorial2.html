@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -1801,8 +1808,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="section-2-1-discriminator-loss">
 <h2>Section 2.1:  Discriminator Loss<a class="headerlink" href="#section-2-1-discriminator-loss" title="Permalink to this headline">¶</a></h2>
 <p>The critic or the discriminator in a vanilla GAN is trained as a binary classifier using the BCE (Binary Cross Entropy) criteria. In this section, we will implement the training objective for the discriminator.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-298d2098-74de-4dfa-893b-15efee0667a3">
-<span class="eqno">(95)<a class="headerlink" href="#equation-298d2098-74de-4dfa-893b-15efee0667a3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-df2307e6-ef21-4b97-a6e2-b4f1f91a1429">
+<span class="eqno">(95)<a class="headerlink" href="#equation-df2307e6-ef21-4b97-a6e2-b4f1f91a1429" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{BCE}_\omega = \mathbb{E}_{x \sim p}[\log(\sigma(D_\omega(x)))] + \mathbb{E}_{x \sim q}[\log(1 - \sigma(D_\omega(x)))]
 \end{equation}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(p\)</span> is the data distribution and <span class="math notranslate nohighlight">\(q\)</span> is the generator distribution. <span class="math notranslate nohighlight">\(D_\omega\)</span> is the logit, which represents <span class="math notranslate nohighlight">\(\log \frac{p}{q}\)</span>. <span class="math notranslate nohighlight">\(\sigma\)</span> is the sigmoid function and therfore, <span class="math notranslate nohighlight">\(\sigma(D_\omega)\)</span> represents <span class="math notranslate nohighlight">\(\frac{p}{p+q}\)</span>.</p>
@@ -1813,8 +1820,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">loss_disc</span></code> also allows you evaluate the loss function on some random samples.
 If your implementation is correct, you will see a plot where the loss values from your implementation will match the ground truth loss values.</p>
 <p>In practice, given <span class="math notranslate nohighlight">\(N\)</span> samples, we estimate BCE as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1fe263e-4399-4cf4-bf1c-bbf3d7e8cea1">
-<span class="eqno">(96)<a class="headerlink" href="#equation-e1fe263e-4399-4cf4-bf1c-bbf3d7e8cea1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3502ff18-dff5-4ec2-b7e3-389b4a6b1d0e">
+<span class="eqno">(96)<a class="headerlink" href="#equation-3502ff18-dff5-4ec2-b7e3-389b4a6b1d0e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{BCE}_\omega = -\frac{1}{N} \sum_{i=1}^N y_i \log(\sigma(D_\omega(x_i)) + (1-y_i) \log(1-\sigma(D_\omega(x_i))).
 \end{equation}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(y\)</span> is the label. <span class="math notranslate nohighlight">\(y=1\)</span> when <span class="math notranslate nohighlight">\(x \sim p\)</span> (real data) and <span class="math notranslate nohighlight">\(y=0\)</span> when <span class="math notranslate nohighlight">\(x \sim q\)</span> (i.e., fake data).</p>

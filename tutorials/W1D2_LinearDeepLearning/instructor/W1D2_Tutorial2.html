@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -2290,8 +2297,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Next, we ask you to implement the <code class="docutils literal notranslate"><span class="pre">forward</span></code> pass for our model from scratch without using PyTorch.</p>
 <p>Also, although our model gets a single input feature and outputs a single prediction, we could calculate the loss and perform training for multiple samples at once. This is the common practice for neural networks, since computers are incredibly fast doing matrix (or tensor) operations on batches of data, rather than processing samples one at a time through <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. Therefore, for the <code class="docutils literal notranslate"><span class="pre">loss</span></code> function, please implement the <strong>mean</strong> squared error (MSE), and adjust your analytical gradients accordingly when implementing the <code class="docutils literal notranslate"><span class="pre">dloss_dw</span></code> function.</p>
 <p>Finally, complete the <code class="docutils literal notranslate"><span class="pre">train</span></code> function for the gradient descent algorithm:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56dea867-60b1-4936-8085-2a5b72711032">
-<span class="eqno">(20)<a class="headerlink" href="#equation-56dea867-60b1-4936-8085-2a5b72711032" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3a6be10c-bbcd-44ee-8507-33a81e57277a">
+<span class="eqno">(20)<a class="headerlink" href="#equation-3a6be10c-bbcd-44ee-8507-33a81e57277a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{w}^{(t+1)} = \mathbf{w}^{(t)} - \eta \nabla loss (\mathbf{w}^{(t)})
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
@@ -2594,8 +2601,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell tag_remove-input docutils container">
 </div>
 <p>As you may have already asked yourself, we can analytically find <span class="math notranslate nohighlight">\(w_1\)</span> and <span class="math notranslate nohighlight">\(w_2\)</span> without using gradient descent:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36bb3072-0ee9-45e0-ba05-b6e4b80a9091">
-<span class="eqno">(21)<a class="headerlink" href="#equation-36bb3072-0ee9-45e0-ba05-b6e4b80a9091" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-30afe26b-69b0-488e-8c9b-b58cc0dec9a1">
+<span class="eqno">(21)<a class="headerlink" href="#equation-30afe26b-69b0-488e-8c9b-b58cc0dec9a1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w_1 \cdot w_2 = \dfrac{y}{x}
 \end{equation}\]</div>
 <p>In fact, we can plot the gradients, the loss function and all the possible solutions in one figure. In this example, we use the <span class="math notranslate nohighlight">\(y = 1x\)</span> mapping:</p>

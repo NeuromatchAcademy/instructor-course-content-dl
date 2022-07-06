@@ -182,6 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+ </li>
+</ul>
 <p class="caption">
  <span class="caption-text">
   Basics Module
@@ -1484,8 +1491,8 @@ GPU is enabled in this notebook.
 <div class="section" id="mixup">
 <h2>Mixup<a class="headerlink" href="#mixup" title="Permalink to this headline">¶</a></h2>
 <p>Mixup is a data augmentation technique that combines pairs of examples via a convex combination of the images and the labels. Given images <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> with labels <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span>, respectively, and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, mixup creates a new image <span class="math notranslate nohighlight">\(\hat{x}\)</span> with label <span class="math notranslate nohighlight">\(\hat{y}\)</span> the following way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc5bc9c0-4cd8-442d-8827-98452788dc62">
-<span class="eqno">(129)<a class="headerlink" href="#equation-bc5bc9c0-4cd8-442d-8827-98452788dc62" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d6ce45e-7804-4d85-b5df-141d9d403ab7">
+<span class="eqno">(129)<a class="headerlink" href="#equation-2d6ce45e-7804-4d85-b5df-141d9d403ab7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \hat{x} &amp;= \lambda x_i + (1 - \lambda) x_j \\
 \hat{y} &amp;= \lambda y_i + (1 - \lambda) y_j
 \end{align}\]</div>

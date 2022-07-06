@@ -156,6 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </input></li>
 </ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../../prereqs/DeepLearning.html">
+   Prerequisites and preparatory materials for NMA Deep Learning
+  </a>
+</li>
+</ul>
 <p class="caption">
 <span class="caption-text">
   Basics Module
@@ -2405,8 +2412,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="coding-exercise-0-re-initialization-optional">
 <h2>Coding Exercise 0: Re-initialization (Optional)<a class="headerlink" href="#coding-exercise-0-re-initialization-optional" title="Permalink to this headline">¶</a></h2>
 <p>Complete the function <code class="docutils literal notranslate"><span class="pre">ex_initializer_</span></code>, such that the weights are sampled from the following distribution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d88cbfc6-6966-4467-acc4-42fd771ccb49">
-<span class="eqno">(22)<a class="headerlink" href="#equation-d88cbfc6-6966-4467-acc4-42fd771ccb49" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2cac6820-83a6-48da-905c-9b52985e57ca">
+<span class="eqno">(22)<a class="headerlink" href="#equation-2cac6820-83a6-48da-905c-9b52985e57ca" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathcal{N}\left(\mu=0, ~~\sigma=\gamma \sqrt{\dfrac{1}{n_{in} + n_{out}}} \right)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the initialization scale, <span class="math notranslate nohighlight">\(n_{in}\)</span> and <span class="math notranslate nohighlight">\(n_{out}\)</span> are respectively input and output dimensions of the layer. the Underscore (“_”) in <code class="docutils literal notranslate"><span class="pre">ex_initializer_</span></code> and other functions, denotes “<a class="reference external" href="https://discuss.pytorch.org/t/what-is-in-place-operation/16244/2">in-place</a>” operation.</p>
@@ -2625,8 +2632,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell tag_remove-input docutils container">
 </div>
 <p>In this section, we intend to study the learning (training) dynamics we just saw. First, we should know that a linear neural network is performing sequential matrix multiplications, which can be simplified to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a4413fd-2da9-43f4-b103-c4baa7600fe1">
-<span class="eqno">(23)<a class="headerlink" href="#equation-8a4413fd-2da9-43f4-b103-c4baa7600fe1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a5431f9-ba75-43f5-8f15-06880efb762a">
+<span class="eqno">(23)<a class="headerlink" href="#equation-6a5431f9-ba75-43f5-8f15-06880efb762a" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{y} &amp;= \mathbf{W}_{L}~\mathbf{W}_{L-1}~\dots~\mathbf{W}_{1} ~ \mathbf{x} \\
  &amp;= \left(\prod_{i=1}^{L}{\mathbf{W}_{i}}\right) ~ \mathbf{x} \\
  &amp;= \mathbf{W}_{tot} ~ \mathbf{x}
@@ -2636,8 +2643,8 @@ const thebe_selector_output = ".output, .cell_output"
 <br/>
 <p><strong>A Quick intro to SVD</strong></p>
 <p>Any real-valued matix <span class="math notranslate nohighlight">\(A\)</span> (yes, ANY) can be decomposed (factorized) to 3 matrices:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dff23540-2572-474d-a319-686c1fda8531">
-<span class="eqno">(24)<a class="headerlink" href="#equation-dff23540-2572-474d-a319-686c1fda8531" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ef1d82e6-74ec-4f59-8354-ade1dc1b37f4">
+<span class="eqno">(24)<a class="headerlink" href="#equation-ef1d82e6-74ec-4f59-8354-ade1dc1b37f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{A} = \mathbf{U} \mathbf{Σ} \mathbf{V}^{\top}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(U\)</span> is an orthogonal matrix, <span class="math notranslate nohighlight">\(\Sigma\)</span> is a diagonal matrix, and <span class="math notranslate nohighlight">\(V\)</span> is again an orthogonal matrix. The diagonal elements of <span class="math notranslate nohighlight">\(\Sigma\)</span> are called <strong>singular values</strong>.</p>
@@ -2776,8 +2783,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The first narrow net (highest singular value) converges fastest, while the last four narrow nets, converge almost simultaneously and have the smallest singular values. Can it be that the narrow net with larger mode is learning the difference between “living things” and “objects”, while another narrow net with smaller mode is learning the difference between Fish and Birds? how could we check this hypothesis?</p>
 <p>Representational Similarity Analysis (RSA) is an approach that could help us understand the internal representation of our network. The main idea is that the activity of hidden units (neurons) in the network must be similar when the network is presented with similar input. For our dataset (hierarchically structured data), we expect the activity of neurons in the hidden layer to be more similar for Tuna and Canary, and less similar for Tuna and Oak.</p>
 <p>For similarity measure, we can use the good old dot (scalar) product, which is also called cosine similarity. For calculating the dot product between multiple vectors (which would be our case), we can simply use matrix multiplication. Therefore the Representational Similarity Matrix for multiple-input (batch) activity could be calculated as follow:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f533358e-732a-4e9b-a3a6-b7372d3345cb">
-<span class="eqno">(25)<a class="headerlink" href="#equation-f533358e-732a-4e9b-a3a6-b7372d3345cb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0af89307-508a-4671-aa71-c3abbd08168a">
+<span class="eqno">(25)<a class="headerlink" href="#equation-0af89307-508a-4671-aa71-c3abbd08168a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 RSM = \mathbf{H} \mathbf{H}^{\top}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{H} = \mathbf{X} \mathbf{W_1}\)</span> is the activity of hidden neurons for a given batch <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
@@ -3128,21 +3135,21 @@ RSM = \mathbf{H} \mathbf{H}^{\top}
 <p>Generally, <em>regression</em> refers to a set of methods for modeling the mapping (relationship) between one (or more) independent variable(s) (i.e., features) and one (or more) dependent variable(s) (i.e., labels). For example, if we want to examine the relative impacts of calendar date, GPS coordinates, and time of the say (the independent variables) on air temperature (the dependent variable). On the other hand, regression can be used for predictive analysis. Thus the independent variables are also called predictors. When the model contains more than one predictor, then the method is called <em>multiple regression</em>, and if it contains more than one dependent variable called <em>multivariate regression</em>. Regression problems pop up whenever we want to predict a numerical (usually continuous) value.</p>
 <p>The independent variables are collected in vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^M\)</span>, where <span class="math notranslate nohighlight">\(M\)</span> denotes the number of independent variables, while the dependent variables are collected in vector <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R}^N\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> denotes the number of dependent variables. And the mapping between them is represented by the weight matrix <span class="math notranslate nohighlight">\(\mathbf{W} \in \mathbb{R}^{N \times M}\)</span> and a bias vector <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{R}^{N}\)</span> (generalizing to affine mappings).</p>
 <p>The multivariate regression model can be written as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-323da709-7019-464c-8d15-03516bd7da06">
-<span class="eqno">(26)<a class="headerlink" href="#equation-323da709-7019-464c-8d15-03516bd7da06" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0607c33f-3184-4895-92b0-21ce2c502a37">
+<span class="eqno">(26)<a class="headerlink" href="#equation-0607c33f-3184-4895-92b0-21ce2c502a37" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{y} = \mathbf{W} ~ \mathbf{x} + \mathbf{b}
 \end{equation}\]</div>
 <p>or it can be written in matrix format as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4edc0e01-f115-4836-a88c-8dc7882acc84">
-<span class="eqno">(27)<a class="headerlink" href="#equation-4edc0e01-f115-4836-a88c-8dc7882acc84" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e75b2ce8-0f55-4c53-92d4-34bef4cb2d26">
+<span class="eqno">(27)<a class="headerlink" href="#equation-e75b2ce8-0f55-4c53-92d4-34bef4cb2d26" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \begin{bmatrix} y_{1} \\ y_{2} \\ \vdots \\ y_{N} \\ \end{bmatrix} = \begin{bmatrix} w_{1,1} &amp; w_{1,2} &amp; \dots &amp; w_{1,M} \\ w_{2,1} &amp; w_{2,2} &amp; \dots &amp; w_{2,M} \\ \vdots &amp; \ddots &amp; \ddots &amp; \vdots \\ w_{N,1} &amp; w_{N,2} &amp; \dots &amp; w_{N,M} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{M} \\ \end{bmatrix} + \begin{bmatrix} b_{1} \\ b_{2} \\ \vdots \\b_{N} \\ \end{bmatrix}
 \end{equation}\]</div>
 </div>
 <div class="section" id="section-5-2-vectorized-regression">
 <h2>Section 5.2: Vectorized regression<a class="headerlink" href="#section-5-2-vectorized-regression" title="Permalink to this headline">¶</a></h2>
 <p>Linear regression can be simply extended to multi-samples (<span class="math notranslate nohighlight">\(D\)</span>) input-output mapping, which we can collect in a matrix <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{M \times D}\)</span>, sometimes called the design matrix. The sample dimension also shows up in the output matrix <span class="math notranslate nohighlight">\(\mathbf{Y} \in \mathbb{R}^{N \times D}\)</span>. Thus, linear regression takes the following form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-233be17b-d15d-4344-92a7-0bc0c356c1c1">
-<span class="eqno">(28)<a class="headerlink" href="#equation-233be17b-d15d-4344-92a7-0bc0c356c1c1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-14afb9f0-72eb-456f-a7b1-8557f48c9284">
+<span class="eqno">(28)<a class="headerlink" href="#equation-14afb9f0-72eb-456f-a7b1-8557f48c9284" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{Y} = \mathbf{W} ~ \mathbf{X} + \mathbf{b}
 \end{equation}\]</div>
 <p>where matrix <span class="math notranslate nohighlight">\(\mathbf{W} \in \mathbb{R}^{N \times M}\)</span> and the vector <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{R}^{N}\)</span> (broadcasted over sample dimension) are the desired parameters to find.</p>
@@ -3151,30 +3158,30 @@ RSM = \mathbf{H} \mathbf{H}^{\top}
 <h2>Section 5.3: Analytical Linear Regression<a class="headerlink" href="#section-5-3-analytical-linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>Linear regression is a relatively simple optimization problem. Unlike most other models that we will see in this course, linear regression for mean squared loss can be solved analytically.</p>
 <p>For <span class="math notranslate nohighlight">\(D\)</span> samples (batch size), <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{M \times D}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{Y} \in \mathbb{R}^{N \times D}\)</span>, the goal of linear regression is to find <span class="math notranslate nohighlight">\(\mathbf{W} \in \mathbb{R}^{N \times M}\)</span> such that:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eafe2fb7-d2cd-4827-9f30-78ad0fa7b60e">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eafe2fb7-d2cd-4827-9f30-78ad0fa7b60e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-209bdfcb-1be1-4771-8f63-b94690542029">
+<span class="eqno">(29)<a class="headerlink" href="#equation-209bdfcb-1be1-4771-8f63-b94690542029" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{Y} = \mathbf{W} ~ \mathbf{X}
 \end{equation}\]</div>
 <p>Given the Squared Error loss function, we have:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68c7c130-263e-4629-82d5-01cd7ab6a993">
-<span class="eqno">(30)<a class="headerlink" href="#equation-68c7c130-263e-4629-82d5-01cd7ab6a993" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0a5046d0-f98b-4670-a0ec-ece0460f7d2c">
+<span class="eqno">(30)<a class="headerlink" href="#equation-0a5046d0-f98b-4670-a0ec-ece0460f7d2c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Loss(\mathbf{W}) = ||\mathbf{Y} - \mathbf{W} ~ \mathbf{X}||^2
 \end{equation}\]</div>
 <p>So, using matrix notation, the optimization problem is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25738811-d658-4ed6-9233-c102b1a83a6a">
-<span class="eqno">(31)<a class="headerlink" href="#equation-25738811-d658-4ed6-9233-c102b1a83a6a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e454f378-dd1f-4dae-97b4-e198d91249fd">
+<span class="eqno">(31)<a class="headerlink" href="#equation-e454f378-dd1f-4dae-97b4-e198d91249fd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{W^{*}} &amp;= \underset{\mathbf{W}}{\mathrm{argmin}} \left( Loss (\mathbf{W})  \right) \\
  &amp;= \underset{\mathbf{W}}{\mathrm{argmin}} \left( ||\mathbf{Y} - \mathbf{W} ~ \mathbf{X}||^2  \right) \\
 &amp;= \underset{\mathbf{W}}{\mathrm{argmin}} \left( \left( \mathbf{Y} - \mathbf{W} ~ \mathbf{X}\right)^{\top} \left( \mathbf{Y} - \mathbf{W} ~ \mathbf{X}\right) \right)
 \end{align}\]</div>
 <p>To solve the minimization problem, we can simply set the derivative of the loss with respect to <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> to zero.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-208d6335-1dcc-4885-b675-e4b48a04ce79">
-<span class="eqno">(32)<a class="headerlink" href="#equation-208d6335-1dcc-4885-b675-e4b48a04ce79" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2aaa67f0-bd74-4bbd-a215-bad17b9fee37">
+<span class="eqno">(32)<a class="headerlink" href="#equation-2aaa67f0-bd74-4bbd-a215-bad17b9fee37" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \dfrac{\partial Loss}{\partial \mathbf{W}} = 0
 \end{equation}\]</div>
 <p>Assuming that <span class="math notranslate nohighlight">\(\mathbf{X}\mathbf{X}^{\top}\)</span> is full-rank, and thus it is invertible, we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97193fd8-d579-44d0-bf82-2d75dd85fd32">
-<span class="eqno">(33)<a class="headerlink" href="#equation-97193fd8-d579-44d0-bf82-2d75dd85fd32" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b85c9875-9ae3-488e-9a84-a9f2de745287">
+<span class="eqno">(33)<a class="headerlink" href="#equation-b85c9875-9ae3-488e-9a84-a9f2de745287" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{W}^{\mathbf{*}} = \mathbf{Y} \mathbf{X}^{\top} \left( \mathbf{X}  \mathbf{X}^{\top} \right) ^{-1}
 \end{equation}\]</div>
 <br/>
