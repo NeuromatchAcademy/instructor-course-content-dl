@@ -37,11 +37,11 @@ In order to build the book locally, you will need to do the following:
 
 5. Copy files from course-content-dl-main
 
-`mv ../course-content-dl-main/tutorials/ tutorials/
+`mv ../course-content-dl-main/tutorials/ tutorials/`
 
-`mv ../course-content-dl-main/projects/ projects/
+`mv ../course-content-dl-main/projects/ projects/`
 
-`mv ../course-content-dl-main/requirements.txt .
+`mv ../course-content-dl-main/requirements.txt .`
 
 `rm -r ../course-content-dl-main`
 
