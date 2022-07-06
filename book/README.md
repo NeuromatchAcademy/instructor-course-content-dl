@@ -8,7 +8,7 @@ In order to build the book locally, you will need to do the following:
 
 1. Clone instructor-course-content-dl repo
 
-`git clone https://github.com/NeuromatchAcademy/instructor-course-content-dl.git`
+`git clone https://github.com/NeuromatchAcademy/instructor-course-content-dl.git --depth=1`
 
 2. Download nmaci repo (main branch)
 
