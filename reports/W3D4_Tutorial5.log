@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# @title Install requirements', 'from IPython.display import clear_output', '# @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.', '', '# @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.']
+['# @title Install requirements', '', '# @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.', '', '# @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.']
 ...
-['from evaltools.airtable import AirtableForm', '', '# Generate airtable form', "atform = AirtableForm('appn7VdPRseSoMXEG','W3D2_T1','https://portal.neuromatchacademy.org/api/redirect/to/3e77471d-4de0-4e43-a026-9cfb603b5197')", 'clear_output()']
+['!pip install dm-acme --quiet', '!pip install dm-acme[reverb] --quiet', '!pip install dm-acme[jax,tensorflow] --quiet', '!pip install dm-acme[envs] --quiet', '!pip install dm-env --quiet']
 -------------------
 

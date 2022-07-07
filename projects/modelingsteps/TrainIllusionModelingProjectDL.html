@@ -1220,7 +1220,6 @@ title="Print to PDF"
 <p><strong>Production editors:</strong> Spiros Chavlis</p>
 <br> 
 <p><strong>Disclaimer</strong>: this is a “toy” model used to demonstrate the <a class="reference external" href="https://doi.org/10.1523/ENEURO.0352-19.2019">10 step procedure of how-to-model</a>. It is not meant to be state of the art research.</p>
-<p><strong>Our 2021 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
 <p align='center'><img src='https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True'/></p></div>
 <hr class="docutils" />
 <div class="section" id="phenomenon">
@@ -1275,8 +1274,8 @@ title="Print to PDF"
 <p><em>Part of step 5</em></p>
 <p>We chose to use a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/">Drift-Diffusion Model (DDM)</a> because it is a well-established framework that allows us to model decision making in the case of 2 alternative choices (here: self-motion vs. other train motion).</p>
 <p>For our purposes simplest equation looks something like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f94494ee-b43f-4ec2-941e-268331b8bf71">
-<span class="eqno">(128)<a class="headerlink" href="#equation-f94494ee-b43f-4ec2-941e-268331b8bf71" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cb084659-e4cb-4f93-af6d-1831f25cb3e0">
+<span class="eqno">(128)<a class="headerlink" href="#equation-cb084659-e4cb-4f93-af6d-1831f25cb3e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dot e = \frac{de}{dt}= -c \cdot e + v \, ,
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e\)</span> is the accumulated evidence and <span class="math notranslate nohighlight">\(v\)</span> is our vestibular input already containing the noise (so we don’t need to add more noise?). <span class="math notranslate nohighlight">\(c\)</span> is the leakage constant, i.e., <span class="math notranslate nohighlight">\(c=0\)</span> means perfect integration; <span class="math notranslate nohighlight">\(c=1\)</span> means no integration (perfect leakage).</p>
@@ -1564,7 +1563,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 31.6% and motion: 61.8%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 28.8% and motion: 60.9%
 </pre></div>
 </div>
 </div>

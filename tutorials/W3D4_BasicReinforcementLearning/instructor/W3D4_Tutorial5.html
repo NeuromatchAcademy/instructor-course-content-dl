@@ -1327,11 +1327,6 @@ const thebe_selector_output = ".output, .cell_output"
      Video 5: How to learn more
     </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#airtable-submission-link">
-     Airtable Submission Link
-    </a>
-</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry">
@@ -1798,11 +1793,6 @@ const thebe_selector_output = ".output, .cell_output"
      Video 5: How to learn more
     </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#airtable-submission-link">
-     Airtable Submission Link
-    </a>
-</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry">
@@ -1825,7 +1815,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Content creators:</strong> Marcelo G Mattar, Eric DeWitt, Matt Krause, Matthew Sargent, Anoop Kulkarni, Sowmya Parthiban, Feryal Behbahani, Jane Wang</p>
 <p><strong>Content reviewers:</strong> Ella Batty, Byron Galbraith, Michael Waskom, Ezekiel Williams, Mehul Rastogi, Lily Cheng, Roberto Guidotti, Arush Tagade, Kelson Shilling-Scrivo</p>
 <p><strong>Production editors:</strong> Gagana B, Spiros Chavlis</p>
-<p><strong>Our 2022 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
 <p align="center"><img src="https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True"/></p></div>
 <hr class="docutils"/>
 <div class="section" id="tutorial-objectives">
@@ -1863,10 +1852,11 @@ By the end of the tutorial, you should be able to:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install requirements</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+
 <span class="c1"># @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.</span>
 
 <span class="c1"># @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.</span>
+
 <span class="o">!</span>pip install --upgrade pip --quiet
 <span class="o">!</span>pip install imageio --quiet
 <span class="o">!</span>pip install imageio-ffmpeg --quiet
@@ -1883,18 +1873,21 @@ By the end of the tutorial, you should be able to:</p>
 <span class="o">!</span>pip install dm-acme<span class="o">[</span>jax,tensorflow<span class="o">]</span> --quiet
 <span class="o">!</span>pip install dm-acme<span class="o">[</span>envs<span class="o">]</span> --quiet
 <span class="o">!</span>pip install dm-env --quiet
-
-<span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
-
-<span class="c1"># Generate airtable form</span>
-<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D2_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/3e77471d-4de0-4e43-a026-9cfb603b5197'</span><span class="p">)</span>
-<span class="n">clear_output</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -rpcio (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -rpcio (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+
 </pre></div>
 </div>
 </div>
@@ -1948,7 +1941,7 @@ By the end of the tutorial, you should be able to:</p>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>  <span class="c1"># Interactive display</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master/nma.mplstyle"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/NeuromatchAcademy/content-creation/main/nma.mplstyle"</span><span class="p">)</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Blues'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3026,8 +3019,8 @@ In other words, the value <span class="math notranslate nohighlight">\(\color{gr
 <p>When introducing function approximations, and neural networks in particular, we need to have a loss to optimize. But looking back at the tabular setting above, you can see that we already have some notion of error: the <strong>TD error</strong>.</p>
 <p>By training our neural network to output values such that the <em>TD error is minimized</em>, we will also satisfy the Bellman Optimality Equation, which is a good sufficient condition to enforce, to obtain an optimal policy.
 Thanks to automatic differentiation, we can just write the TD error as a loss, e.g., with an <span class="math notranslate nohighlight">\(\ell^2\)</span> loss, but others would work too:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30347158-ab9a-49ed-86d1-9075e1f660f6">
-<span class="eqno">(119)<a class="headerlink" href="#equation-30347158-ab9a-49ed-86d1-9075e1f660f6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-668493de-e1bf-42ad-bf7f-e2f6e90417fe">
+<span class="eqno">(119)<a class="headerlink" href="#equation-668493de-e1bf-42ad-bf7f-e2f6e90417fe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L(\color{green}w) = \mathbb{E}\left[ \left( \color{green}{r} + \gamma \max_\color{blue}{a'} \color{green}{Q_w}(\color{red}{s'}, \color{blue}{a'}) âˆ’ \color{green}{Q_w}(\color{red}{s}, \color{blue}{a})  \right)^2\right].
 \end{equation}\]</div>
 <p>Then we can compute the gradient with respect to the parameters of the neural network and improve our Q-value approximation incrementally.</p>
@@ -3199,10 +3192,6 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
   <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">:</span> <span class="n">dm_env</span><span class="o">.</span><span class="n">TimeStep</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_replay_buffer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">)</span>
 
-
-<span class="c1"># Add event to airtable</span>
-<span class="n">atform</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'Coding Exercise 6.1: Implement NFQ'</span><span class="p">)</span>
-
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -3358,10 +3347,6 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 
   <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">:</span> <span class="n">dm_env</span><span class="o">.</span><span class="n">TimeStep</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_replay_buffer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">)</span>
-
-
-<span class="c1"># Add event to airtable</span>
-<span class="n">atform</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'Coding Exercise 6.1: Implement NFQ'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3678,9 +3663,6 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
     <span class="bp">self</span><span class="o">.</span><span class="n">_replay_buffer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">)</span>
 
 
-<span class="c1"># Add event to airtable</span>
-<span class="n">atform</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'Coding Exercise 7.1: Run a DQN Agent'</span><span class="p">)</span>
-
 <span class="c1"># Create a convenient container for the SARS tuples required by NFQ.</span>
 <span class="n">Transitions</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span>
     <span class="s1">'Transitions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'action'</span><span class="p">,</span> <span class="s1">'reward'</span><span class="p">,</span> <span class="s1">'discount'</span><span class="p">,</span> <span class="s1">'next_state'</span><span class="p">])</span>
@@ -3853,9 +3835,6 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
     <span class="bp">self</span><span class="o">.</span><span class="n">_replay_buffer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">next_timestep</span><span class="p">)</span>
 
 
-<span class="c1"># Add event to airtable</span>
-<span class="n">atform</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'Coding Exercise 7.1: Run a DQN Agent'</span><span class="p">)</span>
-
 <span class="c1"># Create a convenient container for the SARS tuples required by NFQ.</span>
 <span class="n">Transitions</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span>
     <span class="s1">'Transitions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'action'</span><span class="p">,</span> <span class="s1">'reward'</span><span class="p">,</span> <span class="s1">'discount'</span><span class="p">,</span> <span class="s1">'next_state'</span><span class="p">])</span>
@@ -4003,8 +3982,8 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <div class="section" id="section-3-1-policy-gradient">
 <h2>Section 3.1: Policy gradient<a class="headerlink" href="#section-3-1-policy-gradient" title="Permalink to this headline">¶</a></h2>
 <p>Now we will turn to policy gradient methods. Rather than defining the policy in terms of a value function, i.e. <span class="math notranslate nohighlight">\(\color{blue}\pi(\color{red}s) = \arg\max_{\color{blue}a}\color{green}Q(\color{red}s, \color{blue}a)\)</span>, we will directly parameterize the policy and write it as the distribution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1a40478-739e-4f8f-90a7-6bcd7a700147">
-<span class="eqno">(120)<a class="headerlink" href="#equation-d1a40478-739e-4f8f-90a7-6bcd7a700147" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bb36b414-10e8-41c7-a826-fe81a80652cd">
+<span class="eqno">(120)<a class="headerlink" href="#equation-bb36b414-10e8-41c7-a826-fe81a80652cd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{blue}a_t \sim \color{blue}\pi_{\theta}(\color{blue}a_t|\color{red}s_t).
 \end{equation}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\theta\)</span> represent the parameters of the policy. We will update the policy parameters using gradient ascent to <strong>maximize</strong> expected future reward.</p>
@@ -4014,8 +3993,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <strong>basic idea</strong> is to use probabilistic action choice. If the reward at the end turns out to be high, we make <strong>all</strong> actions in this sequence <strong>more likely</strong> (otherwise, we do the opposite).</p>
 <p>This strategy could reinforce “bad” actions as well, however they will turn out to be part of trajectories with low reward and will likely not get accentuated.</p>
 <p>From the lectures, we know that we need to compute</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a7ccaac-8639-4666-bf38-40db6f520f22">
-<span class="eqno">(121)<a class="headerlink" href="#equation-3a7ccaac-8639-4666-bf38-40db6f520f22" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-94a888fb-98e9-4ef4-a2da-14ca38142700">
+<span class="eqno">(121)<a class="headerlink" href="#equation-94a888fb-98e9-4ef4-a2da-14ca38142700" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4024,8 +4003,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\color{green} G_t\)</span> is the sum over future rewards from time <span class="math notranslate nohighlight">\(t\)</span>, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5dc77096-1735-4a18-914a-c5d4e6f93bff">
-<span class="eqno">(122)<a class="headerlink" href="#equation-5dc77096-1735-4a18-914a-c5d4e6f93bff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a81db088-361f-46c9-aeb7-2e07deb22640">
+<span class="eqno">(122)<a class="headerlink" href="#equation-a81db088-361f-46c9-aeb7-2e07deb22640" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4219,8 +4198,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <h4>Reward <span class="math notranslate nohighlight">\(G_t\)</span><a class="headerlink" href="#reward-g-t" title="Permalink to this headline">¶</a></h4>
 <p>We update our policy by taking a sample of the action value function <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> by playing through episodes of the game.  <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> is defined as the expected return by taking action <span class="math notranslate nohighlight">\(a\)</span> in state <span class="math notranslate nohighlight">\(s\)</span> following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>We know that for every step the simulation continues we receive a reward of 1.  We can use this to calculate the policy gradient at each time step, where <span class="math notranslate nohighlight">\(r\)</span> is the reward for a particular state-action pair.  Rather than using the instantaneous reward, <span class="math notranslate nohighlight">\(r\)</span>, we instead use a long term reward <span class="math notranslate nohighlight">\( v_{t} \)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is the discounted sum of all future rewards for the length of the episode.   <span class="math notranslate nohighlight">\(v_{t}\)</span> is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-879162a3-d425-4c07-a92d-dd6514c21f20">
-<span class="eqno">(123)<a class="headerlink" href="#equation-879162a3-d425-4c07-a92d-dd6514c21f20" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1cdd1e80-dc4a-448c-b0e0-3f9841a7aba1">
+<span class="eqno">(123)<a class="headerlink" href="#equation-1cdd1e80-dc4a-448c-b0e0-3f9841a7aba1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4231,8 +4210,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="update-policy-equation">
 <h4>Update Policy: equation<a class="headerlink" href="#update-policy-equation" title="Permalink to this headline">¶</a></h4>
 <p>After each episode we apply Monte-Carlo Policy Gradient to improve our policy according to the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05229710-7255-42ef-a7aa-c73b941d7baa">
-<span class="eqno">(124)<a class="headerlink" href="#equation-05229710-7255-42ef-a7aa-c73b941d7baa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dde886d7-766e-49da-ab06-5a0dfaf42705">
+<span class="eqno">(124)<a class="headerlink" href="#equation-dde886d7-766e-49da-ab06-5a0dfaf42705" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta\theta_t = \alpha\nabla_\theta \, \log \pi_\theta (s_t,a_t)G_t
 \end{equation}\]</div>
 <p>We will then feed our policy history multiplied by our rewards to our optimizer and update the weights of our neural network using stochastic gradient <strong>ascent</strong>.  This should increase the likelihood of actions that got our agent a larger reward.</p>
@@ -4408,8 +4387,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="section-3-2-actor-critic">
 <h2>Section 3.2: Actor-critic<a class="headerlink" href="#section-3-2-actor-critic" title="Permalink to this headline">¶</a></h2>
 <p>Recall the policy gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-699cff01-c850-4a3a-ab9e-d857f51967e0">
-<span class="eqno">(125)<a class="headerlink" href="#equation-699cff01-c850-4a3a-ab9e-d857f51967e0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5ea00bf-3806-4bb2-bc95-68d2125bebea">
+<span class="eqno">(125)<a class="headerlink" href="#equation-a5ea00bf-3806-4bb2-bc95-68d2125bebea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4419,8 +4398,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 \end{equation}\]</div>
 <p>The policy parameters are updated using Monte Carlo technique and uses random samples. This introduces high variability in log probabilities and cumulative reward values. This leads to noisy gradients and can cause unstable learning.</p>
 <p>One way to reduce variance and increase stability is subtracting the cumulative reward by a baseline:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d704a01-a875-4902-8118-4ff5a685dfa7">
-<span class="eqno">(126)<a class="headerlink" href="#equation-4d704a01-a875-4902-8118-4ff5a685dfa7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-75039020-ec5c-4a4c-ab5d-a17d42404188">
+<span class="eqno">(126)<a class="headerlink" href="#equation-75039020-ec5c-4a4c-ab5d-a17d42404188" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4738,24 +4717,6 @@ conversation.</p>
 <div class="section" id="video-5-how-to-learn-more">
 <h2>Video 5: How to learn more<a class="headerlink" href="#video-5-how-to-learn-more" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove-input docutils container">
-</div>
-</div>
-<div class="section" id="airtable-submission-link">
-<h2>Airtable Submission Link<a class="headerlink" href="#airtable-submission-link" title="Permalink to this headline">¶</a></h2>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Airtable Submission Link</span>
-<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">IPydisplay</span>
-<span class="n">IPydisplay</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-   <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2"> &lt;div&gt;</span>
-<span class="s2">   &lt;a href= "</span><span class="si">{</span><span class="n">atform</span><span class="o">.</span><span class="n">url</span><span class="p">()</span><span class="si">}</span><span class="s2">" target="_blank"&gt;</span>
-<span class="s2">   &lt;img src="https://github.com/NeuromatchAcademy/course-content-dl/blob/main/tutorials/static/SurveyButton.png?raw=1"</span>
-<span class="s2"> alt="button link end of day Survey" style="width:410px"&gt;&lt;/a&gt;</span>
-<span class="s2">   &lt;/div&gt;"""</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>

@@ -1356,7 +1356,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Content reviewers:</strong> Piyush Chauhan, Siwei Bai, Kelson Shilling-Scrivo</p>
 <p><strong>Content editors:</strong> Roberto Guidotti, Spiros Chavlis</p>
 <p><strong>Production editors:</strong> Saeed Salehi, Gagana B, Spiros Chavlis</p>
-<p><strong>Our 2022 Sponsors, including Presenting Sponsor Facebook Reality Labs</strong></p>
 <p align="center"><img src="https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True"/></p></div>
 <hr class="docutils"/>
 <div class="section" id="tutorial-objectives">
@@ -1392,12 +1391,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="o">!</span>pip install imageio --quiet
 <span class="o">!</span>pip install imageio-ffmpeg --quiet
-
 <span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
-<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
 
-<span class="c1"># Generate airtable form</span>
-<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W1D5_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/9c55f6cb-cdf9-4429-ac1c-ec44fe64c303'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span> <span class="s1">'W2D1_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/db28603f-d241-43d1-a31e-65ddf830a21a'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1913,7 +1910,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "91441ed86857448c81ea5dd495bb44d9"}
+{"version_major": 2, "version_minor": 0, "model_id": "a2fb2ad2bea2427ca76c5ac8a75e7fd8"}
 </script></div>
 </div>
 <p>A key idea of neural nets is that they use models that are “too complex” - complex enough to fit all the noise in the data. One then needs to “regularize” them to make the models fit complex enough, but not too complex. The more complex the model, the better it fits the training data, but if it is too complex, it generalizes less well; it memorizes the training data but is less accurate on future test data.</p>
@@ -1923,7 +1920,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "731c6abf9fe541c39c4e18f527bae3ff"}
+{"version_major": 2, "version_minor": 0, "model_id": "ca28436a037946e7bbad2d4b82c1e0d8"}
 </script></div>
 </div>
 <p>One way to think about Regularization is to think in terms of the magnitude of the overall weights of the model. A model with big weights can fit more data perfectly, whereas a model with smaller weights tends to underperform on the train set but can surprisingly do very well on the test set. Having the weights too small can also be an issue as it can then underfit the model.</p>
@@ -1933,8 +1930,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <h2>Coding Exercise 1: Frobenius Norm<a class="headerlink" href="#coding-exercise-1-frobenius-norm" title="Permalink to this headline">¶</a></h2>
 <p>Before we start, let’s define the Frobenius norm, sometimes also called the Euclidean norm of an <span class="math notranslate nohighlight">\(m×n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>  as the square root of the sum of the absolute squares of its elements.</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-7a22e731-4d86-40e2-a1f1-cb180d0c15b7">
-<span class="eqno">(57)<a class="headerlink" href="#equation-7a22e731-4d86-40e2-a1f1-cb180d0c15b7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dfcdcd36-1b6e-4922-91c7-b99a69a7ba16">
+<span class="eqno">(57)<a class="headerlink" href="#equation-dfcdcd36-1b6e-4922-91c7-b99a69a7ba16" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   ||A||_F= \sqrt{\sum_{i=1}^m\sum_{j=1}^n|a_{ij}|^2}
 \end{equation}\]</div>
 <br/>
@@ -2118,7 +2115,7 @@ Frobenius norm of Models weights: 7.3810
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "defce673d5034598917891bd84c19f68"}
+{"version_major": 2, "version_minor": 0, "model_id": "bf6fe7e620834de2ba8bba87b4ad4e15"}
 </script></div>
 </div>
 </div>
@@ -2278,7 +2275,7 @@ Frobenius norm of Models weights: 7.3810
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6948b2e68ab44ba399d3c3ba751473cc"}
+{"version_major": 2, "version_minor": 0, "model_id": "53831c2b81db4a499b375480267ba081"}
 </script></div>
 </div>
 <p>Now that we have finished training, let’s see how the model has evolved over the training process.</p>
@@ -3188,7 +3185,7 @@ AExhdmY1OC4yOS4xMDA=
 <h3>Think! 2.1: Interpreting losses<a class="headerlink" href="#think-2-1-interpreting-losses" title="Permalink to this headline">¶</a></h3>
 <p>Regarding the train and test graph above, discuss among yourselves:</p>
 <ul class="simple">
-<li><p>What trend do you see w.r.t to train and test losses ( Where do you see the minimum of these losses?)</p></li>
+<li><p>What trend do you see with respect to train and test losses (Where do you see the minimum of these losses?)</p></li>
 <li><p>What does it tell us about the model we trained?</p></li>
 </ul>
 <div class="section" id="student-response">
@@ -3221,9 +3218,9 @@ AExhdmY1OC4yOS4xMDA=
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "719c761b64de486c80a55a132fa99857"}
+{"version_major": 2, "version_minor": 0, "model_id": "ec74c1e2227647878e8fa0ab11ebabb5"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "82b30cd95f16450ab55a96fc279df83c"}
+{"version_major": 2, "version_minor": 0, "model_id": "3a298d08de3a4d0a865d8e8486f5c4a2"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -3519,29 +3516,29 @@ AExhdmY1OC4yOS4xMDA=
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "69f63470570048deb3ea936c18e69d74"}
+{"version_major": 2, "version_minor": 0, "model_id": "6d303ce8b75a4252aa705716c41907fc"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_6340</span><span class="o">/</span><span class="mf">242740004.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_6251</span><span class="o">/</span><span class="mf">242740004.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span>                                               <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span>                                               <span class="n">train_loader</span><span class="o">=</span><span class="n">train_loader</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>                                               <span class="n">val_loader</span><span class="o">=</span><span class="n">val_loader</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> 
 
-<span class="nn">/tmp/ipykernel_6340/2182449489.py</span> in <span class="ni">main</span><span class="nt">(args, model, train_loader, val_loader, reg_function1, reg_function2)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="n">trained_model</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>                           <span class="n">reg_function1</span><span class="o">=</span><span class="n">reg_function1</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>                           <span class="n">reg_function2</span><span class="o">=</span><span class="n">reg_function2</span><span class="p">)</span>
+<span class="nn">/tmp/ipykernel_6251/2182449489.py</span> in <span class="ni">main</span><span class="nt">(args, model, train_loader, val_loader, reg_function1, reg_function2)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>                           <span class="n">reg_function2</span><span class="o">=</span><span class="n">reg_function2</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="n">train_acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">val_acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">121</span>     <span class="n">val_acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">trained_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="n">param_norm</span> <span class="o">=</span> <span class="n">calculate_frobenius_norm</span><span class="p">(</span><span class="n">trained_model</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="n">train_acc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_acc</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_6340/2182449489.py</span> in <span class="ni">train</span><span class="nt">(args, model, train_loader, optimizer, reg_function1, reg_function2, criterion)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>   <span class="n">device</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="s1">'device'</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>   <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">29</span>   <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="nn">/tmp/ipykernel_6251/2182449489.py</span> in <span class="ni">test</span><span class="nt">(model, test_loader, criterion, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>   <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>   <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">67</span>     <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>       <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>       <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">__next__</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">650</span>                 <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
