@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# to_remove solution', 'class LinearAutoEncoder(nn.Module):', '  """', '  Linear Autoencoder', '  """']
+['# @markdown Download BigGAN (a generative model) and a few standard image datasets', '', '## Initially was downloaded directly', "# biggan_model = BigGAN.from_pretrained('biggan-deep-256')", '']
 ...
-['## Uncomment to test your code', 'lin_ae = LinearAutoEncoder(data_size, K)', 'lin_losses = train_autoencoder(lin_ae, train_set, device=DEVICE, seed=SEED)', 'with plt.xkcd():', '  plot_linear_ae(lin_losses)']
+['r = requests.get(url, allow_redirects=True)', "with open(fname, 'wb') as fd:", '  fd.write(r.content)', '', 'biggan_model = torch.load(fname)']
 -------------------
 

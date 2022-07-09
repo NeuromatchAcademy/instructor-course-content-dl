@@ -476,6 +476,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 1: Un/Self-supervised learning methods
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/W3D3_BonusLecture.html">
+     Bonus Lecture: Emily Denton &amp; Melanie Mitchell
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children">
@@ -2084,13 +2089,6 @@ By the end of the tutorial, you should be able to:</p>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
-<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
@@ -3230,8 +3228,8 @@ In other words, the value <span class="math notranslate nohighlight">\(\color{gr
 <p>When introducing function approximations, and neural networks in particular, we need to have a loss to optimize. But looking back at the tabular setting above, you can see that we already have some notion of error: the <strong>TD error</strong>.</p>
 <p>By training our neural network to output values such that the <em>TD error is minimized</em>, we will also satisfy the Bellman Optimality Equation, which is a good sufficient condition to enforce, to obtain an optimal policy.
 Thanks to automatic differentiation, we can just write the TD error as a loss, e.g., with an <span class="math notranslate nohighlight">\(\ell^2\)</span> loss, but others would work too:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fcef3d3c-04e9-4b4c-9bbc-41758dd49131">
-<span class="eqno">(119)<a class="headerlink" href="#equation-fcef3d3c-04e9-4b4c-9bbc-41758dd49131" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0124644f-3eff-4344-8e2e-bf2f1f9f995c">
+<span class="eqno">(119)<a class="headerlink" href="#equation-0124644f-3eff-4344-8e2e-bf2f1f9f995c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L(\color{green}w) = \mathbb{E}\left[ \left( \color{green}{r} + \gamma \max_\color{blue}{a'} \color{green}{Q_w}(\color{red}{s'}, \color{blue}{a'}) âˆ’ \color{green}{Q_w}(\color{red}{s}, \color{blue}{a})  \right)^2\right].
 \end{equation}\]</div>
 <p>Then we can compute the gradient with respect to the parameters of the neural network and improve our Q-value approximation incrementally.</p>
@@ -4193,8 +4191,8 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <div class="section" id="section-3-1-policy-gradient">
 <h2>Section 3.1: Policy gradient<a class="headerlink" href="#section-3-1-policy-gradient" title="Permalink to this headline">¶</a></h2>
 <p>Now we will turn to policy gradient methods. Rather than defining the policy in terms of a value function, i.e. <span class="math notranslate nohighlight">\(\color{blue}\pi(\color{red}s) = \arg\max_{\color{blue}a}\color{green}Q(\color{red}s, \color{blue}a)\)</span>, we will directly parameterize the policy and write it as the distribution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2a42185-33a7-4ee0-b6bc-b4bbb0c973d4">
-<span class="eqno">(120)<a class="headerlink" href="#equation-b2a42185-33a7-4ee0-b6bc-b4bbb0c973d4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-879c97c2-7873-4177-8830-f34ac5accd12">
+<span class="eqno">(120)<a class="headerlink" href="#equation-879c97c2-7873-4177-8830-f34ac5accd12" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{blue}a_t \sim \color{blue}\pi_{\theta}(\color{blue}a_t|\color{red}s_t).
 \end{equation}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\theta\)</span> represent the parameters of the policy. We will update the policy parameters using gradient ascent to <strong>maximize</strong> expected future reward.</p>
@@ -4204,8 +4202,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <strong>basic idea</strong> is to use probabilistic action choice. If the reward at the end turns out to be high, we make <strong>all</strong> actions in this sequence <strong>more likely</strong> (otherwise, we do the opposite).</p>
 <p>This strategy could reinforce “bad” actions as well, however they will turn out to be part of trajectories with low reward and will likely not get accentuated.</p>
 <p>From the lectures, we know that we need to compute</p>
-<div class="amsmath math notranslate nohighlight" id="equation-840e0338-eab3-403a-9d01-de86b52be3f9">
-<span class="eqno">(121)<a class="headerlink" href="#equation-840e0338-eab3-403a-9d01-de86b52be3f9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b8a39448-a835-4137-9254-735ca96f65bc">
+<span class="eqno">(121)<a class="headerlink" href="#equation-b8a39448-a835-4137-9254-735ca96f65bc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4214,8 +4212,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\color{green} G_t\)</span> is the sum over future rewards from time <span class="math notranslate nohighlight">\(t\)</span>, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da5e8506-41ea-441d-be77-4212dfe51910">
-<span class="eqno">(122)<a class="headerlink" href="#equation-da5e8506-41ea-441d-be77-4212dfe51910" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-57e810b3-e23d-41cb-9468-a6098b9651d9">
+<span class="eqno">(122)<a class="headerlink" href="#equation-57e810b3-e23d-41cb-9468-a6098b9651d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4409,8 +4407,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <h4>Reward <span class="math notranslate nohighlight">\(G_t\)</span><a class="headerlink" href="#reward-g-t" title="Permalink to this headline">¶</a></h4>
 <p>We update our policy by taking a sample of the action value function <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> by playing through episodes of the game.  <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> is defined as the expected return by taking action <span class="math notranslate nohighlight">\(a\)</span> in state <span class="math notranslate nohighlight">\(s\)</span> following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>We know that for every step the simulation continues we receive a reward of 1.  We can use this to calculate the policy gradient at each time step, where <span class="math notranslate nohighlight">\(r\)</span> is the reward for a particular state-action pair.  Rather than using the instantaneous reward, <span class="math notranslate nohighlight">\(r\)</span>, we instead use a long term reward <span class="math notranslate nohighlight">\( v_{t} \)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is the discounted sum of all future rewards for the length of the episode.   <span class="math notranslate nohighlight">\(v_{t}\)</span> is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6efd35a3-969f-47a5-9784-a7ba0641a569">
-<span class="eqno">(123)<a class="headerlink" href="#equation-6efd35a3-969f-47a5-9784-a7ba0641a569" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-07eaf17a-a92d-417f-a888-0902ec7df094">
+<span class="eqno">(123)<a class="headerlink" href="#equation-07eaf17a-a92d-417f-a888-0902ec7df094" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4421,8 +4419,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="update-policy-equation">
 <h4>Update Policy: equation<a class="headerlink" href="#update-policy-equation" title="Permalink to this headline">¶</a></h4>
 <p>After each episode we apply Monte-Carlo Policy Gradient to improve our policy according to the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a36dc16-a4b9-4442-9b18-69c19de2a5be">
-<span class="eqno">(124)<a class="headerlink" href="#equation-0a36dc16-a4b9-4442-9b18-69c19de2a5be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d16f739-62ea-4a0c-bebe-1ad929e01d08">
+<span class="eqno">(124)<a class="headerlink" href="#equation-2d16f739-62ea-4a0c-bebe-1ad929e01d08" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta\theta_t = \alpha\nabla_\theta \, \log \pi_\theta (s_t,a_t)G_t
 \end{equation}\]</div>
 <p>We will then feed our policy history multiplied by our rewards to our optimizer and update the weights of our neural network using stochastic gradient <strong>ascent</strong>.  This should increase the likelihood of actions that got our agent a larger reward.</p>
@@ -4598,8 +4596,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="section-3-2-actor-critic">
 <h2>Section 3.2: Actor-critic<a class="headerlink" href="#section-3-2-actor-critic" title="Permalink to this headline">¶</a></h2>
 <p>Recall the policy gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55c5f65a-5613-466b-a4f4-d4d95390b6e9">
-<span class="eqno">(125)<a class="headerlink" href="#equation-55c5f65a-5613-466b-a4f4-d4d95390b6e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03dce82c-a76c-484a-afc2-95433658ecc6">
+<span class="eqno">(125)<a class="headerlink" href="#equation-03dce82c-a76c-484a-afc2-95433658ecc6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4609,8 +4607,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 \end{equation}\]</div>
 <p>The policy parameters are updated using Monte Carlo technique and uses random samples. This introduces high variability in log probabilities and cumulative reward values. This leads to noisy gradients and can cause unstable learning.</p>
 <p>One way to reduce variance and increase stability is subtracting the cumulative reward by a baseline:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d45d5533-7147-4368-b3cc-657e57474659">
-<span class="eqno">(126)<a class="headerlink" href="#equation-d45d5533-7147-4368-b3cc-657e57474659" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0a5a8b22-18a0-4043-b8b1-0e248b4cd04e">
+<span class="eqno">(126)<a class="headerlink" href="#equation-0a5a8b22-18a0-4043-b8b1-0e248b4cd04e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[

@@ -476,6 +476,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 1: Un/Self-supervised learning methods
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/W3D3_BonusLecture.html">
+     Bonus Lecture: Emily Denton &amp; Melanie Mitchell
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -2126,20 +2131,20 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d307372a70d04c9a98337d9b865a8e84"}
+{"version_major": 2, "version_minor": 0, "model_id": "b79b3394e9ba4645b90e7a9bb50da95e"}
 </script></div>
 </div>
 <p>Images are high dimensional. That is to say that <code class="docutils literal notranslate"><span class="pre">image_length</span></code> * <code class="docutils literal notranslate"><span class="pre">image_width</span></code> * <code class="docutils literal notranslate"><span class="pre">image_channels</span></code> is a big number, and multiplying that big number by a normal sized fully-connected layer leads to a ton of parameters to learn. Yesterday, we learned about convolutional neural networks, one way of working around high dimensionality in images and other domains.</p>
 <p>The widget below (i.e., <em>Interactive Demo 1</em>) calculates the parameters required for a single convolutional or fully connected layer that operates on an image of a certain height and width.</p>
 <p>Recall that, the number of parameters of a convolutional layer <span class="math notranslate nohighlight">\(l\)</span> are calculated as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-982efa3e-c81d-491b-a843-2aee3e3d688b">
-<span class="eqno">(83)<a class="headerlink" href="#equation-982efa3e-c81d-491b-a843-2aee3e3d688b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f5525b03-5101-454f-8687-816ec61152fd">
+<span class="eqno">(83)<a class="headerlink" href="#equation-f5525b03-5101-454f-8687-816ec61152fd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( H \times W \times K_{l-1} \right) + 1 \right] \times K_l
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(H\)</span> denotes the shape of the height of the filter, <span class="math notranslate nohighlight">\(W\)</span> the shape of the width of the filter, and <span class="math notranslate nohighlight">\(K_l\)</span> denotes the number of the filters in the <span class="math notranslate nohighlight">\(l\)</span>-th layer. The added <span class="math notranslate nohighlight">\(1\)</span> is because of the bias term for each filter.</p>
 <p>While a fully connected layer contains:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bdd064c-797b-47ce-9766-6518c775f973">
-<span class="eqno">(84)<a class="headerlink" href="#equation-7bdd064c-797b-47ce-9766-6518c775f973" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-301fffc2-1479-46b3-ba5f-b29a7c86d6c0">
+<span class="eqno">(84)<a class="headerlink" href="#equation-301fffc2-1479-46b3-ba5f-b29a7c86d6c0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( N_{l-1} \times N_l \right) + 1 \times N_l \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N_l\)</span> denotes the number of nodes in the <span class="math notranslate nohighlight">\(l\)</span>-th layer.</p>
@@ -2394,7 +2399,7 @@ ConvNet parameter count: 7168
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "bfe5f3460f2e4e5783f624ea66a43ee5"}
+{"version_major": 2, "version_minor": 0, "model_id": "567e179ca5e24bc6b7749039183f527c"}
 </script></div>
 </div>
 </div>
@@ -2411,7 +2416,7 @@ ConvNet parameter count: 7168
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "1be4d77bd91f4b0191e7de892e8ca989"}
+{"version_major": 2, "version_minor": 0, "model_id": "29bd4485c88b40138fb43f00ab43f869"}
 </script></div>
 </div>
 </div>
@@ -2451,9 +2456,9 @@ ConvNet parameter count: 7168
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "3b0c1fdd890a4c1bb0feb98fa9bee1f2"}
+{"version_major": 2, "version_minor": 0, "model_id": "f91e066dbfbe49caa5de52f16594b2e3"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d9da6d74aed04879b75d38df3d9bc2b4"}
+{"version_major": 2, "version_minor": 0, "model_id": "a25794976f8248f68fa9b3688ee91051"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2492,7 +2497,7 @@ ConvNet parameter count: 7168
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "98b65fe548fb42329301012e94fe38b0"}
+{"version_major": 2, "version_minor": 0, "model_id": "7b110813609e44c680476a9e1e3e5cdc"}
 </script></div>
 </div>
 </div>
@@ -2540,7 +2545,7 @@ In this section you’ll have the opportunity to play with AlexNet and see the w
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4b1ef72eeb1c4163b686779a5c046a65"}
+{"version_major": 2, "version_minor": 0, "model_id": "626aa4960f0f473fb5bb1436de83f981"}
 </script></div>
 </div>
 </div>
@@ -2607,9 +2612,9 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e64f0b394bba444896df63da2b71b622"}
+{"version_major": 2, "version_minor": 0, "model_id": "19915086fa774c3496c046566811041d"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "980548a127db49a69905f68fc3a5b17e"}
+{"version_major": 2, "version_minor": 0, "model_id": "6a90f29ab8b6400ba1f14030d2e3a476"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2700,7 +2705,7 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7462bebf9c9c47c685036950d9affc77"}
+{"version_major": 2, "version_minor": 0, "model_id": "3703a60b4d43415dbe086f963c60d9d9"}
 </script></div>
 </div>
 </div>
@@ -2738,9 +2743,9 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "82b2d322ec974861915366bcd4accaf9"}
+{"version_major": 2, "version_minor": 0, "model_id": "fe324afa5c7b4660b45c3b4c54a5b944"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "99c03dfeb21a4b63ab35d6a4b56c5ef8"}
+{"version_major": 2, "version_minor": 0, "model_id": "91d15c641bd74eada0d74f13ba2b9ad0"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2772,7 +2777,7 @@ What do these filters remind you of?</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f1ff79fc1cc3434fbc427c3a5b956a9c"}
+{"version_major": 2, "version_minor": 0, "model_id": "bcfbe07e282b47f9a3656cf90ffc061c"}
 </script></div>
 </div>
 <p>In this section we’ll be working with a state of the art CNN model called <a class="reference external" href="https://arxiv.org/abs/1512.03385">ResNet</a>. ResNet has two particularly interesting features. First, it uses skip connections to avoid the vanishing gradient problem. Second, each block (collection of layers) in a ResNet can be treated as learning a residual function.</p>
@@ -2812,7 +2817,7 @@ What do these filters remind you of?</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19956</span><span class="o">/</span><span class="mf">3300316898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19756</span><span class="o">/</span><span class="mf">3300316898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span>   <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span>   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="o">+</span><span class="s1">'tgz'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>

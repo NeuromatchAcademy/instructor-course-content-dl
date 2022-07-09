@@ -476,6 +476,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 1: Un/Self-supervised learning methods
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/W3D3_BonusLecture.html">
+     Bonus Lecture: Emily Denton &amp; Melanie Mitchell
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -2013,10 +2018,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
@@ -2056,14 +2058,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 
 </pre></div>
 </div>
@@ -3447,8 +3455,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa5ae3c4-04fb-446b-b13c-aa230cf6362c">
-<span class="eqno">(100)<a class="headerlink" href="#equation-aa5ae3c4-04fb-446b-b13c-aa230cf6362c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7c96bfd4-1e19-45be-b865-d6086b13a9d4">
+<span class="eqno">(100)<a class="headerlink" href="#equation-7c96bfd4-1e19-45be-b865-d6086b13a9d4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>
