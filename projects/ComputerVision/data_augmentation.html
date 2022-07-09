@@ -239,6 +239,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 3: Deep linear neural networks
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W1D2_LinearDeepLearning/instructor/W1D2_BonusLecture.html">
+     Bonus Lecture: Yoshua Bengio
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -341,6 +346,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 2: Deep Learning Thinking 1: Cost Functions
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D2_ConvnetsAndDlThinking/instructor/W2D2_BonusLecture.html">
+     Bonus Lecture: Kyunghyun Cho
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -393,6 +403,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/W2D4_GenerativeModels/instructor/W2D4_Tutorial4.html">
      (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D4_GenerativeModels/instructor/W2D4_BonusLecture.html">
+     Bonus Lecture: Geoffrey Hinton
     </a>
    </li>
   </ul>
@@ -524,6 +539,11 @@ const thebe_selector_output = ".output, .cell_output"
      (Bonus) Tutorial 5: Function approximation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D4_BasicReinforcementLearning/instructor/W3D4_BonusLecture.html">
+     Bonus Lecture: Chealsea Finn
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -539,6 +559,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/instructor/W3D5_Tutorial1.html">
      Tutorial 1: Learn to play games with RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/instructor/W3D5_BonusLecture.html">
+     Bonus Lecture: Amita Kapoor
     </a>
    </li>
   </ul>
@@ -1492,8 +1517,8 @@ GPU is enabled in this notebook.
 <div class="section" id="mixup">
 <h2>Mixup<a class="headerlink" href="#mixup" title="Permalink to this headline">¶</a></h2>
 <p>Mixup is a data augmentation technique that combines pairs of examples via a convex combination of the images and the labels. Given images <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> with labels <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span>, respectively, and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, mixup creates a new image <span class="math notranslate nohighlight">\(\hat{x}\)</span> with label <span class="math notranslate nohighlight">\(\hat{y}\)</span> the following way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56e8b0c2-32bd-461b-9eb2-f28c2a19c401">
-<span class="eqno">(129)<a class="headerlink" href="#equation-56e8b0c2-32bd-461b-9eb2-f28c2a19c401" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-82186c5c-e418-487e-8256-1447b97911f4">
+<span class="eqno">(129)<a class="headerlink" href="#equation-82186c5c-e418-487e-8256-1447b97911f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \hat{x} &amp;= \lambda x_i + (1 - \lambda) x_j \\
 \hat{y} &amp;= \lambda y_i + (1 - \lambda) y_j
 \end{align}\]</div>

@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# Original network', 'top_1_accuracies = []', 'top_5_accuracies = []', '', '# Instantiate a pretrained resnet model']
+['# @title Download imagenette', 'import requests, tarfile, os', '', "fname = 'imagenette2-320'", "url = 'https://osf.io/mnve4/download'"]
 ...
-['                                       imagenette_val_loader,', '                                       len(imagenette_val),', '                                       device=DEVICE)', 'top_1_accuracies.append(top_1_acc.item())', 'top_5_accuracies.append(top_5_acc.item())']
+['', "  os.remove(fname+'tgz')", '  print("The download has been completed.")', 'else:', '  print("Data has already been downloaded.")']
 -------------------
 
