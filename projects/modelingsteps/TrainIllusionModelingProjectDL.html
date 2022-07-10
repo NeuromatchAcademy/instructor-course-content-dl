@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
+    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Example Deep Learning Project" href="Example_Deep_Learning_Project.html" />
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/nma-dl-logo-square-4xp.jpeg" class="logo" alt="logo">
+      <img src="../../_static/nma-dl-logo-square-4xp.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
@@ -182,6 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -1304,8 +1311,8 @@ title="Print to PDF"
 <p><em>Part of step 5</em></p>
 <p>We chose to use a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/">Drift-Diffusion Model (DDM)</a> because it is a well-established framework that allows us to model decision making in the case of 2 alternative choices (here: self-motion vs. other train motion).</p>
 <p>For our purposes simplest equation looks something like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f090b6a5-0c28-4b22-892f-5e701dc9b2f1">
-<span class="eqno">(128)<a class="headerlink" href="#equation-f090b6a5-0c28-4b22-892f-5e701dc9b2f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2aa6750c-4340-414b-a113-974958c380bd">
+<span class="eqno">(128)<a class="headerlink" href="#equation-2aa6750c-4340-414b-a113-974958c380bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dot e = \frac{de}{dt}= -c \cdot e + v \, ,
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e\)</span> is the accumulated evidence and <span class="math notranslate nohighlight">\(v\)</span> is our vestibular input already containing the noise (so we don’t need to add more noise?). <span class="math notranslate nohighlight">\(c\)</span> is the leakage constant, i.e., <span class="math notranslate nohighlight">\(c=0\)</span> means perfect integration; <span class="math notranslate nohighlight">\(c=1\)</span> means no integration (perfect leakage).</p>
@@ -1593,7 +1600,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 30.6% and motion: 61.8%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 29.9% and motion: 59.3%
 </pre></div>
 </div>
 </div>

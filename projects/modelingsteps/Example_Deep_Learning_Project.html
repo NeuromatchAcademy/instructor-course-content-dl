@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
+    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Project Templates" href="../docs/projects_overview.html" />
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/nma-dl-logo-square-4xp.jpeg" class="logo" alt="logo">
+      <img src="../../_static/nma-dl-logo-square-4xp.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
@@ -182,6 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -1806,1188 +1813,906 @@ So a “1D” CNN in pytorch expects a 3D tensor as input: BxCxT</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [1/500], Step [2/2], Loss: 2.6469, Accuracy: 5.43%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [1/500], Step [2/2], Loss: 2.6455, Accuracy: 6.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [2/500], Step [2/2], Loss: 2.6388, Accuracy: 6.78%
-Epoch [3/500], Step [2/2], Loss: 2.6379, Accuracy: 8.91%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [2/500], Step [2/2], Loss: 2.6410, Accuracy: 6.01%
+Epoch [3/500], Step [2/2], Loss: 2.6396, Accuracy: 6.59%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [4/500], Step [2/2], Loss: 2.6361, Accuracy: 7.75%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [4/500], Step [2/2], Loss: 2.6377, Accuracy: 6.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [5/500], Step [2/2], Loss: 2.6353, Accuracy: 6.78%
-Epoch [6/500], Step [2/2], Loss: 2.6257, Accuracy: 11.82%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [5/500], Step [2/2], Loss: 2.6384, Accuracy: 6.78%
+Epoch [6/500], Step [2/2], Loss: 2.6338, Accuracy: 10.66%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [7/500], Step [2/2], Loss: 2.6166, Accuracy: 13.76%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [7/500], Step [2/2], Loss: 2.6276, Accuracy: 12.21%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [8/500], Step [2/2], Loss: 2.6157, Accuracy: 9.11%
-Epoch [9/500], Step [2/2], Loss: 2.5978, Accuracy: 14.53%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [8/500], Step [2/2], Loss: 2.6249, Accuracy: 14.15%
+Epoch [9/500], Step [2/2], Loss: 2.6158, Accuracy: 13.95%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [10/500], Step [2/2], Loss: 2.5902, Accuracy: 12.98%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [10/500], Step [2/2], Loss: 2.6064, Accuracy: 19.19%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [11/500], Step [2/2], Loss: 2.5719, Accuracy: 12.02%
-Epoch [12/500], Step [2/2], Loss: 2.5514, Accuracy: 11.24%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [11/500], Step [2/2], Loss: 2.5987, Accuracy: 8.14%
+Epoch [12/500], Step [2/2], Loss: 2.5757, Accuracy: 21.71%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [13/500], Step [2/2], Loss: 2.5018, Accuracy: 13.76%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [13/500], Step [2/2], Loss: 2.5403, Accuracy: 21.32%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [14/500], Step [2/2], Loss: 2.4684, Accuracy: 10.47%
-Epoch [15/500], Step [2/2], Loss: 2.4022, Accuracy: 22.29%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [14/500], Step [2/2], Loss: 2.5067, Accuracy: 19.77%
+Epoch [15/500], Step [2/2], Loss: 2.4929, Accuracy: 18.60%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [16/500], Step [2/2], Loss: 2.3998, Accuracy: 17.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [16/500], Step [2/2], Loss: 2.4310, Accuracy: 19.96%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [17/500], Step [2/2], Loss: 2.2766, Accuracy: 19.57%
-Epoch [18/500], Step [2/2], Loss: 2.2492, Accuracy: 25.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [17/500], Step [2/2], Loss: 2.3577, Accuracy: 21.12%
+Epoch [18/500], Step [2/2], Loss: 2.3186, Accuracy: 19.57%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [19/500], Step [2/2], Loss: 2.2069, Accuracy: 24.42%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [19/500], Step [2/2], Loss: 2.3045, Accuracy: 19.96%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [20/500], Step [2/2], Loss: 2.2228, Accuracy: 18.02%
-Epoch [21/500], Step [2/2], Loss: 2.2842, Accuracy: 12.40%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [20/500], Step [2/2], Loss: 2.2376, Accuracy: 19.77%
+Epoch [21/500], Step [2/2], Loss: 2.2193, Accuracy: 19.57%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [22/500], Step [2/2], Loss: 2.2143, Accuracy: 20.93%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [22/500], Step [2/2], Loss: 2.1883, Accuracy: 20.74%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [23/500], Step [2/2], Loss: 2.1384, Accuracy: 18.60%
-Epoch [24/500], Step [2/2], Loss: 2.0974, Accuracy: 24.42%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [23/500], Step [2/2], Loss: 2.1517, Accuracy: 25.58%
+Epoch [24/500], Step [2/2], Loss: 2.0834, Accuracy: 29.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [25/500], Step [2/2], Loss: 2.0223, Accuracy: 29.65%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [25/500], Step [2/2], Loss: 2.0455, Accuracy: 33.14%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [26/500], Step [2/2], Loss: 1.9804, Accuracy: 35.27%
-Epoch [27/500], Step [2/2], Loss: 1.9459, Accuracy: 34.11%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [26/500], Step [2/2], Loss: 2.0161, Accuracy: 33.33%
+Epoch [27/500], Step [2/2], Loss: 2.0665, Accuracy: 24.22%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [28/500], Step [2/2], Loss: 1.9273, Accuracy: 36.82%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [28/500], Step [2/2], Loss: 1.9703, Accuracy: 32.17%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [29/500], Step [2/2], Loss: 1.9030, Accuracy: 40.31%
-Epoch [30/500], Step [2/2], Loss: 1.8791, Accuracy: 36.82%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [29/500], Step [2/2], Loss: 1.9323, Accuracy: 36.82%
+Epoch [30/500], Step [2/2], Loss: 1.9825, Accuracy: 29.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [31/500], Step [2/2], Loss: 1.8676, Accuracy: 37.21%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [31/500], Step [2/2], Loss: 1.9061, Accuracy: 36.05%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [32/500], Step [2/2], Loss: 1.9000, Accuracy: 32.95%
-Epoch [33/500], Step [2/2], Loss: 1.7813, Accuracy: 44.38%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [32/500], Step [2/2], Loss: 1.8791, Accuracy: 36.43%
+Epoch [33/500], Step [2/2], Loss: 1.8926, Accuracy: 34.30%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [34/500], Step [2/2], Loss: 1.8727, Accuracy: 31.59%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [34/500], Step [2/2], Loss: 1.8278, Accuracy: 41.28%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [35/500], Step [2/2], Loss: 1.9377, Accuracy: 27.52%
-Epoch [36/500], Step [2/2], Loss: 1.8421, Accuracy: 33.14%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [35/500], Step [2/2], Loss: 1.8736, Accuracy: 32.17%
+Epoch [36/500], Step [2/2], Loss: 1.8246, Accuracy: 36.63%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [37/500], Step [2/2], Loss: 1.7455, Accuracy: 42.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [37/500], Step [2/2], Loss: 1.8380, Accuracy: 34.50%
+Epoch [38/500], Step [2/2], Loss: 1.8545, Accuracy: 33.53%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [38/500], Step [2/2], Loss: 1.7027, Accuracy: 47.29%
-Epoch [39/500], Step [2/2], Loss: 1.7771, Accuracy: 36.82%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [39/500], Step [2/2], Loss: 1.7728, Accuracy: 40.31%
+Epoch [40/500], Step [2/2], Loss: 1.8158, Accuracy: 35.66%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [40/500], Step [2/2], Loss: 1.8287, Accuracy: 32.56%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [41/500], Step [2/2], Loss: 1.7796, Accuracy: 34.88%
+Epoch [42/500], Step [2/2], Loss: 1.8558, Accuracy: 30.62%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [41/500], Step [2/2], Loss: 1.8275, Accuracy: 31.59%
-Epoch [42/500], Step [2/2], Loss: 1.7571, Accuracy: 37.79%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [43/500], Step [2/2], Loss: 1.8128, Accuracy: 36.43%
+Epoch [44/500], Step [2/2], Loss: 1.7066, Accuracy: 42.05%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [43/500], Step [2/2], Loss: 1.6953, Accuracy: 43.22%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [45/500], Step [2/2], Loss: 1.7416, Accuracy: 38.76%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [44/500], Step [2/2], Loss: 1.6363, Accuracy: 44.19%
-Epoch [45/500], Step [2/2], Loss: 1.6267, Accuracy: 46.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [46/500], Step [2/2], Loss: 1.8998, Accuracy: 30.43%
+Epoch [47/500], Step [2/2], Loss: 1.7863, Accuracy: 32.56%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [46/500], Step [2/2], Loss: 1.6408, Accuracy: 42.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [48/500], Step [2/2], Loss: 1.7399, Accuracy: 37.79%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [47/500], Step [2/2], Loss: 1.6507, Accuracy: 42.25%
-Epoch [48/500], Step [2/2], Loss: 1.6301, Accuracy: 44.77%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [49/500], Step [2/2], Loss: 1.6752, Accuracy: 37.60%
+Epoch [50/500], Step [2/2], Loss: 1.6460, Accuracy: 41.86%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [49/500], Step [2/2], Loss: 1.6285, Accuracy: 49.81%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [51/500], Step [2/2], Loss: 1.6484, Accuracy: 43.22%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [50/500], Step [2/2], Loss: 1.5550, Accuracy: 44.96%
-Epoch [51/500], Step [2/2], Loss: 1.5780, Accuracy: 48.26%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [52/500], Step [2/2], Loss: 1.6467, Accuracy: 40.89%
+Epoch [53/500], Step [2/2], Loss: 1.6929, Accuracy: 38.18%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [52/500], Step [2/2], Loss: 1.6017, Accuracy: 41.28%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [54/500], Step [2/2], Loss: 1.6578, Accuracy: 41.67%
+Epoch [55/500], Step [2/2], Loss: 1.5936, Accuracy: 45.93%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [53/500], Step [2/2], Loss: 1.5724, Accuracy: 46.32%
-Epoch [54/500], Step [2/2], Loss: 1.5169, Accuracy: 48.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [56/500], Step [2/2], Loss: 1.6339, Accuracy: 43.22%
+Epoch [57/500], Step [2/2], Loss: 1.5879, Accuracy: 47.09%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [55/500], Step [2/2], Loss: 1.5642, Accuracy: 46.51%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [58/500], Step [2/2], Loss: 1.6201, Accuracy: 42.25%
+Epoch [59/500], Step [2/2], Loss: 1.6225, Accuracy: 44.38%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [56/500], Step [2/2], Loss: 1.5036, Accuracy: 50.19%
-Epoch [57/500], Step [2/2], Loss: 1.5172, Accuracy: 47.48%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [60/500], Step [2/2], Loss: 1.5993, Accuracy: 45.54%
+Epoch [61/500], Step [2/2], Loss: 1.5752, Accuracy: 42.64%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [58/500], Step [2/2], Loss: 1.5518, Accuracy: 46.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [62/500], Step [2/2], Loss: 1.5317, Accuracy: 45.54%
+Epoch [63/500], Step [2/2], Loss: 1.6094, Accuracy: 41.67%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [59/500], Step [2/2], Loss: 1.4874, Accuracy: 50.00%
-Epoch [60/500], Step [2/2], Loss: 1.6336, Accuracy: 43.41%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [64/500], Step [2/2], Loss: 1.5657, Accuracy: 45.54%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [61/500], Step [2/2], Loss: 1.4562, Accuracy: 50.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [65/500], Step [2/2], Loss: 1.5266, Accuracy: 44.38%
+Epoch [66/500], Step [2/2], Loss: 1.5762, Accuracy: 43.02%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [62/500], Step [2/2], Loss: 1.7797, Accuracy: 33.91%
-Epoch [63/500], Step [2/2], Loss: 1.7041, Accuracy: 35.66%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [67/500], Step [2/2], Loss: 1.6724, Accuracy: 38.95%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [64/500], Step [2/2], Loss: 1.4791, Accuracy: 47.48%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [68/500], Step [2/2], Loss: 1.5355, Accuracy: 43.22%
+Epoch [69/500], Step [2/2], Loss: 1.4856, Accuracy: 50.58%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [65/500], Step [2/2], Loss: 1.4402, Accuracy: 50.97%
-Epoch [66/500], Step [2/2], Loss: 1.4794, Accuracy: 48.26%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [70/500], Step [2/2], Loss: 1.5404, Accuracy: 47.29%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [67/500], Step [2/2], Loss: 1.5354, Accuracy: 44.57%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [71/500], Step [2/2], Loss: 1.5125, Accuracy: 45.54%
+Epoch [72/500], Step [2/2], Loss: 1.4591, Accuracy: 49.03%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [68/500], Step [2/2], Loss: 1.5059, Accuracy: 49.03%
-Epoch [69/500], Step [2/2], Loss: 1.4908, Accuracy: 45.35%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [73/500], Step [2/2], Loss: 1.5129, Accuracy: 49.03%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [70/500], Step [2/2], Loss: 1.4714, Accuracy: 46.32%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [74/500], Step [2/2], Loss: 1.5013, Accuracy: 48.84%
+Epoch [75/500], Step [2/2], Loss: 1.4639, Accuracy: 49.22%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [71/500], Step [2/2], Loss: 1.4662, Accuracy: 49.22%
-Epoch [72/500], Step [2/2], Loss: 1.5439, Accuracy: 41.67%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [76/500], Step [2/2], Loss: 1.4622, Accuracy: 48.84%
+Epoch [77/500], Step [2/2], Loss: 1.4865, Accuracy: 46.90%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [73/500], Step [2/2], Loss: 1.4379, Accuracy: 49.22%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [78/500], Step [2/2], Loss: 1.5093, Accuracy: 49.61%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [74/500], Step [2/2], Loss: 1.5109, Accuracy: 46.32%
-Epoch [75/500], Step [2/2], Loss: 1.3744, Accuracy: 53.49%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [79/500], Step [2/2], Loss: 1.4782, Accuracy: 49.81%
+Epoch [80/500], Step [2/2], Loss: 1.4273, Accuracy: 54.46%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [76/500], Step [2/2], Loss: 1.3727, Accuracy: 54.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [81/500], Step [2/2], Loss: 1.4772, Accuracy: 46.51%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [77/500], Step [2/2], Loss: 1.3132, Accuracy: 55.62%
-Epoch [78/500], Step [2/2], Loss: 1.3015, Accuracy: 60.27%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [82/500], Step [2/2], Loss: 1.4602, Accuracy: 49.42%
+Epoch [83/500], Step [2/2], Loss: 1.3885, Accuracy: 53.88%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [79/500], Step [2/2], Loss: 1.2961, Accuracy: 55.04%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [84/500], Step [2/2], Loss: 1.3779, Accuracy: 52.13%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [80/500], Step [2/2], Loss: 1.2785, Accuracy: 59.11%
-Epoch [81/500], Step [2/2], Loss: 1.2553, Accuracy: 57.75%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [85/500], Step [2/2], Loss: 1.4471, Accuracy: 48.45%
+Epoch [86/500], Step [2/2], Loss: 1.4208, Accuracy: 55.04%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [82/500], Step [2/2], Loss: 1.2437, Accuracy: 56.59%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [87/500], Step [2/2], Loss: 1.3787, Accuracy: 53.68%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [83/500], Step [2/2], Loss: 1.2912, Accuracy: 55.23%
-Epoch [84/500], Step [2/2], Loss: 1.2354, Accuracy: 58.53%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [88/500], Step [2/2], Loss: 1.3625, Accuracy: 52.91%
+Epoch [89/500], Step [2/2], Loss: 1.4862, Accuracy: 46.71%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [85/500], Step [2/2], Loss: 1.2971, Accuracy: 53.68%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [90/500], Step [2/2], Loss: 1.3658, Accuracy: 49.81%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [86/500], Step [2/2], Loss: 1.2042, Accuracy: 59.50%
-Epoch [87/500], Step [2/2], Loss: 1.2464, Accuracy: 55.62%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [91/500], Step [2/2], Loss: 1.3477, Accuracy: 51.55%
+Epoch [92/500], Step [2/2], Loss: 1.3180, Accuracy: 54.65%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [88/500], Step [2/2], Loss: 1.2328, Accuracy: 56.20%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [93/500], Step [2/2], Loss: 1.2961, Accuracy: 54.65%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [89/500], Step [2/2], Loss: 1.2188, Accuracy: 59.11%
-Epoch [90/500], Step [2/2], Loss: 1.2058, Accuracy: 61.24%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [94/500], Step [2/2], Loss: 1.3169, Accuracy: 53.68%
+Epoch [95/500], Step [2/2], Loss: 1.2782, Accuracy: 56.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [91/500], Step [2/2], Loss: 1.1914, Accuracy: 60.27%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [96/500], Step [2/2], Loss: 1.2636, Accuracy: 56.59%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [92/500], Step [2/2], Loss: 1.1679, Accuracy: 61.05%
-Epoch [93/500], Step [2/2], Loss: 1.1995, Accuracy: 57.75%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [97/500], Step [2/2], Loss: 1.2981, Accuracy: 57.17%
+Epoch [98/500], Step [2/2], Loss: 1.3121, Accuracy: 54.07%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [94/500], Step [2/2], Loss: 1.1760, Accuracy: 63.18%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [99/500], Step [2/2], Loss: 1.2780, Accuracy: 59.69%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [95/500], Step [2/2], Loss: 1.1529, Accuracy: 61.82%
-Epoch [96/500], Step [2/2], Loss: 1.1288, Accuracy: 59.50%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [100/500], Step [2/2], Loss: 1.2820, Accuracy: 52.13%
+Epoch [101/500], Step [2/2], Loss: 1.2638, Accuracy: 58.91%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [97/500], Step [2/2], Loss: 1.0602, Accuracy: 65.12%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [102/500], Step [2/2], Loss: 1.2630, Accuracy: 57.56%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [98/500], Step [2/2], Loss: 1.1252, Accuracy: 59.30%
-Epoch [99/500], Step [2/2], Loss: 1.1320, Accuracy: 62.40%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [103/500], Step [2/2], Loss: 1.1675, Accuracy: 59.11%
+Epoch [104/500], Step [2/2], Loss: 1.1639, Accuracy: 60.47%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [100/500], Step [2/2], Loss: 1.1128, Accuracy: 59.69%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [105/500], Step [2/2], Loss: 1.1804, Accuracy: 59.88%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [101/500], Step [2/2], Loss: 1.0553, Accuracy: 62.98%
-Epoch [102/500], Step [2/2], Loss: 1.1106, Accuracy: 61.82%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [106/500], Step [2/2], Loss: 1.2034, Accuracy: 59.11%
+Epoch [107/500], Step [2/2], Loss: 1.1468, Accuracy: 61.24%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [103/500], Step [2/2], Loss: 1.1335, Accuracy: 61.43%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [108/500], Step [2/2], Loss: 1.1681, Accuracy: 59.88%
+Epoch [109/500], Step [2/2], Loss: 1.1566, Accuracy: 57.75%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [104/500], Step [2/2], Loss: 1.0817, Accuracy: 60.66%
-Epoch [105/500], Step [2/2], Loss: 1.0885, Accuracy: 63.37%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [110/500], Step [2/2], Loss: 1.1411, Accuracy: 59.11%
+Epoch [111/500], Step [2/2], Loss: 1.1283, Accuracy: 61.63%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [106/500], Step [2/2], Loss: 1.0481, Accuracy: 63.18%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [112/500], Step [2/2], Loss: 1.1085, Accuracy: 63.57%
+Epoch [113/500], Step [2/2], Loss: 1.1175, Accuracy: 61.63%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [107/500], Step [2/2], Loss: 1.0518, Accuracy: 64.92%
-Epoch [108/500], Step [2/2], Loss: 0.9912, Accuracy: 67.44%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [114/500], Step [2/2], Loss: 1.1227, Accuracy: 61.05%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [109/500], Step [2/2], Loss: 1.0502, Accuracy: 62.98%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [115/500], Step [2/2], Loss: 1.0368, Accuracy: 63.95%
+Epoch [116/500], Step [2/2], Loss: 1.1405, Accuracy: 58.33%
+Epoch [117/500], Step [2/2], Loss: 1.0835, Accuracy: 61.82%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [110/500], Step [2/2], Loss: 1.0532, Accuracy: 62.40%
-Epoch [111/500], Step [2/2], Loss: 1.0230, Accuracy: 63.76%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [118/500], Step [2/2], Loss: 1.0056, Accuracy: 64.34%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [112/500], Step [2/2], Loss: 1.1162, Accuracy: 57.95%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [119/500], Step [2/2], Loss: 1.1034, Accuracy: 59.50%
+Epoch [120/500], Step [2/2], Loss: 1.0443, Accuracy: 65.12%
+Epoch [121/500], Step [2/2], Loss: 1.1016, Accuracy: 62.98%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [113/500], Step [2/2], Loss: 0.9635, Accuracy: 67.25%
-Epoch [114/500], Step [2/2], Loss: 1.0837, Accuracy: 59.69%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [122/500], Step [2/2], Loss: 1.0635, Accuracy: 61.63%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [115/500], Step [2/2], Loss: 1.1224, Accuracy: 60.47%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [123/500], Step [2/2], Loss: 1.0295, Accuracy: 65.70%
+Epoch [124/500], Step [2/2], Loss: 0.9947, Accuracy: 64.92%
+Epoch [125/500], Step [2/2], Loss: 1.0098, Accuracy: 65.50%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [116/500], Step [2/2], Loss: 1.0574, Accuracy: 64.73%
-Epoch [117/500], Step [2/2], Loss: 1.0217, Accuracy: 64.73%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [126/500], Step [2/2], Loss: 0.9995, Accuracy: 66.09%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [118/500], Step [2/2], Loss: 1.1132, Accuracy: 57.95%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [127/500], Step [2/2], Loss: 0.9889, Accuracy: 66.09%
+Epoch [128/500], Step [2/2], Loss: 0.9702, Accuracy: 67.25%
+Epoch [129/500], Step [2/2], Loss: 0.9494, Accuracy: 68.60%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [119/500], Step [2/2], Loss: 1.0942, Accuracy: 61.05%
-Epoch [120/500], Step [2/2], Loss: 0.9326, Accuracy: 66.67%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [130/500], Step [2/2], Loss: 0.9860, Accuracy: 63.57%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [121/500], Step [2/2], Loss: 1.0297, Accuracy: 64.53%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [131/500], Step [2/2], Loss: 1.0064, Accuracy: 61.24%
+Epoch [132/500], Step [2/2], Loss: 0.9820, Accuracy: 65.50%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [122/500], Step [2/2], Loss: 1.0552, Accuracy: 62.98%
-Epoch [123/500], Step [2/2], Loss: 1.0166, Accuracy: 64.53%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [133/500], Step [2/2], Loss: 1.1523, Accuracy: 55.62%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [124/500], Step [2/2], Loss: 1.0065, Accuracy: 64.15%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [134/500], Step [2/2], Loss: 1.1688, Accuracy: 53.29%
+Epoch [135/500], Step [2/2], Loss: 1.0625, Accuracy: 62.02%
+Epoch [136/500], Step [2/2], Loss: 1.0544, Accuracy: 59.88%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [125/500], Step [2/2], Loss: 1.0433, Accuracy: 62.79%
-Epoch [126/500], Step [2/2], Loss: 0.9859, Accuracy: 63.37%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [137/500], Step [2/2], Loss: 0.9987, Accuracy: 65.70%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [127/500], Step [2/2], Loss: 1.0312, Accuracy: 64.34%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [138/500], Step [2/2], Loss: 0.9323, Accuracy: 71.32%
+Epoch [139/500], Step [2/2], Loss: 0.9625, Accuracy: 69.57%
+Epoch [140/500], Step [2/2], Loss: 0.9448, Accuracy: 64.92%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [128/500], Step [2/2], Loss: 0.9574, Accuracy: 66.28%
-Epoch [129/500], Step [2/2], Loss: 0.9768, Accuracy: 65.89%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [141/500], Step [2/2], Loss: 0.9181, Accuracy: 68.80%
+Epoch [142/500], Step [2/2], Loss: 0.9369, Accuracy: 68.60%
+Epoch [143/500], Step [2/2], Loss: 0.9169, Accuracy: 71.32%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [130/500], Step [2/2], Loss: 0.9635, Accuracy: 63.57%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [144/500], Step [2/2], Loss: 0.9073, Accuracy: 70.93%
+Epoch [145/500], Step [2/2], Loss: 0.9578, Accuracy: 68.80%
+Epoch [146/500], Step [2/2], Loss: 0.9200, Accuracy: 67.05%
+Epoch [147/500], Step [2/2], Loss: 0.9618, Accuracy: 68.60%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [131/500], Step [2/2], Loss: 0.9523, Accuracy: 67.25%
-Epoch [132/500], Step [2/2], Loss: 0.9133, Accuracy: 66.67%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [148/500], Step [2/2], Loss: 0.8957, Accuracy: 68.80%
+Epoch [149/500], Step [2/2], Loss: 0.8872, Accuracy: 67.05%
+Epoch [150/500], Step [2/2], Loss: 0.8622, Accuracy: 71.32%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [133/500], Step [2/2], Loss: 0.9956, Accuracy: 64.73%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [151/500], Step [2/2], Loss: 0.9229, Accuracy: 65.50%
+Epoch [152/500], Step [2/2], Loss: 0.9289, Accuracy: 66.67%
+Epoch [153/500], Step [2/2], Loss: 0.8604, Accuracy: 69.96%
+Epoch [154/500], Step [2/2], Loss: 0.9082, Accuracy: 69.96%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [134/500], Step [2/2], Loss: 0.9476, Accuracy: 64.15%
-Epoch [135/500], Step [2/2], Loss: 0.9597, Accuracy: 65.89%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [155/500], Step [2/2], Loss: 0.8515, Accuracy: 70.35%
+Epoch [156/500], Step [2/2], Loss: 0.9130, Accuracy: 66.67%
+Epoch [157/500], Step [2/2], Loss: 0.8954, Accuracy: 68.99%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [136/500], Step [2/2], Loss: 0.9136, Accuracy: 66.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [158/500], Step [2/2], Loss: 1.1822, Accuracy: 54.07%
+Epoch [159/500], Step [2/2], Loss: 0.9075, Accuracy: 67.25%
+Epoch [160/500], Step [2/2], Loss: 1.0694, Accuracy: 61.05%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [137/500], Step [2/2], Loss: 0.8977, Accuracy: 66.67%
-Epoch [138/500], Step [2/2], Loss: 0.9244, Accuracy: 66.86%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [161/500], Step [2/2], Loss: 0.9814, Accuracy: 64.53%
+Epoch [162/500], Step [2/2], Loss: 0.8456, Accuracy: 70.74%
+Epoch [163/500], Step [2/2], Loss: 0.8687, Accuracy: 70.93%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [139/500], Step [2/2], Loss: 0.9057, Accuracy: 68.41%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [164/500], Step [2/2], Loss: 0.9134, Accuracy: 68.41%
+Epoch [165/500], Step [2/2], Loss: 0.8461, Accuracy: 71.51%
+Epoch [166/500], Step [2/2], Loss: 0.8232, Accuracy: 74.22%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [140/500], Step [2/2], Loss: 0.9059, Accuracy: 67.25%
-Epoch [141/500], Step [2/2], Loss: 0.9459, Accuracy: 67.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [167/500], Step [2/2], Loss: 0.8351, Accuracy: 70.54%
+Epoch [168/500], Step [2/2], Loss: 0.8068, Accuracy: 73.45%
+Epoch [169/500], Step [2/2], Loss: 0.8017, Accuracy: 72.87%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [142/500], Step [2/2], Loss: 0.9261, Accuracy: 66.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [170/500], Step [2/2], Loss: 0.8808, Accuracy: 70.54%
+Epoch [171/500], Step [2/2], Loss: 0.8647, Accuracy: 70.93%
+Epoch [172/500], Step [2/2], Loss: 0.8114, Accuracy: 71.32%
+Epoch [173/500], Step [2/2], Loss: 0.8060, Accuracy: 70.74%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [143/500], Step [2/2], Loss: 0.8707, Accuracy: 68.60%
-Epoch [144/500], Step [2/2], Loss: 0.8294, Accuracy: 71.32%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [174/500], Step [2/2], Loss: 0.8377, Accuracy: 73.84%
+Epoch [175/500], Step [2/2], Loss: 0.8584, Accuracy: 68.60%
+Epoch [176/500], Step [2/2], Loss: 0.8874, Accuracy: 70.35%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [145/500], Step [2/2], Loss: 0.8524, Accuracy: 70.93%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [177/500], Step [2/2], Loss: 0.7775, Accuracy: 75.58%
+Epoch [178/500], Step [2/2], Loss: 0.8043, Accuracy: 71.32%
+Epoch [179/500], Step [2/2], Loss: 0.8036, Accuracy: 71.32%
+Epoch [180/500], Step [2/2], Loss: 0.7818, Accuracy: 72.09%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [146/500], Step [2/2], Loss: 0.8863, Accuracy: 69.19%
-Epoch [147/500], Step [2/2], Loss: 0.8121, Accuracy: 70.74%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [181/500], Step [2/2], Loss: 0.8174, Accuracy: 72.29%
+Epoch [182/500], Step [2/2], Loss: 0.8090, Accuracy: 72.09%
+Epoch [183/500], Step [2/2], Loss: 0.8243, Accuracy: 72.67%
+Epoch [184/500], Step [2/2], Loss: 0.7886, Accuracy: 76.16%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [148/500], Step [2/2], Loss: 0.8800, Accuracy: 68.60%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [185/500], Step [2/2], Loss: 0.8171, Accuracy: 73.45%
+Epoch [186/500], Step [2/2], Loss: 0.7656, Accuracy: 73.84%
+Epoch [187/500], Step [2/2], Loss: 0.8389, Accuracy: 69.38%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [149/500], Step [2/2], Loss: 0.8030, Accuracy: 72.87%
-Epoch [150/500], Step [2/2], Loss: 0.7959, Accuracy: 71.90%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [188/500], Step [2/2], Loss: 0.8051, Accuracy: 73.45%
+Epoch [189/500], Step [2/2], Loss: 0.8467, Accuracy: 71.51%
+Epoch [190/500], Step [2/2], Loss: 0.9201, Accuracy: 66.67%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [151/500], Step [2/2], Loss: 0.8492, Accuracy: 70.16%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [191/500], Step [2/2], Loss: 0.8001, Accuracy: 70.93%
+Epoch [192/500], Step [2/2], Loss: 0.8592, Accuracy: 70.74%
+Epoch [193/500], Step [2/2], Loss: 0.9081, Accuracy: 69.38%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [152/500], Step [2/2], Loss: 0.8208, Accuracy: 72.29%
-Epoch [153/500], Step [2/2], Loss: 0.8627, Accuracy: 68.60%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [194/500], Step [2/2], Loss: 0.8293, Accuracy: 70.16%
+Epoch [195/500], Step [2/2], Loss: 0.8125, Accuracy: 70.93%
+Epoch [196/500], Step [2/2], Loss: 0.7270, Accuracy: 76.16%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [154/500], Step [2/2], Loss: 0.8606, Accuracy: 68.80%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [197/500], Step [2/2], Loss: 0.7986, Accuracy: 75.19%
+Epoch [198/500], Step [2/2], Loss: 0.7435, Accuracy: 75.78%
+Epoch [199/500], Step [2/2], Loss: 0.7830, Accuracy: 75.58%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [155/500], Step [2/2], Loss: 0.8531, Accuracy: 68.60%
-Epoch [156/500], Step [2/2], Loss: 0.8775, Accuracy: 69.38%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [200/500], Step [2/2], Loss: 0.7487, Accuracy: 74.61%
+Epoch [201/500], Step [2/2], Loss: 0.7817, Accuracy: 71.51%
+Epoch [202/500], Step [2/2], Loss: 0.7530, Accuracy: 74.61%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [157/500], Step [2/2], Loss: 0.8867, Accuracy: 69.38%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [203/500], Step [2/2], Loss: 0.8692, Accuracy: 68.80%
+Epoch [204/500], Step [2/2], Loss: 0.7715, Accuracy: 73.26%
+Epoch [205/500], Step [2/2], Loss: 0.8208, Accuracy: 71.51%
+Epoch [206/500], Step [2/2], Loss: 0.7227, Accuracy: 75.78%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [158/500], Step [2/2], Loss: 0.8474, Accuracy: 70.74%
-Epoch [159/500], Step [2/2], Loss: 0.9013, Accuracy: 67.44%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [207/500], Step [2/2], Loss: 0.7678, Accuracy: 73.06%
+Epoch [208/500], Step [2/2], Loss: 0.7644, Accuracy: 75.00%
+Epoch [209/500], Step [2/2], Loss: 0.8525, Accuracy: 72.29%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [160/500], Step [2/2], Loss: 0.8430, Accuracy: 69.19%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [210/500], Step [2/2], Loss: 0.7572, Accuracy: 75.58%
+Epoch [211/500], Step [2/2], Loss: 0.7667, Accuracy: 75.39%
+Epoch [212/500], Step [2/2], Loss: 0.8112, Accuracy: 71.51%
+Epoch [213/500], Step [2/2], Loss: 0.8033, Accuracy: 72.48%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [161/500], Step [2/2], Loss: 0.8194, Accuracy: 71.51%
-Epoch [162/500], Step [2/2], Loss: 0.7840, Accuracy: 74.22%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [214/500], Step [2/2], Loss: 0.7138, Accuracy: 76.16%
+Epoch [215/500], Step [2/2], Loss: 0.7970, Accuracy: 71.90%
+Epoch [216/500], Step [2/2], Loss: 0.8102, Accuracy: 72.09%
+Epoch [217/500], Step [2/2], Loss: 0.7543, Accuracy: 75.97%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [163/500], Step [2/2], Loss: 0.8690, Accuracy: 70.16%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [218/500], Step [2/2], Loss: 0.6747, Accuracy: 75.00%
+Epoch [219/500], Step [2/2], Loss: 0.7402, Accuracy: 74.42%
+Epoch [220/500], Step [2/2], Loss: 0.7293, Accuracy: 74.42%
+Epoch [221/500], Step [2/2], Loss: 0.7715, Accuracy: 74.42%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [164/500], Step [2/2], Loss: 0.7976, Accuracy: 73.64%
-Epoch [165/500], Step [2/2], Loss: 0.8118, Accuracy: 71.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [222/500], Step [2/2], Loss: 0.7350, Accuracy: 74.42%
+Epoch [223/500], Step [2/2], Loss: 0.6900, Accuracy: 76.94%
+Epoch [224/500], Step [2/2], Loss: 0.7032, Accuracy: 75.58%
+Epoch [225/500], Step [2/2], Loss: 0.7944, Accuracy: 71.12%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [166/500], Step [2/2], Loss: 0.8404, Accuracy: 68.41%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [226/500], Step [2/2], Loss: 0.7382, Accuracy: 75.78%
+Epoch [227/500], Step [2/2], Loss: 0.7105, Accuracy: 75.00%
+Epoch [228/500], Step [2/2], Loss: 0.7411, Accuracy: 73.64%
+Epoch [229/500], Step [2/2], Loss: 0.7056, Accuracy: 76.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [167/500], Step [2/2], Loss: 0.8571, Accuracy: 68.99%
-Epoch [168/500], Step [2/2], Loss: 0.8214, Accuracy: 69.77%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [230/500], Step [2/2], Loss: 0.7088, Accuracy: 77.33%
+Epoch [231/500], Step [2/2], Loss: 0.6659, Accuracy: 77.13%
+Epoch [232/500], Step [2/2], Loss: 0.7018, Accuracy: 76.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [169/500], Step [2/2], Loss: 0.8229, Accuracy: 71.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [233/500], Step [2/2], Loss: 0.6979, Accuracy: 76.55%
+Epoch [234/500], Step [2/2], Loss: 0.6512, Accuracy: 79.65%
+Epoch [235/500], Step [2/2], Loss: 0.7079, Accuracy: 74.42%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [170/500], Step [2/2], Loss: 0.8469, Accuracy: 69.96%
-Epoch [171/500], Step [2/2], Loss: 0.8119, Accuracy: 70.16%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [236/500], Step [2/2], Loss: 0.7472, Accuracy: 74.42%
+Epoch [237/500], Step [2/2], Loss: 0.7004, Accuracy: 76.36%
+Epoch [238/500], Step [2/2], Loss: 0.7480, Accuracy: 71.71%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [172/500], Step [2/2], Loss: 0.7374, Accuracy: 75.78%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [239/500], Step [2/2], Loss: 0.7725, Accuracy: 69.77%
+Epoch [240/500], Step [2/2], Loss: 0.7197, Accuracy: 75.19%
+Epoch [241/500], Step [2/2], Loss: 0.7006, Accuracy: 75.39%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [173/500], Step [2/2], Loss: 0.7902, Accuracy: 71.12%
-Epoch [174/500], Step [2/2], Loss: 0.8080, Accuracy: 68.99%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [242/500], Step [2/2], Loss: 0.7575, Accuracy: 75.58%
+Epoch [243/500], Step [2/2], Loss: 0.6768, Accuracy: 75.97%
+Epoch [244/500], Step [2/2], Loss: 0.6790, Accuracy: 76.94%
+Epoch [245/500], Step [2/2], Loss: 0.6904, Accuracy: 77.13%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [175/500], Step [2/2], Loss: 0.7817, Accuracy: 72.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [246/500], Step [2/2], Loss: 0.6822, Accuracy: 76.74%
+Epoch [247/500], Step [2/2], Loss: 0.6494, Accuracy: 77.71%
+Epoch [248/500], Step [2/2], Loss: 0.6350, Accuracy: 77.33%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [176/500], Step [2/2], Loss: 0.9049, Accuracy: 69.19%
-Epoch [177/500], Step [2/2], Loss: 0.9798, Accuracy: 62.98%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [249/500], Step [2/2], Loss: 0.7653, Accuracy: 75.58%
+Epoch [250/500], Step [2/2], Loss: 0.6915, Accuracy: 77.33%
+Epoch [251/500], Step [2/2], Loss: 0.6988, Accuracy: 74.42%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [178/500], Step [2/2], Loss: 0.9257, Accuracy: 65.12%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [252/500], Step [2/2], Loss: 0.6584, Accuracy: 78.68%
+Epoch [253/500], Step [2/2], Loss: 0.6752, Accuracy: 75.78%
+Epoch [254/500], Step [2/2], Loss: 0.6608, Accuracy: 77.13%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [179/500], Step [2/2], Loss: 0.9529, Accuracy: 65.12%
-Epoch [180/500], Step [2/2], Loss: 0.8968, Accuracy: 65.31%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [255/500], Step [2/2], Loss: 0.7014, Accuracy: 77.13%
+Epoch [256/500], Step [2/2], Loss: 0.6488, Accuracy: 78.68%
+Epoch [257/500], Step [2/2], Loss: 0.6747, Accuracy: 76.94%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [181/500], Step [2/2], Loss: 0.8654, Accuracy: 67.44%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [258/500], Step [2/2], Loss: 0.6165, Accuracy: 76.55%
+Epoch [259/500], Step [2/2], Loss: 0.6687, Accuracy: 78.10%
+Epoch [260/500], Step [2/2], Loss: 0.6003, Accuracy: 80.43%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [182/500], Step [2/2], Loss: 0.7503, Accuracy: 75.19%
-Epoch [183/500], Step [2/2], Loss: 0.7855, Accuracy: 72.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [261/500], Step [2/2], Loss: 0.7101, Accuracy: 77.71%
+Epoch [262/500], Step [2/2], Loss: 0.6540, Accuracy: 77.52%
+Epoch [263/500], Step [2/2], Loss: 0.6373, Accuracy: 80.62%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [184/500], Step [2/2], Loss: 0.7405, Accuracy: 72.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [264/500], Step [2/2], Loss: 0.6283, Accuracy: 78.10%
+Epoch [265/500], Step [2/2], Loss: 0.6633, Accuracy: 78.29%
+Epoch [266/500], Step [2/2], Loss: 0.7211, Accuracy: 74.61%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [185/500], Step [2/2], Loss: 0.7901, Accuracy: 71.32%
-Epoch [186/500], Step [2/2], Loss: 0.7768, Accuracy: 72.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [267/500], Step [2/2], Loss: 0.6634, Accuracy: 77.71%
+Epoch [268/500], Step [2/2], Loss: 0.6168, Accuracy: 78.68%
+Epoch [269/500], Step [2/2], Loss: 0.6060, Accuracy: 81.20%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [187/500], Step [2/2], Loss: 0.7009, Accuracy: 73.64%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [270/500], Step [2/2], Loss: 0.7119, Accuracy: 74.22%
+Epoch [271/500], Step [2/2], Loss: 0.6546, Accuracy: 77.91%
+Epoch [272/500], Step [2/2], Loss: 0.6114, Accuracy: 78.29%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [188/500], Step [2/2], Loss: 0.7319, Accuracy: 75.97%
-Epoch [189/500], Step [2/2], Loss: 0.7316, Accuracy: 75.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [273/500], Step [2/2], Loss: 0.7244, Accuracy: 75.78%
+Epoch [274/500], Step [2/2], Loss: 0.6952, Accuracy: 76.36%
+Epoch [275/500], Step [2/2], Loss: 0.6748, Accuracy: 77.71%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [190/500], Step [2/2], Loss: 0.7205, Accuracy: 73.45%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [276/500], Step [2/2], Loss: 0.6405, Accuracy: 77.52%
+Epoch [277/500], Step [2/2], Loss: 0.6726, Accuracy: 78.10%
+Epoch [278/500], Step [2/2], Loss: 0.7045, Accuracy: 77.33%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [191/500], Step [2/2], Loss: 0.7363, Accuracy: 75.58%
-Epoch [192/500], Step [2/2], Loss: 0.6663, Accuracy: 74.42%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [279/500], Step [2/2], Loss: 0.6490, Accuracy: 77.91%
+Epoch [280/500], Step [2/2], Loss: 0.6634, Accuracy: 76.36%
+Epoch [281/500], Step [2/2], Loss: 0.6396, Accuracy: 81.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [193/500], Step [2/2], Loss: 0.7479, Accuracy: 72.87%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [282/500], Step [2/2], Loss: 0.6072, Accuracy: 79.07%
+Epoch [283/500], Step [2/2], Loss: 0.5628, Accuracy: 79.46%
+Epoch [284/500], Step [2/2], Loss: 0.5871, Accuracy: 81.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [194/500], Step [2/2], Loss: 0.7244, Accuracy: 75.00%
-Epoch [195/500], Step [2/2], Loss: 0.7754, Accuracy: 71.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [285/500], Step [2/2], Loss: 0.6623, Accuracy: 76.36%
+Epoch [286/500], Step [2/2], Loss: 0.6666, Accuracy: 76.36%
+Epoch [287/500], Step [2/2], Loss: 0.6684, Accuracy: 76.74%
+Epoch [288/500], Step [2/2], Loss: 0.6309, Accuracy: 77.91%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [196/500], Step [2/2], Loss: 0.7473, Accuracy: 73.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [289/500], Step [2/2], Loss: 0.6970, Accuracy: 75.58%
+Epoch [290/500], Step [2/2], Loss: 0.6669, Accuracy: 80.04%
+Epoch [291/500], Step [2/2], Loss: 0.5771, Accuracy: 79.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [197/500], Step [2/2], Loss: 0.6909, Accuracy: 74.03%
-Epoch [198/500], Step [2/2], Loss: 0.6755, Accuracy: 76.55%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [292/500], Step [2/2], Loss: 0.6514, Accuracy: 77.33%
+Epoch [293/500], Step [2/2], Loss: 0.6347, Accuracy: 77.91%
+Epoch [294/500], Step [2/2], Loss: 0.6780, Accuracy: 75.19%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [199/500], Step [2/2], Loss: 0.6758, Accuracy: 77.33%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [295/500], Step [2/2], Loss: 0.6118, Accuracy: 79.46%
+Epoch [296/500], Step [2/2], Loss: 0.6225, Accuracy: 76.36%
+Epoch [297/500], Step [2/2], Loss: 0.6743, Accuracy: 76.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [200/500], Step [2/2], Loss: 0.7530, Accuracy: 72.29%
-Epoch [201/500], Step [2/2], Loss: 0.7410, Accuracy: 74.03%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [298/500], Step [2/2], Loss: 0.6973, Accuracy: 75.58%
+Epoch [299/500], Step [2/2], Loss: 0.6126, Accuracy: 78.29%
+Epoch [300/500], Step [2/2], Loss: 0.6821, Accuracy: 73.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [202/500], Step [2/2], Loss: 0.6943, Accuracy: 75.19%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [301/500], Step [2/2], Loss: 0.6620, Accuracy: 78.29%
+Epoch [302/500], Step [2/2], Loss: 0.6671, Accuracy: 77.71%
+Epoch [303/500], Step [2/2], Loss: 0.6330, Accuracy: 76.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [203/500], Step [2/2], Loss: 0.8030, Accuracy: 72.67%
-Epoch [204/500], Step [2/2], Loss: 0.6787, Accuracy: 76.94%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [304/500], Step [2/2], Loss: 0.6684, Accuracy: 75.00%
+Epoch [305/500], Step [2/2], Loss: 0.6381, Accuracy: 78.29%
+Epoch [306/500], Step [2/2], Loss: 0.6400, Accuracy: 76.94%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [205/500], Step [2/2], Loss: 0.6682, Accuracy: 77.52%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [307/500], Step [2/2], Loss: 0.6434, Accuracy: 76.55%
+Epoch [308/500], Step [2/2], Loss: 0.6322, Accuracy: 77.91%
+Epoch [309/500], Step [2/2], Loss: 0.5946, Accuracy: 81.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [206/500], Step [2/2], Loss: 0.7855, Accuracy: 70.54%
-Epoch [207/500], Step [2/2], Loss: 0.7395, Accuracy: 71.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [310/500], Step [2/2], Loss: 0.6040, Accuracy: 79.65%
+Epoch [311/500], Step [2/2], Loss: 0.6082, Accuracy: 78.29%
+Epoch [312/500], Step [2/2], Loss: 0.5221, Accuracy: 81.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [208/500], Step [2/2], Loss: 0.7402, Accuracy: 72.87%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [313/500], Step [2/2], Loss: 0.5877, Accuracy: 79.84%
+Epoch [314/500], Step [2/2], Loss: 0.5799, Accuracy: 81.78%
+Epoch [315/500], Step [2/2], Loss: 0.5952, Accuracy: 80.43%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [209/500], Step [2/2], Loss: 0.7313, Accuracy: 75.00%
-Epoch [210/500], Step [2/2], Loss: 0.7127, Accuracy: 72.67%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [316/500], Step [2/2], Loss: 0.6076, Accuracy: 79.65%
+Epoch [317/500], Step [2/2], Loss: 0.6329, Accuracy: 76.16%
+Epoch [318/500], Step [2/2], Loss: 0.5928, Accuracy: 79.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [211/500], Step [2/2], Loss: 0.7236, Accuracy: 74.22%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [319/500], Step [2/2], Loss: 0.6043, Accuracy: 79.07%
+Epoch [320/500], Step [2/2], Loss: 0.6291, Accuracy: 76.36%
+Epoch [321/500], Step [2/2], Loss: 0.5845, Accuracy: 78.68%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [212/500], Step [2/2], Loss: 0.6524, Accuracy: 77.33%
-Epoch [213/500], Step [2/2], Loss: 0.6556, Accuracy: 75.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [322/500], Step [2/2], Loss: 0.6088, Accuracy: 78.10%
+Epoch [323/500], Step [2/2], Loss: 0.5750, Accuracy: 80.04%
+Epoch [324/500], Step [2/2], Loss: 0.5982, Accuracy: 78.49%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [214/500], Step [2/2], Loss: 0.6819, Accuracy: 78.10%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [325/500], Step [2/2], Loss: 0.5465, Accuracy: 80.43%
+Epoch [326/500], Step [2/2], Loss: 0.6156, Accuracy: 78.88%
+Epoch [327/500], Step [2/2], Loss: 0.5871, Accuracy: 80.23%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [215/500], Step [2/2], Loss: 0.6979, Accuracy: 73.45%
-Epoch [216/500], Step [2/2], Loss: 0.6232, Accuracy: 78.29%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [328/500], Step [2/2], Loss: 0.6083, Accuracy: 78.29%
+Epoch [329/500], Step [2/2], Loss: 0.5798, Accuracy: 80.04%
+Epoch [330/500], Step [2/2], Loss: 0.5218, Accuracy: 82.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [217/500], Step [2/2], Loss: 0.6338, Accuracy: 75.97%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [331/500], Step [2/2], Loss: 0.6037, Accuracy: 78.68%
+Epoch [332/500], Step [2/2], Loss: 0.5816, Accuracy: 79.84%
+Epoch [333/500], Step [2/2], Loss: 0.6341, Accuracy: 77.13%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [218/500], Step [2/2], Loss: 0.6229, Accuracy: 76.74%
-Epoch [219/500], Step [2/2], Loss: 0.6030, Accuracy: 79.07%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [334/500], Step [2/2], Loss: 0.5417, Accuracy: 82.17%
+Epoch [335/500], Step [2/2], Loss: 0.6037, Accuracy: 78.88%
+Epoch [336/500], Step [2/2], Loss: 0.5651, Accuracy: 80.04%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [220/500], Step [2/2], Loss: 0.6041, Accuracy: 78.29%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [337/500], Step [2/2], Loss: 0.5749, Accuracy: 80.43%
+Epoch [338/500], Step [2/2], Loss: 0.5894, Accuracy: 80.43%
+Epoch [339/500], Step [2/2], Loss: 0.5558, Accuracy: 81.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [221/500], Step [2/2], Loss: 0.6453, Accuracy: 77.33%
-Epoch [222/500], Step [2/2], Loss: 0.6690, Accuracy: 77.91%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [340/500], Step [2/2], Loss: 0.5396, Accuracy: 82.95%
+Epoch [341/500], Step [2/2], Loss: 0.5455, Accuracy: 81.40%
+Epoch [342/500], Step [2/2], Loss: 0.5353, Accuracy: 82.36%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [223/500], Step [2/2], Loss: 0.5776, Accuracy: 79.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [343/500], Step [2/2], Loss: 0.5526, Accuracy: 81.59%
+Epoch [344/500], Step [2/2], Loss: 0.5808, Accuracy: 80.04%
+Epoch [345/500], Step [2/2], Loss: 0.5426, Accuracy: 82.56%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [224/500], Step [2/2], Loss: 0.6042, Accuracy: 79.65%
-Epoch [225/500], Step [2/2], Loss: 0.6788, Accuracy: 76.16%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [346/500], Step [2/2], Loss: 0.5405, Accuracy: 80.62%
+Epoch [347/500], Step [2/2], Loss: 0.5206, Accuracy: 82.75%
+Epoch [348/500], Step [2/2], Loss: 0.5536, Accuracy: 81.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [226/500], Step [2/2], Loss: 0.6062, Accuracy: 78.29%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [349/500], Step [2/2], Loss: 0.6209, Accuracy: 77.71%
+Epoch [350/500], Step [2/2], Loss: 0.5265, Accuracy: 80.62%
+Epoch [351/500], Step [2/2], Loss: 0.5883, Accuracy: 77.71%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [227/500], Step [2/2], Loss: 0.6496, Accuracy: 77.71%
-Epoch [228/500], Step [2/2], Loss: 0.6648, Accuracy: 77.52%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [352/500], Step [2/2], Loss: 0.6756, Accuracy: 73.45%
+Epoch [353/500], Step [2/2], Loss: 0.4940, Accuracy: 82.17%
+Epoch [354/500], Step [2/2], Loss: 0.5728, Accuracy: 79.65%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [229/500], Step [2/2], Loss: 0.6548, Accuracy: 76.94%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [355/500], Step [2/2], Loss: 0.5281, Accuracy: 82.95%
+Epoch [356/500], Step [2/2], Loss: 0.5268, Accuracy: 80.62%
+Epoch [357/500], Step [2/2], Loss: 0.5752, Accuracy: 79.26%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [230/500], Step [2/2], Loss: 0.5953, Accuracy: 78.68%
-Epoch [231/500], Step [2/2], Loss: 0.6224, Accuracy: 79.65%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [358/500], Step [2/2], Loss: 0.5530, Accuracy: 79.65%
+Epoch [359/500], Step [2/2], Loss: 0.6205, Accuracy: 80.62%
+Epoch [360/500], Step [2/2], Loss: 0.5835, Accuracy: 78.10%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [232/500], Step [2/2], Loss: 0.6826, Accuracy: 71.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [361/500], Step [2/2], Loss: 0.5567, Accuracy: 81.20%
+Epoch [362/500], Step [2/2], Loss: 0.5998, Accuracy: 77.91%
+Epoch [363/500], Step [2/2], Loss: 0.6115, Accuracy: 79.07%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [233/500], Step [2/2], Loss: 0.6637, Accuracy: 74.61%
-Epoch [234/500], Step [2/2], Loss: 0.6936, Accuracy: 72.67%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [364/500], Step [2/2], Loss: 0.5007, Accuracy: 82.17%
+Epoch [365/500], Step [2/2], Loss: 0.5313, Accuracy: 85.08%
+Epoch [366/500], Step [2/2], Loss: 0.5441, Accuracy: 80.04%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [235/500], Step [2/2], Loss: 0.5841, Accuracy: 80.04%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [367/500], Step [2/2], Loss: 0.5592, Accuracy: 80.43%
+Epoch [368/500], Step [2/2], Loss: 0.5245, Accuracy: 81.78%
+Epoch [369/500], Step [2/2], Loss: 0.5578, Accuracy: 81.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [236/500], Step [2/2], Loss: 0.6280, Accuracy: 79.07%
-Epoch [237/500], Step [2/2], Loss: 0.5828, Accuracy: 79.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [370/500], Step [2/2], Loss: 0.5153, Accuracy: 81.59%
+Epoch [371/500], Step [2/2], Loss: 0.5143, Accuracy: 81.40%
+Epoch [372/500], Step [2/2], Loss: 0.5341, Accuracy: 81.78%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [238/500], Step [2/2], Loss: 0.6405, Accuracy: 75.78%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [373/500], Step [2/2], Loss: 0.5216, Accuracy: 82.75%
+Epoch [374/500], Step [2/2], Loss: 0.5759, Accuracy: 79.84%
+Epoch [375/500], Step [2/2], Loss: 0.5235, Accuracy: 81.78%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [239/500], Step [2/2], Loss: 0.6438, Accuracy: 76.36%
-Epoch [240/500], Step [2/2], Loss: 0.6136, Accuracy: 77.91%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [376/500], Step [2/2], Loss: 0.5095, Accuracy: 80.81%
+Epoch [377/500], Step [2/2], Loss: 0.5048, Accuracy: 84.30%
+Epoch [378/500], Step [2/2], Loss: 0.5328, Accuracy: 82.56%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [241/500], Step [2/2], Loss: 0.6231, Accuracy: 76.74%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [379/500], Step [2/2], Loss: 0.5069, Accuracy: 83.53%
+Epoch [380/500], Step [2/2], Loss: 0.5744, Accuracy: 78.49%
+Epoch [381/500], Step [2/2], Loss: 0.5229, Accuracy: 82.17%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [242/500], Step [2/2], Loss: 0.5715, Accuracy: 77.52%
-Epoch [243/500], Step [2/2], Loss: 0.6282, Accuracy: 78.10%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [382/500], Step [2/2], Loss: 0.5145, Accuracy: 81.78%
+Epoch [383/500], Step [2/2], Loss: 0.5456, Accuracy: 80.62%
+Epoch [384/500], Step [2/2], Loss: 0.5165, Accuracy: 81.40%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [244/500], Step [2/2], Loss: 0.6088, Accuracy: 79.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [385/500], Step [2/2], Loss: 0.4850, Accuracy: 82.56%
+Epoch [386/500], Step [2/2], Loss: 0.5222, Accuracy: 81.40%
+Epoch [387/500], Step [2/2], Loss: 0.5399, Accuracy: 83.53%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [245/500], Step [2/2], Loss: 0.6102, Accuracy: 77.13%
-Epoch [246/500], Step [2/2], Loss: 0.5969, Accuracy: 79.65%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [388/500], Step [2/2], Loss: 0.5688, Accuracy: 79.84%
+Epoch [389/500], Step [2/2], Loss: 0.5444, Accuracy: 81.40%
+Epoch [390/500], Step [2/2], Loss: 0.5273, Accuracy: 81.98%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [247/500], Step [2/2], Loss: 0.6170, Accuracy: 77.33%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [391/500], Step [2/2], Loss: 0.5217, Accuracy: 83.33%
+Epoch [392/500], Step [2/2], Loss: 0.5980, Accuracy: 77.71%
+Epoch [393/500], Step [2/2], Loss: 0.4302, Accuracy: 85.27%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [248/500], Step [2/2], Loss: 0.5856, Accuracy: 76.36%
-Epoch [249/500], Step [2/2], Loss: 0.6501, Accuracy: 75.97%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [394/500], Step [2/2], Loss: 0.5367, Accuracy: 82.17%
+Epoch [395/500], Step [2/2], Loss: 0.5576, Accuracy: 80.43%
+Epoch [396/500], Step [2/2], Loss: 0.6359, Accuracy: 76.55%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [250/500], Step [2/2], Loss: 0.5645, Accuracy: 79.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [397/500], Step [2/2], Loss: 0.5891, Accuracy: 77.52%
+Epoch [398/500], Step [2/2], Loss: 0.4938, Accuracy: 83.91%
+Epoch [399/500], Step [2/2], Loss: 0.5849, Accuracy: 79.84%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [251/500], Step [2/2], Loss: 0.5559, Accuracy: 80.62%
-Epoch [252/500], Step [2/2], Loss: 0.5699, Accuracy: 81.01%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [400/500], Step [2/2], Loss: 0.5328, Accuracy: 82.36%
+Epoch [401/500], Step [2/2], Loss: 0.5673, Accuracy: 80.43%
+Epoch [402/500], Step [2/2], Loss: 0.4899, Accuracy: 81.78%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [253/500], Step [2/2], Loss: 0.6300, Accuracy: 77.33%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [403/500], Step [2/2], Loss: 0.4861, Accuracy: 83.91%
+Epoch [404/500], Step [2/2], Loss: 0.5216, Accuracy: 82.17%
+Epoch [405/500], Step [2/2], Loss: 0.5898, Accuracy: 80.04%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [254/500], Step [2/2], Loss: 0.6264, Accuracy: 75.00%
-Epoch [255/500], Step [2/2], Loss: 0.5623, Accuracy: 79.65%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [406/500], Step [2/2], Loss: 0.5611, Accuracy: 80.23%
+Epoch [407/500], Step [2/2], Loss: 0.5666, Accuracy: 81.78%
+Epoch [408/500], Step [2/2], Loss: 0.5413, Accuracy: 80.23%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [256/500], Step [2/2], Loss: 0.5743, Accuracy: 80.04%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [409/500], Step [2/2], Loss: 0.5329, Accuracy: 80.62%
+Epoch [410/500], Step [2/2], Loss: 0.4813, Accuracy: 83.14%
+Epoch [411/500], Step [2/2], Loss: 0.4544, Accuracy: 85.47%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [257/500], Step [2/2], Loss: 0.5587, Accuracy: 78.88%
-Epoch [258/500], Step [2/2], Loss: 0.6001, Accuracy: 78.68%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [412/500], Step [2/2], Loss: 0.4910, Accuracy: 84.69%
+Epoch [413/500], Step [2/2], Loss: 0.5312, Accuracy: 80.62%
+Epoch [414/500], Step [2/2], Loss: 0.5029, Accuracy: 81.01%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [259/500], Step [2/2], Loss: 0.6350, Accuracy: 78.49%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [415/500], Step [2/2], Loss: 0.5336, Accuracy: 79.84%
+Epoch [416/500], Step [2/2], Loss: 0.4755, Accuracy: 84.50%
+Epoch [417/500], Step [2/2], Loss: 0.5280, Accuracy: 80.23%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [260/500], Step [2/2], Loss: 0.6295, Accuracy: 75.97%
-Epoch [261/500], Step [2/2], Loss: 0.6238, Accuracy: 77.52%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [418/500], Step [2/2], Loss: 0.5378, Accuracy: 79.65%
+Epoch [419/500], Step [2/2], Loss: 0.5802, Accuracy: 78.88%
+Epoch [420/500], Step [2/2], Loss: 0.5605, Accuracy: 79.65%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [262/500], Step [2/2], Loss: 0.5698, Accuracy: 78.10%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [421/500], Step [2/2], Loss: 0.6217, Accuracy: 77.13%
+Epoch [422/500], Step [2/2], Loss: 0.5416, Accuracy: 80.43%
+Epoch [423/500], Step [2/2], Loss: 0.5106, Accuracy: 80.43%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [263/500], Step [2/2], Loss: 0.6386, Accuracy: 75.78%
-Epoch [264/500], Step [2/2], Loss: 0.6358, Accuracy: 74.81%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [424/500], Step [2/2], Loss: 0.4822, Accuracy: 84.50%
+Epoch [425/500], Step [2/2], Loss: 0.5562, Accuracy: 77.91%
+Epoch [426/500], Step [2/2], Loss: 0.5385, Accuracy: 81.59%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [265/500], Step [2/2], Loss: 0.6807, Accuracy: 77.71%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [427/500], Step [2/2], Loss: 0.4868, Accuracy: 81.40%
+Epoch [428/500], Step [2/2], Loss: 0.5277, Accuracy: 81.78%
+Epoch [429/500], Step [2/2], Loss: 0.4730, Accuracy: 83.53%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [266/500], Step [2/2], Loss: 0.6423, Accuracy: 74.03%
-Epoch [267/500], Step [2/2], Loss: 0.5893, Accuracy: 80.23%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [430/500], Step [2/2], Loss: 0.4880, Accuracy: 82.75%
+Epoch [431/500], Step [2/2], Loss: 0.5163, Accuracy: 80.62%
+Epoch [432/500], Step [2/2], Loss: 0.5078, Accuracy: 81.59%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [268/500], Step [2/2], Loss: 0.5884, Accuracy: 79.26%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [433/500], Step [2/2], Loss: 0.4885, Accuracy: 83.33%
+Epoch [434/500], Step [2/2], Loss: 0.5081, Accuracy: 81.59%
+Epoch [435/500], Step [2/2], Loss: 0.5045, Accuracy: 82.75%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [269/500], Step [2/2], Loss: 0.6497, Accuracy: 74.42%
-Epoch [270/500], Step [2/2], Loss: 0.5969, Accuracy: 75.58%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [436/500], Step [2/2], Loss: 0.4542, Accuracy: 84.30%
+Epoch [437/500], Step [2/2], Loss: 0.5022, Accuracy: 83.72%
+Epoch [438/500], Step [2/2], Loss: 0.4930, Accuracy: 83.53%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [271/500], Step [2/2], Loss: 0.5457, Accuracy: 80.23%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [439/500], Step [2/2], Loss: 0.4572, Accuracy: 83.72%
+Epoch [440/500], Step [2/2], Loss: 0.5004, Accuracy: 81.98%
+Epoch [441/500], Step [2/2], Loss: 0.5128, Accuracy: 82.17%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [272/500], Step [2/2], Loss: 0.6170, Accuracy: 76.55%
-Epoch [273/500], Step [2/2], Loss: 0.5879, Accuracy: 77.91%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [442/500], Step [2/2], Loss: 0.5524, Accuracy: 77.71%
+Epoch [443/500], Step [2/2], Loss: 0.5708, Accuracy: 78.88%
+Epoch [444/500], Step [2/2], Loss: 0.5743, Accuracy: 77.52%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [274/500], Step [2/2], Loss: 0.5186, Accuracy: 78.49%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [445/500], Step [2/2], Loss: 0.5095, Accuracy: 83.14%
+Epoch [446/500], Step [2/2], Loss: 0.5914, Accuracy: 75.97%
+Epoch [447/500], Step [2/2], Loss: 0.6670, Accuracy: 74.81%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [275/500], Step [2/2], Loss: 0.5592, Accuracy: 80.23%
-Epoch [276/500], Step [2/2], Loss: 0.5064, Accuracy: 81.40%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [448/500], Step [2/2], Loss: 0.5486, Accuracy: 79.84%
+Epoch [449/500], Step [2/2], Loss: 0.6736, Accuracy: 74.61%
+Epoch [450/500], Step [2/2], Loss: 0.8006, Accuracy: 71.32%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [277/500], Step [2/2], Loss: 0.5861, Accuracy: 78.49%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [451/500], Step [2/2], Loss: 0.6209, Accuracy: 77.13%
+Epoch [452/500], Step [2/2], Loss: 0.5255, Accuracy: 81.59%
+Epoch [453/500], Step [2/2], Loss: 0.4754, Accuracy: 82.95%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [278/500], Step [2/2], Loss: 0.4992, Accuracy: 81.01%
-Epoch [279/500], Step [2/2], Loss: 0.5280, Accuracy: 81.20%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [454/500], Step [2/2], Loss: 0.4715, Accuracy: 85.08%
+Epoch [455/500], Step [2/2], Loss: 0.5403, Accuracy: 80.62%
+Epoch [456/500], Step [2/2], Loss: 0.4994, Accuracy: 82.56%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [280/500], Step [2/2], Loss: 0.5286, Accuracy: 80.62%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [457/500], Step [2/2], Loss: 0.4557, Accuracy: 84.69%
+Epoch [458/500], Step [2/2], Loss: 0.4451, Accuracy: 86.05%
+Epoch [459/500], Step [2/2], Loss: 0.4819, Accuracy: 84.88%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [281/500], Step [2/2], Loss: 0.5306, Accuracy: 81.01%
-Epoch [282/500], Step [2/2], Loss: 0.5485, Accuracy: 78.10%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [460/500], Step [2/2], Loss: 0.4592, Accuracy: 83.91%
+Epoch [461/500], Step [2/2], Loss: 0.4727, Accuracy: 84.11%
+Epoch [462/500], Step [2/2], Loss: 0.4725, Accuracy: 83.91%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [283/500], Step [2/2], Loss: 0.5570, Accuracy: 77.52%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [463/500], Step [2/2], Loss: 0.5029, Accuracy: 80.62%
+Epoch [464/500], Step [2/2], Loss: 0.4781, Accuracy: 84.50%
+Epoch [465/500], Step [2/2], Loss: 0.4838, Accuracy: 83.72%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [284/500], Step [2/2], Loss: 0.5453, Accuracy: 79.07%
-Epoch [285/500], Step [2/2], Loss: 0.5602, Accuracy: 79.26%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [466/500], Step [2/2], Loss: 0.4741, Accuracy: 84.88%
+Epoch [467/500], Step [2/2], Loss: 0.4604, Accuracy: 83.91%
+Epoch [468/500], Step [2/2], Loss: 0.4892, Accuracy: 84.88%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [286/500], Step [2/2], Loss: 0.5485, Accuracy: 77.91%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [469/500], Step [2/2], Loss: 0.4220, Accuracy: 86.43%
+Epoch [470/500], Step [2/2], Loss: 0.4405, Accuracy: 85.66%
+Epoch [471/500], Step [2/2], Loss: 0.4592, Accuracy: 84.69%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [287/500], Step [2/2], Loss: 0.5699, Accuracy: 81.20%
-Epoch [288/500], Step [2/2], Loss: 0.5432, Accuracy: 79.84%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [472/500], Step [2/2], Loss: 0.4777, Accuracy: 83.33%
+Epoch [473/500], Step [2/2], Loss: 0.4868, Accuracy: 83.53%
+Epoch [474/500], Step [2/2], Loss: 0.5724, Accuracy: 77.13%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [289/500], Step [2/2], Loss: 0.5533, Accuracy: 81.59%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [475/500], Step [2/2], Loss: 0.5575, Accuracy: 79.84%
+Epoch [476/500], Step [2/2], Loss: 0.5374, Accuracy: 78.68%
+Epoch [477/500], Step [2/2], Loss: 0.5194, Accuracy: 81.59%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [290/500], Step [2/2], Loss: 0.5359, Accuracy: 81.78%
-Epoch [291/500], Step [2/2], Loss: 0.4545, Accuracy: 84.30%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [478/500], Step [2/2], Loss: 0.4539, Accuracy: 85.27%
+Epoch [479/500], Step [2/2], Loss: 0.4483, Accuracy: 85.08%
+Epoch [480/500], Step [2/2], Loss: 0.4554, Accuracy: 84.30%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [292/500], Step [2/2], Loss: 0.5335, Accuracy: 81.20%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [481/500], Step [2/2], Loss: 0.5360, Accuracy: 80.04%
+Epoch [482/500], Step [2/2], Loss: 0.4332, Accuracy: 85.85%
+Epoch [483/500], Step [2/2], Loss: 0.5374, Accuracy: 79.26%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [293/500], Step [2/2], Loss: 0.5797, Accuracy: 80.81%
-Epoch [294/500], Step [2/2], Loss: 0.5135, Accuracy: 81.20%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [484/500], Step [2/2], Loss: 0.4714, Accuracy: 84.11%
+Epoch [485/500], Step [2/2], Loss: 0.4278, Accuracy: 86.24%
+Epoch [486/500], Step [2/2], Loss: 0.4576, Accuracy: 85.66%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [295/500], Step [2/2], Loss: 0.5125, Accuracy: 82.75%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [487/500], Step [2/2], Loss: 0.4410, Accuracy: 85.47%
+Epoch [488/500], Step [2/2], Loss: 0.4221, Accuracy: 85.85%
+Epoch [489/500], Step [2/2], Loss: 0.3869, Accuracy: 87.79%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [296/500], Step [2/2], Loss: 0.4762, Accuracy: 82.17%
-Epoch [297/500], Step [2/2], Loss: 0.5290, Accuracy: 80.04%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [490/500], Step [2/2], Loss: 0.4621, Accuracy: 83.72%
+Epoch [491/500], Step [2/2], Loss: 0.4318, Accuracy: 85.08%
+Epoch [492/500], Step [2/2], Loss: 0.4857, Accuracy: 83.33%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [298/500], Step [2/2], Loss: 0.5101, Accuracy: 81.40%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [493/500], Step [2/2], Loss: 0.4353, Accuracy: 82.95%
+Epoch [494/500], Step [2/2], Loss: 0.5060, Accuracy: 81.98%
+Epoch [495/500], Step [2/2], Loss: 0.4628, Accuracy: 84.30%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [299/500], Step [2/2], Loss: 0.4995, Accuracy: 82.95%
-Epoch [300/500], Step [2/2], Loss: 0.4615, Accuracy: 84.11%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [496/500], Step [2/2], Loss: 0.4620, Accuracy: 83.91%
+Epoch [497/500], Step [2/2], Loss: 0.4620, Accuracy: 85.27%
+Epoch [498/500], Step [2/2], Loss: 0.4442, Accuracy: 85.66%
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [301/500], Step [2/2], Loss: 0.4598, Accuracy: 83.91%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [302/500], Step [2/2], Loss: 0.4481, Accuracy: 83.33%
-Epoch [303/500], Step [2/2], Loss: 0.4956, Accuracy: 82.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [304/500], Step [2/2], Loss: 0.5576, Accuracy: 79.46%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [305/500], Step [2/2], Loss: 0.5302, Accuracy: 82.95%
-Epoch [306/500], Step [2/2], Loss: 0.5059, Accuracy: 82.17%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [307/500], Step [2/2], Loss: 0.5302, Accuracy: 75.97%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [308/500], Step [2/2], Loss: 0.4887, Accuracy: 82.95%
-Epoch [309/500], Step [2/2], Loss: 0.5024, Accuracy: 80.62%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [310/500], Step [2/2], Loss: 0.5120, Accuracy: 81.20%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [311/500], Step [2/2], Loss: 0.5147, Accuracy: 81.01%
-Epoch [312/500], Step [2/2], Loss: 0.5268, Accuracy: 81.59%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [313/500], Step [2/2], Loss: 0.5377, Accuracy: 79.84%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [314/500], Step [2/2], Loss: 0.4731, Accuracy: 82.17%
-Epoch [315/500], Step [2/2], Loss: 0.5373, Accuracy: 81.20%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [316/500], Step [2/2], Loss: 0.5298, Accuracy: 79.26%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [317/500], Step [2/2], Loss: 0.4778, Accuracy: 81.98%
-Epoch [318/500], Step [2/2], Loss: 0.4514, Accuracy: 84.69%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [319/500], Step [2/2], Loss: 0.4820, Accuracy: 82.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [320/500], Step [2/2], Loss: 0.4680, Accuracy: 82.36%
-Epoch [321/500], Step [2/2], Loss: 0.4819, Accuracy: 81.40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [322/500], Step [2/2], Loss: 0.4492, Accuracy: 83.14%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [323/500], Step [2/2], Loss: 0.5166, Accuracy: 78.68%
-Epoch [324/500], Step [2/2], Loss: 0.4638, Accuracy: 81.78%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [325/500], Step [2/2], Loss: 0.4658, Accuracy: 83.72%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [326/500], Step [2/2], Loss: 0.4218, Accuracy: 84.30%
-Epoch [327/500], Step [2/2], Loss: 0.4514, Accuracy: 81.78%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [328/500], Step [2/2], Loss: 0.4874, Accuracy: 82.75%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [329/500], Step [2/2], Loss: 0.4761, Accuracy: 81.98%
-Epoch [330/500], Step [2/2], Loss: 0.5357, Accuracy: 81.20%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [331/500], Step [2/2], Loss: 0.4921, Accuracy: 81.40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [332/500], Step [2/2], Loss: 0.5377, Accuracy: 82.56%
-Epoch [333/500], Step [2/2], Loss: 0.6070, Accuracy: 74.81%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [334/500], Step [2/2], Loss: 0.5890, Accuracy: 79.46%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [335/500], Step [2/2], Loss: 0.4618, Accuracy: 82.56%
-Epoch [336/500], Step [2/2], Loss: 0.4778, Accuracy: 83.14%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [337/500], Step [2/2], Loss: 0.4933, Accuracy: 82.75%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [338/500], Step [2/2], Loss: 0.4572, Accuracy: 82.56%
-Epoch [339/500], Step [2/2], Loss: 0.4584, Accuracy: 83.91%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [340/500], Step [2/2], Loss: 0.4944, Accuracy: 79.46%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [341/500], Step [2/2], Loss: 0.4589, Accuracy: 81.98%
-Epoch [342/500], Step [2/2], Loss: 0.4431, Accuracy: 84.69%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [343/500], Step [2/2], Loss: 0.4773, Accuracy: 82.95%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [344/500], Step [2/2], Loss: 0.4993, Accuracy: 82.17%
-Epoch [345/500], Step [2/2], Loss: 0.4752, Accuracy: 83.33%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [346/500], Step [2/2], Loss: 0.4416, Accuracy: 82.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [347/500], Step [2/2], Loss: 0.4463, Accuracy: 81.98%
-Epoch [348/500], Step [2/2], Loss: 0.4954, Accuracy: 81.98%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [349/500], Step [2/2], Loss: 0.4628, Accuracy: 83.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [350/500], Step [2/2], Loss: 0.5163, Accuracy: 81.59%
-Epoch [351/500], Step [2/2], Loss: 0.5464, Accuracy: 78.10%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [352/500], Step [2/2], Loss: 0.5910, Accuracy: 76.94%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [353/500], Step [2/2], Loss: 0.5654, Accuracy: 78.88%
-Epoch [354/500], Step [2/2], Loss: 0.6703, Accuracy: 74.81%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [355/500], Step [2/2], Loss: 0.5833, Accuracy: 78.29%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [356/500], Step [2/2], Loss: 0.6297, Accuracy: 76.74%
-Epoch [357/500], Step [2/2], Loss: 0.5236, Accuracy: 79.65%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [358/500], Step [2/2], Loss: 0.4941, Accuracy: 80.81%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [359/500], Step [2/2], Loss: 0.4852, Accuracy: 82.17%
-Epoch [360/500], Step [2/2], Loss: 0.5322, Accuracy: 79.07%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [361/500], Step [2/2], Loss: 0.5258, Accuracy: 82.17%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [362/500], Step [2/2], Loss: 0.4972, Accuracy: 80.23%
-Epoch [363/500], Step [2/2], Loss: 0.4620, Accuracy: 82.95%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [364/500], Step [2/2], Loss: 0.4641, Accuracy: 81.78%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [365/500], Step [2/2], Loss: 0.4968, Accuracy: 80.81%
-Epoch [366/500], Step [2/2], Loss: 0.4155, Accuracy: 83.72%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [367/500], Step [2/2], Loss: 0.4196, Accuracy: 84.11%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [368/500], Step [2/2], Loss: 0.4019, Accuracy: 84.69%
-Epoch [369/500], Step [2/2], Loss: 0.3976, Accuracy: 86.24%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [370/500], Step [2/2], Loss: 0.4292, Accuracy: 84.30%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [371/500], Step [2/2], Loss: 0.4094, Accuracy: 85.08%
-Epoch [372/500], Step [2/2], Loss: 0.3951, Accuracy: 85.08%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [373/500], Step [2/2], Loss: 0.4195, Accuracy: 86.24%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [374/500], Step [2/2], Loss: 0.3827, Accuracy: 86.63%
-Epoch [375/500], Step [2/2], Loss: 0.4199, Accuracy: 85.47%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [376/500], Step [2/2], Loss: 0.4377, Accuracy: 83.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [377/500], Step [2/2], Loss: 0.3990, Accuracy: 83.91%
-Epoch [378/500], Step [2/2], Loss: 0.3982, Accuracy: 85.27%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [379/500], Step [2/2], Loss: 0.4220, Accuracy: 87.02%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [380/500], Step [2/2], Loss: 0.4453, Accuracy: 83.72%
-Epoch [381/500], Step [2/2], Loss: 0.4417, Accuracy: 80.81%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [382/500], Step [2/2], Loss: 0.4457, Accuracy: 83.72%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [383/500], Step [2/2], Loss: 0.4473, Accuracy: 84.30%
-Epoch [384/500], Step [2/2], Loss: 0.4435, Accuracy: 82.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [385/500], Step [2/2], Loss: 0.4088, Accuracy: 84.50%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [386/500], Step [2/2], Loss: 0.5329, Accuracy: 80.43%
-Epoch [387/500], Step [2/2], Loss: 0.5800, Accuracy: 79.65%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [388/500], Step [2/2], Loss: 0.5062, Accuracy: 81.01%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [389/500], Step [2/2], Loss: 0.4351, Accuracy: 82.75%
-Epoch [390/500], Step [2/2], Loss: 0.4530, Accuracy: 83.14%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [391/500], Step [2/2], Loss: 0.3945, Accuracy: 86.63%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [392/500], Step [2/2], Loss: 0.4183, Accuracy: 84.88%
-Epoch [393/500], Step [2/2], Loss: 0.3982, Accuracy: 86.43%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [394/500], Step [2/2], Loss: 0.4031, Accuracy: 83.91%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [395/500], Step [2/2], Loss: 0.4001, Accuracy: 83.91%
-Epoch [396/500], Step [2/2], Loss: 0.3668, Accuracy: 87.21%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [397/500], Step [2/2], Loss: 0.3692, Accuracy: 86.24%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [398/500], Step [2/2], Loss: 0.4284, Accuracy: 87.98%
-Epoch [399/500], Step [2/2], Loss: 0.4399, Accuracy: 82.95%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [400/500], Step [2/2], Loss: 0.5014, Accuracy: 80.43%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [401/500], Step [2/2], Loss: 0.4783, Accuracy: 82.56%
-Epoch [402/500], Step [2/2], Loss: 0.4445, Accuracy: 84.88%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [403/500], Step [2/2], Loss: 0.5194, Accuracy: 80.23%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [404/500], Step [2/2], Loss: 0.4881, Accuracy: 82.95%
-Epoch [405/500], Step [2/2], Loss: 0.5029, Accuracy: 82.56%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [406/500], Step [2/2], Loss: 0.4953, Accuracy: 81.01%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [407/500], Step [2/2], Loss: 0.4396, Accuracy: 85.08%
-Epoch [408/500], Step [2/2], Loss: 0.4438, Accuracy: 82.75%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [409/500], Step [2/2], Loss: 0.4129, Accuracy: 85.85%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [410/500], Step [2/2], Loss: 0.3985, Accuracy: 85.66%
-Epoch [411/500], Step [2/2], Loss: 0.3671, Accuracy: 86.82%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [412/500], Step [2/2], Loss: 0.3739, Accuracy: 87.02%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [413/500], Step [2/2], Loss: 0.3651, Accuracy: 87.40%
-Epoch [414/500], Step [2/2], Loss: 0.4415, Accuracy: 83.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [415/500], Step [2/2], Loss: 0.4113, Accuracy: 84.88%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [416/500], Step [2/2], Loss: 0.4077, Accuracy: 85.47%
-Epoch [417/500], Step [2/2], Loss: 0.3519, Accuracy: 87.60%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [418/500], Step [2/2], Loss: 0.3762, Accuracy: 87.60%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [419/500], Step [2/2], Loss: 0.4334, Accuracy: 85.85%
-Epoch [420/500], Step [2/2], Loss: 0.3975, Accuracy: 87.40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [421/500], Step [2/2], Loss: 0.4905, Accuracy: 81.78%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [422/500], Step [2/2], Loss: 0.4069, Accuracy: 84.88%
-Epoch [423/500], Step [2/2], Loss: 0.3874, Accuracy: 86.24%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [424/500], Step [2/2], Loss: 0.4240, Accuracy: 84.69%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [425/500], Step [2/2], Loss: 0.4005, Accuracy: 85.27%
-Epoch [426/500], Step [2/2], Loss: 0.4233, Accuracy: 82.95%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [427/500], Step [2/2], Loss: 0.3319, Accuracy: 90.31%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [428/500], Step [2/2], Loss: 0.3635, Accuracy: 85.85%
-Epoch [429/500], Step [2/2], Loss: 0.3530, Accuracy: 86.82%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [430/500], Step [2/2], Loss: 0.3729, Accuracy: 87.40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [431/500], Step [2/2], Loss: 0.3861, Accuracy: 86.63%
-Epoch [432/500], Step [2/2], Loss: 0.3980, Accuracy: 84.50%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [433/500], Step [2/2], Loss: 0.4251, Accuracy: 83.33%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [434/500], Step [2/2], Loss: 0.3919, Accuracy: 85.27%
-Epoch [435/500], Step [2/2], Loss: 0.3890, Accuracy: 86.43%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [436/500], Step [2/2], Loss: 0.4224, Accuracy: 85.66%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [437/500], Step [2/2], Loss: 0.3803, Accuracy: 86.24%
-Epoch [438/500], Step [2/2], Loss: 0.3410, Accuracy: 87.79%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [439/500], Step [2/2], Loss: 0.3264, Accuracy: 89.15%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [440/500], Step [2/2], Loss: 0.3632, Accuracy: 87.40%
-Epoch [441/500], Step [2/2], Loss: 0.3215, Accuracy: 88.57%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [442/500], Step [2/2], Loss: 0.5049, Accuracy: 78.88%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [443/500], Step [2/2], Loss: 0.5129, Accuracy: 81.40%
-Epoch [444/500], Step [2/2], Loss: 0.3488, Accuracy: 87.60%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [445/500], Step [2/2], Loss: 0.4063, Accuracy: 86.63%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [446/500], Step [2/2], Loss: 0.3905, Accuracy: 87.02%
-Epoch [447/500], Step [2/2], Loss: 0.3871, Accuracy: 88.37%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [448/500], Step [2/2], Loss: 0.4031, Accuracy: 84.69%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [449/500], Step [2/2], Loss: 0.4142, Accuracy: 84.69%
-Epoch [450/500], Step [2/2], Loss: 0.3811, Accuracy: 86.05%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [451/500], Step [2/2], Loss: 0.3590, Accuracy: 87.21%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [452/500], Step [2/2], Loss: 0.3860, Accuracy: 85.47%
-Epoch [453/500], Step [2/2], Loss: 0.3884, Accuracy: 85.85%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [454/500], Step [2/2], Loss: 0.3445, Accuracy: 87.40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [455/500], Step [2/2], Loss: 0.3398, Accuracy: 86.82%
-Epoch [456/500], Step [2/2], Loss: 0.3574, Accuracy: 87.98%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [457/500], Step [2/2], Loss: 0.3611, Accuracy: 87.79%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [458/500], Step [2/2], Loss: 0.3751, Accuracy: 85.47%
-Epoch [459/500], Step [2/2], Loss: 0.3261, Accuracy: 89.15%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [460/500], Step [2/2], Loss: 0.3302, Accuracy: 87.79%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [461/500], Step [2/2], Loss: 0.3450, Accuracy: 88.95%
-Epoch [462/500], Step [2/2], Loss: 0.2943, Accuracy: 88.95%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [463/500], Step [2/2], Loss: 0.3233, Accuracy: 89.73%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [464/500], Step [2/2], Loss: 0.2953, Accuracy: 90.89%
-Epoch [465/500], Step [2/2], Loss: 0.2984, Accuracy: 90.12%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [466/500], Step [2/2], Loss: 0.3005, Accuracy: 89.73%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [467/500], Step [2/2], Loss: 0.2938, Accuracy: 90.50%
-Epoch [468/500], Step [2/2], Loss: 0.3046, Accuracy: 89.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [469/500], Step [2/2], Loss: 0.3014, Accuracy: 90.89%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [470/500], Step [2/2], Loss: 0.2925, Accuracy: 90.70%
-Epoch [471/500], Step [2/2], Loss: 0.3347, Accuracy: 89.34%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [472/500], Step [2/2], Loss: 0.3503, Accuracy: 88.37%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [473/500], Step [2/2], Loss: 0.3062, Accuracy: 89.34%
-Epoch [474/500], Step [2/2], Loss: 0.3044, Accuracy: 89.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [475/500], Step [2/2], Loss: 0.3111, Accuracy: 89.92%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [476/500], Step [2/2], Loss: 0.3115, Accuracy: 88.18%
-Epoch [477/500], Step [2/2], Loss: 0.3103, Accuracy: 89.15%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [478/500], Step [2/2], Loss: 0.3008, Accuracy: 89.53%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [479/500], Step [2/2], Loss: 0.3042, Accuracy: 89.73%
-Epoch [480/500], Step [2/2], Loss: 0.2668, Accuracy: 90.31%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [481/500], Step [2/2], Loss: 0.3302, Accuracy: 88.57%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [482/500], Step [2/2], Loss: 0.3181, Accuracy: 88.95%
-Epoch [483/500], Step [2/2], Loss: 0.3287, Accuracy: 88.18%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [484/500], Step [2/2], Loss: 0.2853, Accuracy: 90.89%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [485/500], Step [2/2], Loss: 0.3482, Accuracy: 87.40%
-Epoch [486/500], Step [2/2], Loss: 0.3300, Accuracy: 89.34%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [487/500], Step [2/2], Loss: 0.3249, Accuracy: 90.31%
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3795</span><span class="o">/</span><span class="mf">620869286.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">acc_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>   <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">motions</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">motions</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">motions</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">__next__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>                 <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="ne">--&gt; </span><span class="mi">652</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_next_data</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">690</span>     <span class="k">def</span> <span class="nf">_next_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">691</span>         <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_index</span><span class="p">()</span>  <span class="c1"># may raise StopIteration</span>
-<span class="ne">--&gt; </span><span class="mi">692</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_fetcher</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># may raise StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">693</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_memory</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">694</span>             <span class="n">data</span> <span class="o">=</span> <span class="n">_utils</span><span class="o">.</span><span class="n">pin_memory</span><span class="o">.</span><span class="n">pin_memory</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_memory_device</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py</span> in <span class="ni">fetch</span><span class="nt">(self, possibly_batched_index)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">possibly_batched_index</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_collation</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">49</span>             <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">possibly_batched_index</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">possibly_batched_index</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_collation</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">49</span>             <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">possibly_batched_index</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
-
-<span class="nn">/tmp/ipykernel_3795/1707725241.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, idx)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>       <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> 
-<span class="ne">---&gt; </span><span class="mi">30</span>     <span class="n">sample</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">moves</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,:])),</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> 
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">return</span> <span class="n">sample</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [499/500], Step [2/2], Loss: 0.4728, Accuracy: 82.56%
+Epoch [500/500], Step [2/2], Loss: 0.4635, Accuracy: 83.53%
 </pre></div>
 </div>
 </div>
@@ -3016,7 +2741,7 @@ Epoch [486/500], Step [2/2], Loss: 0.3300, Accuracy: 89.34%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test Accuracy of the model on the 172 test moves: 84.302%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test Accuracy of the model on the 172 test moves: 82.558%
 </pre></div>
 </div>
 </div>
@@ -3118,7 +2843,7 @@ Epoch [486/500], Step [2/2], Loss: 0.3300, Accuracy: 89.34%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73.25581395348837
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71.51162790697676
 </pre></div>
 </div>
 <img alt="../../_images/Example_Deep_Learning_Project_54_1.png" src="../../_images/Example_Deep_Learning_Project_54_1.png" />
@@ -3165,22 +2890,77 @@ Epoch [486/500], Step [2/2], Loss: 0.3300, Accuracy: 89.34%
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** FITTING: Left Leg
-limb performance: 80.23%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>limb performance: 69.19%
 
 *** FITTING: Right Leg
-limb performance: 75.00%
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3705</span><span class="o">/</span><span class="mf">231488163.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span>   <span class="n">joints</span> <span class="o">=</span> <span class="n">limb_joints</span><span class="p">[</span><span class="n">limb</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>   <span class="n">limb_fit</span> <span class="o">=</span> <span class="n">testJointModel</span><span class="p">(</span><span class="n">joints</span><span class="o">=</span><span class="n">joints</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>   <span class="n">limb_fits</span><span class="p">[</span><span class="n">limb</span><span class="p">]</span> <span class="o">=</span> <span class="n">limb_fit</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;limb performance: </span><span class="si">{</span><span class="n">limb_fit</span><span class="p">[</span><span class="s1">&#39;performance&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 
-*** FITTING: Left Arm
-limb performance: 61.05%
+<span class="nn">/tmp/ipykernel_3705/2006577586.py</span> in <span class="ni">testJointModel</span><span class="nt">(joints, num_epochs, batch_size, learning_rate)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>   <span class="c1"># Train the model</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>   <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">26</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">motions</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>       <span class="n">motions</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">motions</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> 
 
-*** FITTING: Right Arm
-limb performance: 36.63%
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">__next__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>                 <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="ne">--&gt; </span><span class="mi">652</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
 
-*** FITTING: Torso
-limb performance: 80.81%
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_next_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">690</span>     <span class="k">def</span> <span class="nf">_next_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">691</span>         <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_index</span><span class="p">()</span>  <span class="c1"># may raise StopIteration</span>
+<span class="ne">--&gt; </span><span class="mi">692</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_fetcher</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># may raise StopIteration</span>
+<span class="g g-Whitespace">    </span><span class="mi">693</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_memory</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span>             <span class="n">data</span> <span class="o">=</span> <span class="n">_utils</span><span class="o">.</span><span class="n">pin_memory</span><span class="o">.</span><span class="n">pin_memory</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_memory_device</span><span class="p">)</span>
 
-*** FITTING: Head
-limb performance: 46.51%
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py</span> in <span class="ni">fetch</span><span class="nt">(self, possibly_batched_index)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">52</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">collate_fn</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py</span> in <span class="ni">default_collate</span><span class="nt">(batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> 
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">175</span>             <span class="k">return</span> <span class="p">[</span><span class="n">default_collate</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span> <span class="k">for</span> <span class="n">samples</span> <span class="ow">in</span> <span class="n">transposed</span><span class="p">]</span>  <span class="c1"># Backwards compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> 
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">175</span>             <span class="k">return</span> <span class="p">[</span><span class="n">default_collate</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span> <span class="k">for</span> <span class="n">samples</span> <span class="ow">in</span> <span class="n">transposed</span><span class="p">]</span>  <span class="c1"># Backwards compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py</span> in <span class="ni">default_collate</span><span class="nt">(batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">default_collate_err_msg_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> 
+<span class="ne">--&gt; </span><span class="mi">149</span>             <span class="k">return</span> <span class="n">default_collate</span><span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="k">elif</span> <span class="n">elem</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">():</span>  <span class="c1"># scalars</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>             <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">default_collate_err_msg_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> 
+<span class="ne">--&gt; </span><span class="mi">149</span>             <span class="k">return</span> <span class="n">default_collate</span><span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="k">elif</span> <span class="n">elem</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">():</span>  <span class="c1"># scalars</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>             <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

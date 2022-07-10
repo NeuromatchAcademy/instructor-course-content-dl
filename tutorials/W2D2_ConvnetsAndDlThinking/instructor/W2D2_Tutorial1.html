@@ -41,7 +41,7 @@ const thebe_selector_output = ".output, .cell_output"
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-<link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
+<link href="../../../_static/nma-dl-logo-square-4xp.png" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="W2D2_Tutorial2.html" rel="next" title="Tutorial 2: Deep Learning Thinking 1: Cost Functions"/>
@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar__top"><div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
 <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.jpeg"/>
+<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.png"/>
 <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
 </a>
 </div><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
@@ -157,6 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </input></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
+</li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1">
@@ -2343,7 +2350,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a726599a503040aba17b00ac8125a0f8"}
+{"version_major": 2, "version_minor": 0, "model_id": "a4bb05eb27be46058ac06a50c2433c9b"}
 </script></div>
 </div>
 </div>
@@ -2386,9 +2393,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4aeb243420cc4966831e65fcab8d2ccc"}
+{"version_major": 2, "version_minor": 0, "model_id": "3f4a68092c364962bb5cc3f914d0d829"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4c1609d2cc834ea68248b6397db68f3c"}
+{"version_major": 2, "version_minor": 0, "model_id": "a61949c8d49e46afb05f61ba89c6dda3"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2419,7 +2426,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "619037f2aa91429f86970b86e39c8268"}
+{"version_major": 2, "version_minor": 0, "model_id": "f07440d4fa6c49beb47fec07a19a6abf"}
 </script></div>
 </div>
 </div>
@@ -2458,9 +2465,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "59e78ef7048c47e685be3ee3d5142394"}
+{"version_major": 2, "version_minor": 0, "model_id": "08139544fd254781b68dc23688ab7191"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b6b49729986d4895bc7d0dc5f7a097bd"}
+{"version_major": 2, "version_minor": 0, "model_id": "916087e47777465c9584ea26e16bf9c1"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2491,7 +2498,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "74eb344021a04928923dfce49227f3f8"}
+{"version_major": 2, "version_minor": 0, "model_id": "952214e2c8da44f5bdb8afabad8b3fab"}
 </script></div>
 </div>
 <p>Before jumping into coding exercises, take a moment to look at this animation that steps through the process of convolution.</p>
@@ -2531,8 +2538,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="section" id="coding-exercise-2-1-convolution-of-a-simple-kernel">
 <h2>Coding Exercise 2.1: Convolution of a Simple Kernel<a class="headerlink" href="#coding-exercise-2-1-convolution-of-a-simple-kernel" title="Permalink to this headline">¶</a></h2>
 <p>At its core, convolution is just repeatedly multiplying a matrix, known as a <em>kernel</em> or <em>filter</em>, with some other, larger matrix (in our case the pixels of an image). Consider the below image and kernel:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aec67ee1-dd23-48bb-9a0c-504e6eb3b408">
-<span class="eqno">(65)<a class="headerlink" href="#equation-aec67ee1-dd23-48bb-9a0c-504e6eb3b408" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2fefe0a0-88f4-42e5-809d-60f90f9f3445">
+<span class="eqno">(65)<a class="headerlink" href="#equation-2fefe0a0-88f4-42e5-809d-60f90f9f3445" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \textbf{Image} &amp;= 
 \begin{bmatrix}0 &amp; 200 &amp; 200 \\0 &amp; 0 &amp; 200 \\ 0 &amp; 0 &amp; 0  
 \end{bmatrix} \\ \\
@@ -2949,14 +2956,14 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19632</span><span class="o">/</span><span class="mf">644241346.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19583</span><span class="o">/</span><span class="mf">644241346.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="n">kernel_hor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span>   <span class="n">img_processed_mat_ver</span> <span class="o">=</span> <span class="n">convolution2d</span><span class="p">(</span><span class="n">img_skyline_mat</span><span class="p">,</span> <span class="n">kernel_ver</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">10</span>   <span class="n">img_processed_mat_hor</span> <span class="o">=</span> <span class="n">convolution2d</span><span class="p">(</span><span class="n">img_skyline_mat</span><span class="p">,</span> <span class="n">kernel_hor</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span>   <span class="n">img_processed_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">img_processed_mat_ver</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span>                                           <span class="n">img_processed_mat_ver</span><span class="p">)</span> <span class="o">+</span> \
 
-<span class="nn">/tmp/ipykernel_19632/631294496.py</span> in <span class="ni">convolution2d</span><span class="nt">(image, kernel)</span>
+<span class="nn">/tmp/ipykernel_19583/631294496.py</span> in <span class="ni">convolution2d</span><span class="nt">(image, kernel)</span>
 <span class="g g-Whitespace">     </span><span class="mi">33</span>       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ker_h</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ker_w</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">35</span>           <span class="n">current_product</span> <span class="o">+=</span> <span class="n">image</span><span class="p">[</span><span class="n">out_row</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">out_col</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">kernel</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
@@ -3101,8 +3108,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="section" id="think-2-2-1-edge-detection">
 <h3>Think! 2.2.1: Edge Detection<a class="headerlink" href="#think-2-2-1-edge-detection" title="Permalink to this headline">¶</a></h3>
 <p>One of the simpler tasks performed by a convolutional layer is edge detection; that is, finding a place in the image where there is a large and abrupt change in color. Edge-detecting filters are usually learned by the first layers in a CNN. Observe the following simple kernel and discuss whether this will detect vertical edges (where the trace of the edge is vertical; i.e. there is a boundary between left and right), or whether it will detect horizontal edges (where the trace of the edge is horizontal; i.e., there is a boundary between top and bottom).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37db1b2e-936f-4cc3-9953-6c16970bfde9">
-<span class="eqno">(66)<a class="headerlink" href="#equation-37db1b2e-936f-4cc3-9953-6c16970bfde9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-93d9aae1-1c93-49bd-9d00-8b39fcb47a40">
+<span class="eqno">(66)<a class="headerlink" href="#equation-93d9aae1-1c93-49bd-9d00-8b39fcb47a40" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \textbf{Kernel} = 
 \begin{bmatrix} 1 &amp; -1 \\ 1 &amp; -1
 \end{bmatrix} 
@@ -4694,8 +4701,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <h2>Bonus 1.1: Understand the Dataset<a class="headerlink" href="#bonus-1-1-understand-the-dataset" title="Permalink to this headline">¶</a></h2>
 <p>The dataset we are going to use for this task is called Fashion-MNIST. It consists of a training set of 60,000 examples and a test set of 10,000 examples. We further divide the test set into a validation set and a test set (8,000 and 2,000, respectively). Each example is a <span class="math notranslate nohighlight">\(28 \times 28\)</span> gray scale image, associated with a label from 10 classes. Following are the labels of the dataset:</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-eaabdedc-9f63-4adf-b45c-5af0c42c1daf">
-<span class="eqno">(67)<a class="headerlink" href="#equation-eaabdedc-9f63-4adf-b45c-5af0c42c1daf" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1abd5ef9-e57b-4d9b-a97e-436a30904e17">
+<span class="eqno">(67)<a class="headerlink" href="#equation-1abd5ef9-e57b-4d9b-a97e-436a30904e17" title="Permalink to this equation">¶</a></span>\[\begin{matrix}
 \text{label} &amp;&amp; \text{category} \\
 \hline
 0 &amp;&amp; \text{T-shirt/top} \\

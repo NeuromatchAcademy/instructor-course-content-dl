@@ -41,7 +41,7 @@ const thebe_selector_output = ".output, .cell_output"
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
 <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-<link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
+<link href="../../../_static/nma-dl-logo-square-4xp.png" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="../../W3D2_DlThinking2/chapter_title.html" rel="next" title="Dl Thinking2"/>
@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar__top"><div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
 <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.jpeg"/>
+<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.png"/>
 <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
 </a>
 </div><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
@@ -157,6 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </input></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
+</li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1">
@@ -2058,20 +2065,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 <span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 
 </pre></div>
 </div>
@@ -3455,8 +3456,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c96bfd4-1e19-45be-b865-d6086b13a9d4">
-<span class="eqno">(100)<a class="headerlink" href="#equation-7c96bfd4-1e19-45be-b865-d6086b13a9d4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-40df9ed6-e1dc-41fa-95d5-7586148f1e19">
+<span class="eqno">(100)<a class="headerlink" href="#equation-40df9ed6-e1dc-41fa-95d5-7586148f1e19" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.jpeg"/>
+    <link rel="shortcut icon" href="../../_static/nma-dl-logo-square-4xp.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Transfer Learning" href="transfer_learning.html" />
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/nma-dl-logo-square-4xp.jpeg" class="logo" alt="logo">
+      <img src="../../_static/nma-dl-logo-square-4xp.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
@@ -182,6 +182,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -1522,8 +1529,8 @@ GPU is enabled in this notebook.
 <div class="section" id="mixup">
 <h2>Mixup<a class="headerlink" href="#mixup" title="Permalink to this headline">¶</a></h2>
 <p>Mixup is a data augmentation technique that combines pairs of examples via a convex combination of the images and the labels. Given images <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> with labels <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span>, respectively, and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, mixup creates a new image <span class="math notranslate nohighlight">\(\hat{x}\)</span> with label <span class="math notranslate nohighlight">\(\hat{y}\)</span> the following way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-152249c1-6bb3-456b-b19d-cdbff01d4040">
-<span class="eqno">(129)<a class="headerlink" href="#equation-152249c1-6bb3-456b-b19d-cdbff01d4040" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8961e893-df21-4a48-8cd8-da7037a2e1ac">
+<span class="eqno">(129)<a class="headerlink" href="#equation-8961e893-df21-4a48-8cd8-da7037a2e1ac" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \hat{x} &amp;= \lambda x_i + (1 - \lambda) x_j \\
 \hat{y} &amp;= \lambda y_i + (1 - \lambda) y_j
 \end{align}\]</div>

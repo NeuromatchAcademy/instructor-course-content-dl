@@ -39,7 +39,7 @@ const thebe_selector_output = ".output, .cell_output"
 <script async="async" src="../../../_static/sphinx-thebe.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-<link href="../../../_static/nma-dl-logo-square-4xp.jpeg" rel="shortcut icon">
+<link href="../../../_static/nma-dl-logo-square-4xp.png" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="W3D5_BonusLecture.html" rel="next" title="Bonus Lecture: Amita Kapoor"/>
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar__top"><div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
 <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.jpeg"/>
+<img alt="logo" class="logo" src="../../../_static/nma-dl-logo-square-4xp.png"/>
 <h1 class="site-logo" id="site-title">Neuromatch Academy: Deep Learning (instructor's version)</h1>
 </a>
 </div><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
@@ -155,6 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </input></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../TechnicalHelp/Links_Policy.html">
+   Quick links and policies
+  </a>
+</li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1">
@@ -1754,10 +1761,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
+<span class="-Color -Color-Yellow">WARNING: Ignoring invalid distribution -orch (/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages)</span>
 
 </pre></div>
 </div>
@@ -1811,43 +1815,22 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21046</span><span class="o">/</span><span class="mf">1013040963.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20901</span><span class="o">/</span><span class="mf">1013040963.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">torch</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">nn</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.modules</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F403</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span><span class="p">,</span> <span class="n">UninitializedParameter</span><span class="p">,</span> <span class="n">UninitializedBuffer</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">.parallel</span> <span class="kn">import</span> <span class="n">DataParallel</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">init</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">functional</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="k">if</span> <span class="n">USE_GLOBAL_DEPS</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="n">_load_global_deps</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">196</span>     <span class="kn">from</span> <span class="nn">torch._C</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> 
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># Appease the type checker; ordinarily this binding is inserted by the</span>
 
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">nn</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.module</span> <span class="kn">import</span> <span class="n">Module</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.linear</span> <span class="kn">import</span> <span class="n">Identity</span><span class="p">,</span> <span class="n">Linear</span><span class="p">,</span> <span class="n">Bilinear</span><span class="p">,</span> <span class="n">LazyLinear</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">.conv</span> <span class="kn">import</span> <span class="n">Conv1d</span><span class="p">,</span> <span class="n">Conv2d</span><span class="p">,</span> <span class="n">Conv3d</span><span class="p">,</span> \
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">ConvTranspose1d</span><span class="p">,</span> <span class="n">ConvTranspose2d</span><span class="p">,</span> <span class="n">ConvTranspose3d</span><span class="p">,</span> \
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">LazyConv1d</span><span class="p">,</span> <span class="n">LazyConv2d</span><span class="p">,</span> <span class="n">LazyConv3d</span><span class="p">,</span> <span class="n">LazyConvTranspose1d</span><span class="p">,</span> <span class="n">LazyConvTranspose2d</span><span class="p">,</span> <span class="n">LazyConvTranspose3d</span>
-
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">nn</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">module</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">..parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">torch.utils.hooks</span> <span class="k">as</span> <span class="nn">hooks</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">nn</span><span class="o">/</span><span class="n">parameter</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">torch._C</span> <span class="kn">import</span> <span class="n">_disabled_torch_function_impl</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'torch._C'
+<span class="ne">ImportError</span>: libshm.so: cannot open shared object file: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -1919,6 +1902,27 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20901</span><span class="o">/</span><span class="mf">762505290.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Call `set_seed` function in the exercises to ensure reproducibility.</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">torch</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed_torch</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="k">if</span> <span class="n">USE_GLOBAL_DEPS</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="n">_load_global_deps</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">196</span>     <span class="kn">from</span> <span class="nn">torch._C</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> 
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># Appease the type checker; ordinarily this binding is inserted by the</span>
+
+<span class="ne">ImportError</span>: libshm.so: cannot open shared object file: No such file or directory
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="set-device-gpu-or-cpu-execute-set-device">
@@ -1961,25 +1965,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21046</span><span class="o">/</span><span class="mf">1437846392.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">SEED</span> <span class="o">=</span> <span class="mi">2021</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">DEVICE</span> <span class="o">=</span> <span class="n">set_device</span><span class="p">()</span>
 
-<span class="nn">/tmp/ipykernel_21046/762505290.py</span> in <span class="ni">set_seed</span><span class="nt">(seed, seed_torch)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>   <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>   <span class="k">if</span> <span class="n">seed_torch</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed_all</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module 'torch' has no attribute 'manual_seed'
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="download-the-modules">
@@ -2037,7 +2023,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21046</span><span class="o">/</span><span class="mf">3255350861.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20901</span><span class="o">/</span><span class="mf">3255350861.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">download_string</span><span class="si">}</span><span class="s2"> and unzipping the file... Please wait."</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">zipurl</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipresp</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">23</span>   <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">zipresp</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span> <span class="k">as</span> <span class="n">zfile</span><span class="p">:</span>
