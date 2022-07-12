@@ -32,8 +32,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# Visualize the output of your function', 'from IPython.display import display as IPydisplay', '', 'with open("images/chicago_skyline_shrunk_v2.bmp", \'rb\') as skyline_image_file:', '  img_skyline_orig = Image.open(skyline_image_file)']
-...
-['  scale = 0.6', '  IPydisplay(img_skyline_orig.resize((int(width*scale), int(height*scale))),', '             Image.NEAREST)', '  IPydisplay(img_processed.resize((int(width*scale), int(height*scale))),', '             Image.NEAREST)']
+,,# @title Download EMNIST dataset
+
+# webpage: https://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip
+fname = 'EMNIST.zip'
+folder = 'EMNIST'
+url = "https://osf.io/xwfaj/download"
+download_data(fname, folder, url, tar=False)
 -------------------
 

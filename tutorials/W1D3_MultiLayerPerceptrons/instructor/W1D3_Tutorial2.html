@@ -1949,7 +1949,7 @@ If you want to enable it, in the menu under `Runtime` -&gt;
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "bd121283a63c4552a913b18eb6c4c381"}
+{"version_major": 2, "version_minor": 0, "model_id": "347258332df1493082ef65494a37ec83"}
 </script></div>
 </div>
 </div>
@@ -2143,31 +2143,31 @@ But first, we need a model parameter counter. You could iterate over the model l
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ee31df2771f7497f8a61fe8a60c4402f"}
+{"version_major": 2, "version_minor": 0, "model_id": "04f59e9f31a945dfbf8b122b48cee2a9"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 81.59
 Accuracy on the 800 testing samples: 81.50
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5544439871d04180a23dc2de1ff6e5d4"}
+{"version_major": 2, "version_minor": 0, "model_id": "51c6a42ead0742d79202cbba986124d6"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 85.03
 Accuracy on the 800 testing samples: 85.88
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cd1809c36e80445a832c5320a0432554"}
+{"version_major": 2, "version_minor": 0, "model_id": "4edb98890b5b435aa992966dcdbe9702"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 89.97
 Accuracy on the 800 testing samples: 89.88
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "16dd1db084884a5a89c109eb1e846c8c"}
+{"version_major": 2, "version_minor": 0, "model_id": "0b7b7f587ba843afa1f15f8a07eb1226"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 85.28
 Accuracy on the 800 testing samples: 86.62
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6a2affa9fb09407eb662947f4580f86d"}
+{"version_major": 2, "version_minor": 0, "model_id": "86e2dac8755349118e089bea474ec452"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 86.25
 Accuracy on the 800 testing samples: 86.12
 </pre></div>
@@ -2209,9 +2209,9 @@ Accuracy on the 800 testing samples: 86.12
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "46968cfc20734ad3bd147b22ab498819"}
+{"version_major": 2, "version_minor": 0, "model_id": "20332ace276e47949972b3b55b55beb3"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "20cfcc10801b4d45b159b6c5a9261d19"}
+{"version_major": 2, "version_minor": 0, "model_id": "1f198a08825c408cb5237524b77bec75"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2231,8 +2231,8 @@ Accuracy on the 800 testing samples: 86.12
 <h2>Section 1.1: Where Wide Fails<a class="headerlink" href="#section-1-1-where-wide-fails" title="Permalink to this headline">¶</a></h2>
 <p>Let’s use the same spiral dataset generated before with two features. And then add more polynomial features (which makes the first layer wider). And finally, train a single linear layer. We could use the same MLP network with no hidden layers (though it would not be called an MLP anymore!).</p>
 <p>Note that we will add polynomial terms upto <span class="math notranslate nohighlight">\(P=50\)</span> which means that for every <span class="math notranslate nohighlight">\(x_1^n x_2^m\)</span> term, <span class="math notranslate nohighlight">\(n+m\leq P\)</span>. Now it’s fun math exercise to prove why the total number of polynomial features upto <span class="math notranslate nohighlight">\(P\)</span> becomes,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d583fb36-9e0e-40ed-b814-2d4b6e8b4af7">
-<span class="eqno">(42)<a class="headerlink" href="#equation-d583fb36-9e0e-40ed-b814-2d4b6e8b4af7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fd8c5931-69fe-4ab6-a237-7c62ee5dddd7">
+<span class="eqno">(42)<a class="headerlink" href="#equation-fd8c5931-69fe-4ab6-a237-7c62ee5dddd7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{# of terms} = \frac{(P+1)(P+2)}{2}
 \end{equation}\]</div>
 <p>Also, we don’t need the polynomial term with degree zero (which is the constatnt term) since <code class="docutils literal notranslate"><span class="pre">nn.Linear</span></code> layers have bias terms. Therefore we will have one fewer polynomial feature.</p>
@@ -2340,7 +2340,7 @@ Accuracy on the 800 testing samples: 86.12
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "40d5e1b2364d4af5b3ff9b88b52e1eed"}
+{"version_major": 2, "version_minor": 0, "model_id": "1df75e4b12cc45f3a4149be7d7433c23"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 69.88
 Accuracy on the 800 testing samples: 72.62
 </pre></div>
@@ -2384,9 +2384,9 @@ Accuracy on the 800 testing samples: 72.62
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d8ab46c76f5f4dc6bc9e9a779b118938"}
+{"version_major": 2, "version_minor": 0, "model_id": "2c03ec4bfafb414fa3f2c9f37d32125e"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d30e61fc71874bc9815748e313dc0ccc"}
+{"version_major": 2, "version_minor": 0, "model_id": "04ca16506943455e98676f82e25b6c0d"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2413,7 +2413,7 @@ Accuracy on the 800 testing samples: 72.62
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6c0749cff9d5474bbe1f92e0ee0def2b"}
+{"version_major": 2, "version_minor": 0, "model_id": "4d53cc4738674e089a4ae2d2c84906a9"}
 </script></div>
 </div>
 </div>
@@ -2602,15 +2602,15 @@ and we’d like a preprocessing that:</p></li>
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ff76abaf22364d19ac188d712588285c"}
+{"version_major": 2, "version_minor": 0, "model_id": "65b9f7883b7f4760802c5295b95d334a"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5449</span><span class="o">/</span><span class="mf">70278562.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5511</span><span class="o">/</span><span class="mf">70278562.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">train_test_classification</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                                 <span class="n">img_train_loader</span><span class="p">,</span> <span class="n">img_test_loader</span><span class="p">,</span>
 <span class="ne">----&gt; </span><span class="mi">8</span>                                 <span class="n">num_epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_5449/927545959.py</span> in <span class="ni">train_test_classification</span><span class="nt">(net, criterion, optimizer, train_loader, test_loader, num_epochs, verbose, training_plot, device)</span>
+<span class="nn">/tmp/ipykernel_5511/927545959.py</span> in <span class="ni">train_test_classification</span><span class="nt">(net, criterion, optimizer, train_loader, test_loader, num_epochs, verbose, training_plot, device)</span>
 <span class="g g-Whitespace">     </span><span class="mi">97</span>   <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">)):</span>  <span class="c1"># Loop over the dataset multiple times</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="ne">---&gt; </span><span class="mi">99</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
@@ -2646,46 +2646,67 @@ and we’d like a preprocessing that:</p></li>
 <span class="g g-Whitespace">     </span><span class="mi">51</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/datasets/folder.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, index)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>         <span class="n">sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">232</span>             <span class="n">sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>             <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_transform</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>         <span class="s2">"""</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="s2">         path, target = self.samples[index]</span>
+<span class="ne">--&gt; </span><span class="mi">230</span><span class="s2">         sample = self.loader(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="s2">         if self.transform is not None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span><span class="s2">             sample = self.transform(sample)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/transforms.py</span> in <span class="ni">__call__</span><span class="nt">(self, img)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">94</span>             <span class="n">img</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>         <span class="k">return</span> <span class="n">img</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/transforms.py</span> in <span class="ni">forward</span><span class="nt">(self, tensor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>             <span class="n">Tensor</span><span class="p">:</span> <span class="n">Normalized</span> <span class="n">Tensor</span> <span class="n">image</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="s2">"""</span>
-<span class="ne">--&gt; </span><span class="mi">269</span><span class="s2">         return F.normalize(tensor, self.mean, self.std, self.inplace)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/datasets/folder.py</span> in <span class="ni">default_loader</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2">         return accimage_loader(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s2">     else:</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="s2">         return pil_loader(path)</span>
 <span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2">     def __repr__(self) -&gt; str:</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2"> </span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/functional.py</span> in <span class="ni">normalize</span><span class="nt">(tensor, mean, std, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span><span class="s2">         raise TypeError(f"img should be Tensor Image. Got {type(tensor)}")</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">360</span><span class="s2">     return F_t.normalize(tensor, mean=mean, std=std, inplace=inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span><span class="s2"> </span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/datasets/folder.py</span> in <span class="ni">pil_loader</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span><span class="s2">     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span><span class="s2">     with open(path, "rb") as f:</span>
+<span class="ne">--&gt; </span><span class="mi">248</span><span class="s2">         img = Image.open(f)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span><span class="s2">         return img.convert("RGB")</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="s2"> </span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/functional_tensor.py</span> in <span class="ni">normalize</span><span class="nt">(tensor, mean, std, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span><span class="s2">     mean = torch.as_tensor(mean, dtype=dtype, device=tensor.device)</span>
-<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="s2">     std = torch.as_tensor(std, dtype=dtype, device=tensor.device)</span>
-<span class="ne">--&gt; </span><span class="mi">953</span><span class="s2">     if (std == 0).any():</span>
-<span class="g g-Whitespace">    </span><span class="mi">954</span><span class="s2">         raise ValueError(f"std evaluated to zero after conversion to </span><span class="si">{dtype}</span><span class="s2">, leading to division by zero.")</span>
-<span class="g g-Whitespace">    </span><span class="mi">955</span><span class="s2">     if mean.ndim == 1:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/Image.py</span> in <span class="ni">open</span><span class="nt">(fp, mode, formats)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3131</span><span class="s2">         return None</span>
+<span class="g g-Whitespace">   </span><span class="mi">3132</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">3133</span><span class="s2">     im = _open_core(fp, filename, prefix, formats)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3134</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3135</span><span class="s2">     if im is None:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/Image.py</span> in <span class="ni">_open_core</span><span class="nt">(fp, filename, prefix, formats)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3117</span><span class="s2">                 elif result:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3118</span><span class="s2">                     fp.seek(0)</span>
+<span class="ne">-&gt; </span><span class="mi">3119</span><span class="s2">                     im = factory(fp, filename)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3120</span><span class="s2">                     _decompression_bomb_check(im.size)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3121</span><span class="s2">                     return im</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/JpegImagePlugin.py</span> in <span class="ni">jpeg_factory</span><span class="nt">(fp, filename)</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span><span class="s2"> # Factory for making JPEG and MPO instances</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span><span class="s2"> def jpeg_factory(fp=None, filename=None):</span>
+<span class="ne">--&gt; </span><span class="mi">799</span><span class="s2">     im = JpegImageFile(fp, filename)</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span><span class="s2">     try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="s2">         mpheader = im._getmp()</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/ImageFile.py</span> in <span class="ni">__init__</span><span class="nt">(self, fp, filename)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span><span class="s2">         try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span><span class="s2">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">116</span><span class="s2">                 self._open()</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="s2">             except (</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="s2">                 IndexError,  # end of data</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/JpegImagePlugin.py</span> in <span class="ni">_open</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                 name, description, handler = MARKER[i]</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span><span class="s2">                 if handler is not None:</span>
+<span class="ne">--&gt; </span><span class="mi">380</span><span class="s2">                     handler(self, i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">                 if i == 0xFFDA:  # start of scan</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span><span class="s2">                     rawmode = self.mode</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/PIL/JpegImagePlugin.py</span> in <span class="ni">DQT</span><span class="nt">(self, marker)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span><span class="s2">             raise SyntaxError("bad quantization table marker")</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span><span class="s2">         data = array.array("B" if precision == 1 else "H", s[1:qt_length])</span>
+<span class="ne">--&gt; </span><span class="mi">256</span><span class="s2">         if sys.byteorder == "little" and precision &gt; 1:</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span><span class="s2">             data.byteswap()  # the values are always big-endian</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span><span class="s2">         self.quantization[v &amp; 15] = [data[i] for i in zigzag_index]</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2802,13 +2823,13 @@ and we’d like a preprocessing that:</p></li>
 <div class="section" id="xavier-initialization">
 <h2>Xavier initialization<a class="headerlink" href="#xavier-initialization" title="Permalink to this headline">¶</a></h2>
 <p>Let us look at the scale distribution of an output (e.g., a hidden variable)  <span class="math notranslate nohighlight">\(o_i\)</span> for some fully-connected layer without nonlinearities. With <span class="math notranslate nohighlight">\(n_{in}\)</span>  inputs (<span class="math notranslate nohighlight">\(x_j\)</span>)  and their associated weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>  for this layer. Then an output is given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9c905bd-0bac-4cf1-ac5a-965d86025496">
-<span class="eqno">(43)<a class="headerlink" href="#equation-e9c905bd-0bac-4cf1-ac5a-965d86025496" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59a48288-fc2e-4cc8-9534-cecfae475243">
+<span class="eqno">(43)<a class="headerlink" href="#equation-59a48288-fc2e-4cc8-9534-cecfae475243" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   o_{i} = \sum_{j=1}^{n_\mathrm{in}} w_{ij} x_j
 \end{equation}\]</div>
 <p>The weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>  are all drawn independently from the same distribution. Furthermore, let us assume that this distribution has zero mean and variance  <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Note that this does not mean that the distribution has to be Gaussian, just that the mean and variance need to exist. For now, let us assume that the inputs to the layer  <span class="math notranslate nohighlight">\(x_j\)</span> also have zero mean and variance  <span class="math notranslate nohighlight">\(\gamma^2\)</span>  and that they are independent of <span class="math notranslate nohighlight">\(w_{ij}\)</span> and independent of each other. In this case, we can compute the mean and variance of <span class="math notranslate nohighlight">\(o_i\)</span> as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b64d7f39-fe52-4acd-8603-005f313e3869">
-<span class="eqno">(44)<a class="headerlink" href="#equation-b64d7f39-fe52-4acd-8603-005f313e3869" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5335e067-3902-43aa-9f27-eb428c1a4f06">
+<span class="eqno">(44)<a class="headerlink" href="#equation-5335e067-3902-43aa-9f27-eb428c1a4f06" title="Permalink to this equation">¶</a></span>\[\begin{align}
   E[o_i] &amp;= \sum_{j=1}^{n_\mathrm{in}} E[w_{ij} x_j] \\ \\
   &amp;= \sum_{j=1}^{n_\mathrm{in}} E[w_{ij}] E[x_j] = 0, \\ \\ \\
   \mathrm{Var}[o_i] &amp;= E[o_i^2] - (E[o_i])^2 \\ \\
@@ -2818,20 +2839,20 @@ and we’d like a preprocessing that:</p></li>
 \end{align}\]</div>
 <br/>
 <p>One way to keep the variance fixed is to set <span class="math notranslate nohighlight">\(n_{in}\sigma^2=1\)</span> . Now consider backpropagation. There we face a similar problem, albeit with gradients being propagated from the layers closer to the output. Using the same reasoning as for forward propagation, we see that the gradients’ variance can blow up unless <span class="math notranslate nohighlight">\(n_{out}\sigma^2=1\)</span> , where  <span class="math notranslate nohighlight">\(n_{out}\)</span> is the number of outputs of this layer. This leaves us in a dilemma: we cannot possibly satisfy both conditions simultaneously. Instead, we simply try to satisfy:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd51f7cc-7f82-471e-8a91-1e94bcf918b1">
-<span class="eqno">(45)<a class="headerlink" href="#equation-dd51f7cc-7f82-471e-8a91-1e94bcf918b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b27a8509-6863-4a84-a59e-dded0ff596b4">
+<span class="eqno">(45)<a class="headerlink" href="#equation-b27a8509-6863-4a84-a59e-dded0ff596b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ or equivalently }
 \sigma = \sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}
 \end{align}\]</div>
 <br/>
 <p>This is the reasoning underlying the now-standard and practically beneficial Xavier initialization, named after the first author of its creators <a class="reference external" href="https://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf">Glorot and Bengio, 2010</a>. Typically, the Xavier initialization samples weights from a Gaussian distribution with zero mean and variance  <span class="math notranslate nohighlight">\(\sigma^2=\frac{2}{(n_{in}+n_{out})}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8568ba74-4da7-4c23-a547-4e470c1da523">
-<span class="eqno">(46)<a class="headerlink" href="#equation-8568ba74-4da7-4c23-a547-4e470c1da523" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-078d8080-080e-45df-a531-81383da53629">
+<span class="eqno">(46)<a class="headerlink" href="#equation-078d8080-080e-45df-a531-81383da53629" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   w_{ij} \sim \mathcal{N} \left (\mu=0, \sigma=\sqrt{\frac{2}{(n_{in}+n_{out})}} \right)
 \end{equation}\]</div>
 <p>We can also adapt Xavier’s intuition to choose the variance when sampling weights from a uniform distribution. Note that the uniform distribution <span class="math notranslate nohighlight">\(\mathcal{U}(−a,a)\)</span> has variance <span class="math notranslate nohighlight">\(\frac{a^2}{3}\)</span>. Plugging this into our condition on <span class="math notranslate nohighlight">\(\sigma^2\)</span> yields the suggestion to initialize according to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-444e809e-87f8-44ee-ab12-9ca1ebaeadbb">
-<span class="eqno">(47)<a class="headerlink" href="#equation-444e809e-87f8-44ee-ab12-9ca1ebaeadbb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f370cd07-eb2f-4ee3-9732-60474fc36f39">
+<span class="eqno">(47)<a class="headerlink" href="#equation-f370cd07-eb2f-4ee3-9732-60474fc36f39" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w_{ij} \sim  \mathcal{U} \left(-\sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}, \sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}\right)
 \end{equation}\]</div>
 <p>This explanation is mainly taken from <a class="reference external" href="https://d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html">here</a>.</p>
@@ -2841,8 +2862,8 @@ w_{ij} \sim  \mathcal{U} \left(-\sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}},
 <h2>Initialization with transfer function<a class="headerlink" href="#initialization-with-transfer-function" title="Permalink to this headline">¶</a></h2>
 <p>Let’s derive the optimal gain for LeakyReLU following similar steps.</p>
 <p>LeakyReLU is described mathematically:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a842c997-3ef8-47ac-b31f-fddc9c845557">
-<span class="eqno">(48)<a class="headerlink" href="#equation-a842c997-3ef8-47ac-b31f-fddc9c845557" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-63843c7f-b862-42c3-9c3d-bdfcfac50305">
+<span class="eqno">(48)<a class="headerlink" href="#equation-63843c7f-b862-42c3-9c3d-bdfcfac50305" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\left\{
   \begin{array}{ll}
     \alpha \cdot x &amp; \text { for } x&lt;0 \\
@@ -2851,15 +2872,15 @@ f(x)=\left\{
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> controls the angle of the negative slope.</p>
 <p>Considering a single layer with this activation function gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a6292c6-5caa-47fa-a400-aac8f0c8f798">
-<span class="eqno">(49)<a class="headerlink" href="#equation-9a6292c6-5caa-47fa-a400-aac8f0c8f798" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d0f57f29-ccb7-41a4-b730-b3e81c57d06b">
+<span class="eqno">(49)<a class="headerlink" href="#equation-d0f57f29-ccb7-41a4-b730-b3e81c57d06b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 o_{i} &amp;= \sum_{j=1}^{n_\mathrm{in}} w_{ij} x_j\\
 z_{i} &amp;= f\left( o_{i} \right)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(z_i\)</span> denotes the activation of node <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>The expectation of the output is still zero, i.e., <span class="math notranslate nohighlight">\(\mathbb{E}[f(o_i)=0]\)</span>, but the variance changes, and assuming that the probability <span class="math notranslate nohighlight">\(P(x &lt; 0) = 0.5\)</span>, we have that:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70a72f0f-c7f0-4065-a96a-ad59a8e73017">
-<span class="eqno">(50)<a class="headerlink" href="#equation-70a72f0f-c7f0-4065-a96a-ad59a8e73017" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e04bfdac-a5ad-491b-919c-f7e3a930f682">
+<span class="eqno">(50)<a class="headerlink" href="#equation-e04bfdac-a5ad-491b-919c-f7e3a930f682" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathrm{Var}[f(o_i)] &amp;= \mathbb{E}[f(o_i)^2] - \left( \mathbb{E}[f(o_i)] \right)^{2} \\ \\
 &amp;= \frac{\mathrm{Var}[o_i] + \alpha^2 \mathrm{Var}[o_i]}{2} \\ \\
 &amp;= \frac{1+\alpha^2}{2}n_\mathrm{in} \sigma^2 \gamma^2
@@ -2867,8 +2888,8 @@ z_{i} &amp;= f\left( o_{i} \right)
 <p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the variance of the distribution of the inputs <span class="math notranslate nohighlight">\(x_j\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is the variance of the distribution of weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>, as before.</p>
 <p>Therefore, following the rest of derivation as before,</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-dacc214c-e1d8-42af-af60-2630a016c410">
-<span class="eqno">(51)<a class="headerlink" href="#equation-dacc214c-e1d8-42af-af60-2630a016c410" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aedb2f5a-9c26-457b-aa16-2e9d706af7ff">
+<span class="eqno">(51)<a class="headerlink" href="#equation-aedb2f5a-9c26-457b-aa16-2e9d706af7ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \sigma = gain\sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}, \, \text{where} \,\, gain = \sqrt{\frac{2}{1+\alpha^2}}
 \end{equation}\]</div>
 <p>As we can see from the derived formula of <span class="math notranslate nohighlight">\(\sigma\)</span>, the transfer function we choose is related with the variance of the distribution of the weights. As the negative slope of the LeakyReLU <span class="math notranslate nohighlight">\(\alpha\)</span> becomes larger, the <span class="math notranslate nohighlight">\(gain\)</span> becomes smaller and thus, the distribution of the weights is narrower. On the other hand, as <span class="math notranslate nohighlight">\(\alpha\)</span> becomes smaller and smaller, the distribution of the weights is wider. Recall that, we initialize our weights, for example, by sampling from a normal distribution with zero mean and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>

@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# @title Download imagenette', 'import requests, tarfile, os', '', "fname = 'imagenette2-320'", "url = 'https://osf.io/mnve4/download'"]
+['# @title Import Alexnet', '# @markdown This cell gives you the `alexnet` model as well as the `input_image` and `input_batch` variables used below', 'import requests, urllib', '', '# Original link: https://s3.amazonaws.com/pytorch/models/alexnet-owt-4df8aa71.pth']
 ...
-['', "  os.remove(fname+'tgz')", '  print("The download has been completed.")', 'else:', '  print("Data has already been downloaded.")']
+['', '# Move the input and model to GPU for speed if available', 'if torch.cuda.is_available():', '  input_batch = input_batch.cuda()', '  alexnet.cuda()']
 -------------------
 
