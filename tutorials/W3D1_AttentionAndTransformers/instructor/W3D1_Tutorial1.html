@@ -674,11 +674,6 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../../projects/ComputerVision/image_alignment.html">
-       Image Alignment
-      </a>
-</li>
-<li class="toctree-l3">
 <a class="reference internal" href="../../../projects/ComputerVision/data_augmentation.html">
        Data Augmentation in image classification models
       </a>
@@ -2389,19 +2384,19 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f0bff8c2f5924e6097d8694e648cf2ad"}
+{"version_major": 2, "version_minor": 0, "model_id": "03657645f14749339bad8f30710fac9e"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "129ea981c87f4992a8d28a1a8005f342"}
+{"version_major": 2, "version_minor": 0, "model_id": "570dfca1a4894a69a0c26b27d103b37c"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and preparing dataset yelp_review_full/yelp_review_full (download: 187.06 MiB, generated: 496.94 MiB, post-processed: Unknown size, total: 684.00 MiB) to data/yelp_review_full/yelp_review_full/1.0.0/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b133e3a570b947638ed336cce823eb3c"}
+{"version_major": 2, "version_minor": 0, "model_id": "6973e36b2ef64b1aaa0c51884b17f1be"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ba325c5abdfc4910a19c0ff3fae1d407"}
+{"version_major": 2, "version_minor": 0, "model_id": "e33b2e337e964913babda1697a17f78d"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_10451</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20503</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">DATASET</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"yelp_review_full"</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span>                                 <span class="n">download_mode</span><span class="o">=</span><span class="s2">"reuse_dataset_if_exists"</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">23</span>                                 <span class="n">cache_dir</span><span class="o">=</span><span class="s1">'data/'</span><span class="p">)</span>
@@ -2437,50 +2432,32 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <span class="g g-Whitespace">    </span><span class="mi">795</span>                 <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_prepare_split</span><span class="nt">(self, split_generator, check_duplicate_keys)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1208</span>                     <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1209</span>                     <span class="n">disable</span><span class="o">=</span><span class="ow">not</span> <span class="n">logging</span><span class="o">.</span><span class="n">is_progress_bar_enabled</span><span class="p">(),</span>
+<span class="ne">-&gt; </span><span class="mi">1210</span>                     <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Generating </span><span class="si">{</span><span class="n">split_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> split"</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1211</span>                 <span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1212</span>                     <span class="n">example</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">encode_example</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1213</span>                     <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1214</span>             <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1215</span>                 <span class="n">num_examples</span><span class="p">,</span> <span class="n">num_bytes</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/arrow_writer.py</span> in <span class="ni">write</span><span class="nt">(self, example, key, writer_batch_size)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">hkey_record</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span> 
-<span class="ne">--&gt; </span><span class="mi">452</span>             <span class="bp">self</span><span class="o">.</span><span class="n">write_examples_on_file</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> 
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">def</span> <span class="nf">check_duplicate_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/notebook.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>             <span class="n">it</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">tqdm_notebook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">258</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>                 <span class="c1"># return super(tqdm...) will not catch exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>                 <span class="k">yield</span> <span class="n">obj</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/arrow_writer.py</span> in <span class="ni">write_examples_on_file</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>             <span class="c1"># Since current_examples contains (example, key) tuples</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>             <span class="n">batch_examples</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_examples</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">410</span>         <span class="bp">self</span><span class="o">.</span><span class="n">write_batch</span><span class="p">(</span><span class="n">batch_examples</span><span class="o">=</span><span class="n">batch_examples</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span>         <span class="bp">self</span><span class="o">.</span><span class="n">current_examples</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span> 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/std.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1195</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1196</span>                 <span class="k">yield</span> <span class="n">obj</span>
+<span class="g g-Whitespace">   </span><span class="mi">1197</span>                 <span class="c1"># Update and possibly print the progressbar.</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/arrow_writer.py</span> in <span class="ni">write_batch</span><span class="nt">(self, batch_examples, writer_batch_size)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>             <span class="n">typed_sequence</span> <span class="o">=</span> <span class="n">OptimizedTypedSequence</span><span class="p">(</span><span class="n">batch_examples</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="n">col_type</span><span class="p">,</span> <span class="n">try_type</span><span class="o">=</span><span class="n">col_try_type</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>             <span class="n">arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">typed_sequence</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">504</span>             <span class="n">inferred_features</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">typed_sequence</span><span class="o">.</span><span class="n">get_inferred_type</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">schema</span> <span class="o">=</span> <span class="n">inferred_features</span><span class="o">.</span><span class="n">arrow_schema</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pa_writer</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">pa_table</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/arrow_writer.py</span> in <span class="ni">get_inferred_type</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>         <span class="s2">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="s2">         if self._inferred_type is None:</span>
-<span class="ne">--&gt; </span><span class="mi">123</span><span class="s2">             self._inferred_type = generate_from_arrow_type(pa.array(self).type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="s2">         return self._inferred_type</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="s2"> </span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pyarrow/array.pxi</span> in <span class="ni">pyarrow.lib.array</span><span class="nt">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pyarrow/array.pxi</span> in <span class="ni">pyarrow.lib._handle_arrow_array_protocol</span><span class="nt">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/arrow_writer.py</span> in <span class="ni">__arrow_array__</span><span class="nt">(self, type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="s2">                 trying_cast_to_python_objects = True</span>
-<span class="ne">--&gt; </span><span class="mi">183</span><span class="s2">                 out = pa.array(cast_to_python_objects(data, only_1d_for_numpy=True))</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="s2">             # use smaller integer precisions if possible</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2">             if self.trying_int_optimization:</span>
+<span class="nn">~/.cache/huggingface/modules/datasets_modules/datasets/yelp_review_full/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf/yelp_review_full.py</span> in <span class="ni">_generate_examples</span><span class="nt">(self, filepath, files)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>                 <span class="n">csvfile</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>                 <span class="k">for</span> <span class="n">id_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>                     <span class="k">yield</span> <span class="n">id_</span><span class="p">,</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>                         <span class="s2">"text"</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -3445,8 +3422,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b770094e-4fd6-40dd-b89b-cdb77ad52832">
-<span class="eqno">(100)<a class="headerlink" href="#equation-b770094e-4fd6-40dd-b89b-cdb77ad52832" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf802ce3-7a95-4b90-ab44-a1fd3be26e1f">
+<span class="eqno">(100)<a class="headerlink" href="#equation-bf802ce3-7a95-4b90-ab44-a1fd3be26e1f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

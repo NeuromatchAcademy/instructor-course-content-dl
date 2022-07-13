@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# @title Loading Animal Faces Data', 'import requests, os', 'from zipfile import ZipFile', '', 'print("Start downloading and unzipping `AnimalFaces` dataset...")']
+['# Set the arguments', 'args2 = {', "    'test_batch_size': 1000,", "    'epochs': 150,", "    'lr': 5e-3,"]
 ...
-["    with ZipFile(fname, 'r') as zfile:", '      zfile.extractall(f".")', '      os.remove(fname)', '', 'print("Download completed.")']
+["plt.ylabel('Accuracy (%)')", "plt.xlabel('Epoch')", 'plt.legend()', 'plt.show()', 'print(f"Maximum Validation Accuracy reached: {max(val_acc_l2reg)}")']
 -------------------
 

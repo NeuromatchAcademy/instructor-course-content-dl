@@ -32,13 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-limb_fits = {}
-for limb in limb_joints.keys():
-  print(f"\n*** FITTING: {limb}")
-
-  joints = limb_joints[limb]
-  limb_fit = testJointModel(joints=joints)
-  limb_fits[limb] = limb_fit
-  print(f"limb performance: {limb_fit['performance']:.2f}%")
+['# Train the model', 'total_step = len(train_loader)', 'loss_list = []', 'acc_list = []', 'for epoch in range(num_epochs):']
+...
+['', '    if (i + 1) % 2 == 0:', '        print(f"Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{total_step}], "', '              f"Loss: {loss.item():.4f}, "', '              f"Accuracy: {((correct / total) * 100):.2f}%")']
 -------------------
 

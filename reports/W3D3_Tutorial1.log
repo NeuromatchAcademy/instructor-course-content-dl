@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# @title Install dependencies', '', '# @markdown Download dataset, modules, and files needed for the tutorial from GitHub.', '', '# @markdown This cell will download the library from OSF, but you can check out the code in https://github.com/colleenjg/neuromatch_ssl_tutorial.git']
+['# to_remove solution', 'def train_supervised_encoder(num_epochs, seed):', '  """', '  Helper function to train the encoder in a supervised way', '']
 ...
-['', '!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet', '', 'from evaltools.airtable import AirtableForm', "atform = AirtableForm('appn7VdPRseSoMXEG','W3D3_T1','https://portal.neuromatchacademy.org/api/redirect/to/c2c522fd-3361-4414-a019-d0d6a6325ebe')"]
+["atform.add_event('Coding Exercise 1.2.1: Training a logistic regression classifier along with an encoder')", '', 'num_epochs = 10 # Proposed number of training epochs', '## Uncomment below to test your function', 'supervised_encoder = train_supervised_encoder(num_epochs=num_epochs, seed=SEED)']
 -------------------
 

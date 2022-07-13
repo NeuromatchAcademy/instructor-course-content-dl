@@ -674,11 +674,6 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../../projects/ComputerVision/image_alignment.html">
-       Image Alignment
-      </a>
-</li>
-<li class="toctree-l3">
 <a class="reference internal" href="../../../projects/ComputerVision/data_augmentation.html">
        Data Augmentation in image classification models
       </a>
@@ -1552,8 +1547,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
-
 </pre></div>
 </div>
 </div>
@@ -1749,8 +1742,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The following provides more data than the video (but can be skipped for now). For more detail, see the sources, the <a class="reference external" href="https://www.deeplearningbook.org/contents/rnn.html">deep learning book</a>, and <a class="reference external" href="https://d2l.ai/chapter_recurrent-neural-networks/rnn.html">d2l.ai</a></p>
 <p>When the recurrent network is trained to perform a task that requires predicting the future from the past, the network typically learns to use a hidden state at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(H_t\)</span> as a kind of lossy summary of the task-relevant aspects of the past sequence of inputs up to <span class="math notranslate nohighlight">\(t\)</span>. This summary is in general necessarily lossy, since it maps an arbitrary length sequence <span class="math notranslate nohighlight">\((X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})\)</span> to a ﬁxed length vector <span class="math notranslate nohighlight">\(H_t\)</span>.</p>
 <p>We can represent the unfolded recurrence after <span class="math notranslate nohighlight">\(t\)</span> steps with a function <span class="math notranslate nohighlight">\(G_t\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-83f3f7d8-af80-4f61-a810-58e66ead02ba">
-<span class="eqno">(97)<a class="headerlink" href="#equation-83f3f7d8-af80-4f61-a810-58e66ead02ba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dee32f2e-26f4-4c87-b373-d8822ba72967">
+<span class="eqno">(97)<a class="headerlink" href="#equation-dee32f2e-26f4-4c87-b373-d8822ba72967" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})=f(H_{t−1}, X_{t}; \theta)
 \end{equation}\]</div>
 <br/>
@@ -1763,13 +1756,13 @@ H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})=f(H_{t−1}, X_{t}; \theta)
 </ul>
 <p>We will now formally write down the equations of a recurrent unit-</p>
 <p>Assume that we have a minibatch of inputs <span class="math notranslate nohighlight">\(X_t \in R^{nxd}\)</span> at time step <span class="math notranslate nohighlight">\(t\)</span> . In other words, for a minibatch of <span class="math notranslate nohighlight">\(n\)</span> sequence examples, each row of <span class="math notranslate nohighlight">\(X_t\)</span>  corresponds to one example at time step <span class="math notranslate nohighlight">\(t\)</span> from the sequence. Next, we denote by <span class="math notranslate nohighlight">\(H_t \in R^{nxh}\)</span> the hidden variable of time step <span class="math notranslate nohighlight">\(t\)</span>. Unlike the MLP, here we save the hidden variable <span class="math notranslate nohighlight">\(H_{t-1}\)</span> from the previous time step and introduce a new weight parameter <span class="math notranslate nohighlight">\(W_{hh} \in R^{hxh}\)</span> to describe how to use the hidden variable of the previous time step in the current time step. Specifically, the calculation of the hidden variable of the current time step is determined by the input of the current time step together with the hidden variable of the previous time step:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49e31c43-f032-4700-a723-c5bd5977ce8d">
-<span class="eqno">(98)<a class="headerlink" href="#equation-49e31c43-f032-4700-a723-c5bd5977ce8d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-75b6af4d-ae3a-4223-9098-6d4637aaffaf">
+<span class="eqno">(98)<a class="headerlink" href="#equation-75b6af4d-ae3a-4223-9098-6d4637aaffaf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t = \phi(X_t W_{xh} + H_{t-1}W_{hh} + b_h)
 \end{equation}\]</div>
 <p>For time step <span class="math notranslate nohighlight">\(t\)</span>, the output of the output layer is similar to the computation in the MLP:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-940aba00-f122-48ca-ace6-76e19fceebfc">
-<span class="eqno">(99)<a class="headerlink" href="#equation-940aba00-f122-48ca-ace6-76e19fceebfc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cda64f54-d32b-4b7b-adab-b0ae60a562fc">
+<span class="eqno">(99)<a class="headerlink" href="#equation-cda64f54-d32b-4b7b-adab-b0ae60a562fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 O_t = H_t W_{hq} + b_q
 \end{equation}\]</div>
 <p>Parameters of the RNN include the weights <span class="math notranslate nohighlight">\(W_{xh} \in R^{dxh}, W_{hh} \in R^{h \times h}\)</span> , and the bias <span class="math notranslate nohighlight">\(b_h \in R^{1 \times h}\)</span> of the hidden layer, together with the weights <span class="math notranslate nohighlight">\(W_{hq} \in R^{h \times q}\)</span> and the bias <span class="math notranslate nohighlight">\(b_q \in R^{1 \times q}\)</span> of the output layer. It is worth mentioning that even at different time steps, RNNs always use these model parameters. Therefore, the parameterization cost of an RNN does not grow as the number of time steps increases.</p>
