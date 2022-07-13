@@ -1243,22 +1243,21 @@ title="Print to PDF"
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
-!pip install dm-env --quiet
-!pip install dm-acme --quiet
-!pip install dm-acme[reverb] --quiet
+# !pip install --upgrade pip setuptools wheel --quiet
+!pip install dm-acme[jax,tensorflow] --quiet
+!pip install dm-acme[envs] --quiet
 !pip install dm-sonnet --quiet
 !pip install trfl --quiet
-!pip install dm-reverb --quiet
-!pip install dm-reverb[tensorflow] --quiet
-!pip install dm-acme[launchpad] --quiet
-!pip install dm-acme[jax,tensorflow] --quiet
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;reverb&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;launchpad&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;tensorflow&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;tensorflow&#39;</span>
+<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+
 </pre></div>
 </div>
 </div>
@@ -1268,7 +1267,6 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">sonnet</span> <span class="k">as</span> <span class="nn">snt</span>
@@ -1281,8 +1279,6 @@ title="Print to PDF"
 <span class="kn">from</span> <span class="nn">acme</span> <span class="kn">import</span> <span class="n">specs</span>
 <span class="kn">from</span> <span class="nn">acme</span> <span class="kn">import</span> <span class="n">wrappers</span>
 <span class="kn">from</span> <span class="nn">acme</span> <span class="kn">import</span> <span class="n">EnvironmentLoop</span>
-<span class="kn">from</span> <span class="nn">acme.tf</span> <span class="kn">import</span> <span class="n">networks</span>
-<span class="kn">from</span> <span class="nn">acme.testing</span> <span class="kn">import</span> <span class="n">fakes</span>
 <span class="kn">from</span> <span class="nn">acme.agents.tf</span> <span class="kn">import</span> <span class="n">dqn</span>
 <span class="kn">from</span> <span class="nn">acme.utils</span> <span class="kn">import</span> <span class="n">loggers</span>
 </pre></div>
@@ -1418,7 +1414,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
 <img alt="../../_images/human_rl_15_1.png" src="../../_images/human_rl_15_1.png" />
 <img alt="../../_images/human_rl_15_2.png" src="../../_images/human_rl_15_2.png" />
 <div class="output text_html">
-  <div id="df-954d3ea3-75ce-4a1d-a493-0f1b91b63e8b">
+  <div id="df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1452,7 +1448,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>0</th>
       <td>sub-1</td>
       <td>1</td>
-      <td>C</td>
+      <td>F</td>
       <td>None</td>
       <td>NaN</td>
       <td>None</td>
@@ -1462,7 +1458,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>1</th>
       <td>sub-1</td>
       <td>2</td>
-      <td>B</td>
+      <td>E</td>
       <td>None</td>
       <td>NaN</td>
       <td>None</td>
@@ -1472,19 +1468,19 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>2</th>
       <td>sub-1</td>
       <td>3</td>
-      <td>B</td>
-      <td>match</td>
-      <td>1.479569</td>
+      <td>D</td>
       <td>non-match</td>
-      <td>0</td>
+      <td>2.334214</td>
+      <td>non-match</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
       <td>sub-1</td>
       <td>4</td>
-      <td>D</td>
+      <td>A</td>
       <td>match</td>
-      <td>0.100424</td>
+      <td>0.215188</td>
       <td>non-match</td>
       <td>0</td>
     </tr>
@@ -1492,16 +1488,16 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>4</th>
       <td>sub-1</td>
       <td>5</td>
-      <td>C</td>
+      <td>A</td>
+      <td>match</td>
+      <td>0.119143</td>
       <td>non-match</td>
-      <td>1.621891</td>
-      <td>non-match</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-954d3ea3-75ce-4a1d-a493-0f1b91b63e8b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1552,12 +1548,12 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
 
       <script>
         const buttonEl =
-          document.querySelector('#df-954d3ea3-75ce-4a1d-a493-0f1b91b63e8b button.colab-df-convert');
+          document.querySelector('#df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-954d3ea3-75ce-4a1d-a493-0f1b91b63e8b');
+          const element = document.querySelector('#df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1931,7 +1927,7 @@ rewards:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2a52ee9d-ff83-4b1f-8ba3-9af774d89d71">
+  <div id="df-96e1bea3-3300-4323-b0c3-c928d4540408">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1962,47 +1958,47 @@ rewards:
     <tr>
       <th>995</th>
       <td>32</td>
-      <td>-10.0</td>
-      <td>322.968725</td>
+      <td>-6.0</td>
+      <td>300.396435</td>
       <td>996</td>
       <td>31872</td>
     </tr>
     <tr>
       <th>996</th>
       <td>32</td>
-      <td>-10.0</td>
-      <td>288.301134</td>
+      <td>-4.0</td>
+      <td>381.083839</td>
       <td>997</td>
       <td>31904</td>
     </tr>
     <tr>
       <th>997</th>
       <td>32</td>
-      <td>-11.0</td>
-      <td>295.394324</td>
+      <td>-8.0</td>
+      <td>403.665982</td>
       <td>998</td>
       <td>31936</td>
     </tr>
     <tr>
       <th>998</th>
       <td>32</td>
-      <td>-10.0</td>
-      <td>282.521408</td>
+      <td>-9.0</td>
+      <td>323.130456</td>
       <td>999</td>
       <td>31968</td>
     </tr>
     <tr>
       <th>999</th>
       <td>32</td>
-      <td>-14.0</td>
-      <td>304.779151</td>
+      <td>-7.0</td>
+      <td>321.238755</td>
       <td>1000</td>
       <td>32000</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2a52ee9d-ff83-4b1f-8ba3-9af774d89d71')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-96e1bea3-3300-4323-b0c3-c928d4540408')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2053,12 +2049,12 @@ rewards:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2a52ee9d-ff83-4b1f-8ba3-9af774d89d71 button.colab-df-convert');
+          document.querySelector('#df-96e1bea3-3300-4323-b0c3-c928d4540408 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2a52ee9d-ff83-4b1f-8ba3-9af774d89d71');
+          const element = document.querySelector('#df-96e1bea3-3300-4323-b0c3-c928d4540408');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
