@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# @title Download and load the dataset', '', 'import requests, tarfile', '', "os.environ['HF_DATASETS_CACHE'] = 'data/'"]
+['# @title Install dependencies', '# @markdown There may be *errors* and/or *warnings* reported during the installation. However, they are to be ignored.', '!pip install tensorboard --quiet', '!pip install transformers --quiet', '!pip install datasets --quiet']
 ...
-["                                cache_dir='data/')", '', '# If the above produces an error uncomment below:', '# DATASET = load_dataset("yelp_review_full", ignore_verifications=True)', 'print(type(DATASET))']
+['', '!pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet', '', 'from evaltools.airtable import AirtableForm', "atform = AirtableForm('appn7VdPRseSoMXEG', 'W3D1_T1','https://portal.neuromatchacademy.org/api/redirect/to/d3f4b811-a40e-42d1-a79a-8becb99ad490')"]
 -------------------
 

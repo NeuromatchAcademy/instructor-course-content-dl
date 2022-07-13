@@ -1539,7 +1539,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "33638176398844faac2f5eb33f78c915"}
+{"version_major": 2, "version_minor": 0, "model_id": "220eb7b073f943808951ef28d21c042a"}
 </script></div>
 </div>
 <p>The algorithms introduced in the previous tutorials are all <em>model-free</em>, as they do not require a model to use or control behavior. In this section, we will study a different class of algorithms called model-based. As we will see next, in contrast to model-free RL, model-based methods use a model to build a policy.</p>
@@ -1847,26 +1847,26 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21025</span><span class="o">/</span><span class="mf">720999810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_14228</span><span class="o">/</span><span class="mf">720999810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">26</span>   <span class="k">for</span> <span class="n">experiment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_experiments</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">results</span> <span class="o">=</span> <span class="n">learn_environment</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">dyna_q_model_update</span><span class="p">,</span> <span class="n">dyna_q_planning</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">28</span>                                 <span class="n">params</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">,</span> <span class="n">n_episodes</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">steps_per_episode</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">experiment</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">30</span> 
 
-<span class="nn">/tmp/ipykernel_21025/1162803831.py</span> in <span class="ni">learn_environment</span><span class="nt">(env, model_updater, planner, params, max_steps, n_episodes, shortcut_episode)</span>
+<span class="nn">/tmp/ipykernel_14228/1162803831.py</span> in <span class="ni">learn_environment</span><span class="nt">(env, model_updater, planner, params, max_steps, n_episodes, shortcut_episode)</span>
 <span class="g g-Whitespace">     </span><span class="mi">95</span> 
 <span class="g g-Whitespace">     </span><span class="mi">96</span>       <span class="c1"># execute planner</span>
 <span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">value</span> <span class="o">=</span> <span class="n">planner</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span> 
 <span class="g g-Whitespace">     </span><span class="mi">99</span>       <span class="k">if</span> <span class="n">next_state</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">/tmp/ipykernel_21025/3234831554.py</span> in <span class="ni">dyna_q_planning</span><span class="nt">(model, value, params)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="c1"># the reward value is not NaN. The outcome of this expression is an Nx2</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="c1"># matrix, where each row is a state and action value, respectively.</span>
-<span class="ne">---&gt; </span><span class="mi">21</span>     <span class="n">candidates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">model</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">])))</span><span class="o">.</span><span class="n">T</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> 
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="c1"># Write an expression for selecting a random row index from our candidates</span>
+<span class="nn">/tmp/ipykernel_14228/3234831554.py</span> in <span class="ni">dyna_q_planning</span><span class="nt">(model, value, params)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> 
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="c1"># Obtain the randomly selected state and action values from the candidates</span>
+<span class="ne">---&gt; </span><span class="mi">27</span>     <span class="n">state</span><span class="p">,</span> <span class="n">action</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> 
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="c1"># Obtain the expected reward and next state from the model</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

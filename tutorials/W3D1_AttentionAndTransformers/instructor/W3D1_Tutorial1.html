@@ -2008,6 +2008,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2087,11 +2090,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'averaged_perceptron_tagger'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'brown'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'webtext'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2272,12 +2270,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
-WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="load-yelp-dataset">
@@ -2370,96 +2362,6 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <span class="c1"># If the above produces an error uncomment below:</span>
 <span class="c1"># DATASET = load_dataset("yelp_review_full", ignore_verifications=True)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">DATASET</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset is being downloading...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download is finished.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Files have been extracted.
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "03657645f14749339bad8f30710fac9e"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "570dfca1a4894a69a0c26b27d103b37c"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and preparing dataset yelp_review_full/yelp_review_full (download: 187.06 MiB, generated: 496.94 MiB, post-processed: Unknown size, total: 684.00 MiB) to data/yelp_review_full/yelp_review_full/1.0.0/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf...
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6973e36b2ef64b1aaa0c51884b17f1be"}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e33b2e337e964913babda1697a17f78d"}
-</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_20503</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">DATASET</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"yelp_review_full"</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>                                 <span class="n">download_mode</span><span class="o">=</span><span class="s2">"reuse_dataset_if_exists"</span><span class="p">,</span>
-<span class="ne">---&gt; </span><span class="mi">23</span>                                 <span class="n">cache_dir</span><span class="o">=</span><span class="s1">'data/'</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> 
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># If the above produces an error uncomment below:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/load.py</span> in <span class="ni">load_dataset</span><span class="nt">(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, ignore_verifications, keep_in_memory, save_infos, revision, use_auth_token, task, streaming, **config_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1682</span>         <span class="n">ignore_verifications</span><span class="o">=</span><span class="n">ignore_verifications</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1683</span>         <span class="n">try_from_hf_gcs</span><span class="o">=</span><span class="n">try_from_hf_gcs</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1684</span>         <span class="n">use_auth_token</span><span class="o">=</span><span class="n">use_auth_token</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1685</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1686</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">download_and_prepare</span><span class="nt">(self, download_config, download_mode, ignore_verifications, try_from_hf_gcs, dl_manager, base_path, use_auth_token, **download_and_prepare_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>                     <span class="k">if</span> <span class="ow">not</span> <span class="n">downloaded_from_gcs</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_download_and_prepare</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">705</span>                             <span class="n">dl_manager</span><span class="o">=</span><span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="o">=</span><span class="n">verify_infos</span><span class="p">,</span> <span class="o">**</span><span class="n">download_and_prepare_kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>                         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>                     <span class="c1"># Sync info</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_download_and_prepare</span><span class="nt">(self, dl_manager, verify_infos)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1219</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1220</span>     <span class="k">def</span> <span class="nf">_download_and_prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1221</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_download_and_prepare</span><span class="p">(</span><span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="p">,</span> <span class="n">check_duplicate_keys</span><span class="o">=</span><span class="n">verify_infos</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="k">def</span> <span class="nf">_get_examples_iterable_for_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">split_generator</span><span class="p">:</span> <span class="n">SplitGenerator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExamplesIterable</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_download_and_prepare</span><span class="nt">(self, dl_manager, verify_infos, **prepare_split_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>             <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>                 <span class="c1"># Prepare split will record examples associated to the split</span>
-<span class="ne">--&gt; </span><span class="mi">793</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_split</span><span class="p">(</span><span class="n">split_generator</span><span class="p">,</span> <span class="o">**</span><span class="n">prepare_split_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>             <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>                 <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_prepare_split</span><span class="nt">(self, split_generator, check_duplicate_keys)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1208</span>                     <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1209</span>                     <span class="n">disable</span><span class="o">=</span><span class="ow">not</span> <span class="n">logging</span><span class="o">.</span><span class="n">is_progress_bar_enabled</span><span class="p">(),</span>
-<span class="ne">-&gt; </span><span class="mi">1210</span>                     <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Generating </span><span class="si">{</span><span class="n">split_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> split"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1211</span>                 <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1212</span>                     <span class="n">example</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">encode_example</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/notebook.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span>             <span class="n">it</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">tqdm_notebook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">258</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>                 <span class="c1"># return super(tqdm...) will not catch exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>                 <span class="k">yield</span> <span class="n">obj</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/std.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1193</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1194</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1195</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1196</span>                 <span class="k">yield</span> <span class="n">obj</span>
-<span class="g g-Whitespace">   </span><span class="mi">1197</span>                 <span class="c1"># Update and possibly print the progressbar.</span>
-
-<span class="nn">~/.cache/huggingface/modules/datasets_modules/datasets/yelp_review_full/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf/yelp_review_full.py</span> in <span class="ni">_generate_examples</span><span class="nt">(self, filepath, files)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>                 <span class="n">csvfile</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>                 <span class="k">for</span> <span class="n">id_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>                     <span class="k">yield</span> <span class="n">id_</span><span class="p">,</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>                         <span class="s2">"text"</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -3422,8 +3324,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf802ce3-7a95-4b90-ab44-a1fd3be26e1f">
-<span class="eqno">(100)<a class="headerlink" href="#equation-bf802ce3-7a95-4b90-ab44-a1fd3be26e1f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7aee0f6f-c908-45a4-861a-e862e71cdfc7">
+<span class="eqno">(100)<a class="headerlink" href="#equation-7aee0f6f-c908-45a4-861a-e862e71cdfc7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>
