@@ -3326,8 +3326,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dec8968c-e5f2-4565-86f0-7b9a219cc455">
-<span class="eqno">(100)<a class="headerlink" href="#equation-dec8968c-e5f2-4565-86f0-7b9a219cc455" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ab800fc-8afa-4303-9d76-7993a2c84578">
+<span class="eqno">(100)<a class="headerlink" href="#equation-0ab800fc-8afa-4303-9d76-7993a2c84578" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

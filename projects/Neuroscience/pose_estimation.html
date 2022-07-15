@@ -1197,7 +1197,7 @@ title="Print to PDF"
 <h1>Animal Pose Estimation<a class="headerlink" href="#animal-pose-estimation" title="Permalink to this headline">¶</a></h1>
 <p><strong>By Neuromatch Academy</strong></p>
 <p><strong>Content creators:</strong> Kristin Branson</p>
-<p><strong>Produtction editors:</strong> Spiros Chavlis</p>
+<p><strong>Produtction editors:</strong> Gagana B, Spiros Chavlis</p>
 <p align='center'><img src='https://github.com/NeuromatchAcademy/widgets/blob/master/sponsors.png?raw=True'/></p></div>
 <hr class="docutils" />
 <div class="section" id="objectives">
@@ -1209,9 +1209,9 @@ title="Print to PDF"
 </ol>
 <ul class="simple">
 <li><p>(easy) Data augmentation: It is common to train a network to be robust to certain kinds of perturbations by adding random perturbations to the training data. Try modifying the COCODataset to perform data augmentation. The mmpose toolkit has some data transforms relevant for pose tracking here
-https://github.com/open-mmlab/mmpose/blob/b0acfc423da672e61db75e00df9da106b6ead574/mmpose/datasets/pipelines/top_down_transform.py</p></li>
+<a class="reference external" href="https://github.com/open-mmlab/mmpose/blob/b0acfc423da672e61db75e00df9da106b6ead574/mmpose/datasets/pipelines/top_down_transform.py">https://github.com/open-mmlab/mmpose/blob/b0acfc423da672e61db75e00df9da106b6ead574/mmpose/datasets/pipelines/top_down_transform.py</a></p></li>
 <li><p>(medium) Network architecture: There are tons of networks people have designed for pose estimation. The mmpose toolbox has many networks implemented:
-https://github.com/open-mmlab/mmpose. Can you improve the accuracy with more exotic networks than the UNet? To do this, you should define a new network class, similar to the definition of <a class="reference external" href="https://colab.research.google.com/drive/1SLgOHcgo1bfMDx5wlnLqm05AZe6aVG0l?authuser=1#scrollTo=Yf4vdxN7v9Rz&amp;line=5&amp;uniqifier=1">UNet</a>. If you need a different loss function, you will also need to change the criterion used for training.</p></li>
+<a class="reference external" href="https://github.com/open-mmlab/mmpose">https://github.com/open-mmlab/mmpose</a>. Can you improve the accuracy with more exotic networks than the UNet? To do this, you should define a new network class, similar to the definition of <a class="reference external" href="https://colab.research.google.com/drive/1SLgOHcgo1bfMDx5wlnLqm05AZe6aVG0l?authuser=1#scrollTo=Yf4vdxN7v9Rz&amp;line=5&amp;uniqifier=1">UNet</a>. If you need a different loss function, you will also need to change the criterion used for training.</p></li>
 <li><p>(easy to medium) Optimization algorithm: Feed-forward convolutional networks have been engineered (e.g. by adding batch normalization layers) to be pretty robust to the exact choice of gradient descent algorithm, but there is still room for improvement in this code.</p></li>
 <li><p>Other ideas? Look at the errors the network is making – how might we improve the tracker?</p></li>
 <li><p>(medium) Our training data set was relatively large – 4216 examples. Can we get away with less examples than this? Can we change our algorithm to work better with smaller data sets? One idea to look into is pre-training the network on a different data set.</p></li>
@@ -1221,25 +1221,25 @@ https://github.com/open-mmlab/mmpose. Can you improve the accuracy with more exo
 <li><p>(easy) Train a pose estimator for a different data set.</p></li>
 </ol>
 <ul class="simple">
-<li><p>This Notebook has code for training a fly part tracker. More animal pose data sets can be found here: https://mmpose.readthedocs.io/en/latest/tasks/2d_animal_keypoint.html</p></li>
+<li><p>This Notebook has code for training a fly part tracker. More animal pose data sets can be found here: <a class="reference external" href="https://mmpose.readthedocs.io/en/latest/tasks/2d_animal_keypoint.html">https://mmpose.readthedocs.io/en/latest/tasks/2d_animal_keypoint.html</a></p></li>
 <li><p>You can label your own dataset using animal tracking software like
-DeepLabCut http://www.mackenziemathislab.org/deeplabcut
-or APT http://kristinbranson.github.io/APT/</p></li>
+DeepLabCut <a class="reference external" href="http://www.mackenziemathislab.org/deeplabcut">http://www.mackenziemathislab.org/deeplabcut</a>
+or APT <a class="reference external" href="http://kristinbranson.github.io/APT/">http://kristinbranson.github.io/APT/</a></p></li>
 <li><p>To use a different data set, you might need to make a new Dataset class similar to our COCODataset class.</p></li>
 </ul>
 <ol class="simple">
 <li><p>(medium) Explore how well the network generalizes to data collected in other labs. Can you train a pose estimator that works on lots of different types of data?</p></li>
 <li><p>(easy) Explore using tensorboard with this network. Tensorboard lets you monitor and visualize training, and is an important tool as you develop and debug algorithms. A tutorial on using Tensorboard is here
-https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html
+<a class="reference external" href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html</a>
 A Colab Notebook using tensorboard is here:
-https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/tensorboard_with_pytorch.ipynb</p></li>
+<a class="reference external" href="https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/tensorboard_with_pytorch.ipynb">https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/tensorboard_with_pytorch.ipynb</a></p></li>
 <li><p>(hard) Explore how the network is making its decisions using explainable AI techniques.</p></li>
 </ol>
 <p>Acknowledgments:
 This Notebook was developed by Kristin Branson. It borrows from:</p>
 <ul class="simple">
-<li><p>APT https://github.com/kristinbranson/APT</p></li>
-<li><p>Milesi Alexandre’s UNet implementation https://github.com/milesial/Pytorch-UNet</p></li>
+<li><p>APT <a class="reference external" href="https://github.com/kristinbranson/APT">https://github.com/kristinbranson/APT</a></p></li>
+<li><p>Milesi Alexandre’s UNet implementation <a class="reference external" href="https://github.com/milesial/Pytorch-UNet">https://github.com/milesial/Pytorch-UNet</a></p></li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -1356,11 +1356,11 @@ This Notebook was developed by Kristin Branson. It borrows from:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy version: 1.19.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy version: 1.21.6
 
 CUDA available: True
 
-torch version: 1.9.0+cu102
+torch version: 1.12.0+cu113
 </pre></div>
 </div>
 </div>
@@ -1397,7 +1397,7 @@ torch version: 1.9.0+cu102
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fly pose data have been downloaded.
-Fly pose data have been unzipped.
+Fly pose data already unzipped.
 </pre></div>
 </div>
 </div>
@@ -1409,7 +1409,7 @@ Fly pose data have been unzipped.
 <h1>Mount your gDrive<a class="headerlink" href="#mount-your-gdrive" title="Permalink to this headline">¶</a></h1>
 <p>Get the pose data set. To do this, you need to make a shortcut to a shared Google Drive directory in your Google Drive.</p>
 <ol class="simple">
-<li><p>Go to the shared Google Drive: https://drive.google.com/drive/folders/1a06ZAmQXvUqZZQGI9XWWjABl4vOF8v6Z?usp=sharing</p></li>
+<li><p>Go to the shared Google Drive: <a class="reference external" href="https://drive.google.com/drive/folders/1a06ZAmQXvUqZZQGI9XWWjABl4vOF8v6Z?usp=sharing">https://drive.google.com/drive/folders/1a06ZAmQXvUqZZQGI9XWWjABl4vOF8v6Z?usp=sharing</a></p></li>
 <li><p>Select “Add shortcut to Drive” and select “My Drive”.</p></li>
 </ol>
 <img alt="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/projects/static/Screenshot_AddShortcutToPoseData.png" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/projects/static/Screenshot_AddShortcutToPoseData.png" />
@@ -1873,56 +1873,56 @@ input image size: (181, 181, 1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;image&#39;: tensor([[[[0.8431, 0.8431, 0.8431,  ..., 0.8314, 0.8314, 0.8314],
-          [0.8392, 0.8431, 0.8431,  ..., 0.8314, 0.8353, 0.8314],
-          [0.8471, 0.8471, 0.8431,  ..., 0.8314, 0.8314, 0.8314],
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;image&#39;: tensor([[[[0.8353, 0.8275, 0.8235,  ..., 0.8314, 0.8275, 0.8275],
+          [0.8314, 0.8275, 0.8275,  ..., 0.8275, 0.8314, 0.8314],
+          [0.8275, 0.8314, 0.8275,  ..., 0.8275, 0.8314, 0.8314],
           ...,
-          [0.8510, 0.8510, 0.8471,  ..., 0.8392, 0.8353, 0.8392],
-          [0.8471, 0.8471, 0.8510,  ..., 0.8353, 0.8314, 0.8353],
-          [0.8471, 0.8471, 0.8510,  ..., 0.8392, 0.8353, 0.8392]]],
+          [0.7882, 0.7882, 0.7922,  ..., 0.8000, 0.8039, 0.8000],
+          [0.7804, 0.7882, 0.7882,  ..., 0.8000, 0.8039, 0.7961],
+          [0.7882, 0.7882, 0.7882,  ..., 0.8000, 0.8039, 0.7961]]],
 
 
-        [[[0.8275, 0.8314, 0.8314,  ..., 0.7922, 0.7961, 0.7882],
-          [0.8314, 0.8353, 0.8275,  ..., 0.7922, 0.7922, 0.7843],
-          [0.8275, 0.8314, 0.8235,  ..., 0.8000, 0.7961, 0.7922],
+        [[[0.0000, 0.0000, 0.0000,  ..., 0.8157, 0.8118, 0.8118],
+          [0.0000, 0.0000, 0.0000,  ..., 0.8118, 0.8078, 0.8157],
+          [0.0000, 0.0000, 0.0000,  ..., 0.8235, 0.8118, 0.8078],
           ...,
-          [0.8471, 0.8510, 0.8510,  ..., 0.8118, 0.8118, 0.8118],
-          [0.8431, 0.8431, 0.8471,  ..., 0.8039, 0.8078, 0.8118],
-          [0.8510, 0.8471, 0.8431,  ..., 0.8039, 0.8118, 0.8118]]]]), &#39;landmarks&#39;: tensor([[[ 90.0000,  62.9300],
-         [ 82.7520,  71.7154],
-         [ 96.5891,  71.9350],
-         [ 95.9302,  74.5706],
-         [ 83.4109,  75.0099],
-         [ 90.0000,  92.5807],
-         [ 90.0000, 115.4228],
-         [ 81.4342,  86.4309],
-         [ 74.4059,  88.8469],
-         [ 98.5658,  85.9917],
-         [103.8370,  86.2113],
-         [ 74.8452,  44.4806],
-         [ 62.1063,  95.8752],
-         [ 69.1347, 109.9319],
-         [106.2530, 116.0817],
-         [121.6275,  74.1314],
-         [ 98.5658,  61.3925]],
+          [0.8275, 0.8235, 0.8196,  ..., 0.8392, 0.8471, 0.8392],
+          [0.8275, 0.8235, 0.8235,  ..., 0.8392, 0.8431, 0.8392],
+          [0.8314, 0.8314, 0.8314,  ..., 0.8431, 0.8510, 0.8431]]]]), &#39;landmarks&#39;: tensor([[[ 90.7488,  65.4393],
+         [ 83.2865,  72.8702],
+         [ 96.8077,  73.0938],
+         [ 96.8719,  76.1947],
+         [ 84.1545,  76.3605],
+         [ 90.2214,  91.9388],
+         [ 91.6487, 113.5320],
+         [ 82.6973,  87.1256],
+         [ 74.5618,  90.7494],
+         [ 97.8496,  86.9855],
+         [103.9393,  91.6487],
+         [ 79.6579,  81.4566],
+         [ 71.2644,  98.5434],
+         [ 80.8570, 112.0331],
+         [104.8386, 110.8340],
+         [109.6349,  94.3467],
+         [103.3398,  74.2621]],
 
-        [[ 89.2585,  67.4062],
-         [ 82.8763,  75.0593],
-         [ 96.7689,  73.8698],
-         [ 96.1929,  77.0382],
-         [ 83.8230,  77.0166],
-         [ 89.6741,  92.5389],
-         [ 89.0515, 111.7325],
-         [ 82.9430,  88.5598],
-         [ 73.4377,  90.0000],
-         [ 97.6330,  89.1359],
-         [102.2417,  89.7120],
-         [ 84.9593,  63.7884],
-         [ 59.6074,  88.8010],
-         [ 67.3889, 116.2116],
-         [101.6656, 116.7877],
-         [112.0350,  91.4402],
-         [ 98.2091,  64.0764]]]), &#39;heatmaps&#39;: tensor([[[[0., 0., 0.,  ..., 0., 0., 0.],
+        [[ 89.5554,  69.6067],
+         [ 83.5406,  77.3683],
+         [ 95.4841,  76.6089],
+         [ 95.5981,  79.6650],
+         [ 84.1148,  79.9521],
+         [ 89.5694,  94.5933],
+         [ 88.9952, 110.0958],
+         [ 81.8181,  85.1196],
+         [ 74.0669,  85.6937],
+         [ 97.5386,  86.0347],
+         [104.8119,  87.0003],
+         [ 75.2152,  61.5787],
+         [ 67.4639,  70.1912],
+         [ 63.7318,  99.7608],
+         [107.6556, 107.7992],
+         [111.5985,  71.5912],
+         [108.5169,  61.5787]]]), &#39;heatmaps&#39;: tensor([[[[0., 0., 0.,  ..., 0., 0., 0.],
           [0., 0., 0.,  ..., 0., 0., 0.],
           [0., 0., 0.,  ..., 0., 0., 0.],
           ...,
@@ -2021,7 +2021,7 @@ input image size: (181, 181, 1)
           ...,
           [0., 0., 0.,  ..., 0., 0., 0.],
           [0., 0., 0.,  ..., 0., 0., 0.],
-          [0., 0., 0.,  ..., 0., 0., 0.]]]]), &#39;id&#39;: tensor([1187, 2451])}
+          [0., 0., 0.,  ..., 0., 0., 0.]]]]), &#39;id&#39;: tensor([3186, 2265])}
 </pre></div>
 </div>
 <img alt="../../_images/pose_estimation_21_1.png" src="../../_images/pose_estimation_21_1.png" />
@@ -2240,7 +2240,7 @@ inc: shape = torch.Size([2, 4, 181, 181])
 outc: shape = torch.Size([2, 17, 181, 181])
 </pre></div>
 </div>
-<img alt="../../_images/pose_estimation_24_2.png" src="../../_images/pose_estimation_24_2.png" />
+<img alt="../../_images/pose_estimation_24_1.png" src="../../_images/pose_estimation_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2386,15 +2386,15 @@ outc: shape = torch.Size([2, 17, 181, 181])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 22.393545420607552
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 24.892069824039936
 Saving network state at epoch 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 6.8574152931105345
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 7.0559215631801635
 Saving network state at epoch 2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 6.503829563735053
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss (epoch) = 6.596667634788901
 Saving network state at epoch 3
 </pre></div>
 </div>
