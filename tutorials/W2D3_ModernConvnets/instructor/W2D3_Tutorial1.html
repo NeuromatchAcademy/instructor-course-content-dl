@@ -2133,20 +2133,20 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8bf365bf473a48db8f96581496fe6c78"}
+{"version_major": 2, "version_minor": 0, "model_id": "427574ffa6e049129eaf13805195363c"}
 </script></div>
 </div>
 <p>Images are high dimensional. That is to say that <code class="docutils literal notranslate"><span class="pre">image_length</span></code> * <code class="docutils literal notranslate"><span class="pre">image_width</span></code> * <code class="docutils literal notranslate"><span class="pre">image_channels</span></code> is a big number, and multiplying that big number by a normal sized fully-connected layer leads to a ton of parameters to learn. Yesterday, we learned about convolutional neural networks, one way of working around high dimensionality in images and other domains.</p>
 <p>The widget below (i.e., <em>Interactive Demo 1</em>) calculates the parameters required for a single convolutional or fully connected layer that operates on an image of a certain height and width.</p>
 <p>Recall that, the number of parameters of a convolutional layer <span class="math notranslate nohighlight">\(l\)</span> are calculated as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1553ec1-3d04-4c34-ad7c-ebb4fd280e74">
-<span class="eqno">(83)<a class="headerlink" href="#equation-b1553ec1-3d04-4c34-ad7c-ebb4fd280e74" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6de36421-b638-43b6-a66f-de88d3d4e74a">
+<span class="eqno">(83)<a class="headerlink" href="#equation-6de36421-b638-43b6-a66f-de88d3d4e74a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( H \times W \times K_{l-1} \right) + 1 \right] \times K_l
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(H\)</span> denotes the shape of the height of the filter, <span class="math notranslate nohighlight">\(W\)</span> the shape of the width of the filter, and <span class="math notranslate nohighlight">\(K_l\)</span> denotes the number of the filters in the <span class="math notranslate nohighlight">\(l\)</span>-th layer. The added <span class="math notranslate nohighlight">\(1\)</span> is because of the bias term for each filter.</p>
 <p>While a fully connected layer contains:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00765fbc-9dc8-43d4-87a0-b19b872028f2">
-<span class="eqno">(84)<a class="headerlink" href="#equation-00765fbc-9dc8-43d4-87a0-b19b872028f2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb95671c-6cf6-4483-99ed-7d248e437133">
+<span class="eqno">(84)<a class="headerlink" href="#equation-cb95671c-6cf6-4483-99ed-7d248e437133" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( N_{l-1} \times N_l \right) + 1 \times N_l \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N_l\)</span> denotes the number of nodes in the <span class="math notranslate nohighlight">\(l\)</span>-th layer.</p>
@@ -2401,7 +2401,7 @@ ConvNet parameter count: 7168
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f84a80ebd4264daea3f9a6fb3e1c7181"}
+{"version_major": 2, "version_minor": 0, "model_id": "177f8653114e40ccb91ca9e693f66deb"}
 </script></div>
 </div>
 </div>
@@ -2418,7 +2418,7 @@ ConvNet parameter count: 7168
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "977a3d2dce6b451b88dce52dc23209a9"}
+{"version_major": 2, "version_minor": 0, "model_id": "47acb53d9bd442df84024abede5e93fa"}
 </script></div>
 </div>
 </div>
@@ -2458,9 +2458,9 @@ ConvNet parameter count: 7168
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d1e01ca5c02240b0a275043b885e2980"}
+{"version_major": 2, "version_minor": 0, "model_id": "01a9e0253592475798f612808ac57265"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f0c16d7bc70e478c920e171920fb5c76"}
+{"version_major": 2, "version_minor": 0, "model_id": "2f40582f9b3f4081a4e6a3c24eb45f8b"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2499,7 +2499,7 @@ ConvNet parameter count: 7168
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "093fc8c708bb4695849f3bbb66856ed1"}
+{"version_major": 2, "version_minor": 0, "model_id": "d3770574ca384c57a93ae55a03315b84"}
 </script></div>
 </div>
 </div>
@@ -2547,7 +2547,7 @@ In this section you’ll have the opportunity to play with AlexNet and see the w
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "846f42a6ef0b48749f9256ba47278a6d"}
+{"version_major": 2, "version_minor": 0, "model_id": "c9d7d609b813409087c31d719f6d32cc"}
 </script></div>
 </div>
 </div>
@@ -2614,9 +2614,9 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "af3d27b2e0b44001a0ede3b36b6e9c4b"}
+{"version_major": 2, "version_minor": 0, "model_id": "de1a07f0ba9342c0a1061c14b6362efd"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "fbc15448b8644c10b09467e089fdd651"}
+{"version_major": 2, "version_minor": 0, "model_id": "6f3dc9225f474ebdb9f45c92b7846ce6"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2707,7 +2707,7 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "beffb9e618654f87aa3dcfd366025ea4"}
+{"version_major": 2, "version_minor": 0, "model_id": "2942d8e7ea6946bcbc83c781e43750cf"}
 </script></div>
 </div>
 </div>
@@ -2745,9 +2745,9 @@ What do these filters remind you of?</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "bc68869f8b274ba8b878da58e7cb1730"}
+{"version_major": 2, "version_minor": 0, "model_id": "cfb95dfc00014299ad3f5e1dee04989e"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "28829e9d121e47a48ed0d1a397a7202f"}
+{"version_major": 2, "version_minor": 0, "model_id": "5cd985bc422341918960544f4609f66c"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2779,7 +2779,7 @@ What do these filters remind you of?</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "633d6a50c725469c9f5220c40b140c5a"}
+{"version_major": 2, "version_minor": 0, "model_id": "e9a05f6433804c6fb9b8dc5443e5070f"}
 </script></div>
 </div>
 <p>In this section we’ll be working with a state of the art CNN model called <a class="reference external" href="https://arxiv.org/abs/1512.03385">ResNet</a>. ResNet has two particularly interesting features. First, it uses skip connections to avoid the vanishing gradient problem. Second, each block (collection of layers) in a ResNet can be treated as learning a residual function.</p>
@@ -2817,79 +2817,7 @@ What do these filters remind you of?</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data is being downloaded...
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19691</span><span class="o">/</span><span class="mf">3300316898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>   <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="o">+</span><span class="s1">'tgz'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> 
-<span class="g g-Whitespace">     </span><span class="mi">13</span>   <span class="k">with</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="o">+</span><span class="s1">'tgz'</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">ft</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">content</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">897</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">898</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">899</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s2">""</span>
-<span class="g g-Whitespace">    </span><span class="mi">900</span> 
-<span class="g g-Whitespace">    </span><span class="mi">901</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">generate</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s2">"stream"</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">815</span>                 <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">816</span>                     <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span>                 <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span>                     <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">stream</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>             <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">579</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span> 
-<span class="g g-Whitespace">    </span><span class="mi">581</span>                 <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">520</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">521</span>                 <span class="n">cache_content</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">--&gt; </span><span class="mi">522</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">""</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span>                 <span class="k">if</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>                     <span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>             <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>             <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">465</span>             <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>             <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="c1"># (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">509</span>         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>             <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">589</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span>             <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>                   <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>                   <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>             <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">929</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The download has been completed.
 </pre></div>
 </div>
 </div>
@@ -3995,6 +3923,9 @@ What do these filters remind you of?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/W2D3_Tutorial1_76_0.png" src="../../../_images/W2D3_Tutorial1_76_0.png"/>
+</div>
 </div>
 </div>
 <div class="section" id="eval-imagenette-function">
@@ -4120,6 +4051,83 @@ What do these filters remind you of?</p>
                                        <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
 <span class="n">top_1_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top_1_acc</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
 <span class="n">top_5_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top_5_acc</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "16c1e764da3849759ac4b6c7960c97ac"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "aa8a2b66a19343ffa795f5c5fdc4223d"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_12068</span><span class="o">/</span><span class="mf">2682190146.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>                       <span class="n">imagenette_train_loader</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>                       <span class="n">loss_fn</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>                       <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">top_1_acc</span><span class="p">,</span> <span class="n">top_5_acc</span> <span class="o">=</span> <span class="n">eval_imagenette</span><span class="p">(</span><span class="n">resnet</span><span class="p">,</span>
+
+<span class="nn">/tmp/ipykernel_12068/2576981491.py</span> in <span class="ni">imagenette_train_loop</span><span class="nt">(model, optimizer, train_loader, loss_fn, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>       <span class="n">images</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>       <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">37</span>       <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>       <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>       <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/models/resnet.py</span> in <span class="ni">forward</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span> 
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">285</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_impl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> 
+<span class="g g-Whitespace">    </span><span class="mi">287</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/models/resnet.py</span> in <span class="ni">_forward_impl</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">271</span>         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxpool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> 
+<span class="g g-Whitespace">    </span><span class="mi">273</span>         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/pooling.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>         <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stride</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>                             <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilation</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ceil_mode</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>                             <span class="n">return_indices</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">return_indices</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span> 
+<span class="g g-Whitespace">    </span><span class="mi">166</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_jit_internal.py</span> in <span class="ni">fn</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="k">return</span> <span class="n">if_true</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">423</span>             <span class="k">return</span> <span class="n">if_false</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">424</span> 
+<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="k">if</span> <span class="n">if_true</span><span class="o">.</span><span class="vm">__doc__</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">if_false</span><span class="o">.</span><span class="vm">__doc__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/functional.py</span> in <span class="ni">_max_pool2d</span><span class="nt">(input, kernel_size, stride, padding, dilation, ceil_mode, return_indices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">780</span>     <span class="k">if</span> <span class="n">stride</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">781</span>         <span class="n">stride</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="p">[])</span>
+<span class="ne">--&gt; </span><span class="mi">782</span>     <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">padding</span><span class="p">,</span> <span class="n">dilation</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span> 
+<span class="g g-Whitespace">    </span><span class="mi">784</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

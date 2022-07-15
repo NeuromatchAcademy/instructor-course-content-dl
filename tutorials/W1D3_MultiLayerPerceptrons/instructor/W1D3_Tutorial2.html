@@ -1944,7 +1944,7 @@ If you want to enable it, in the menu under `Runtime` -&gt;
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a437a1f75c7a4c808c7843d1480a6325"}
+{"version_major": 2, "version_minor": 0, "model_id": "08dabdd6ac6a4dd58e0d6f700ea70e9f"}
 </script></div>
 </div>
 </div>
@@ -2138,33 +2138,33 @@ But first, we need a model parameter counter. You could iterate over the model l
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "1e5a8c2caa274c1fa66f4689f6b70ca8"}
+{"version_major": 2, "version_minor": 0, "model_id": "2a1d0e648a0949bf873db2689cd57e1e"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 81.59
 Accuracy on the 800 testing samples: 81.50
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6d541ef3531e469c842b16eaa5cb1338"}
+{"version_major": 2, "version_minor": 0, "model_id": "8d695cb66d5c402d92baac49e41d014f"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 85.03
 Accuracy on the 800 testing samples: 85.88
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "237b17e09ae3410a94e032eaa43c2107"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 89.97
+{"version_major": 2, "version_minor": 0, "model_id": "06e2c47c6e1f43f89f69a09c8e0e524b"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 90.06
 Accuracy on the 800 testing samples: 89.88
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "464151fe12b34d329a1e05f677c7b8b6"}
+{"version_major": 2, "version_minor": 0, "model_id": "43bcb674fa7f496eb0cfc42aaddbb38e"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 85.28
 Accuracy on the 800 testing samples: 86.62
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "69157926ff7f4b6b80243b1aad683b65"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 86.25
-Accuracy on the 800 testing samples: 86.12
+{"version_major": 2, "version_minor": 0, "model_id": "8156e8799c9c45e29c67adb461107882"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 86.22
+Accuracy on the 800 testing samples: 86.25
 </pre></div>
 </div>
 <img alt="../../../_images/W1D3_Tutorial2_34_14.png" src="../../../_images/W1D3_Tutorial2_34_14.png"/>
@@ -2204,9 +2204,9 @@ Accuracy on the 800 testing samples: 86.12
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "3a58b59db45d453b9abd1cdade2a2d6e"}
+{"version_major": 2, "version_minor": 0, "model_id": "ed44928473234191b2d88c1c51934e06"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "080e5956f43d4f4db65088b35619247e"}
+{"version_major": 2, "version_minor": 0, "model_id": "86689d0a268549229b7210209fd7b56e"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2226,8 +2226,8 @@ Accuracy on the 800 testing samples: 86.12
 <h2>Section 1.1: Where Wide Fails<a class="headerlink" href="#section-1-1-where-wide-fails" title="Permalink to this headline">¶</a></h2>
 <p>Let’s use the same spiral dataset generated before with two features. And then add more polynomial features (which makes the first layer wider). And finally, train a single linear layer. We could use the same MLP network with no hidden layers (though it would not be called an MLP anymore!).</p>
 <p>Note that we will add polynomial terms upto <span class="math notranslate nohighlight">\(P=50\)</span> which means that for every <span class="math notranslate nohighlight">\(x_1^n x_2^m\)</span> term, <span class="math notranslate nohighlight">\(n+m\leq P\)</span>. Now it’s fun math exercise to prove why the total number of polynomial features upto <span class="math notranslate nohighlight">\(P\)</span> becomes,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2dc2e06c-efdd-4e61-9f05-9812ac2350f3">
-<span class="eqno">(42)<a class="headerlink" href="#equation-2dc2e06c-efdd-4e61-9f05-9812ac2350f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cee4e5d1-bd44-4cf8-8512-7fac1d74f9c2">
+<span class="eqno">(42)<a class="headerlink" href="#equation-cee4e5d1-bd44-4cf8-8512-7fac1d74f9c2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{# of terms} = \frac{(P+1)(P+2)}{2}
 \end{equation}\]</div>
 <p>Also, we don’t need the polynomial term with degree zero (which is the constatnt term) since <code class="docutils literal notranslate"><span class="pre">nn.Linear</span></code> layers have bias terms. Therefore we will have one fewer polynomial feature.</p>
@@ -2335,7 +2335,7 @@ Accuracy on the 800 testing samples: 86.12
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "dad168d02e02427eaea1320f30153787"}
+{"version_major": 2, "version_minor": 0, "model_id": "64c0eb1ba4ba49d9bb52c47ff9031c8d"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on the 3200 training samples: 69.88
 Accuracy on the 800 testing samples: 72.62
 </pre></div>
@@ -2379,9 +2379,9 @@ Accuracy on the 800 testing samples: 72.62
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a15944643baf4740b0ec8a062ec0571b"}
+{"version_major": 2, "version_minor": 0, "model_id": "02c69d4b2f02476da63f860e8067bfe7"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f399a10f44f1428497407537d7995228"}
+{"version_major": 2, "version_minor": 0, "model_id": "03bd49b3445f44d78a28353179cfb2aa"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2408,7 +2408,7 @@ Accuracy on the 800 testing samples: 72.62
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "65e1d5e5a8c542bfa83773f04ac48bd9"}
+{"version_major": 2, "version_minor": 0, "model_id": "b405fad5157740d59c7da74adc0072ac"}
 </script></div>
 </div>
 </div>
@@ -2603,15 +2603,15 @@ and we’d like a preprocessing that:</p></li>
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "21bacb0fa39a40739a5d8c19db6ddc26"}
+{"version_major": 2, "version_minor": 0, "model_id": "24e245fb2cab43a68346d4a304524c42"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5697</span><span class="o">/</span><span class="mf">70278562.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5659</span><span class="o">/</span><span class="mf">70278562.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">train_test_classification</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                                 <span class="n">img_train_loader</span><span class="p">,</span> <span class="n">img_test_loader</span><span class="p">,</span>
 <span class="ne">----&gt; </span><span class="mi">8</span>                                 <span class="n">num_epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_5697/927545959.py</span> in <span class="ni">train_test_classification</span><span class="nt">(net, criterion, optimizer, train_loader, test_loader, num_epochs, verbose, training_plot, device)</span>
+<span class="nn">/tmp/ipykernel_5659/927545959.py</span> in <span class="ni">train_test_classification</span><span class="nt">(net, criterion, optimizer, train_loader, test_loader, num_epochs, verbose, training_plot, device)</span>
 <span class="g g-Whitespace">     </span><span class="mi">97</span>   <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">)):</span>  <span class="c1"># Loop over the dataset multiple times</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="ne">---&gt; </span><span class="mi">99</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
@@ -2660,19 +2660,26 @@ and we’d like a preprocessing that:</p></li>
 <span class="g g-Whitespace">     </span><span class="mi">95</span>         <span class="k">return</span> <span class="n">img</span>
 <span class="g g-Whitespace">     </span><span class="mi">96</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/transforms.py</span> in <span class="ni">__call__</span><span class="nt">(self, pic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>             <span class="n">Tensor</span><span class="p">:</span> <span class="n">Converted</span> <span class="n">image</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s2">"""</span>
-<span class="ne">--&gt; </span><span class="mi">134</span><span class="s2">         return F.to_tensor(pic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span><span class="s2">     def __repr__(self) -&gt; str:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/functional.py</span> in <span class="ni">to_tensor</span><span class="nt">(pic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span><span class="s2">     if pic.mode == "1":</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span><span class="s2">         img = 255 * img</span>
-<span class="ne">--&gt; </span><span class="mi">168</span><span class="s2">     img = img.view(pic.size[1], pic.size[0], len(pic.getbands()))</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span><span class="s2">     # put it from HWC to CHW format</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span><span class="s2">     img = img.permute((2, 0, 1)).contiguous()</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/transforms.py</span> in <span class="ni">forward</span><span class="nt">(self, tensor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>             <span class="n">Tensor</span><span class="p">:</span> <span class="n">Normalized</span> <span class="n">Tensor</span> <span class="n">image</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="sd">"""</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="sd">         return F.normalize(tensor, self.mean, self.std, self.inplace)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">     def __repr__(self) -&gt; str:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torchvision/transforms/functional.py</span> in <span class="ni">normalize</span><span class="nt">(tensor, mean, std, inplace)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span><span class="sd">         Tensor: Normalized Tensor image.</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="sd">     """</span>
+<span class="ne">--&gt; </span><span class="mi">355</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">is_scripting</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">is_tracing</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="n">_log_api_usage_once</span><span class="p">(</span><span class="n">normalize</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2789,13 +2796,13 @@ and we’d like a preprocessing that:</p></li>
 <div class="section" id="xavier-initialization">
 <h2>Xavier initialization<a class="headerlink" href="#xavier-initialization" title="Permalink to this headline">¶</a></h2>
 <p>Let us look at the scale distribution of an output (e.g., a hidden variable)  <span class="math notranslate nohighlight">\(o_i\)</span> for some fully-connected layer without nonlinearities. With <span class="math notranslate nohighlight">\(n_{in}\)</span>  inputs (<span class="math notranslate nohighlight">\(x_j\)</span>)  and their associated weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>  for this layer. Then an output is given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fbe8e4bc-7148-4878-92fd-3ad1b213b69c">
-<span class="eqno">(43)<a class="headerlink" href="#equation-fbe8e4bc-7148-4878-92fd-3ad1b213b69c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a3c6ab63-f9ec-4780-bd5d-d294c4a428e8">
+<span class="eqno">(43)<a class="headerlink" href="#equation-a3c6ab63-f9ec-4780-bd5d-d294c4a428e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   o_{i} = \sum_{j=1}^{n_\mathrm{in}} w_{ij} x_j
 \end{equation}\]</div>
 <p>The weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>  are all drawn independently from the same distribution. Furthermore, let us assume that this distribution has zero mean and variance  <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Note that this does not mean that the distribution has to be Gaussian, just that the mean and variance need to exist. For now, let us assume that the inputs to the layer  <span class="math notranslate nohighlight">\(x_j\)</span> also have zero mean and variance  <span class="math notranslate nohighlight">\(\gamma^2\)</span>  and that they are independent of <span class="math notranslate nohighlight">\(w_{ij}\)</span> and independent of each other. In this case, we can compute the mean and variance of <span class="math notranslate nohighlight">\(o_i\)</span> as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4331795f-d45b-4849-b2e7-3a639abeb103">
-<span class="eqno">(44)<a class="headerlink" href="#equation-4331795f-d45b-4849-b2e7-3a639abeb103" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-434c2af9-2ec3-4e0d-9a1d-3af76201eebc">
+<span class="eqno">(44)<a class="headerlink" href="#equation-434c2af9-2ec3-4e0d-9a1d-3af76201eebc" title="Permalink to this equation">¶</a></span>\[\begin{align}
   E[o_i] &amp;= \sum_{j=1}^{n_\mathrm{in}} E[w_{ij} x_j] \\ \\
   &amp;= \sum_{j=1}^{n_\mathrm{in}} E[w_{ij}] E[x_j] = 0, \\ \\ \\
   \mathrm{Var}[o_i] &amp;= E[o_i^2] - (E[o_i])^2 \\ \\
@@ -2805,20 +2812,20 @@ and we’d like a preprocessing that:</p></li>
 \end{align}\]</div>
 <br/>
 <p>One way to keep the variance fixed is to set <span class="math notranslate nohighlight">\(n_{in}\sigma^2=1\)</span> . Now consider backpropagation. There we face a similar problem, albeit with gradients being propagated from the layers closer to the output. Using the same reasoning as for forward propagation, we see that the gradients’ variance can blow up unless <span class="math notranslate nohighlight">\(n_{out}\sigma^2=1\)</span> , where  <span class="math notranslate nohighlight">\(n_{out}\)</span> is the number of outputs of this layer. This leaves us in a dilemma: we cannot possibly satisfy both conditions simultaneously. Instead, we simply try to satisfy:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3346a04-e8bb-4362-8d84-a2b879565517">
-<span class="eqno">(45)<a class="headerlink" href="#equation-e3346a04-e8bb-4362-8d84-a2b879565517" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d5c4905d-4c39-44d8-a8c2-09a819c7a4bd">
+<span class="eqno">(45)<a class="headerlink" href="#equation-d5c4905d-4c39-44d8-a8c2-09a819c7a4bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ or equivalently }
 \sigma = \sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}
 \end{align}\]</div>
 <br/>
 <p>This is the reasoning underlying the now-standard and practically beneficial Xavier initialization, named after the first author of its creators <a class="reference external" href="https://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf">Glorot and Bengio, 2010</a>. Typically, the Xavier initialization samples weights from a Gaussian distribution with zero mean and variance  <span class="math notranslate nohighlight">\(\sigma^2=\frac{2}{(n_{in}+n_{out})}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31eac167-dafe-42d4-96c2-bf1d420afc94">
-<span class="eqno">(46)<a class="headerlink" href="#equation-31eac167-dafe-42d4-96c2-bf1d420afc94" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ad9f5043-d764-4853-ae70-82f5a66161f6">
+<span class="eqno">(46)<a class="headerlink" href="#equation-ad9f5043-d764-4853-ae70-82f5a66161f6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   w_{ij} \sim \mathcal{N} \left (\mu=0, \sigma=\sqrt{\frac{2}{(n_{in}+n_{out})}} \right)
 \end{equation}\]</div>
 <p>We can also adapt Xavier’s intuition to choose the variance when sampling weights from a uniform distribution. Note that the uniform distribution <span class="math notranslate nohighlight">\(\mathcal{U}(−a,a)\)</span> has variance <span class="math notranslate nohighlight">\(\frac{a^2}{3}\)</span>. Plugging this into our condition on <span class="math notranslate nohighlight">\(\sigma^2\)</span> yields the suggestion to initialize according to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cc5b8ab-c7d9-454b-8920-2d61404cd778">
-<span class="eqno">(47)<a class="headerlink" href="#equation-8cc5b8ab-c7d9-454b-8920-2d61404cd778" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-242a9cd8-9827-4657-8712-5a0e8878f100">
+<span class="eqno">(47)<a class="headerlink" href="#equation-242a9cd8-9827-4657-8712-5a0e8878f100" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w_{ij} \sim  \mathcal{U} \left(-\sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}, \sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}\right)
 \end{equation}\]</div>
 <p>This explanation is mainly taken from <a class="reference external" href="https://d2l.ai/chapter_multilayer-perceptrons/numerical-stability-and-init.html">here</a>.</p>
@@ -2828,8 +2835,8 @@ w_{ij} \sim  \mathcal{U} \left(-\sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}},
 <h2>Initialization with transfer function<a class="headerlink" href="#initialization-with-transfer-function" title="Permalink to this headline">¶</a></h2>
 <p>Let’s derive the optimal gain for LeakyReLU following similar steps.</p>
 <p>LeakyReLU is described mathematically:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2dd068b6-94b5-41aa-b7ce-1b1367fc8f11">
-<span class="eqno">(48)<a class="headerlink" href="#equation-2dd068b6-94b5-41aa-b7ce-1b1367fc8f11" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a0d56332-8f9c-4de6-aa6f-e935375db322">
+<span class="eqno">(48)<a class="headerlink" href="#equation-a0d56332-8f9c-4de6-aa6f-e935375db322" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\left\{
   \begin{array}{ll}
     \alpha \cdot x &amp; \text { for } x&lt;0 \\
@@ -2838,15 +2845,15 @@ f(x)=\left\{
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> controls the angle of the negative slope.</p>
 <p>Considering a single layer with this activation function gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c95fa8a0-4bf2-45da-bf8d-7fcd744c52fb">
-<span class="eqno">(49)<a class="headerlink" href="#equation-c95fa8a0-4bf2-45da-bf8d-7fcd744c52fb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-02c136be-e0aa-4995-a018-b047bbe968fb">
+<span class="eqno">(49)<a class="headerlink" href="#equation-02c136be-e0aa-4995-a018-b047bbe968fb" title="Permalink to this equation">¶</a></span>\[\begin{align}
 o_{i} &amp;= \sum_{j=1}^{n_\mathrm{in}} w_{ij} x_j\\
 z_{i} &amp;= f\left( o_{i} \right)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(z_i\)</span> denotes the activation of node <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>The expectation of the output is still zero, i.e., <span class="math notranslate nohighlight">\(\mathbb{E}[f(o_i)=0]\)</span>, but the variance changes, and assuming that the probability <span class="math notranslate nohighlight">\(P(x &lt; 0) = 0.5\)</span>, we have that:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ede27e6-58dd-4a05-8db3-f20515eb6c40">
-<span class="eqno">(50)<a class="headerlink" href="#equation-6ede27e6-58dd-4a05-8db3-f20515eb6c40" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c82ff1af-84e9-4fdc-b52a-768aa4c1d336">
+<span class="eqno">(50)<a class="headerlink" href="#equation-c82ff1af-84e9-4fdc-b52a-768aa4c1d336" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathrm{Var}[f(o_i)] &amp;= \mathbb{E}[f(o_i)^2] - \left( \mathbb{E}[f(o_i)] \right)^{2} \\ \\
 &amp;= \frac{\mathrm{Var}[o_i] + \alpha^2 \mathrm{Var}[o_i]}{2} \\ \\
 &amp;= \frac{1+\alpha^2}{2}n_\mathrm{in} \sigma^2 \gamma^2
@@ -2854,8 +2861,8 @@ z_{i} &amp;= f\left( o_{i} \right)
 <p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the variance of the distribution of the inputs <span class="math notranslate nohighlight">\(x_j\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is the variance of the distribution of weights <span class="math notranslate nohighlight">\(w_{ij}\)</span>, as before.</p>
 <p>Therefore, following the rest of derivation as before,</p>
 <br/>
-<div class="amsmath math notranslate nohighlight" id="equation-540a9573-1f45-4009-b9d1-485829847f16">
-<span class="eqno">(51)<a class="headerlink" href="#equation-540a9573-1f45-4009-b9d1-485829847f16" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-99a75c2d-5875-4a32-baf0-9fe8f4330888">
+<span class="eqno">(51)<a class="headerlink" href="#equation-99a75c2d-5875-4a32-baf0-9fe8f4330888" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \sigma = gain\sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}, \, \text{where} \,\, gain = \sqrt{\frac{2}{1+\alpha^2}}
 \end{equation}\]</div>
 <p>As we can see from the derived formula of <span class="math notranslate nohighlight">\(\sigma\)</span>, the transfer function we choose is related with the variance of the distribution of the weights. As the negative slope of the LeakyReLU <span class="math notranslate nohighlight">\(\alpha\)</span> becomes larger, the <span class="math notranslate nohighlight">\(gain\)</span> becomes smaller and thus, the distribution of the weights is narrower. On the other hand, as <span class="math notranslate nohighlight">\(\alpha\)</span> becomes smaller and smaller, the distribution of the weights is wider. Recall that, we initialize our weights, for example, by sampling from a normal distribution with zero mean and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>

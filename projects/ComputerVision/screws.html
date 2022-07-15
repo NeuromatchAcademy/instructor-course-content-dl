@@ -1295,7 +1295,7 @@ title="Print to PDF"
 <div class="section" id="objective">
 <h1>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h1>
 <p>Useful link:
-NMA daily guide to projects - https://deeplearning.neuromatch.io/projects/docs/project_guidance.html</p>
+NMA daily guide to projects - <a class="reference external" href="https://deeplearning.neuromatch.io/projects/docs/project_guidance.html">https://deeplearning.neuromatch.io/projects/docs/project_guidance.html</a></p>
 <p>The overall goal of the project is to learn about object recognition, classification, and detection.
 You’ll start with simple networks, and potentially work up to larger pretained models. Your loss function is to optimize learning, not model performance.</p>
 </div>
@@ -1490,17 +1490,17 @@ Download completed.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mvtec_screws_train.hdict&#39;,
- &#39;mvtec_screws.json&#39;,
- &#39;mvtec_screws_val.json&#39;,
- &#39;mvtec_screws_test.hdict&#39;,
- &#39;mvtec_screws_val.hdict&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;images&#39;,
  &#39;mvtec_screws_train.json&#39;,
- &#39;README_v1.0.txt&#39;,
  &#39;mvtec_screws.hdict&#39;,
- &#39;mvtec_screws_test.json&#39;,
+ &#39;mvtec_screws_train.hdict&#39;,
+ &#39;mvtec_screws.json&#39;,
  &#39;mvtec_screws_splitted.hdict&#39;,
- &#39;images&#39;]
+ &#39;mvtec_screws_val.json&#39;,
+ &#39;mvtec_screws_val.hdict&#39;,
+ &#39;README_v1.0.txt&#39;,
+ &#39;mvtec_screws_test.hdict&#39;,
+ &#39;mvtec_screws_test.json&#39;]
 </pre></div>
 </div>
 </div>
@@ -1719,6 +1719,8 @@ Coordinate system: In comparison to the pixel-centered coordinate-system of HALC
     <span class="n">cat_imgdict</span><span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="s1">&#39;category_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subimg</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 <div class="cell docutils container">
@@ -2039,12 +2041,12 @@ Estimated Total Size (MB): 2.18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before starting: 49.88% of test images correct
-Epoch:0 Train Loss:67.480 Test Losss:240.036 Percent correct: 91.65%
-Epoch:1 Train Loss:42.946 Test Losss:191.455 Percent correct: 94.14%
-Epoch:2 Train Loss:35.324 Test Losss:165.624 Percent correct: 95.39%
-Epoch:3 Train Loss:30.795 Test Losss:150.372 Percent correct: 96.01%
-Epoch:4 Train Loss:27.745 Test Losss:139.937 Percent correct: 96.13%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before starting: 50.37% of test images correct
+Epoch:0 Train Loss:97.973 Test Losss:256.380 Percent correct: 93.27%
+Epoch:1 Train Loss:49.839 Test Losss:197.818 Percent correct: 96.51%
+Epoch:2 Train Loss:39.270 Test Losss:161.713 Percent correct: 97.26%
+Epoch:3 Train Loss:32.547 Test Losss:137.508 Percent correct: 98.38%
+Epoch:4 Train Loss:27.970 Test Losss:120.993 Percent correct: 98.38%
 </pre></div>
 </div>
 </div>
@@ -2065,7 +2067,7 @@ Epoch:4 Train Loss:27.745 Test Losss:139.937 Percent correct: 96.13%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.961% of test images correct
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.984% of test images correct
 </pre></div>
 </div>
 </div>
@@ -2091,7 +2093,7 @@ Epoch:4 Train Loss:27.745 Test Losss:139.937 Percent correct: 96.13%
 </div>
 <div class="section" id="damaged-screw-detection">
 <h2>Damaged screw detection<a class="headerlink" href="#damaged-screw-detection" title="Permalink to this headline">¶</a></h2>
-<p>There’s a dataset with anamolous screws on Kaggle - https://www.kaggle.com/ruruamour/screw-dataset</p>
+<p>There’s a dataset with anamolous screws on Kaggle - <a class="reference external" href="https://www.kaggle.com/ruruamour/screw-dataset">https://www.kaggle.com/ruruamour/screw-dataset</a></p>
 <p>Download and inspect the dataset, then setup a network for classification of damaged or normal screw</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import json, os
 # Here&#39;s a code snippet for downloading from kaggle
@@ -2137,7 +2139,7 @@ Note that not all classes are the same sized, so you’ll have to use larger ima
 <h1>Object detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">¶</a></h1>
 <p>Object classification of fixed sized images with a single item is nice, but for many real world tasks detection of multiple objects throughout an image is crucial. Now we will try to create a network for object detection.</p>
 <p>Here’s a useful intro to some of the different types of object classification tasks:
-https://machinelearningmastery.com/object-recognition-with-deep-learning/</p>
+<a class="reference external" href="https://machinelearningmastery.com/object-recognition-with-deep-learning/">https://machinelearningmastery.com/object-recognition-with-deep-learning/</a></p>
 <p>First start by thinking about how the network could capture the location of multiple objects - a single classifer layer at the end of the network won’t be enough. The <a class="reference external" href="https://arxiv.org/abs/1506.02640">YOLO paper</a> might be a helpful read as well as <a class="reference external" href="https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e">this algorithm comparison</a>.
 Try to implement your own network (keep in mind for a practice training time you won’t be able to use as deep of a network as many of the papers).</p>
 <div class="section" id="network-performance-introspection">
@@ -2173,7 +2175,7 @@ Either classical approaches which <a class="reference external" href="https://sc
 <hr class="docutils" />
 <div class="section" id="useful-links">
 <h1>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
-<p>Library of open 3D cad models of bolts etc.: https://www.bolts-library.org/en/index.html</p>
+<p>Library of open 3D cad models of bolts etc.: <a class="reference external" href="https://www.bolts-library.org/en/index.html">https://www.bolts-library.org/en/index.html</a></p>
 </div>
 
     <script type="text/x-thebe-config">

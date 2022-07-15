@@ -2112,7 +2112,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2f9d29b35c974a6887d6f9497dcf301e"}
+{"version_major": 2, "version_minor": 0, "model_id": "217866eba00d4475bef6125d573f8a87"}
 </script></div>
 </div>
 <p>Download BigGAN (a generative model) and a few standard image datasets</p>
@@ -2220,9 +2220,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "aaba7246cc6a4e06812a377973b68eba"}
+{"version_major": 2, "version_minor": 0, "model_id": "b16b74f218f94737a2f759dd24f223ce"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "340b41dd903c476399f67589da1a4dc2"}
+{"version_major": 2, "version_minor": 0, "model_id": "0b0df937f5b1448780d30cad05210430"}
 </script></div>
 </div>
 </div>
@@ -2259,9 +2259,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ccd5cf6003ba41e6aba787bf37bc344f"}
+{"version_major": 2, "version_minor": 0, "model_id": "5e961de4365441a99e3031e8cbdffc19"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "64c3ffde16244586abb32363ce586684"}
+{"version_major": 2, "version_minor": 0, "model_id": "405317d5a89546bfb519d7e715d10d33"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2421,9 +2421,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e13b00e24ca643d9b14092e9227c2855"}
+{"version_major": 2, "version_minor": 0, "model_id": "3ca601a953f24f8893774684b980792a"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "91c8be749807438a8d850c7abe8c0949"}
+{"version_major": 2, "version_minor": 0, "model_id": "d78ca81fa12a4f20bab8f580f2c49d10"}
 </script></div>
 </div>
 </div>
@@ -2460,9 +2460,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "bf101d88c34d4c50a4c77c1cbecdcf74"}
+{"version_major": 2, "version_minor": 0, "model_id": "18ee6edcb35b4634912debc4af814215"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7163f26501ea4117ae26a73005064142"}
+{"version_major": 2, "version_minor": 0, "model_id": "29b42a8e400e40e784253afe14c985d8"}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -2491,7 +2491,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "51cf319b6bf0442eb3d27839b6148bd4"}
+{"version_major": 2, "version_minor": 0, "model_id": "9f75e77546314b219d0d6e0bd86bf222"}
 </script></div>
 </div>
 <p>In the video, the concept of a latent variable model was introduced. We saw how PCA (principal component analysis) can be extended into a generative model with latent variables called probabilistic PCA (pPCA). For pPCA the latent variables (z in the video) are the projections onto the principal component axes.</p>
@@ -2601,8 +2601,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <p><strong>Step 2</strong>: “Generate” from the pPCA model of the thermometer data.</p>
 <p>Complete the code so it properly generates from the pPCA model. At present we aren’t accounting for the “sensor noise” the sensor noise is the variance that the PC axes isn’t accounting for. Thus, you’ll note that the current output sits on the PC axes and doesn’t look like the original data distribution!!</p>
 <p>Here is the equation for sampling from the pPCA model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6315b3eb-06c5-4041-b677-cb8d70b7716d">
-<span class="eqno">(86)<a class="headerlink" href="#equation-6315b3eb-06c5-4041-b677-cb8d70b7716d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cda5e4e9-f7a3-4362-931f-fdd147a30a47">
+<span class="eqno">(86)<a class="headerlink" href="#equation-cda5e4e9-f7a3-4362-931f-fdd147a30a47" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma^2 \mathbf{I})
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gen_from_pPCA</span><span class="p">(</span><span class="n">noise_var</span><span class="p">,</span> <span class="n">data_mean</span><span class="p">,</span> <span class="n">pc_axes</span><span class="p">,</span> <span class="n">pc_variance</span><span class="p">):</span>
@@ -2728,7 +2728,7 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "29dffa807c4d499d8d5f662556d9a80c"}
+{"version_major": 2, "version_minor": 0, "model_id": "12720e4993f34d4fbe8e702224d9d3d1"}
 </script></div>
 </div>
 <p>Download MNIST and CIFAR10 datasets</p>
@@ -2872,13 +2872,13 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 <div class="section" id="section-3-1-conceptual-introduction-to-autoencoders">
 <h2>Section 3.1: Conceptual introduction to AutoEncoders<a class="headerlink" href="#section-3-1-conceptual-introduction-to-autoencoders" title="Permalink to this headline">¶</a></h2>
 <p>Now we’ll create our first autoencoder. It will reduce images down to <span class="math notranslate nohighlight">\(K\)</span> dimensions. The architecture will be quite simple: the input will be linearly mapped to a single hidden (or latent) layer <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> with <span class="math notranslate nohighlight">\(K\)</span> units, which will then be linearly mapped back to an output that is the same size as the input:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a17a34e-9a27-443c-bf73-6f5d9824b6be">
-<span class="eqno">(87)<a class="headerlink" href="#equation-7a17a34e-9a27-443c-bf73-6f5d9824b6be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6dfc19c9-e85f-4a5e-8934-5f1ea1567487">
+<span class="eqno">(87)<a class="headerlink" href="#equation-6dfc19c9-e85f-4a5e-8934-5f1ea1567487" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \longrightarrow \mathbf{h} \longrightarrow \mathbf{x'}
 \end{equation}\]</div>
 <p>The loss function we’ll use will simply be mean squared error (MSE) quantifying how well the reconstruction (<span class="math notranslate nohighlight">\(\mathbf{x'}\)</span>) matches the original image (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a8720a8-28e9-492e-8d99-114786fb58a5">
-<span class="eqno">(88)<a class="headerlink" href="#equation-3a8720a8-28e9-492e-8d99-114786fb58a5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2fb18694-ffbd-4f8b-b4a3-bf02d47ff8c8">
+<span class="eqno">(88)<a class="headerlink" href="#equation-2fb18694-ffbd-4f8b-b4a3-bf02d47ff8c8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{MSE Loss} = \sum_{i=1}^{N} ||\mathbf{x}_i - \mathbf{x'}_i||^2_2
 \end{equation}\]</div>
 <p>If all goes well, then the AutoEncoder will learn, <strong>end to end</strong>, a good “encoding” or “compression” of inputs to a latent representation (<span class="math notranslate nohighlight">\(\mathbf{x \longrightarrow h}\)</span>) as well as a good “decoding” of that latent representation to a reconstruction of the original input (<span class="math notranslate nohighlight">\(\mathbf{h \longrightarrow x'}\)</span>).</p>
@@ -3146,8 +3146,90 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2df108e4112a4bfa85b921cebebd0cad"}
-</script></div>
+{"version_major": 2, "version_minor": 0, "model_id": "67f071310f884a3fbeb1ef293b398770"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_12267</span><span class="o">/</span><span class="mf">2902376323.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="c1">## Uncomment to test your code</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">lin_ae</span> <span class="o">=</span> <span class="n">LinearAutoEncoder</span><span class="p">(</span><span class="n">data_size</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">80</span> <span class="n">lin_losses</span> <span class="o">=</span> <span class="n">train_autoencoder</span><span class="p">(</span><span class="n">lin_ae</span><span class="p">,</span> <span class="n">train_set</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>   <span class="n">plot_linear_ae</span><span class="p">(</span><span class="n">lin_losses</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_12267/3011766672.py</span> in <span class="ni">train_autoencoder</span><span class="nt">(autoencoder, dataset, device, epochs, batch_size, seed)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>   <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>   <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">'Epoch'</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="k">for</span> <span class="n">im_batch</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>       <span class="n">im_batch</span> <span class="o">=</span> <span class="n">im_batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>       <span class="n">optim</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">__next__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>                 <span class="c1"># TODO(https://github.com/pytorch/pytorch/issues/76750)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="ne">--&gt; </span><span class="mi">652</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_next_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1328</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1329</span>             <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shutdown</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="ne">-&gt; </span><span class="mi">1330</span>             <span class="n">idx</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1331</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_tasks_outstanding</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1332</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_get_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1294</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1295</span>             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1296</span>                 <span class="n">success</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1297</span>                 <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1298</span>                     <span class="k">return</span> <span class="n">data</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/utils/data/dataloader.py</span> in <span class="ni">_try_get_data</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="c1">#   (bool: whether successfully get data, any: data if successful else None)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1134</span>             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span>             <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/queues.py</span> in <span class="ni">get</span><span class="nt">(self, block, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>                 <span class="k">if</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>                     <span class="n">timeout</span> <span class="o">=</span> <span class="n">deadline</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">104</span>                     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>                         <span class="k">raise</span> <span class="n">Empty</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>                 <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">():</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_closed</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">257</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> 
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">_poll</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> 
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="k">def</span> <span class="nf">_poll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">414</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">wait</span><span class="p">([</span><span class="bp">self</span><span class="p">],</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/multiprocessing/connection.py</span> in <span class="ni">wait</span><span class="nt">(object_list, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span> 
+<span class="g g-Whitespace">    </span><span class="mi">920</span>             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">921</span>                 <span class="n">ready</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span>                 <span class="k">if</span> <span class="n">ready</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">923</span>                     <span class="k">return</span> <span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">fileobj</span> <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">events</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ready</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/selectors.py</span> in <span class="ni">select</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>         <span class="n">ready</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">415</span>             <span class="n">fd_event_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span>         <span class="k">except</span> <span class="ne">InterruptedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>             <span class="k">return</span> <span class="n">ready</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="comparison-to-pca">
@@ -3932,25 +4014,25 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 <p><em>Recognition models and density networks</em></p>
 <p>Variational AutoEncoders (VAEs) are a lot like the classic AutoEncoders (AEs), but where we explicitly think about probability distributions. In the language of VAEs, the <strong>encoder</strong> is replaced with a <strong>recognition model</strong>, and the <strong>decoder</strong> is replaced with a <strong>density network</strong>.</p>
 <p>Where in a classic autoencoder the encoder maps from images to a single hidden vector,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b44d1f3-218d-403f-82ef-1a17a0dd8498">
-<span class="eqno">(89)<a class="headerlink" href="#equation-1b44d1f3-218d-403f-82ef-1a17a0dd8498" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4507a6f2-ed5a-4a07-a09d-59e848226070">
+<span class="eqno">(89)<a class="headerlink" href="#equation-4507a6f2-ed5a-4a07-a09d-59e848226070" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{AE}}{\longrightarrow} \mathbf{h} \, ,
 \end{equation}\]</div>
 <p>in a VAE we would say that a recognition model maps from inputs to entire <strong>distributions</strong> over hidden vectors,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d3a5fe0-c58d-46bc-abda-14fc6836ef10">
-<span class="eqno">(90)<a class="headerlink" href="#equation-7d3a5fe0-c58d-46bc-abda-14fc6836ef10" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-045993ca-073b-45a4-8b36-b669423a56f0">
+<span class="eqno">(90)<a class="headerlink" href="#equation-045993ca-073b-45a4-8b36-b669423a56f0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{VAE}}{\longrightarrow} q_{\mathbf{w_e}}(\mathbf{z}) \, ,
 \end{equation}\]</div>
 <p>which we will then sample from. Here <span class="math notranslate nohighlight">\(\mathbf{w_e}\)</span> refers to the weights of the recognition model, which parametarize our distribution generating network. We’ll say more in a moment about what kind of distribution <span class="math notranslate nohighlight">\(q_{\mathbf{w_e}}(\mathbf{z})\)</span> is.
 Part of what makes VAEs work is that the loss function will require good reconstructions of the input not just for a single <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, but <em>on average</em> from samples of <span class="math notranslate nohighlight">\(\mathbf{z} \sim q_{\mathbf{w_e}}(\mathbf{z})\)</span>.</p>
 <p>In the classic autoencoder, we had a decoder which maps from hidden vectors to reconstructions of the input:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c5ee742-de94-49f5-9626-f62b2ed001ed">
-<span class="eqno">(91)<a class="headerlink" href="#equation-4c5ee742-de94-49f5-9626-f62b2ed001ed" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-55be8253-a4db-4db0-bd6f-90e9ab096a0d">
+<span class="eqno">(91)<a class="headerlink" href="#equation-55be8253-a4db-4db0-bd6f-90e9ab096a0d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{h} \overset{\text{AE}}{\longrightarrow} \mathbf{x'} \, .
 \end{equation}\]</div>
 <p>In a density network, reconstructions are expressed in terms of a distribution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f232cf60-6234-42b4-9499-fd50ac2f1fa3">
-<span class="eqno">(92)<a class="headerlink" href="#equation-f232cf60-6234-42b4-9499-fd50ac2f1fa3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7219b0fe-b5f7-49e5-9675-4a72ea853f10">
+<span class="eqno">(92)<a class="headerlink" href="#equation-7219b0fe-b5f7-49e5-9675-4a72ea853f10" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{z} \overset{\text{VAE}}{\longrightarrow} p_{\mathbf{w_d}}(\mathbf{x}|\mathbf{z})
 \end{equation}\]</div>
 <p>where, as above, <span class="math notranslate nohighlight">\(p_{\mathbf{w_d}}(\mathbf{x}|\mathbf{z})\)</span> is defined by mapping <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> through a density network then treating the resulting <span class="math notranslate nohighlight">\(f(\mathbf{z};\mathbf{w_d})\)</span> as the mean of a (Gaussian) distribution over <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Similarly, our reconstruction distribution is parametarized by the weights of the density network.</p>
@@ -3958,13 +4040,13 @@ Part of what makes VAEs work is that the loss function will require good reconst
 <div class="section" id="section-4-2-generating-novel-images-from-the-decoder">
 <h2>Section 4.2: Generating novel images from the decoder<a class="headerlink" href="#section-4-2-generating-novel-images-from-the-decoder" title="Permalink to this headline">¶</a></h2>
 <p>If we isolate the decoder part of the AutoEncoder, what we have is a neural network that takes as input a vector of size <span class="math notranslate nohighlight">\(K\)</span> and produces as output an image that looks something like our training data. Recall that in our earlier notation, we had an input <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> that was mapped to a low-dimensional hidden representation <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> which was then decoded into a reconstruction of the input, <span class="math notranslate nohighlight">\(\mathbf{x'}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47139262-1c90-4afa-8152-bb33f26ee705">
-<span class="eqno">(93)<a class="headerlink" href="#equation-47139262-1c90-4afa-8152-bb33f26ee705" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-67e3c76b-780d-4864-8205-a0117640c1e8">
+<span class="eqno">(93)<a class="headerlink" href="#equation-67e3c76b-780d-4864-8205-a0117640c1e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{encode}}{\longrightarrow} \mathbf{h} \overset{\text{decode}}{\longrightarrow} \mathbf{x'}\, .
 \end{equation}\]</div>
 <p>Partly as a matter of convention, and partly to distinguish where we are going next from the previous section, we’re going to introduce a new variable, <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathbb{R}^K\)</span>, which will take the place of <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>. The key difference is that while <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is produced by the encoder for a particular <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> will be drawn out of thin air from a prior of our choosing:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c566d98e-51b9-4cad-bff7-83671e99e6a6">
-<span class="eqno">(94)<a class="headerlink" href="#equation-c566d98e-51b9-4cad-bff7-83671e99e6a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff9765d7-3f61-4f4f-b193-97e00d9b17ce">
+<span class="eqno">(94)<a class="headerlink" href="#equation-ff9765d7-3f61-4f4f-b193-97e00d9b17ce" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{z} \sim p(\mathbf{z})\\ \mathbf{z} \overset{\text{decode}}{\longrightarrow} \mathbf{x}\, .
 \end{equation}\]</div>
 <p>(Note that it is also common convention to drop the “prime” on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> when it is no longer being thought of as a “reconstruction”).</p>
