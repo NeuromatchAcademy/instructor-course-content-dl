@@ -2384,19 +2384,19 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e9d51b994ee648ae80dafb950ab43844"}
+{"version_major": 2, "version_minor": 0, "model_id": "98df662582b24fb4b2c441510ebae557"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "76ffd0ab9289443bad99e0c4d6916821"}
+{"version_major": 2, "version_minor": 0, "model_id": "78fe5c1b67ef4f7aa51643299c5cee40"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and preparing dataset yelp_review_full/yelp_review_full (download: 187.06 MiB, generated: 496.94 MiB, post-processed: Unknown size, total: 684.00 MiB) to data/yelp_review_full/yelp_review_full/1.0.0/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "1c1c6fd30d2d49308452a089b4d982a1"}
+{"version_major": 2, "version_minor": 0, "model_id": "92a585f05f644c2fa4c1f3f42a5c82f9"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "89f2fd05c11b411581c77f2fad14a575"}
+{"version_major": 2, "version_minor": 0, "model_id": "4904f42ffb6c4bfda5ce70abb5feaca7"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21684</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21615</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">DATASET</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"yelp_review_full"</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span>                                 <span class="n">download_mode</span><span class="o">=</span><span class="s2">"reuse_dataset_if_exists"</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">23</span>                                 <span class="n">cache_dir</span><span class="o">=</span><span class="s1">'data/'</span><span class="p">)</span>
@@ -2432,39 +2432,67 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <span class="g g-Whitespace">    </span><span class="mi">795</span>                 <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_prepare_split</span><span class="nt">(self, split_generator, check_duplicate_keys)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1210</span>                     <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Generating </span><span class="si">{</span><span class="n">split_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> split"</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1208</span>                     <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1209</span>                     <span class="n">disable</span><span class="o">=</span><span class="ow">not</span> <span class="n">logging</span><span class="o">.</span><span class="n">is_progress_bar_enabled</span><span class="p">(),</span>
+<span class="ne">-&gt; </span><span class="mi">1210</span>                     <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Generating </span><span class="si">{</span><span class="n">split_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> split"</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1211</span>                 <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1212</span>                     <span class="n">example</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">encode_example</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1213</span>                     <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1214</span>             <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1212</span>                     <span class="n">example</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">encode_example</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_example</span><span class="nt">(self, example)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1577</span>         <span class="s2">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1578</span><span class="s2">         example = cast_to_python_objects(example)</span>
-<span class="ne">-&gt; </span><span class="mi">1579</span><span class="s2">         return encode_nested_example(self, example)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1580</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1581</span><span class="s2">     def encode_batch(self, batch):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/notebook.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>             <span class="n">it</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">tqdm_notebook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">258</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>                 <span class="c1"># return super(tqdm...) will not catch exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>                 <span class="k">yield</span> <span class="n">obj</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_nested_example</span><span class="nt">(schema, obj, level)</span>
-<span class="nn">   1150                 for k, (sub_schema, sub_obj)</span> in <span class="ni">zip_dict</span><span class="nt">(schema, obj)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1151</span><span class="s2">             }</span>
-<span class="ne">-&gt; </span><span class="mi">1152</span><span class="s2">             if obj is not None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1153</span><span class="s2">             else None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1154</span><span class="s2">         )</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/tqdm/std.py</span> in <span class="ni">__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1195</span>             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1196</span>                 <span class="k">yield</span> <span class="n">obj</span>
+<span class="g g-Whitespace">   </span><span class="mi">1197</span>                 <span class="c1"># Update and possibly print the progressbar.</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1148</span><span class="s2">             {</span>
-<span class="g g-Whitespace">   </span><span class="mi">1149</span><span class="s2">                 k: encode_nested_example(sub_schema, sub_obj, level=level + 1)</span>
-<span class="nn">-&gt; 1150                 for k, (sub_schema, sub_obj)</span> in <span class="ni">zip_dict</span><span class="nt">(schema, obj)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1151</span><span class="s2">             }</span>
-<span class="g g-Whitespace">   </span><span class="mi">1152</span><span class="s2">             if obj is not None</span>
+<span class="nn">~/.cache/huggingface/modules/datasets_modules/datasets/yelp_review_full/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf/yelp_review_full.py</span> in <span class="ni">_generate_examples</span><span class="nt">(self, filepath, files)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>                 <span class="n">csvfile</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>                 <span class="k">for</span> <span class="n">id_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>                     <span class="k">yield</span> <span class="n">id_</span><span class="p">,</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>                         <span class="s2">"text"</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_nested_example</span><span class="nt">(schema, obj, level)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1201</span><span class="s2">     # ClassLabel will convert from string to int, TranslationVariableLanguages does some checks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span><span class="s2">     elif isinstance(schema, (Audio, Image, ClassLabel, TranslationVariableLanguages, Value, _ArrayXD)):</span>
-<span class="ne">-&gt; </span><span class="mi">1203</span><span class="s2">         return schema.encode_example(obj) if obj is not None else None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span><span class="s2">     # Other object should be directly convertible to a native Arrow type (like Translation and Translation)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span><span class="s2">     return obj</span>
+<span class="nn">~/.cache/huggingface/modules/datasets_modules/datasets/yelp_review_full/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf/yelp_review_full.py</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>             <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="n">filepath</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">117</span>                 <span class="n">csvfile</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>                 <span class="k">for</span> <span class="n">id_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tarfile.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> 
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">def</span> <span class="nf">readinto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>         <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="n">b</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)]</span> <span class="o">=</span> <span class="n">buf</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tarfile.py</span> in <span class="ni">read</span><span class="nt">(self, size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">693</span>             <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">fileobj</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">695</span>                 <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fileobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">696</span>                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span>                     <span class="k">raise</span> <span class="n">ReadError</span><span class="p">(</span><span class="s2">"unexpected end of data"</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tarfile.py</span> in <span class="ni">read</span><span class="nt">(self, size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>             <span class="n">buf</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">537</span>             <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="k">return</span> <span class="n">buf</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tarfile.py</span> in <span class="ni">_read</span><span class="nt">(self, size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span>                 <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">554</span>                 <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmp</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>             <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>                 <span class="k">raise</span> <span class="n">ReadError</span><span class="p">(</span><span class="s2">"invalid compressed data"</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -3429,8 +3457,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61304f19-c074-4775-af65-5bbf0904e133">
-<span class="eqno">(100)<a class="headerlink" href="#equation-61304f19-c074-4775-af65-5bbf0904e133" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b622216-dfaf-4596-858d-008a0b374c6c">
+<span class="eqno">(100)<a class="headerlink" href="#equation-0b622216-dfaf-4596-858d-008a0b374c6c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

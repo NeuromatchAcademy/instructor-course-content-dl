@@ -1901,13 +1901,60 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/IPython/utils/_process_posix.py</span> in <span class="ni">system</span><span class="nt">(self, cmd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">157</span>                 <span class="n">child</span> <span class="o">=</span> <span class="n">pexpect</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sh</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">'-c'</span><span class="p">,</span> <span class="n">cmd</span><span class="p">])</span>  <span class="c1"># Vanilla Pexpect</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>             <span class="n">flush</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span>
 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra 'reverb'</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pexpect/pty_spawn.py</span> in <span class="ni">__init__</span><span class="nt">(self, command, args, timeout, maxread, searchwindowsize, logfile, cwd, env, ignore_sighup, echo, preexec_fn, encoding, codec_errors, dimensions, use_poll)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_spawn</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="bp">self</span><span class="o">.</span><span class="n">use_poll</span> <span class="o">=</span> <span class="n">use_poll</span>
 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pexpect/pty_spawn.py</span> in <span class="ni">_spawn</span><span class="nt">(self, command, args, preexec_fn, dimensions)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>         <span class="bp">self</span><span class="o">.</span><span class="n">ptyproc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spawnpty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">304</span>                                      <span class="n">cwd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cwd</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pexpect/pty_spawn.py</span> in <span class="ni">_spawnpty</span><span class="nt">(self, args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="sd">'''Spawn a pty and return an instance of PtyProcess.'''</span>
+<span class="ne">--&gt; </span><span class="mi">315</span>         <span class="k">return</span> <span class="n">ptyprocess</span><span class="o">.</span><span class="n">PtyProcess</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/ptyprocess/ptyprocess.py</span> in <span class="ni">spawn</span><span class="nt">(cls, argv, cwd, env, echo, preexec_fn, dimensions, pass_fds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">exec_err_pipe_write</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">315</span>         <span class="n">exec_err_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">exec_err_pipe_read</span><span class="p">,</span> <span class="mi">4096</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">exec_err_pipe_read</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_22370</span><span class="o">/</span><span class="mf">2471966904.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install typing --quiet'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install einops --quiet'</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install dm-acme[reverb] --quiet'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install dm-acme[jax,tensorflow] --quiet'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install dm-acme[envs] --quiet'</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/ipykernel/zmqshell.py</span> in <span class="ni">system_piped</span><span class="nt">(self, cmd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s2">"_exit_code"</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">633</span>             <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s2">"_exit_code"</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">var_expand</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span> 
+<span class="g g-Whitespace">    </span><span class="mi">635</span>     <span class="c1"># Ensure new system_piped implementation is used</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/IPython/utils/_process_posix.py</span> in <span class="ni">system</span><span class="nt">(self, cmd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>             <span class="c1"># (the character is known as ETX for 'End of Text', see</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="c1"># curses.ascii.ETX).</span>
+<span class="ne">--&gt; </span><span class="mi">173</span>             <span class="n">child</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="c1"># Read and print any more output the program might produce on its</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>             <span class="c1"># way out.</span>
+
+<span class="ne">UnboundLocalError</span>: local variable 'child' referenced before assignment
 </pre></div>
 </div>
 </div>
@@ -3040,8 +3087,8 @@ In other words, the value <span class="math notranslate nohighlight">\(\color{gr
 <p>When introducing function approximations, and neural networks in particular, we need to have a loss to optimize. But looking back at the tabular setting above, you can see that we already have some notion of error: the <strong>TD error</strong>.</p>
 <p>By training our neural network to output values such that the <em>TD error is minimized</em>, we will also satisfy the Bellman Optimality Equation, which is a good sufficient condition to enforce, to obtain an optimal policy.
 Thanks to automatic differentiation, we can just write the TD error as a loss, e.g., with an <span class="math notranslate nohighlight">\(\ell^2\)</span> loss, but others would work too:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf24c11e-e906-43ec-8934-5941506bc7fc">
-<span class="eqno">(119)<a class="headerlink" href="#equation-cf24c11e-e906-43ec-8934-5941506bc7fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ae63f155-cf11-4c63-9fbd-93f83affece0">
+<span class="eqno">(119)<a class="headerlink" href="#equation-ae63f155-cf11-4c63-9fbd-93f83affece0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L(\color{green}w) = \mathbb{E}\left[ \left( \color{green}{r} + \gamma \max_\color{blue}{a'} \color{green}{Q_w}(\color{red}{s'}, \color{blue}{a'}) âˆ’ \color{green}{Q_w}(\color{red}{s}, \color{blue}{a})  \right)^2\right].
 \end{equation}\]</div>
 <p>Then we can compute the gradient with respect to the parameters of the neural network and improve our Q-value approximation incrementally.</p>
@@ -4003,8 +4050,8 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <div class="section" id="section-3-1-policy-gradient">
 <h2>Section 3.1: Policy gradient<a class="headerlink" href="#section-3-1-policy-gradient" title="Permalink to this headline">¶</a></h2>
 <p>Now we will turn to policy gradient methods. Rather than defining the policy in terms of a value function, i.e. <span class="math notranslate nohighlight">\(\color{blue}\pi(\color{red}s) = \arg\max_{\color{blue}a}\color{green}Q(\color{red}s, \color{blue}a)\)</span>, we will directly parameterize the policy and write it as the distribution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6af1cb9d-0308-4d88-b6e9-63a56991b63f">
-<span class="eqno">(120)<a class="headerlink" href="#equation-6af1cb9d-0308-4d88-b6e9-63a56991b63f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-302577d5-b513-49ee-95c1-323a6de4aca7">
+<span class="eqno">(120)<a class="headerlink" href="#equation-302577d5-b513-49ee-95c1-323a6de4aca7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{blue}a_t \sim \color{blue}\pi_{\theta}(\color{blue}a_t|\color{red}s_t).
 \end{equation}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\theta\)</span> represent the parameters of the policy. We will update the policy parameters using gradient ascent to <strong>maximize</strong> expected future reward.</p>
@@ -4014,8 +4061,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <strong>basic idea</strong> is to use probabilistic action choice. If the reward at the end turns out to be high, we make <strong>all</strong> actions in this sequence <strong>more likely</strong> (otherwise, we do the opposite).</p>
 <p>This strategy could reinforce “bad” actions as well, however they will turn out to be part of trajectories with low reward and will likely not get accentuated.</p>
 <p>From the lectures, we know that we need to compute</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58844796-e3c3-46e3-b146-0aff83510c63">
-<span class="eqno">(121)<a class="headerlink" href="#equation-58844796-e3c3-46e3-b146-0aff83510c63" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-48f26a57-e767-433e-85ea-9031c664becb">
+<span class="eqno">(121)<a class="headerlink" href="#equation-48f26a57-e767-433e-85ea-9031c664becb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4024,8 +4071,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\color{green} G_t\)</span> is the sum over future rewards from time <span class="math notranslate nohighlight">\(t\)</span>, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea2394c3-0c32-4050-ac54-1a26714f347f">
-<span class="eqno">(122)<a class="headerlink" href="#equation-ea2394c3-0c32-4050-ac54-1a26714f347f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46e70f7d-6ec0-435f-8f1a-cd5ad0926da9">
+<span class="eqno">(122)<a class="headerlink" href="#equation-46e70f7d-6ec0-435f-8f1a-cd5ad0926da9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4219,8 +4266,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <h4>Reward <span class="math notranslate nohighlight">\(G_t\)</span><a class="headerlink" href="#reward-g-t" title="Permalink to this headline">¶</a></h4>
 <p>We update our policy by taking a sample of the action value function <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> by playing through episodes of the game.  <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> is defined as the expected return by taking action <span class="math notranslate nohighlight">\(a\)</span> in state <span class="math notranslate nohighlight">\(s\)</span> following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>We know that for every step the simulation continues we receive a reward of 1.  We can use this to calculate the policy gradient at each time step, where <span class="math notranslate nohighlight">\(r\)</span> is the reward for a particular state-action pair.  Rather than using the instantaneous reward, <span class="math notranslate nohighlight">\(r\)</span>, we instead use a long term reward <span class="math notranslate nohighlight">\( v_{t} \)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is the discounted sum of all future rewards for the length of the episode.   <span class="math notranslate nohighlight">\(v_{t}\)</span> is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0fe376a4-ddff-4430-a8ff-0acdf72f7646">
-<span class="eqno">(123)<a class="headerlink" href="#equation-0fe376a4-ddff-4430-a8ff-0acdf72f7646" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43e50e3a-98c0-453d-a287-ce3f7d59a54d">
+<span class="eqno">(123)<a class="headerlink" href="#equation-43e50e3a-98c0-453d-a287-ce3f7d59a54d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4231,8 +4278,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="update-policy-equation">
 <h4>Update Policy: equation<a class="headerlink" href="#update-policy-equation" title="Permalink to this headline">¶</a></h4>
 <p>After each episode we apply Monte-Carlo Policy Gradient to improve our policy according to the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24c1ea07-c24a-4426-b88a-381718c60704">
-<span class="eqno">(124)<a class="headerlink" href="#equation-24c1ea07-c24a-4426-b88a-381718c60704" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-17889c96-ee08-46e6-bb78-9fde96517d16">
+<span class="eqno">(124)<a class="headerlink" href="#equation-17889c96-ee08-46e6-bb78-9fde96517d16" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta\theta_t = \alpha\nabla_\theta \, \log \pi_\theta (s_t,a_t)G_t
 \end{equation}\]</div>
 <p>We will then feed our policy history multiplied by our rewards to our optimizer and update the weights of our neural network using stochastic gradient <strong>ascent</strong>.  This should increase the likelihood of actions that got our agent a larger reward.</p>
@@ -4408,8 +4455,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="section-3-2-actor-critic">
 <h2>Section 3.2: Actor-critic<a class="headerlink" href="#section-3-2-actor-critic" title="Permalink to this headline">¶</a></h2>
 <p>Recall the policy gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dea1f014-750b-431e-8b12-124cd2081601">
-<span class="eqno">(125)<a class="headerlink" href="#equation-dea1f014-750b-431e-8b12-124cd2081601" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-57d3f89a-7519-4e14-ae81-07e5fab847bf">
+<span class="eqno">(125)<a class="headerlink" href="#equation-57d3f89a-7519-4e14-ae81-07e5fab847bf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4419,8 +4466,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 \end{equation}\]</div>
 <p>The policy parameters are updated using Monte Carlo technique and uses random samples. This introduces high variability in log probabilities and cumulative reward values. This leads to noisy gradients and can cause unstable learning.</p>
 <p>One way to reduce variance and increase stability is subtracting the cumulative reward by a baseline:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-268a14e0-775e-465f-aa6b-5e9a7197b76f">
-<span class="eqno">(126)<a class="headerlink" href="#equation-268a14e0-775e-465f-aa6b-5e9a7197b76f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bfcd16f2-607b-4530-b462-cf70319ab38a">
+<span class="eqno">(126)<a class="headerlink" href="#equation-bfcd16f2-607b-4530-b462-cf70319ab38a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
