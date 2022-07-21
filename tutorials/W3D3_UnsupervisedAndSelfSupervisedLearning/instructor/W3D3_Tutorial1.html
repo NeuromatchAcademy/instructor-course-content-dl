@@ -29,7 +29,7 @@
 <script src="../../../_static/togglebutton.js"></script>
 <script src="../../../_static/clipboard.min.js"></script>
 <script src="../../../_static/copybutton.js"></script>
-<script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
 <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -2344,7 +2344,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b8bd733bd9cb4124999198c98894061f"}
+{"version_major": 2, "version_minor": 0, "model_id": "4da6256124574de6bfdd7da67bc50955"}
 </script></div>
 </div>
 </div>
@@ -2358,7 +2358,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "4746716521ea40f7b1de1fe26018850b"}
+{"version_major": 2, "version_minor": 0, "model_id": "db599806811841d6bcdd1c2db3b1b727"}
 </script></div>
 </div>
 </div>
@@ -2515,7 +2515,7 @@ Training a classifier directly on the images...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "eb411c9252ae465893fb26f49c3975c0"}
+{"version_major": 2, "version_minor": 0, "model_id": "2b2b590c9b274648bb6a79f28cca1fe6"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
     Training accuracy: 51.81%
     Testing accuracy: 39.55%
@@ -2667,15 +2667,15 @@ Training a supervised encoder and classifier...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "51935160443242029fe182b7cd081b2a"}
+{"version_major": 2, "version_minor": 0, "model_id": "b3cf94a1b49c46579e045f68bdd6c421"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_13440</span><span class="o">/</span><span class="mf">626022344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21963</span><span class="o">/</span><span class="mf">626022344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Proposed number of training epochs</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="c1">## Uncomment below to test your function</span>
 <span class="ne">---&gt; </span><span class="mi">42</span> <span class="n">supervised_encoder</span> <span class="o">=</span> <span class="n">train_supervised_encoder</span><span class="p">(</span><span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_13440/626022344.py</span> in <span class="ni">train_supervised_encoder</span><span class="nt">(num_epochs, seed)</span>
+<span class="nn">/tmp/ipykernel_21963/626022344.py</span> in <span class="ni">train_supervised_encoder</span><span class="nt">(num_epochs, seed)</span>
 <span class="g g-Whitespace">     </span><span class="mi">29</span>       <span class="n">freeze_features</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">30</span>       <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">31</span>       <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># print results</span>
@@ -2683,25 +2683,60 @@ Training a supervised encoder and classifier...
 <span class="g g-Whitespace">     </span><span class="mi">33</span> 
 
 <span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/neuromatch_ssl_tutorial/modules/models.py</span> in <span class="ni">train_classifier</span><span class="nt">(encoder, dataset, train_sampler, test_sampler, num_epochs, fraction_of_labels, batch_size, freeze_features, subset_seed, use_cuda, progress_bar, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>                 <span class="n">features</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>                 <span class="n">features</span> <span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> 
 <span class="g g-Whitespace">    </span><span class="mi">296</span>             <span class="n">predicted_y_logits</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>             <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">predicted_y_logits</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">298</span>             <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>             <span class="n">classification_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>                 <span class="n">create_graph</span><span class="o">=</span><span class="n">create_graph</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">396</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span> 
-<span class="g g-Whitespace">    </span><span class="mi">398</span>     <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors_</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>         <span class="n">allow_unreachable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accumulate_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> 
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span>
+<span class="nn">~/work/instructor-course-content-dl/instructor-course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/instructor/neuromatch_ssl_tutorial/modules/models.py</span> in <span class="ni">forward</span><span class="nt">(self, X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">untrained</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_untrained</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">154</span>         <span class="n">feats_extr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">feats_flat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">feats_extr</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>         <span class="n">feats_proj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_projections</span><span class="p">(</span><span class="n">feats_flat</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/container.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>             <span class="nb">input</span> <span class="o">=</span> <span class="n">module</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">return</span> <span class="nb">input</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/conv.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conv_forward</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> 
+<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">class</span> <span class="nc">Conv3d</span><span class="p">(</span><span class="n">_ConvNd</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/conv.py</span> in <span class="ni">_conv_forward</span><span class="nt">(self, input, weight, bias)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>                             <span class="n">_pair</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span>         <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stride</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">454</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

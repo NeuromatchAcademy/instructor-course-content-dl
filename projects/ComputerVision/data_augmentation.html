@@ -38,7 +38,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -1524,8 +1524,8 @@ GPU is enabled in this notebook.
 <div class="section" id="mixup">
 <h2>Mixup<a class="headerlink" href="#mixup" title="Permalink to this headline">¶</a></h2>
 <p>Mixup is a data augmentation technique that combines pairs of examples via a convex combination of the images and the labels. Given images <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> with labels <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span>, respectively, and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, mixup creates a new image <span class="math notranslate nohighlight">\(\hat{x}\)</span> with label <span class="math notranslate nohighlight">\(\hat{y}\)</span> the following way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ab62bda-638d-488a-a895-1a7870ce511e">
-<span class="eqno">(129)<a class="headerlink" href="#equation-1ab62bda-638d-488a-a895-1a7870ce511e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab9267eb-f237-48d1-b04a-45f9a0e2e5b0">
+<span class="eqno">(129)<a class="headerlink" href="#equation-ab9267eb-f237-48d1-b04a-45f9a0e2e5b0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \hat{x} &amp;= \lambda x_i + (1 - \lambda) x_j \\
 \hat{y} &amp;= \lambda y_i + (1 - \lambda) y_j
 \end{align}\]</div>

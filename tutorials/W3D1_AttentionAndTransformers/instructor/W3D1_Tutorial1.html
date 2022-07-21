@@ -29,7 +29,7 @@
 <script src="../../../_static/togglebutton.js"></script>
 <script src="../../../_static/clipboard.min.js"></script>
 <script src="../../../_static/copybutton.js"></script>
-<script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
 <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -2008,11 +2008,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
-
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -2092,6 +2087,11 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'averaged_perceptron_tagger'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'brown'</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'webtext'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2272,6 +2272,12 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
+WARNING: For this notebook to perform best, if possible, in the menu under `Runtime` -&gt; `Change runtime type.`  select `GPU` 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="load-yelp-dataset">
@@ -2364,6 +2370,103 @@ For detailed structure, see <a class="reference external" href="https://www.yelp
 <span class="c1"># If the above produces an error uncomment below:</span>
 <span class="c1"># DATASET = load_dataset("yelp_review_full", ignore_verifications=True)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">DATASET</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset is being downloading...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download is finished.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Files have been extracted.
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "e9d51b994ee648ae80dafb950ab43844"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "76ffd0ab9289443bad99e0c4d6916821"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading and preparing dataset yelp_review_full/yelp_review_full (download: 187.06 MiB, generated: 496.94 MiB, post-processed: Unknown size, total: 684.00 MiB) to data/yelp_review_full/yelp_review_full/1.0.0/e8e18e19d7be9e75642fc66b198abadb116f73599ec89a69ba5dd8d1e57ba0bf...
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "1c1c6fd30d2d49308452a089b4d982a1"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "89f2fd05c11b411581c77f2fad14a575"}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21684</span><span class="o">/</span><span class="mf">2718299813.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">DATASET</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"yelp_review_full"</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>                                 <span class="n">download_mode</span><span class="o">=</span><span class="s2">"reuse_dataset_if_exists"</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>                                 <span class="n">cache_dir</span><span class="o">=</span><span class="s1">'data/'</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> 
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># If the above produces an error uncomment below:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/load.py</span> in <span class="ni">load_dataset</span><span class="nt">(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, ignore_verifications, keep_in_memory, save_infos, revision, use_auth_token, task, streaming, **config_kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1682</span>         <span class="n">ignore_verifications</span><span class="o">=</span><span class="n">ignore_verifications</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1683</span>         <span class="n">try_from_hf_gcs</span><span class="o">=</span><span class="n">try_from_hf_gcs</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1684</span>         <span class="n">use_auth_token</span><span class="o">=</span><span class="n">use_auth_token</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1685</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1686</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">download_and_prepare</span><span class="nt">(self, download_config, download_mode, ignore_verifications, try_from_hf_gcs, dl_manager, base_path, use_auth_token, **download_and_prepare_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>                     <span class="k">if</span> <span class="ow">not</span> <span class="n">downloaded_from_gcs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_download_and_prepare</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>                             <span class="n">dl_manager</span><span class="o">=</span><span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="o">=</span><span class="n">verify_infos</span><span class="p">,</span> <span class="o">**</span><span class="n">download_and_prepare_kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>                         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>                     <span class="c1"># Sync info</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_download_and_prepare</span><span class="nt">(self, dl_manager, verify_infos)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1219</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1220</span>     <span class="k">def</span> <span class="nf">_download_and_prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1221</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_download_and_prepare</span><span class="p">(</span><span class="n">dl_manager</span><span class="p">,</span> <span class="n">verify_infos</span><span class="p">,</span> <span class="n">check_duplicate_keys</span><span class="o">=</span><span class="n">verify_infos</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="k">def</span> <span class="nf">_get_examples_iterable_for_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">split_generator</span><span class="p">:</span> <span class="n">SplitGenerator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExamplesIterable</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_download_and_prepare</span><span class="nt">(self, dl_manager, verify_infos, **prepare_split_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>             <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>                 <span class="c1"># Prepare split will record examples associated to the split</span>
+<span class="ne">--&gt; </span><span class="mi">793</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_split</span><span class="p">(</span><span class="n">split_generator</span><span class="p">,</span> <span class="o">**</span><span class="n">prepare_split_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>             <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>                 <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/builder.py</span> in <span class="ni">_prepare_split</span><span class="nt">(self, split_generator, check_duplicate_keys)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1210</span>                     <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Generating </span><span class="si">{</span><span class="n">split_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> split"</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1211</span>                 <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1212</span>                     <span class="n">example</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">encode_example</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1213</span>                     <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1214</span>             <span class="k">finally</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_example</span><span class="nt">(self, example)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1577</span>         <span class="s2">"""</span>
+<span class="g g-Whitespace">   </span><span class="mi">1578</span><span class="s2">         example = cast_to_python_objects(example)</span>
+<span class="ne">-&gt; </span><span class="mi">1579</span><span class="s2">         return encode_nested_example(self, example)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1580</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1581</span><span class="s2">     def encode_batch(self, batch):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_nested_example</span><span class="nt">(schema, obj, level)</span>
+<span class="nn">   1150                 for k, (sub_schema, sub_obj)</span> in <span class="ni">zip_dict</span><span class="nt">(schema, obj)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1151</span><span class="s2">             }</span>
+<span class="ne">-&gt; </span><span class="mi">1152</span><span class="s2">             if obj is not None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1153</span><span class="s2">             else None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1154</span><span class="s2">         )</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1148</span><span class="s2">             {</span>
+<span class="g g-Whitespace">   </span><span class="mi">1149</span><span class="s2">                 k: encode_nested_example(sub_schema, sub_obj, level=level + 1)</span>
+<span class="nn">-&gt; 1150                 for k, (sub_schema, sub_obj)</span> in <span class="ni">zip_dict</span><span class="nt">(schema, obj)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1151</span><span class="s2">             }</span>
+<span class="g g-Whitespace">   </span><span class="mi">1152</span><span class="s2">             if obj is not None</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/datasets/features/features.py</span> in <span class="ni">encode_nested_example</span><span class="nt">(schema, obj, level)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1201</span><span class="s2">     # ClassLabel will convert from string to int, TranslationVariableLanguages does some checks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1202</span><span class="s2">     elif isinstance(schema, (Audio, Image, ClassLabel, TranslationVariableLanguages, Value, _ArrayXD)):</span>
+<span class="ne">-&gt; </span><span class="mi">1203</span><span class="s2">         return schema.encode_example(obj) if obj is not None else None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1204</span><span class="s2">     # Other object should be directly convertible to a native Arrow type (like Translation and Translation)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1205</span><span class="s2">     return obj</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -3326,8 +3429,8 @@ Note: the function takes an additional argument `h` (number of heads). You can a
 <p>Self-attention is concerned with relationship between words and is not sensitive to positions or word orderings.
 Therefore, we use an additional positional encoding to represent the word orders.</p>
 <p>There are multiple ways to encode the position. For our purpose to have continuous values of the positions based on binary encoding, let’s use the following implementation of deterministic (as opposed to learned) position encoding using sinusoidal functions.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ab800fc-8afa-4303-9d76-7993a2c84578">
-<span class="eqno">(100)<a class="headerlink" href="#equation-0ab800fc-8afa-4303-9d76-7993a2c84578" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-61304f19-c074-4775-af65-5bbf0904e133">
+<span class="eqno">(100)<a class="headerlink" href="#equation-61304f19-c074-4775-af65-5bbf0904e133" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})\\
 PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
 \end{equation}\]</div>

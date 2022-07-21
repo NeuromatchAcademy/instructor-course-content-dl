@@ -29,7 +29,7 @@
 <script src="../../../_static/togglebutton.js"></script>
 <script src="../../../_static/clipboard.min.js"></script>
 <script src="../../../_static/copybutton.js"></script>
-<script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
 <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -1851,17 +1851,13 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils"/>
 <div class="section" id="tutorial-objectives">
 <h1>Tutorial Objectives<a class="headerlink" href="#tutorial-objectives" title="Permalink to this headline">¶</a></h1>
-<p>This whole notebook contains bonus material to get a better sense of more complex reinforcement learning models as well as real world applications of RL. Previously, we implemented fundemental ideas of RL in basic Python. Here, we will show how these can be implemented using the ACME library by DeepMind.
-By the end of the tutorial, you should be able to:</p>
+<p>This whole notebook contains bonus material to get a better sense of more complex reinforcement learning models as well as real world applications of RL. Previously, we implemented fundemental ideas of RL in basic Python. Here, we will show how these can be implemented using the <a class="reference external" href="https://www.deepmind.com/publications/acme-a-new-framework-for-distributed-reinforcement-learning">Acme</a> library by DeepMind. For the project on GitHub see <a class="reference external" href="https://github.com/deepmind/acme">here</a>.</p>
+<p>By the end of the tutorial, you should be able to:</p>
 <ol class="simple">
-<li><p>aaa</p></li>
-<li><p>bbb</p></li>
-<li><p>ccc</p></li>
-</ol>
-<p>By completing the Bonus sections, you should be able to:</p>
-<ol class="simple">
-<li><p>ddd</p></li>
-<li><p>eee</p></li>
+<li><p>Implement, train, and test a NFQ Agent</p></li>
+<li><p>Use a Deep Q-network</p></li>
+<li><p>Learn the Policy Gradient and the Actor Critic</p></li>
+<li><p>Use RL in real-world applications</p></li>
 </ol>
 <div class="section" id="tutorial-slides">
 <h2>Tutorial slides<a class="headerlink" href="#tutorial-slides" title="Permalink to this headline">¶</a></h2>
@@ -1894,54 +1890,24 @@ By the end of the tutorial, you should be able to:</p>
 <span class="o">!</span>pip install imageio-ffmpeg --quiet
 <span class="o">!</span>pip install gym --quiet
 <span class="o">!</span>pip install enum34 --quiet
-<span class="o">!</span>pip install dm-env --quiet
 <span class="o">!</span>pip install pandas --quiet
 <span class="o">!</span>pip install <span class="nv">grpcio</span><span class="o">==</span><span class="m">1</span>.34.0 --quiet
-<span class="o">!</span>pip install tensorflow --quiet
 <span class="o">!</span>pip install typing --quiet
 <span class="o">!</span>pip install einops --quiet
-<span class="o">!</span>pip install dm-acme --quiet
 <span class="o">!</span>pip install dm-acme<span class="o">[</span>reverb<span class="o">]</span> --quiet
 <span class="o">!</span>pip install dm-acme<span class="o">[</span>jax,tensorflow<span class="o">]</span> --quiet
 <span class="o">!</span>pip install dm-acme<span class="o">[</span>envs<span class="o">]</span> --quiet
-<span class="o">!</span>pip install dm-env --quiet
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/bin/pip", line 5, in &lt;module&gt;
-    from pip._internal.cli.main import main
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/cli/main.py", line 9, in &lt;module&gt;
-    from pip._internal.cli.autocompletion import autocomplete
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/cli/autocompletion.py", line 10, in &lt;module&gt;
-    from pip._internal.cli.main_parser import create_main_parser
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/cli/main_parser.py", line 8, in &lt;module&gt;
-    from pip._internal.cli import cmdoptions
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/cli/cmdoptions.py", line 24, in &lt;module&gt;
-    from pip._internal.cli.parser import ConfigOptionParser
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/cli/parser.py", line 12, in &lt;module&gt;
-    from pip._internal.configuration import Configuration, ConfigurationError
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/configuration.py", line 26, in &lt;module&gt;
-    from pip._internal.utils.logging import getLogger
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/utils/logging.py", line 29, in &lt;module&gt;
-    from pip._internal.utils.misc import ensure_dir
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/utils/misc.py", line 42, in &lt;module&gt;
-    from pip._internal.locations import get_major_minor_version
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/locations/__init__.py", line 14, in &lt;module&gt;
-    from . import _distutils, _sysconfig
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pip/_internal/locations/_distutils.py", line 9, in &lt;module&gt;
-    from distutils.cmd import Command as DistutilsCommand
-  File "/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/distutils/cmd.py", line 9, in &lt;module&gt;
-    from distutils import util, dir_util, file_util, archive_util, dep_util
-  File "&lt;frozen importlib._bootstrap&gt;", line 983, in _find_and_load
-  File "&lt;frozen importlib._bootstrap&gt;", line 967, in _find_and_load_unlocked
-  File "&lt;frozen importlib._bootstrap&gt;", line 677, in _load_unlocked
-  File "&lt;frozen importlib._bootstrap_external&gt;", line 724, in exec_module
-  File "&lt;frozen importlib._bootstrap_external&gt;", line 857, in get_code
-  File "&lt;frozen importlib._bootstrap_external&gt;", line 525, in _compile_bytecode
-KeyboardInterrupt
+<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra 'reverb'</span>
+
 </pre></div>
 </div>
 </div>
@@ -1965,20 +1931,21 @@ KeyboardInterrupt
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span>
+
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<span class="kn">from</span> <span class="nn">torch.distributions</span> <span class="kn">import</span> <span class="n">Categorical</span>
 
 <span class="kn">from</span> <span class="nn">acme</span> <span class="kn">import</span> <span class="n">specs</span>
 <span class="kn">from</span> <span class="nn">acme</span> <span class="kn">import</span> <span class="n">wrappers</span>
 <span class="kn">from</span> <span class="nn">acme.utils</span> <span class="kn">import</span> <span class="n">tree_utils</span>
 <span class="kn">from</span> <span class="nn">acme.utils</span> <span class="kn">import</span> <span class="n">loggers</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
-<span class="kn">from</span> <span class="nn">torch.distributions</span> <span class="kn">import</span> <span class="n">Categorical</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -3073,8 +3040,8 @@ In other words, the value <span class="math notranslate nohighlight">\(\color{gr
 <p>When introducing function approximations, and neural networks in particular, we need to have a loss to optimize. But looking back at the tabular setting above, you can see that we already have some notion of error: the <strong>TD error</strong>.</p>
 <p>By training our neural network to output values such that the <em>TD error is minimized</em>, we will also satisfy the Bellman Optimality Equation, which is a good sufficient condition to enforce, to obtain an optimal policy.
 Thanks to automatic differentiation, we can just write the TD error as a loss, e.g., with an <span class="math notranslate nohighlight">\(\ell^2\)</span> loss, but others would work too:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec88a161-594b-46b0-b848-56526f523db0">
-<span class="eqno">(119)<a class="headerlink" href="#equation-ec88a161-594b-46b0-b848-56526f523db0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cf24c11e-e906-43ec-8934-5941506bc7fc">
+<span class="eqno">(119)<a class="headerlink" href="#equation-cf24c11e-e906-43ec-8934-5941506bc7fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 L(\color{green}w) = \mathbb{E}\left[ \left( \color{green}{r} + \gamma \max_\color{blue}{a'} \color{green}{Q_w}(\color{red}{s'}, \color{blue}{a'}) âˆ’ \color{green}{Q_w}(\color{red}{s}, \color{blue}{a})  \right)^2\right].
 \end{equation}\]</div>
 <p>Then we can compute the gradient with respect to the parameters of the neural network and improve our Q-value approximation incrementally.</p>
@@ -4036,8 +4003,8 @@ But it is a good stepping stone to the more complex agents used today. Here, we 
 <div class="section" id="section-3-1-policy-gradient">
 <h2>Section 3.1: Policy gradient<a class="headerlink" href="#section-3-1-policy-gradient" title="Permalink to this headline">¶</a></h2>
 <p>Now we will turn to policy gradient methods. Rather than defining the policy in terms of a value function, i.e. <span class="math notranslate nohighlight">\(\color{blue}\pi(\color{red}s) = \arg\max_{\color{blue}a}\color{green}Q(\color{red}s, \color{blue}a)\)</span>, we will directly parameterize the policy and write it as the distribution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4d10724-3963-4be1-8e2b-edb30f68e2eb">
-<span class="eqno">(120)<a class="headerlink" href="#equation-d4d10724-3963-4be1-8e2b-edb30f68e2eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6af1cb9d-0308-4d88-b6e9-63a56991b63f">
+<span class="eqno">(120)<a class="headerlink" href="#equation-6af1cb9d-0308-4d88-b6e9-63a56991b63f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{blue}a_t \sim \color{blue}\pi_{\theta}(\color{blue}a_t|\color{red}s_t).
 \end{equation}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\theta\)</span> represent the parameters of the policy. We will update the policy parameters using gradient ascent to <strong>maximize</strong> expected future reward.</p>
@@ -4047,8 +4014,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <p>The <strong>basic idea</strong> is to use probabilistic action choice. If the reward at the end turns out to be high, we make <strong>all</strong> actions in this sequence <strong>more likely</strong> (otherwise, we do the opposite).</p>
 <p>This strategy could reinforce “bad” actions as well, however they will turn out to be part of trajectories with low reward and will likely not get accentuated.</p>
 <p>From the lectures, we know that we need to compute</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6fb985ac-9bfb-4f32-904e-fe5b552538ff">
-<span class="eqno">(121)<a class="headerlink" href="#equation-6fb985ac-9bfb-4f32-904e-fe5b552538ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-58844796-e3c3-46e3-b146-0aff83510c63">
+<span class="eqno">(121)<a class="headerlink" href="#equation-58844796-e3c3-46e3-b146-0aff83510c63" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4057,8 +4024,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\color{green} G_t\)</span> is the sum over future rewards from time <span class="math notranslate nohighlight">\(t\)</span>, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b545a2f-5f38-4f8d-880c-41107333a795">
-<span class="eqno">(122)<a class="headerlink" href="#equation-7b545a2f-5f38-4f8d-880c-41107333a795" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea2394c3-0c32-4050-ac54-1a26714f347f">
+<span class="eqno">(122)<a class="headerlink" href="#equation-ea2394c3-0c32-4050-ac54-1a26714f347f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4252,8 +4219,8 @@ REINFORCE (Williams 1992) is the simplest model-free general reinforcement learn
 <h4>Reward <span class="math notranslate nohighlight">\(G_t\)</span><a class="headerlink" href="#reward-g-t" title="Permalink to this headline">¶</a></h4>
 <p>We update our policy by taking a sample of the action value function <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> by playing through episodes of the game.  <span class="math notranslate nohighlight">\(Q^{\pi_\theta} (s_t,a_t)\)</span> is defined as the expected return by taking action <span class="math notranslate nohighlight">\(a\)</span> in state <span class="math notranslate nohighlight">\(s\)</span> following policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>We know that for every step the simulation continues we receive a reward of 1.  We can use this to calculate the policy gradient at each time step, where <span class="math notranslate nohighlight">\(r\)</span> is the reward for a particular state-action pair.  Rather than using the instantaneous reward, <span class="math notranslate nohighlight">\(r\)</span>, we instead use a long term reward <span class="math notranslate nohighlight">\( v_{t} \)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is the discounted sum of all future rewards for the length of the episode.   <span class="math notranslate nohighlight">\(v_{t}\)</span> is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-43b7cadc-7485-44a0-b431-8fcbdc8aa67c">
-<span class="eqno">(123)<a class="headerlink" href="#equation-43b7cadc-7485-44a0-b431-8fcbdc8aa67c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0fe376a4-ddff-4430-a8ff-0acdf72f7646">
+<span class="eqno">(123)<a class="headerlink" href="#equation-0fe376a4-ddff-4430-a8ff-0acdf72f7646" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \color{green} G_t 
 = \sum_{n=t}^T \gamma^{n-t} 
 \color{green} R(\color{red}{s_t}, \color{blue}{a_t}, \color{red}{s_{t+1}}).
@@ -4264,8 +4231,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="update-policy-equation">
 <h4>Update Policy: equation<a class="headerlink" href="#update-policy-equation" title="Permalink to this headline">¶</a></h4>
 <p>After each episode we apply Monte-Carlo Policy Gradient to improve our policy according to the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d194b396-b16a-438f-a813-e564f733a4d8">
-<span class="eqno">(124)<a class="headerlink" href="#equation-d194b396-b16a-438f-a813-e564f733a4d8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-24c1ea07-c24a-4426-b88a-381718c60704">
+<span class="eqno">(124)<a class="headerlink" href="#equation-24c1ea07-c24a-4426-b88a-381718c60704" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta\theta_t = \alpha\nabla_\theta \, \log \pi_\theta (s_t,a_t)G_t
 \end{equation}\]</div>
 <p>We will then feed our policy history multiplied by our rewards to our optimizer and update the weights of our neural network using stochastic gradient <strong>ascent</strong>.  This should increase the likelihood of actions that got our agent a larger reward.</p>
@@ -4441,8 +4408,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 <div class="section" id="section-3-2-actor-critic">
 <h2>Section 3.2: Actor-critic<a class="headerlink" href="#section-3-2-actor-critic" title="Permalink to this headline">¶</a></h2>
 <p>Recall the policy gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b2a3953-4741-4cbb-a689-95edacbbbca4">
-<span class="eqno">(125)<a class="headerlink" href="#equation-6b2a3953-4741-4cbb-a689-95edacbbbca4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dea1f014-750b-431e-8b12-124cd2081601">
+<span class="eqno">(125)<a class="headerlink" href="#equation-dea1f014-750b-431e-8b12-124cd2081601" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4452,8 +4419,8 @@ Next we scale our reward vector by substracting the mean from each element and s
 \end{equation}\]</div>
 <p>The policy parameters are updated using Monte Carlo technique and uses random samples. This introduces high variability in log probabilities and cumulative reward values. This leads to noisy gradients and can cause unstable learning.</p>
 <p>One way to reduce variance and increase stability is subtracting the cumulative reward by a baseline:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e14fde6c-9f6d-4dbd-8d7f-82748a3078b3">
-<span class="eqno">(126)<a class="headerlink" href="#equation-e14fde6c-9f6d-4dbd-8d7f-82748a3078b3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-268a14e0-775e-465f-aa6b-5e9a7197b76f">
+<span class="eqno">(126)<a class="headerlink" href="#equation-268a14e0-775e-465f-aa6b-5e9a7197b76f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla J(\theta) 
 = \mathbb{E}
 \left[
@@ -4779,15 +4746,15 @@ conversation.</p>
 <h1>Appendix and further reading<a class="headerlink" href="#appendix-and-further-reading" title="Permalink to this headline">¶</a></h1>
 <p>Books and lecture notes</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://incompleteideas.net/book/RLbook2018.pdf">Reinforcement Learning: an Introduction by Sutton &amp; Barto</a></p></li>
-<li><p><a class="reference external" href="https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf">Algorithms for Reinforcement Learning by Csaba Szepesvari</a></p></li>
+<li><p>Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018. url: <a class="reference external" href="http://incompleteideas.net/book/RLbook2018.pdf">incompleteideas.net/book/RLbook2018.pdf</a></p></li>
+<li><p>Szepesvári, Csaba. Algorithms for reinforcement learning.” Synthesis lectures on artificial intelligence and machine learning 4.1 (2010): 1-103. url: <a class="reference external" href="https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf">sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf</a></p></li>
 </ul>
 <p>Lectures and course</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLzuuYNsE1EZAXYR4FJ75jcJseBmo4KQ9-">RL Course by David Silver</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLqYmG7hTraZBKeNJ-JE_eyJHZ7XgBoAyb">Reinforcement Learning Course | UCL &amp; DeepMind</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u">Emma Brunskill Stanford RL Course</a></p></li>
-<li><p><a class="reference external" href="https://www.coursera.org/specializations/reinforcement-learning">RL Course on Coursera by Martha White &amp; Adam White</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u">Stanford RL Course by Emma Brunskill</a></p></li>
+<li><p><a class="reference external" href="https://www.coursera.org/specializations/reinforcement-learning">RL Course on Coursera by Martha White and Adam White</a></p></li>
 </ul>
 <p>More practical:</p>
 <ul class="simple">
@@ -4795,9 +4762,9 @@ conversation.</p>
 <li><p><a class="reference external" href="https://arxiv.org/abs/2006.00979">Acme white paper</a> &amp; <a class="reference external" href="https://github.com/deepmind/acme/blob/master/examples/tutorial.ipynb">Colab tutorial</a></p></li>
 </ul>
 <br/>
-<p><a class="reference external" href="https://twitter.com/FeryalMP/status/1407272291579355136?s=20">Link to the tweet thread with resources recommended by the community</a>.</p>
+<p>Link to the <a class="reference external" href="https://twitter.com/FeryalMP/status/1407272291579355136?s=20">tweet thread</a> with resources recommended by the community.</p>
 <br/>
-<p>This notebook is based on the <a class="reference external" href="https://colab.research.google.com/github/eemlcommunity/PracticalSessions2020/blob/master/rl/EEML2020_RL_Tutorial.ipynb">EEML 2020 RL practical</a> by Feryal Behbahani &amp; Gheorghe Comanici. If you are interested in JAX you should try the colab. If you are interested in Tensorflow, there is also a version of the colab for the <a class="reference external" href="https://github.com/Feryal/rl_mlss_2020">MLSS 2020 RL Tutorial</a> that you can try :)</p>
+<p>This notebook is based on the <a class="reference external" href="https://colab.research.google.com/github/eemlcommunity/PracticalSessions2020/blob/master/rl/EEML2020_RL_Tutorial.ipynb">EEML 2020 RL practical</a> by Feryal Behbahani &amp; Gheorghe Comanici. If you are interested in JAX you should try the colab. If you are interested in Tensorflow, there is also a version of the colab for the <a class="reference external" href="https://github.com/Feryal/rl_mlss_2020">MLSS 2020 RL Tutorial</a> that you can try!</p>
 </div>
 <script type="text/x-thebe-config">
     {

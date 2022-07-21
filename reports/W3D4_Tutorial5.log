@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['# @title Install requirements', '', '# @markdown We install the acme library, see [here](https://github.com/deepmind/acme) for more info.', '', '# @markdown **WARNING:** There may be *errors* and/or *warnings* reported during the installation. However, they should be ignored.']
 ...
-['!pip install dm-acme --quiet', '!pip install dm-acme[reverb] --quiet', '!pip install dm-acme[jax,tensorflow] --quiet', '!pip install dm-acme[envs] --quiet', '!pip install dm-env --quiet']
+['!pip install typing --quiet', '!pip install einops --quiet', '!pip install dm-acme[reverb] --quiet', '!pip install dm-acme[jax,tensorflow] --quiet', '!pip install dm-acme[envs] --quiet']
 -------------------
 
