@@ -446,6 +446,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 2: Time series for Language
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/instructor/W2D5_Tutorial3.html">
+     (Bonus) Tutorial 3: Multilingual Embeddings
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1306,8 +1311,8 @@ title="Print to PDF"
 <p><em>Part of step 5</em></p>
 <p>We chose to use a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/">Drift-Diffusion Model (DDM)</a> because it is a well-established framework that allows us to model decision making in the case of 2 alternative choices (here: self-motion vs. other train motion).</p>
 <p>For our purposes simplest equation looks something like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-368f104d-63f4-477d-b4d6-1db0d33608bd">
-<span class="eqno">(128)<a class="headerlink" href="#equation-368f104d-63f4-477d-b4d6-1db0d33608bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1578a2e6-06d7-4056-8126-0564c6b0a5fd">
+<span class="eqno">(129)<a class="headerlink" href="#equation-1578a2e6-06d7-4056-8126-0564c6b0a5fd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dot e = \frac{de}{dt}= -c \cdot e + v \, ,
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e\)</span> is the accumulated evidence and <span class="math notranslate nohighlight">\(v\)</span> is our vestibular input already containing the noise (so we don’t need to add more noise?). <span class="math notranslate nohighlight">\(c\)</span> is the leakage constant, i.e., <span class="math notranslate nohighlight">\(c=0\)</span> means perfect integration; <span class="math notranslate nohighlight">\(c=1\)</span> means no integration (perfect leakage).</p>
@@ -1595,7 +1600,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 28.2% and motion: 60.6%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 30.0% and motion: 58.6%
 </pre></div>
 </div>
 </div>

@@ -418,6 +418,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 2: Time series for Language
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="W2D5_Tutorial3.html">
+     (Bonus) Tutorial 3: Multilingual Embeddings
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -943,6 +948,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#install-fasttext">
+     Install fastText
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#figure-settings">
      Figure Settings
     </a>
@@ -1159,6 +1169,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#install-dependencies">
      Install dependencies
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#install-fasttext">
+     Install fastText
     </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -1385,7 +1400,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="o">!</span>pip install --upgrade gensim --quiet
 <span class="o">!</span>pip install nltk --quiet
 <span class="o">!</span>pip install python-Levenshtein --quiet
-<span class="o">!</span>pip install git+https://github.com/facebookresearch/fastText.git --quiet
 
 <span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
 
@@ -1398,6 +1412,45 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 <span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="install-fasttext">
+<h2>Install fastText<a class="headerlink" href="#install-fasttext" title="Permalink to this headline">¶</a></h2>
+<p>If you want to see the original code, go to repo: https://github.com/facebookresearch/fastText.git</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Install fastText</span>
+<span class="c1"># @markdown If you want to see the original code, go to repo: https://github.com/facebookresearch/fastText.git</span>
+
+<span class="c1"># !pip install git+https://github.com/facebookresearch/fastText.git --quiet</span>
+
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://osf.io/vkuz7/download"</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s2">"fastText-main.zip"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Downloading Started...'</span><span class="p">)</span>
+<span class="c1"># Downloading the file by sending the request to the URL</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Writing the file to the local file system</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Downloading Completed.'</span><span class="p">)</span>
+
+<span class="c1"># opening the zip file in READ mode</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipObj</span><span class="p">:</span>
+  <span class="c1"># extracting all the files</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'Extracting all the files now...'</span><span class="p">)</span>
+  <span class="n">zipObj</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'Done!'</span><span class="p">)</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="c1"># Install the package</span>
+<span class="o">!</span>pip install fastText-main/ --quiet
 </pre></div>
 </div>
 </div>
@@ -2377,12 +2430,12 @@ Let’s try it:</p>
 
 
 <span class="c1"># Plotting</span>
-<span class="k">def</span> <span class="nf">plot_train_val</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">val_label</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_train_val</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">train_label</span><span class="p">,</span> <span class="n">val_label</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">):</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">train_label</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">val_label</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'epoch'</span><span class="p">)</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'accuracy'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -2439,10 +2492,10 @@ Let’s try it:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_train_val</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">epochs</span><span class="p">),</span> <span class="n">nn_train_acc</span><span class="p">,</span> <span class="n">nn_validation_acc</span><span class="p">,</span>
                <span class="s1">'training_accuracy'</span><span class="p">,</span> <span class="s1">'validation_accuracy'</span><span class="p">,</span>
-               <span class="s1">'Neural Net on IMDB text classification'</span><span class="p">)</span>
+               <span class="s1">'Neural Net on IMDB text classification'</span><span class="p">,</span> <span class="s1">'accuracy'</span><span class="p">)</span>
 <span class="n">plot_train_val</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">epochs</span><span class="p">),</span> <span class="n">nn_train_loss</span><span class="p">,</span> <span class="n">nn_validation_loss</span><span class="p">,</span>
                <span class="s1">'training_loss'</span><span class="p">,</span> <span class="s1">'validation_loss'</span><span class="p">,</span>
-               <span class="s1">'Neural Net on IMDB text classification'</span><span class="p">)</span>
+               <span class="s1">'Neural Net on IMDB text classification'</span><span class="p">,</span> <span class="s1">'loss'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

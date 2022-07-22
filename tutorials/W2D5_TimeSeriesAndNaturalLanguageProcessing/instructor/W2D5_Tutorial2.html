@@ -44,7 +44,7 @@ const thebe_selector_output = ".output, .cell_output"
 <link href="../../../_static/nma-dl-logo-square-4xp.png" rel="shortcut icon">
 <link href="../../../genindex.html" rel="index" title="Index"/>
 <link href="../../../search.html" rel="search" title="Search"/>
-<link href="../../W3D1_AttentionAndTransformers/chapter_title.html" rel="next" title="Attention And Transformers"/>
+<link href="W2D5_Tutorial3.html" rel="next" title="(Bonus) Tutorial 3: Multilingual Embeddings"/>
 <link href="W2D5_Tutorial1.html" rel="prev" title="Tutorial 1: Introduction to processing time series"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
@@ -418,6 +418,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
      Tutorial 2: Time series for Language
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="W2D5_Tutorial3.html">
+     (Bonus) Tutorial 3: Multilingual Embeddings
     </a>
 </li>
 </ul>
@@ -1747,8 +1752,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The following provides more data than the video (but can be skipped for now). For more detail, see the sources, the <a class="reference external" href="https://www.deeplearningbook.org/contents/rnn.html">deep learning book</a>, and <a class="reference external" href="https://d2l.ai/chapter_recurrent-neural-networks/rnn.html">d2l.ai</a></p>
 <p>When the recurrent network is trained to perform a task that requires predicting the future from the past, the network typically learns to use a hidden state at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(H_t\)</span> as a kind of lossy summary of the task-relevant aspects of the past sequence of inputs up to <span class="math notranslate nohighlight">\(t\)</span>. This summary is in general necessarily lossy, since it maps an arbitrary length sequence <span class="math notranslate nohighlight">\((X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1})\)</span> to a ﬁxed length vector <span class="math notranslate nohighlight">\(H_t\)</span>.</p>
 <p>We can represent the unfolded recurrence after <span class="math notranslate nohighlight">\(t\)</span> steps with a function <span class="math notranslate nohighlight">\(G_t\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db7ed9c3-ede1-43df-8dfe-ec521e849eba">
-<span class="eqno">(97)<a class="headerlink" href="#equation-db7ed9c3-ede1-43df-8dfe-ec521e849eba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e95fd4eb-edf1-44de-b43d-daad5cbfb1ee">
+<span class="eqno">(97)<a class="headerlink" href="#equation-e95fd4eb-edf1-44de-b43d-daad5cbfb1ee" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1}) = f(H_{t−1}, X_{t}; \theta)
 \end{equation}\]</div>
 <br/>
@@ -1761,13 +1766,13 @@ H_t=G_t(X_t, X_{t-1}, X_{t-2}, \dots , X_{2}, X_{1}) = f(H_{t−1}, X_{t}; \thet
 </ul>
 <p>We will now formally write down the equations of a recurrent unit-</p>
 <p>Assume that we have a minibatch of inputs <span class="math notranslate nohighlight">\(X_t \in R^{n \times d}\)</span> at time step <span class="math notranslate nohighlight">\(t\)</span>. In other words, for a minibatch of <span class="math notranslate nohighlight">\(n\)</span> sequence examples, each row of <span class="math notranslate nohighlight">\(X_t\)</span> corresponds to one example at time step <span class="math notranslate nohighlight">\(t\)</span> from the sequence. Next, we denote by <span class="math notranslate nohighlight">\(H_t \in R^{n \times h}\)</span> the hidden variable of time step <span class="math notranslate nohighlight">\(t\)</span>. Unlike the MLP, here we save the hidden variable <span class="math notranslate nohighlight">\(H_{t-1}\)</span> from the previous time step and introduce a new weight parameter <span class="math notranslate nohighlight">\(W_{hh} \in R^{h \times h}\)</span> to describe how to use the hidden variable of the previous time step in the current time step. Specifically, the calculation of the hidden variable of the current time step is determined by the input of the current time step together with the hidden variable of the previous time step:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6558d939-5ea7-4237-94f0-86190e550fd6">
-<span class="eqno">(98)<a class="headerlink" href="#equation-6558d939-5ea7-4237-94f0-86190e550fd6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f2f4bdd-f36d-4bfa-aba2-38ec105a1ba1">
+<span class="eqno">(98)<a class="headerlink" href="#equation-9f2f4bdd-f36d-4bfa-aba2-38ec105a1ba1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H_t = \phi(X_t W_{xh} + H_{t-1}W_{hh} + b_h)
 \end{equation}\]</div>
 <p>For time step <span class="math notranslate nohighlight">\(t\)</span>, the output of the output layer is similar to the computation in the MLP:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22da0e2b-28d9-4e9e-83b8-75a8e29736f5">
-<span class="eqno">(99)<a class="headerlink" href="#equation-22da0e2b-28d9-4e9e-83b8-75a8e29736f5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-24e7638f-6391-42bd-8f95-89941ddf95e8">
+<span class="eqno">(99)<a class="headerlink" href="#equation-24e7638f-6391-42bd-8f95-89941ddf95e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 O_t = H_t W_{hq} + b_q
 \end{equation}\]</div>
 <p>Parameters of the RNN include the weights <span class="math notranslate nohighlight">\(W_{xh} \in R^{d \times h}, W_{hh} \in R^{h \times h}\)</span> , and the bias <span class="math notranslate nohighlight">\(b_h \in R^{1 \times h}\)</span> of the hidden layer, together with the weights <span class="math notranslate nohighlight">\(W_{hq} \in R^{h \times q}\)</span> and the bias <span class="math notranslate nohighlight">\(b_q \in R^{1 \times q}\)</span> of the output layer. It is worth mentioning that even at different time steps, RNNs always use these model parameters. Therefore, the parameterization cost of an RNN does not grow as the number of time steps increases.</p>
@@ -3781,10 +3786,10 @@ simple seq2seq models are composed of two parts: the encoder, the context (“st
 <p class="prev-next-title">Tutorial 1: Introduction to processing time series</p>
 </div>
 </a>
-<a class="right-next" href="../../W3D1_AttentionAndTransformers/chapter_title.html" id="next-link" title="next page">
+<a class="right-next" href="W2D5_Tutorial3.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Attention And Transformers</p>
+<p class="prev-next-title">(Bonus) Tutorial 3: Multilingual Embeddings</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
