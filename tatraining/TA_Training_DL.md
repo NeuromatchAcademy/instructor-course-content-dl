@@ -67,7 +67,7 @@
   - [Example tutorial](https://deeplearning.neuromatch.io/tutorials/W1D3_MultiLayerPerceptrons/student/W1D3_Tutorial1.html)
   - [Peer programming](https://www.codefellows.org/blog/peer-programming-5-reasons-learning-in-a-group-beats-studying-on-your-own/)
   - [Nicolas method guidelines](https://docs.google.com/document/d/1znLhHKgC_TAia4vRTxQSV3-FV49W8ctBAT-Serex1Vc/edit?usp=sharing) for peer programming
-  - [DL content help videos](https://youtube.com/playlist?list=PLkBQOLLbi18NveUf7Jwoef26cIy_btcIF)
+  - [DL content help videos](https://youtube.com/playlist?list=PLkBQOLLbi18NveUf7Jwoef26cIy_btcIF). **Important:** from previous years, some days are yet to be updated.
   
   #### Assessment
   Please complete the quiz we prepared for you. [Here](https://portal.neuromatchacademy.org/api/redirect/to/5d595cd0-ab2b-422e-834f-9b6a5b964377) is the link.
