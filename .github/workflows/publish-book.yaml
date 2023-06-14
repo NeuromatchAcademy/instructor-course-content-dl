@@ -87,6 +87,7 @@ jobs:
           ln -s ../tutorials book/tutorials
           ln -s ../projects book/projects
           ln -s ../prereqs book/prereqs
+          ln -s ../tatraining book/tatraining
           jupyter-book build book
           python ci/parse_html_for_errors.py instructor
 
