@@ -80,14 +80,14 @@ jobs:
           rm -r course-content-dl-$BRANCH
           rm -r $BRANCH.tar.gz
 
-      - name: Copy prereqs file
-        run: |
-          BRANCH=`python -c 'import os, re; m = re.search(r"course-content-dl:([\w-]+)", os.environ["COMMIT_MESSAGE"]); print("main" if m is None else m.group(1))'`
-          wget https://github.com/NeuromatchAcademy/precourse/archive/refs/heads/$BRANCH.tar.gz
-          tar -xzf $BRANCH.tar.gz
-          mv precourse-$BRANCH/prereqs/ prereqs/
-          rm -r precourse-$BRANCH
-          rm -r $BRANCH.tar.gz
+      # - name: Copy prereqs file
+      #   run: |
+      #     BRANCH=`python -c 'import os, re; m = re.search(r"course-content-dl:([\w-]+)", os.environ["COMMIT_MESSAGE"]); print("main" if m is None else m.group(1))'`
+      #     wget https://github.com/NeuromatchAcademy/precourse/archive/refs/heads/$BRANCH.tar.gz
+      #     tar -xzf $BRANCH.tar.gz
+      #     mv precourse-$BRANCH/prereqs/ prereqs/
+      #     rm -r precourse-$BRANCH
+      #     rm -r $BRANCH.tar.gz
 
       - name: Install dependencies
         run: |
@@ -102,7 +102,7 @@ jobs:
           jupyter-book toc migrate /home/runner/work/instructor-course-content-dl/instructor-course-content-dl/book/_toc.yml -o /home/runner/work/instructor-course-content-dl/instructor-course-content-dl/book/_toc.yml
           ln -s ../tutorials book/tutorials
           ln -s ../projects book/projects
-          ln -s ../prereqs book/prereqs
+          # ln -s ../prereqs book/prereqs
           ln -s ../tatraining book/tatraining
           jupyter-book build book
           python ci/parse_html_for_errors.py instructor
