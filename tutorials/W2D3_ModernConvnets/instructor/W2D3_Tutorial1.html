@@ -1336,7 +1336,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5f003171b243459b9a4594f9aba86bde"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8557d4c0e8934a07b2e502404d5036d9"}</script></div>
 </div>
 </section>
 <hr class="docutils"/>
@@ -1578,7 +1578,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <h2>Video 1: Modern CNNs and Transfer Learning<a class="headerlink" href="#video-1-modern-cnns-and-transfer-learning" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8f2c2640fa014edb8a524e6fb50ac520"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5e5d8aaf5bc046079ac22e1632efc529"}</script></div>
 </div>
 </section>
 <section id="submit-your-feedback">
@@ -1597,19 +1597,19 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "07a215383c6a4bcfb4029726a7a48c86"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cb65810752254a2dad56f1de3aba7186"}</script></div>
 </div>
 <p>Images are high dimensional. That is to say that <code class="docutils literal notranslate"><span class="pre">image_length</span></code> * <code class="docutils literal notranslate"><span class="pre">image_width</span></code> * <code class="docutils literal notranslate"><span class="pre">image_channels</span></code> is a big number, and multiplying that big number by a normal sized fully-connected layer leads to a ton of parameters to learn. Yesterday, we learned about convolutional neural networks, one way of working around high dimensionality in images and other domains.</p>
 <p>The widget below (i.e., <em>Interactive Demo 1</em>) calculates the parameters required for a single convolutional or fully connected layer that operates on an image of a certain height and width.</p>
 <p>Recall that, the number of parameters of a convolutional layer <span class="math notranslate nohighlight">\(l\)</span> are calculated as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a934db7-1491-4bb8-bcec-0cafc4b9a26f">
-<span class="eqno">(83)<a class="headerlink" href="#equation-8a934db7-1491-4bb8-bcec-0cafc4b9a26f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cd6c3e62-7493-42c7-a99e-47a2bca86b18">
+<span class="eqno">(83)<a class="headerlink" href="#equation-cd6c3e62-7493-42c7-a99e-47a2bca86b18" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( H \times W \times K_{l-1} \right) + 1 \right] \times K_l
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(H\)</span> denotes the shape of the height of the filter, <span class="math notranslate nohighlight">\(W\)</span> the shape of the width of the filter, and <span class="math notranslate nohighlight">\(K_l\)</span> denotes the number of the filters in the <span class="math notranslate nohighlight">\(l\)</span>-th layer. The added <span class="math notranslate nohighlight">\(1\)</span> is because of the bias term for each filter.</p>
 <p>While a fully connected layer contains:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d2d7c63a-5b8d-4d22-8e85-7713996ef7b8">
-<span class="eqno">(84)<a class="headerlink" href="#equation-d2d7c63a-5b8d-4d22-8e85-7713996ef7b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08f178c9-e3df-458e-925e-6104978df37f">
+<span class="eqno">(84)<a class="headerlink" href="#equation-08f178c9-e3df-458e-925e-6104978df37f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \text{num_of_params}_l = \left[ \left( N_{l-1} \times N_l \right) + 1 \times N_l \right]
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N_l\)</span> denotes the number of nodes in the <span class="math notranslate nohighlight">\(l\)</span>-th layer.</p>
@@ -1812,7 +1812,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f49d3967cb424e40953b3dd4f6086fd7"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4def46d0aef141e1b6822123badb5e8b"}</script></div>
 </div>
 </section>
 </section>
@@ -1884,7 +1884,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9a28d7e3cccf497889a28bfee16d7cf0"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1060f6c3653444f0b6ce50911239173c"}</script></div>
 </div>
 </section>
 <section id="id2">
@@ -1903,7 +1903,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c7e3c3b2988e475ab33af73ccc7e12cd"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "264b05ad81f14b73b7c34859e530f838"}</script></div>
 </div>
 </section>
 </section>
@@ -1918,7 +1918,7 @@ ConvNet parameter count: 7168
 <h2>Video 2: History of convnets<a class="headerlink" href="#video-2-history-of-convnets" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "666f1c92bd244d1eab3b393f41b91e0b"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "2f2cc08c1ecc459caf33975487fa4b2b"}</script></div>
 </div>
 </section>
 <section id="id3">
@@ -1937,7 +1937,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "aeed1c155ebb4850af7e2db4497acb2a"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cfc1263cfc7b456f95ef64f9e74a5176"}</script></div>
 </div>
 </section>
 <section id="think-2-challenges-of-improving-cnns">
@@ -1986,7 +1986,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1b3327f230d04d3cbcd32a6d26dfb3dd"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5856fd362a4f4308bbf51df210c856c0"}</script></div>
 </div>
 </section>
 </section>
@@ -1999,7 +1999,7 @@ ConvNet parameter count: 7168
 <h2>Video 3: AlexNet &amp; VGG<a class="headerlink" href="#video-3-alexnet-vgg" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cdec0c9fa2094c6a98b1fcc96d0cc443"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "46dafd026c9145ca960f9c941ab96912"}</script></div>
 </div>
 </section>
 <section id="id5">
@@ -2018,7 +2018,7 @@ ConvNet parameter count: 7168
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c3793d508935481c9be75874c34c197c"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8121a2caa59748ceb7e379e82c10726e"}</script></div>
 </div>
 </section>
 <section id="section-3-1-introduction-to-alexnet">
@@ -2070,7 +2070,7 @@ In this section you’ll have the opportunity to play with AlexNet and see the w
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c7c77843a6dc4d20b78b08640d111a59"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b48e193d04ea436c9ef405425f378813"}</script></div>
 </div>
 </section>
 </section>
@@ -2133,7 +2133,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "22fa7c0ca7ef460aa676b454ac3d8335"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c659433f6ecb414ea52b3d1ea45c9ece"}</script></div>
 </div>
 </section>
 </section>
@@ -2214,7 +2214,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "776638b9036a4ae98614760a5eb8f735"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6ed1a751afa64badac913274a9e2cf9a"}</script></div>
 </div>
 <section id="id7">
 <h4>Submit your feedback<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
@@ -2232,7 +2232,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "42d53a7d84a74150897645cbcbdff707"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "eb2d0b0051b743c0892ac1000ecbd9a7"}</script></div>
 </div>
 </section>
 </section>
@@ -2268,7 +2268,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "57b79238af344dfeb7062b6ee37cb267"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ec0bfd7e2ce0497ab7ca3776166cf558"}</script></div>
 </div>
 </section>
 </section>
@@ -2286,7 +2286,7 @@ What do these filters remind you of?</p>
 <h2>Video 4: Residual Networks (ResNets)<a class="headerlink" href="#video-4-residual-networks-resnets" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "71c6fee83d21485096fa8705d3e8f7bb"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4f5a9ec7515147a19c6e4e540cb6002d"}</script></div>
 </div>
 </section>
 <section id="id9">
@@ -2305,7 +2305,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4961634fb3a34bbbab4cad487865d5db"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "060ff443c7e84aa2a28c689f4ddec144"}</script></div>
 </div>
 <p>In this section we’ll be working with a state of the art CNN model called <a class="reference external" href="https://arxiv.org/abs/1512.03385">ResNet</a>. ResNet has two particularly interesting features. First, it uses skip connections to avoid the vanishing gradient problem. Second, each block (collection of layers) in a ResNet can be treated as learning a residual function.</p>
 <p>Mathematically, a neural network can be thought of as a series of operations that maps an input (like an image of a dog) to an output (like the label “dog”). In math-speak a mapping from an input to an output is called a function. Neural networks are a flexible way of expressing that function.</p>
@@ -3619,7 +3619,7 @@ What do these filters remind you of?</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0efeaa46ad5043bbbdc1b680ae9c95f8"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "dc4bb2a4f6834e9b93461c05313cf69c"}</script></div>
 </div>
 </section>
 <section id="coding-exercise-4-1-use-the-resnet-model">
@@ -3769,7 +3769,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1fe3364db1d344abb8cb13f4bf78688f"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9e38d046d69442f1beb066328246e9c2"}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3864,7 +3864,7 @@ What do these filters remind you of?</p>
 <h2>Video 5: Improving efficiency: Inception and ResNeXt<a class="headerlink" href="#video-5-improving-efficiency-inception-and-resnext" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "fc6c1798ff294ed1afb899c75c5b9b44"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f2703246cb4c42c2aef8eab3ea8c8ed4"}</script></div>
 </div>
 </section>
 <section id="id11">
@@ -3883,7 +3883,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8d9e023d538f415bae3ca5241d80f3b9"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6d5f668b58ed4d8faf9023d53ae69f49"}</script></div>
 </div>
 </section>
 <section id="resnet-vs-resnext">
@@ -4017,7 +4017,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9be2f3eb4af84c6db1a05f98896ed56e"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "56dbb9b1f1f544cabbd98aa314cebaa3"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "94cb4cc5a18646f69eeb10ba0b5cea09"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5c6f6e5440564edea3f517d40a740856"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "91a9ea75dc8a4564adad8797feea26dd"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "272f5e1e926a41e1bafc61b7c2655f15"}</script></div>
 </div>
 </section>
 <section id="id13">
@@ -4036,7 +4036,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e8ff92c4387d4ce7944267a6248323a4"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5287fb85d4d04e14bb924ca7c2ef9409"}</script></div>
 </div>
 </section>
 </section>
@@ -4083,7 +4083,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "98b0e681c88e4bd48cb619216dcddb81"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ce176638c6a849e7aca1b22fe37120f1"}</script></div>
 </div>
 <p>Now we want to look at the number of parameters.</p>
 <ul class="simple">
@@ -4114,7 +4114,7 @@ What do these filters remind you of?</p>
 <h2>Video 6: Improving efficiency: MobileNet<a class="headerlink" href="#video-6-improving-efficiency-mobilenet" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8bf3b93dc0b1491fa937a2d0ffa065ac"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "77bf695b26f24e418477893f68ca2727"}</script></div>
 </div>
 </section>
 <section id="id15">
@@ -4133,7 +4133,7 @@ What do these filters remind you of?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "04807686ff56487f9acde864a54082b9"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f332c0fd570a4f168c1a3df6005db1ce"}</script></div>
 </div>
 </section>
 <section id="section-6-1-depthwise-separable-convolutions">
@@ -4245,7 +4245,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "99dc389e24f64cd5a20ad2f720473ff2"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "013314839b774980b77a915ea4347a8a"}</script></div>
 </div>
 </section>
 </section>
@@ -4280,7 +4280,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "04d5eb32a17e45bda5b65e6c5bb817c5"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "28b7ceb42e4d47b2932f3e7b381bbc51"}</script></div>
 </div>
 </section>
 </section>
@@ -4294,7 +4294,7 @@ Regular convolution: 72 parameters
 <h2>Video 7: Transfer Learning<a class="headerlink" href="#video-7-transfer-learning" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "52dabe4b9b4f4e1ea6dead30f4137a56"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8de5ca99cd6c4d55969499ff6363bb56"}</script></div>
 </div>
 </section>
 <section id="id18">
@@ -4313,7 +4313,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4e4fc5fc9fed4de884e9978499c01b0c"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "dd084a83b20547268dc37c4bea16b86e"}</script></div>
 </div>
 <p>The most common way large image models are trained in practice is via transfer learning. One first pretrains a network on a large classification dataset like ImageNet, then uses the weights of this network as initialization for training (“fine-tuning”) that network on your task of choice.</p>
 <p>While training a network twice sounds like a strange thing to do, the model ends up training faster on the target dataset and often outperforms training “from scratch”. There are also other benefits such as <a class="reference external" href="https://arxiv.org/pdf/1901.09960.pdf">robustness to noise</a> that are the subject of <a class="reference external" href="https://arxiv.org/abs/2008.11687">active research</a>.</p>
@@ -4761,7 +4761,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "82feab5eed4d4de79b6a4ed88b12435a"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "2ac03950055242fc9b6bc9b0a506d2c1"}</script></div>
 </div>
 </section>
 </section>
@@ -4797,7 +4797,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5d4784f2af7d4e3fb522e2264373187d"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0293ee73b5f746f3b6642a5bfd6b1382"}</script></div>
 </div>
 </section>
 </section>
@@ -4816,7 +4816,7 @@ Regular convolution: 72 parameters
 <h2>Video 8: Summary and Outlook<a class="headerlink" href="#video-8-summary-and-outlook" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f47825db10794bd092f216783042802f"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c001866c9153453b84102cf3ddcdbc62"}</script></div>
 </div>
 </section>
 <section id="id22">
@@ -4835,7 +4835,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "dbba887986c741deb838f0b2b6ba450a"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "88a9c166606e436ab56fcf26d8721d3f"}</script></div>
 </div>
 </section>
 </section>
@@ -4853,7 +4853,7 @@ Regular convolution: 72 parameters
 <h2>Video 9: Speed-accuracy trade-off<a class="headerlink" href="#video-9-speed-accuracy-trade-off" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4efb5195bfa04a95adb10d94da3c12cd"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "7c1d50eca5924c99b9b6bbddeabcb650"}</script></div>
 </div>
 </section>
 <section id="id23">
@@ -4872,7 +4872,7 @@ Regular convolution: 72 parameters
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bfff2d19c5594a92800082384ffc50b9"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e619b98530b44446813d1c555db289c4"}</script></div>
 </div>
 <p>As the models got larger and the number of connections increased so did the computational costs involved. In the modern era of image processing, there is a tradeoff between model performance and computational cost. Models can reach extremely high performance on many problems, but achieving state of the art results requires <a class="reference external" href="https://arxiv.org/pdf/1810.00736.pdf">huge amounts of compute power</a>.</p>
 <img alt="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D3_ModernConvnets/static/compute_vs_performance.png" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D3_ModernConvnets/static/compute_vs_performance.png"/>
@@ -5131,7 +5131,7 @@ For a start, load these models from torchvision.models and make sure they are pr
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "87847c6ce6814dea85fbac302e18da90"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cfb2d6bfaa3f4ec2b216c9bbf730f111"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ResNet18 0.0001
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f59193cabd8a4aafb0e80b1a52ef836f"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f4b7c80df05e435ab58d36cfc092690a"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ResNet18 0.0001
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AlexNet 0.0001
