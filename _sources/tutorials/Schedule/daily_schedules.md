@@ -12,17 +12,17 @@
 
 * Week 2
    * Monday: Regularization
-   * Tuesday: Convnets and DL Thinking 1
-   * Wednesday: Modern Convnets
-   * Thursday: Generative models (VAEs and Diffusion models)
-   * Friday: Attention and Transformers
+   * Tuesday: Convnets 
+   * Wednesday: Generative models and DL Discussion 1
+   * Thursday: Diffusion Generative models 
+   * Friday: Time Series and Natural Language Processing
 
 * Week 3: Advanced concepts
-   * Monday: Time Series and Natural Language Processing
-   * Tuesday: DL Thinking 2 & Half Projects Day (Abstract Writing)
+   * Monday: Attention and Transformers
+   * Tuesday: DL Discussion 2 & Half Projects Day (Abstract Writing)
    * Wednesday: Unsupervised and Self-supervised learning
    * Thursday: Basic Reinforcement Learning
-   * Friday: Reinforcement Learning for Games & DL Thinking 3
+   * Friday: Advanced Reinforcement Learning & DL Discussion 3
 ----
 
 ## Daily coursework schedule
@@ -47,8 +47,6 @@ All days (except W1D5, W3D2, and W3D5) will follow this schedule for course time
 
 ### Project time
 In addition to course time, each day will have 3 hours of project time that takes place after course work time.
-
-#### **Schedule Change for 2025:** For all time slots, projects will come *after* course work.
 
 ----
 ### Schedule of specific days
